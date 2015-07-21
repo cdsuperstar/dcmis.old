@@ -52,7 +52,7 @@ $(function() {
 					if(validate()){
 						
 						MsgShow('登陆成功'+validate());
-						window.location.href='./FMain.html'; //跳转页面
+						window.location.href='/loginmain'; //跳转页面
 					}					
 				}},{
 				id : 'btnReset',
