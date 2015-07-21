@@ -15,7 +15,7 @@
 Route::get('about','PagesController@about');
 Route::get('/users','PagesController@users');
 Route::get('/getc','PagesController@getUsercout');
-
+Route::get('/loginmain','PagesController@main');
 //Route::get('auth/login', 'Auth\AuthController@getLogin');
 //Route::post('auth/login', 'Auth\AuthController@postLogin');
 //Route::get('auth/logout', 'Auth\AuthController@getLogout');

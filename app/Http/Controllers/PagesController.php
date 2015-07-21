@@ -39,4 +39,8 @@ class PagesController extends Controller
         $users=User::all();
         return $users->toJson();
     }
+
+    public function main(){
+        return view("main");
+    }
 }
