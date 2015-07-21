@@ -29,6 +29,7 @@ class PagesController extends Controller
 
     public function getUsercout()
     {
+        //linlu
         return User::all()->count();
     }
     public function users(){
