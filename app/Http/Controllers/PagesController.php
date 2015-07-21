@@ -33,6 +33,7 @@ class PagesController extends Controller
     }
     public function users(){
         // var data=ajax.getresponse('/Users');
+        //wxb
         $users=User::all();
         return $users->toJson();
     }
