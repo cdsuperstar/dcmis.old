@@ -6,7 +6,7 @@
     <meta http-equiv="keywords" content="培训学校管理系统,培训学校系统,培训学校教务系统">
     <meta http-equiv="description" content="培训学校管理系统">
     <meta http-equiv="content-type" content="text/html" charset="UTF-8">
-     <link rel="stylesheet" href="Css/sys-css.css" type="text/css" />
+     <link rel="stylesheet" href="css/sys-css.css" type="text/css" />
     <link id="easyuiTheme" rel="stylesheet" type="text/css" href="js/themes/default/easyui.css" />
     <link rel="stylesheet" type="text/css" href="js/themes/icon.css" />
     <script type="text/javascript" src="js/jquery-1.4.2.min.js"  charset="UTF-8"></script>
@@ -18,7 +18,7 @@
 	 var _menus = {"menus":[
 						{"menuid":"1","icon":"icon-sys","menuname":"系统管理",
 							"menus":[{"menuname":"菜单管理","icon":"icon-nav","url":"de.html"},
-									{"menuname":"添加用户","icon":"icon-add","url":"demo.html"},
+									{"menuname":"添加用户","icon":"icon-add1","url":"demo.html"},
 									{"menuname":"用户管理","icon":"icon-users","url":"demo2.html"},
 									{"menuname":"角色管理","icon":"icon-role","url":"demo2.html"},
 									{"menuname":"权限设置","icon":"icon-set","url":"demo.html"},
