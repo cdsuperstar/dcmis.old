@@ -13,3 +13,5 @@
 
 Route::get('/', 'PagesController@index');
 route::get('about','PagesController@about');
+route::get('/users','PagesController@users');
+route::get('/getc','PagesController@getUsercout');
