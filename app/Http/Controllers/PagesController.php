@@ -43,4 +43,8 @@ class PagesController extends Controller
     public function main(){
         return view("main");
     }
+
+    public function login(){
+        return view("login");
+    }
 }
