@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
   <head>
     <title>学校管理系统FMAIN</title>
@@ -18,7 +18,7 @@
 	 var _menus = {"menus":[
 						{"menuid":"1","icon":"icon-sys","menuname":"系统管理",
 							"menus":[{"menuname":"菜单管理","icon":"icon-nav","url":"de.html"},
-									{"menuname":"添加用户","icon":"icon-add1","url":"demo.html"},
+									{"menuname":"添加用户","icon":"icon-add","url":"demo.html"},
 									{"menuname":"用户管理","icon":"icon-users","url":"demo2.html"},
 									{"menuname":"角色管理","icon":"icon-role","url":"demo2.html"},
 									{"menuname":"权限设置","icon":"icon-set","url":"demo.html"},

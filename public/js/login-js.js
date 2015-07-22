@@ -53,7 +53,7 @@ $(function() {
 						
 						MsgShow('登陆成功'+validate());
 						window.location.href='/loginmain'; //跳转页面
-					}					
+					}
 				}},{
 				id : 'btnReset',
 				text : '- 取 消 -',

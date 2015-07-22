@@ -7,7 +7,7 @@
     <meta http-equiv="description" content="培训学校管理系统">
     <meta http-equiv="content-type" content="text/html" charset="UTF-8">
 
-    <link rel="stylesheet" href="Css/sys-css.css" type="text/css" />
+    <link rel="stylesheet" href="css/sys-css.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="js/themes/default/easyui.css" />
     <link rel="stylesheet" type="text/css" href="js/themes/icon.css" />
     <script type="text/javascript" src="js/jquery-1.4.2.min.js"  charset="UTF-8"></script>
