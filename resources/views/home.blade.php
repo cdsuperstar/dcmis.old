@@ -1,5 +1,7 @@
 @extends('app')
+<?php
 
+?>
 @section('content')
 <div class="container">
 	<div class="row">
