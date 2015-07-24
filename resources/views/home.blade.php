@@ -1,6 +1,6 @@
 @extends('app')
 <?php
-
+Debugbar::addMessage(Auth::check());
 ?>
 @section('content')
 <div class="container">
