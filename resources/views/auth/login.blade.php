@@ -35,7 +35,7 @@
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
-<body class="login">
+<body class="login" ng-app >
 <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
 <div class="menu-toggler sidebar-toggler">
 </div>
@@ -179,7 +179,9 @@
 	<!-- END REGISTRATION FORM -->
 </div>
 <div class="copyright">
-	 2014 © Metronic. Admin Dashboard Template.
+	 2014 © Metronic. Admin Dashboard Template. <p>1 + 2 = @{{1 + 2}}</p>
+    <input type="text" ng-model="yourName" placeholder="Enter a name here">
+    <h1>Hello, @{{ yourName }}!</h1>
 </div>
 <!-- END LOGIN -->
 <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
@@ -203,6 +205,8 @@
 <script src="/metronic/assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
 <script src="/metronic/assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
 <script src="/metronic/assets/admin/pages/scripts/login.js" type="text/javascript"></script>
+<script src="/metronic/assets/global/plugins/angularjs/angular.min.js" type="text/javascript"></script>
+
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
 jQuery(document).ready(function() {     

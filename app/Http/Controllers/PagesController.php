@@ -44,6 +44,9 @@ class PagesController extends Controller
     }
 
     public function login(){
-        return view("login");
+        $user=User::all()->first()->toJson();
+        return $user;
+//        response()->
+//        return view("login");
     }
 }
