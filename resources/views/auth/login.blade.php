@@ -11,9 +11,9 @@
 <title>澳斯特 | 教学管理系统</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta http-equiv="keywords" content="培训学校管理系统,培训学校系统,培训学校教务系统">
+<meta http-equiv="description" content="培训学校管理系统">
 <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-<meta content="" name="description"/>
-<meta content="" name="author"/>
 <!-- BEGIN GLOBAL MANDATORY STYLES -->
 <link href="http://fonts.useso.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
 <link href="/metronic/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
@@ -31,7 +31,7 @@
 <link href="/metronic/assets/admin/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css" id="style_color"/>
 <link href="/metronic/assets/admin/layout/css/custom.css" rel="stylesheet" type="text/css"/>
 <!-- END THEME STYLES -->
-<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="shortcut icon" href="/metronic/assets/image/favicon.ico"/>
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
@@ -43,7 +43,7 @@
 <!-- BEGIN LOGO -->
 <div class="logo">
 	<a href="#">
-	<img src="/metronic/assets/admin/layout/img/logo-big.png" alt="澳斯特教育"/>
+	<img src="/metronic/assets/admin/layout/img/logo-big.png" alt="澳斯特教育" height="30px"/>
 	</a>
 </div>
 <!-- END LOGO -->
