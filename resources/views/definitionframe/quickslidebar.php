@@ -49,7 +49,7 @@
                                 <div class="media-status">
                                     <span class="badge badge-success">8</span>
                                 </div>
-                                <img class="media-object" src="/metronic/assets/admin/layout/img/avatar3.jpg" alt="...">
+                                    <img class="media-object" src="/metronic/assets/admin/layout/img/avatar3.jpg" alt="...">
                                 <div class="media-body">
                                     <h4 class="media-heading">Bob Nilson</h4>
                                     <div class="media-heading-sub">
