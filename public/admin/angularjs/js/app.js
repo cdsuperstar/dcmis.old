@@ -138,8 +138,8 @@ MetronicApp.controller('FooterController', ['$scope', function($scope) {
 /* Setup Rounting For All Pages */
 MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
     // Redirect any unmatched url
-    $urlRouterProvider.otherwise("/dashboard.html");  
-    
+    $urlRouterProvider.otherwise("/dashboard.html");
+
     $stateProvider
 
         // Dashboard
@@ -166,6 +166,34 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
 
                              'js/controllers/DashboardController.js'
                         ] 
+                    });
+                }]
+            }
+        })
+
+        // 系统设置 用户管理
+        .state("sys_admin_users", {
+            url: "/sys_admin/sys_admin_users.php",
+            templateUrl: "views/sys_admin/sys_admin_users.php",
+            data: {pageTitle: '用户管理'},
+            controller: "GeneralPageController",
+            resolve: {
+                deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                    return $ocLazyLoad.load({
+                        name: 'MetronicApp',
+                        insertBefore: '#ng_load_plugins_before', // load the above css files before '#ng_load_plugins_before'
+                        files: [
+                            '../../metronic/assets/global/plugins/select2/select2.css',
+                            '../../metronic/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css',
+                            '../../metronic/assets/global/plugins/datatables/extensions/Scroller/css/dataTables.scroller.min.css',
+                            '../../metronic/assets/global/plugins/datatables/extensions/ColReorder/css/dataTables.colReorder.min.css',
+
+                            '../../metronic/assets/global/plugins/select2/select2.min.js',
+                            '../../metronic/assets/global/plugins/datatables/all.min.js',
+                            'js/scripts/table-advanced.js',
+
+                            'js/controllers/GeneralPageController.js'
+                        ]
                     });
                 }]
             }
@@ -198,7 +226,7 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
         .state('uiselect', {
             url: "/ui_select.html",
             templateUrl: "views/ui_select.html",
-            data: {pageTitle: 'AngularJS Ui Select'},
+            data: {pageTitle: 'UI选择插件'},
             controller: "UISelectController",
             resolve: {
                 deps: ['$ocLazyLoad', function($ocLazyLoad) {

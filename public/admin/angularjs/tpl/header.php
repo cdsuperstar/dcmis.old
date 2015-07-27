@@ -3,7 +3,7 @@
 	<!-- BEGIN LOGO -->
 	<div class="page-logo">
 		<a href="#/">  
-		<img src="../../../assets/admin/layout/img/logo.png" alt="logo" class="logo-default"/>
+		<img src="../../metronic/assets/admin/layout/img/logo.png" alt="logo" class="logo-default" height="15px"/>
 		</a>
 		<div class="menu-toggler sidebar-toggler">
 			<!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
@@ -156,7 +156,7 @@
 							<li>
 								<a href="#/profile/dashboard">
 								<span class="photo">
-								<img src="../../../assets/admin/layout3/img/avatar2.jpg" class="img-circle" alt="">
+								<img src="../../metronic/assets/admin/layout3/img/avatar2.jpg" class="img-circle" alt="">
 								</span>
 								<span class="subject">
 								<span class="from">
@@ -170,7 +170,7 @@
 							<li>
 								<a href="#/profile/dashboard">
 								<span class="photo">
-								<img src="../../../assets/admin/layout3/img/avatar3.jpg" class="img-circle" alt="">
+								<img src="../../metronic/assets/admin/layout3/img/avatar3.jpg" class="img-circle" alt="">
 								</span>
 								<span class="subject">
 								<span class="from">
@@ -184,7 +184,7 @@
 							<li>
 								<a href="#/profile/dashboard">
 								<span class="photo">
-								<img src="../../../assets/admin/layout3/img/avatar1.jpg" class="img-circle" alt="">
+								<img src="../../metronic/assets/admin/layout3/img/avatar1.jpg" class="img-circle" alt="">
 								</span>
 								<span class="subject">
 								<span class="from">
@@ -198,7 +198,7 @@
 							<li>
 								<a href="#/profile/dashboard">
 								<span class="photo">
-								<img src="../../../assets/admin/layout3/img/avatar2.jpg" class="img-circle" alt="">
+								<img src="../../metronic/assets/admin/layout3/img/avatar2.jpg" class="img-circle" alt="">
 								</span>
 								<span class="subject">
 								<span class="from">
@@ -212,7 +212,7 @@
 							<li>
 								<a href="#/profile/dashboard">
 								<span class="photo">
-								<img src="../../../assets/admin/layout3/img/avatar3.jpg" class="img-circle" alt="">
+								<img src="../../metronic/assets/admin/layout3/img/avatar3.jpg" class="img-circle" alt="">
 								</span>
 								<span class="subject">
 								<span class="from">
@@ -329,7 +329,7 @@
 			<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
 			<li class="dropdown dropdown-language hide">
 				<a href="#" class="dropdown-toggle" dropdown-menu-hover data-toggle="dropdown" data-close-others="true">
-				<img alt="" src="../../../assets/global/img/flags/us.png">
+				<img alt="" src="../../metronic/assets/global/img/flags/us.png">
 				<span class="langname">
 				EN </span>
 				<i class="fa fa-angle-down"></i>
@@ -337,19 +337,19 @@
 				<ul class="dropdown-menu dropdown-menu-default">
 					<li class="active">
 						<a href="#">
-						<img alt="" src="../../../assets/global/img/flags/us.png"> English </a>
+						<img alt="" src="../../metronic/assets/global/img/flags/us.png"> English </a>
 					</li>
 					<li>
 						<a href="#">
-						<img alt="" src="../../../assets/global/img/flags/de.png"> German </a>
+						<img alt="" src="../../metronic/assets/global/img/flags/de.png"> German </a>
 					</li>
 					<li>
 						<a href="#">
-						<img alt="" src="../../../assets/global/img/flags/ru.png"> Russian </a>
+						<img alt="" src="../../metronic/assets/global/img/flags/ru.png"> Russian </a>
 					</li>
 					<li>	
 						<a href="#">
-						<img alt="" src="../../../assets/global/img/flags/fr.png"> French </a>
+						<img alt="" src="../../metronic/assets/global/img/flags/fr.png"> French </a>
 					</li>
 				</ul>
 			</li>
@@ -358,44 +358,44 @@
 			<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
 			<li class="dropdown dropdown-user">
 				<a href="#" class="dropdown-toggle" dropdown-menu-hover data-toggle="dropdown" data-close-others="true">
-				<img alt="" class="img-circle" src="../../../assets/admin/layout/img/avatar3_small.jpg"/>
+				<img alt="" class="img-circle" src="../../metronic/assets/admin/layout/img/avatar3_small.jpg"/>
 				<span class="username username-hide-on-mobile">
-				Nick </span>
-				<i class="fa fa-angle-down"></i>
-				</a>
-				<ul class="dropdown-menu dropdown-menu-default">
-						<li>
-							<a href="#/profile/dashboard">
-							<i class="icon-user"></i> My Profile </a>
-						</li>
-						<li>
-							<a href="#">
-							<i class="icon-calendar"></i> My Calendar </a>
-						</li>
-						<li>
-							<a href="#">
-							<i class="icon-envelope-open"></i> My Inbox <span class="badge badge-danger">
+					杨老师 </span>
+                    <i class="fa fa-angle-down"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-default">
+                    <li>
+                        <a href="page_calendar.html">
+                            <i class="icon-calendar"></i> 日历 </a>
+                    </li>
+                    <li>
+                        <a href="extra_profile.html">
+                            <i class="icon-user"></i> 个人主页 </a>
+                    </li>
+                    <li>
+                        <a href="inbox.html">
+                            <i class="icon-envelope-open"></i> 我的信息 <span class="badge badge-danger">
 							3 </span>
-							</a>
-						</li>
-						<li>
-							<a href="#/todo">
-							<i class="icon-rocket"></i> My Tasks <span class="badge badge-success">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="page_todo.html">
+                            <i class="icon-rocket"></i> 我的任务 <span class="badge badge-success">
 							7 </span>
-							</a>
-						</li>
-						<li class="divider">
-						</li>
-						<li>
-							<a href="#">
-							<i class="icon-lock"></i> Lock Screen </a>
-						</li>
-						<li>
-							<a href="#">
-							<i class="icon-key"></i> Log Out </a>
-						</li>
-				</ul>
-			</li>
+                        </a>
+                    </li>
+                    <li class="divider">
+                    </li>
+                    <li>
+                        <a href="extra_lock.html">
+                            <i class="icon-lock"></i> - 锁 屏 - </a>
+                    </li>
+                    <li>
+                        <a href="login.html">
+                            <i class="icon-key"></i> - 注 销 - </a>
+                    </li>
+                </ul>
+            </li>
 			<!-- END USER LOGIN DROPDOWN -->
 			<!-- BEGIN QUICK SIDEBAR TOGGLER -->
 			<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->

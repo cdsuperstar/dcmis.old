@@ -18,13 +18,14 @@ License: You must have a valid license purchased only from themeforest(the above
 <!--<![endif]-->
 <!-- BEGIN HEAD -->
 <head>
-<title data-ng-bind="'Metronic AngularJS | ' + $state.current.data.pageTitle"></title>
+<title data-ng-bind="'澳斯特教育 | ' + $state.current.data.pageTitle"></title>
 
-<meta charset="utf-8"/>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="" name="description"/>
-<meta content="" name="author"/>
+<meta http-equiv="keywords" content="培训学校管理系统,培训学校系统,培训学校教务系统">
+<meta http-equiv="description" content="培训学校管理系统">
+
 
 <!-- BEGIN GLOBAL MANDATORY STYLES -->
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
@@ -73,7 +74,7 @@ License: You must have a valid license purchased only from themeforest(the above
 	<!-- END PAGE SPINNER -->
 
 	<!-- BEGIN HEADER -->
-	<div data-ng-include="'tpl/header.html'" data-ng-controller="HeaderController" class="page-header md-shadow-z-1-i navbar navbar-fixed-top">
+	<div data-ng-include="'tpl/header.php'" data-ng-controller="HeaderController" class="page-header md-shadow-z-1-i navbar navbar-fixed-top">
 	</div>
 	<!-- END HEADER -->
 
@@ -83,7 +84,7 @@ License: You must have a valid license purchased only from themeforest(the above
 	<!-- BEGIN CONTAINER -->
 	<div class="page-container">
 		<!-- BEGIN SIDEBAR -->
-		<div data-ng-include="'tpl/sidebar.html'" data-ng-controller="SidebarController" class="page-sidebar-wrapper">			
+		<div data-ng-include="'tpl/sidebar.php'" data-ng-controller="SidebarController" class="page-sidebar-wrapper">
 		</div>
 		<!-- END SIDEBAR -->
 
@@ -91,7 +92,7 @@ License: You must have a valid license purchased only from themeforest(the above
 		<div class="page-content-wrapper">
 			<div class="page-content">
 				<!-- BEGIN STYLE CUSTOMIZER(optional) -->
-				<div data-ng-include="'tpl/theme-panel.html'" data-ng-controller="ThemePanelController" class="theme-panel hidden-xs hidden-sm">				
+				<div data-ng-include="'tpl/theme-panel.php'" data-ng-controller="ThemePanelController" class="theme-panel hidden-xs hidden-sm">
 				</div>
 				<!-- END STYLE CUSTOMIZER -->
 						
@@ -105,13 +106,13 @@ License: You must have a valid license purchased only from themeforest(the above
 		
 		<!-- BEGIN QUICK SIDEBAR -->
 		<a href="javascript:;" class="page-quick-sidebar-toggler"><i class="icon-close"></i></a>
-		<div data-ng-include="'tpl/quick-sidebar.html'" data-ng-controller="QuickSidebarController" class="page-quick-sidebar-wrapper"></div>
+		<div data-ng-include="'tpl/quick-sidebar.php'" data-ng-controller="QuickSidebarController" class="page-quick-sidebar-wrapper"></div>
 		<!-- END QUICK SIDEBAR -->
 	</div>
 	<!-- END CONTAINER -->
 
 	<!-- BEGIN FOOTER -->
-	<div data-ng-include="'tpl/footer.html'" data-ng-controller="FooterController" class="page-footer">
+	<div data-ng-include="'tpl/footer.php'" data-ng-controller="FooterController" class="page-footer">
 	</div>
 	<!-- END FOOTER -->
 

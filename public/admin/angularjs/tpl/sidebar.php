@@ -17,7 +17,7 @@
 				<i class="icon-close"></i>
 				</a>
 				<div class="input-group">
-					<input type="text" class="form-control" placeholder="Search...">
+					<input type="text" class="form-control" placeholder="搜索...">
 					<span class="input-group-btn">
 					<a href="javascript:;" class="btn submit"><i class="icon-magnifier"></i></a>
 					</span>
@@ -28,16 +28,26 @@
 		<li class="start">
 			<a href="#/dashboard.html">
 			<i class="icon-home"></i>
-			<span class="title">Dashboard</span>
+			<span class="title">主页</span>
 			</a>
 		</li>
 		<li>
 			<a href="javascript:;">
 			<i class="icon-settings"></i>
-			<span class="title">AngularJS Features</span>
+			<span class="title">系统设置</span>
 			<span class="arrow "></span>
 			</a>
 			<ul class="sub-menu">
+                <li>
+                    <a href="#/sys_admin/sys_admin_users.php">
+                        <i class="icon-users"></i>
+                        用户管理</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-globe"></i>
+                        角色管理</a>
+                </li>
 				<li>
 					<a href="#/ui_bootstrap.html">
 					<i class="icon-puzzle"></i> UI Bootstrap</span>
