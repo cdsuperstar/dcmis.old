@@ -8,7 +8,7 @@
 <!-- BEGIN HEAD -->
 <head>
 <meta charset="utf-8"/>
-<title>澳斯特 | 教学管理系统</title>
+<title>澳斯特教育 | 教学管理系统</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta http-equiv="keywords" content="培训学校管理系统,培训学校系统,培训学校教务系统">
@@ -74,7 +74,7 @@
 			<a href="javascript:;" id="forget-password" class="forget-password">忘记密码 ?</a>
 		</div>
 		<div class="login-options">
-			<h4>可以使用其他方式登录</h4>
+			<h4><font size="3">可以使用其他方式登录</font> </h4>
 			<ul class="social-icons">
 				<li>
 					<a class="social-icon-color facebook" data-original-title="facebook" href="javascript:;"></a>
