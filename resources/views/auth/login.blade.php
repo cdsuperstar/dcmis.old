@@ -43,7 +43,7 @@
 <!-- BEGIN LOGO -->
 <div class="logo">
 	<a href="#">
-	<img src="/metronic/assets/admin/layout/img/logo-big.png" alt=""/>
+	<img src="/metronic/assets/admin/layout/img/logo-big.png" alt="" height="30px"/>
 	</a>
 </div>
 <!-- END LOGO -->

@@ -48,7 +48,6 @@ License: You must have a valid license purchased only from themeforest(the above
 <link href="../../metronic/assets/admin/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css" id="style_color"/>
 <link href="../../metronic/assets/admin/layout/css/custom.css" rel="stylesheet" type="text/css"/>
 <!-- END THEME STYLES -->
-
 <link rel="shortcut icon" href="favicon.ico"/>
 </head>
 <!-- END HEAD -->

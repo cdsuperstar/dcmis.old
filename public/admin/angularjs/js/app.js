@@ -185,14 +185,17 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
                         files: [
                             '../../metronic/assets/global/plugins/select2/select2.css',
                             '../../metronic/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css',
-                            '../../metronic/assets/global/plugins/datatables/extensions/Scroller/css/dataTables.scroller.min.css',
-                            '../../metronic/assets/global/plugins/datatables/extensions/ColReorder/css/dataTables.colReorder.min.css',
 
+                            '../../metronic/assets/global/plugins/jquery-ui/jquery-ui.min.js',
                             '../../metronic/assets/global/plugins/select2/select2.min.js',
+                            '../../metronic/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js',
+                            '../../metronic/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js',
+
                             '../../metronic/assets/global/plugins/datatables/all.min.js',
                             'js/scripts/table-advanced.js',
 
                             'js/controllers/GeneralPageController.js'
+
                         ]
                     });
                 }]
