@@ -14,3 +14,12 @@ var elixir = require('laravel-elixir');
 elixir(function(mix) {
     mix.sass('*.scss');
 });
+elixir(function(mix){
+    mix.scriptsIn([
+        'public/metronic/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js',
+        'public/metronic/assets/global/plugins/select2/select2.min.js',
+        'public/metronic/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js',
+        'public/metronic/assets/admin/pages/scripts/table-editable.js',
+        'js/controllers/GeneralPageController.js'
+    ],'public/js/view/sys-users.js');
+});
