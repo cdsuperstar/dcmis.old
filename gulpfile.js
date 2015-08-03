@@ -15,15 +15,15 @@ elixir(function(mix) {
     mix.sass('*.scss');
 });
 // sys-user view js&css
-elixir(function(mix){
-    mix.scripts([
-        'public/metronic/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js',
-        'public/metronic/assets/global/plugins/select2/select2.min.js',
-        'public/metronic/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js',
-        'public/metronic/assets/admin/pages/scripts/table-editable.js',
-        'public/metronic/theme/topical/default/js/controllers/GeneralPageController.js'
-    ],'public/js/view/sys-user.js','public');
-})
+//elixir(function(mix){
+//    mix.scripts([
+//        'public/metronic/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js',
+//        'public/metronic/assets/global/plugins/select2/select2.min.js',
+//        'public/metronic/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js',
+//        'public/metronic/assets/admin/pages/scripts/table-editable.js',
+//        'public/metronic/theme/topical/default/js/controllers/GeneralPageController.js'
+//    ],'public/js/view/sys-user.js','public');
+//});
 elixir(function(mix){
     mix.styles([
         "public/metronic/assets/global/plugins/font-awesome/css/font-awesome.min.css",
