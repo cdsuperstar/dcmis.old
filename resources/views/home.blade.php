@@ -1,3 +1,3 @@
 <script type="text/javascript">
-    window.location="/admin/angularjs/index.php";
+    window.location="metronic/theme/topical/default/index.html";
 </script>
