@@ -105,6 +105,6 @@ class dcResController extends Controller
      */
     public function missingMethod($sUrl = '')
     {
-        return redirect('/theme/' . $sUrl);
+        return redirect('/theme/assets' . $sUrl);
     }
 }
