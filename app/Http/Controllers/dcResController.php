@@ -96,7 +96,6 @@ class dcResController extends Controller
         $mycomp->attachComponentFilesystem($disk);
         $mycomp->setPathToComponents('theme/templates/admin');
         $mycomp->analyseMetronicIntoComponents($id);
-//        var_dump($mycomp->getAllStuff('css',$id));
         return view('assets.comdemo', ['mycomp'=>$mycomp,'name'=>$id]);
     }
 
@@ -106,6 +105,6 @@ class dcResController extends Controller
      */
     public function missingMethod($sUrl = '')
     {
-        return redirect('/theme/assets/' . $sUrl);
+        return redirect('/theme/' . $sUrl);
     }
 }
