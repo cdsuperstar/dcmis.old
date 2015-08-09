@@ -1,23 +1,22 @@
 <!doctype html>
 <html ng-app="myApp">
 <head>
-    @foreach($mycomp->getAllStuff('css',$name) as $css)
+    @foreach($mycomp->getAllUniqueStuff('css') as $css)
         <link href="{{$css}}" rel="stylesheet" type="text/css"/>
     @endforeach
 </head>
 <body>
     <div class="row">
-        @foreach($mycomp->getAllStuff('demo',$name) as $demo)
+        @foreach($mycomp->getAllUniqueStuff('demo') as $demo)
             {!! $demo !!}
         @endforeach
     </div>
-@foreach($mycomp->getAllStuff('script',$name) as $script)
-    {{--<script src="{{str_replace('../..','/theme',$script)}}" type="text/javascript"></script>--}}
+@foreach($mycomp->getAllUniqueStuff('script') as $script)
     <script src="{{$script}}" type="text/javascript"></script>
 @endforeach
 
 <script type="text/javascript">
-    {!! $mycomp->getMetronicInitScript($name) !!}
+    {!! $mycomp->getMetronicInitScript() !!}
 </script>
 </body>
 </html>

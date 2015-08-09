@@ -68,6 +68,7 @@ class dcComponentSelector extends Crawler
         $aComponent['name'] = $sName;
         // get filename
         $aComponent['filename'] = is_null($sFilename) ? $this->sPathToComponents . '/' . $sName . '.html' : $this->sPathToComponents . '/' . $sFilename;
+        $this->clear();
         $this->addContent($this->fStorage->get($aComponent['filename']));
         // get css array
         $preFix = 'BEGIN GLOBAL MANDATORY STYLES';
@@ -127,7 +128,7 @@ class dcComponentSelector extends Crawler
      * @param string $sStuff
      * @return mixed
      */
-    public function getAllStuff( $sStuff = 'demo',$sComponent)
+    public function getAllStuff($sStuff = 'demo', $sComponent)
     {
         return isset($this->aComponents[$sComponent][$sStuff]) ?
             $this->aComponents[$sComponent][$sStuff] :
@@ -135,14 +136,40 @@ class dcComponentSelector extends Crawler
     }
 
     /**
-     * return init script
+     * get unique stuff as js,css,demo
+     * @param $sStuff
+     * @return array
+     */
+    public function getAllUniqueStuff($sStuff)
+    {
+        $aTmp = array();
+        foreach ($this->aComponents as $aComp) {
+            if (is_array($aComp[$sStuff])) {
+                $aTmp = array_merge($aTmp, $aComp[$sStuff]);
+            } else {
+                $aTmp[] = $aComp[$sStuff];
+            }
+        }
+
+        return is_array($aComp[$sStuff]) ?
+            array_unique($aTmp) :
+            implode($aTmp);
+    }
+
+    /**
+     * return init script,default '' returns all
      * @param $sComponent
      * @return string
      */
-    public function getMetronicInitScript($sComponent)
+    public function getMetronicInitScript($sComponent = '')
     {
-        return isset($this->aComponents[$sComponent]['MetronicInitScript']) ?
-            $this->aComponents[$sComponent]['MetronicInitScript'] :
-            '';
+        if (isset($this->aComponents[$sComponent]['MetronicInitScript'])) {
+            return $this->aComponents[$sComponent]['MetronicInitScript'];
+        }
+        $sInit = '';
+        foreach ($this->aComponents as $aComp) {
+            $sInit .= $aComp['MetronicInitScript'];
+        }
+        return $sInit;
     }
 }
