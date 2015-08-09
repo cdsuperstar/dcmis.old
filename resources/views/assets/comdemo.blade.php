@@ -6,13 +6,11 @@
     @endforeach
 </head>
 <body>
-<form method="get" action="/adduser">
     <div class="row">
         @foreach($mycomp->getAllStuff('demo',$name) as $demo)
             {!! $demo !!}
         @endforeach
     </div>
-</form>
 @foreach($mycomp->getAllStuff('script',$name) as $script)
     {{--<script src="{{str_replace('../..','/theme',$script)}}" type="text/javascript"></script>--}}
     <script src="{{$script}}" type="text/javascript"></script>
