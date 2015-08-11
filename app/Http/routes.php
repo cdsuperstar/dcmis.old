@@ -25,11 +25,11 @@ Route::get('/login', 'PagesController@login');
 //// Registration routes...
 //Route::get('auth/register', 'Auth\AuthController@getRegister');
 //Route::post('auth/register', 'Auth\AuthController@postRegister');
-Route::get('demo/{a}',
-    function($a){
-        return redirect('/theme/templates/admin/demo/'.$a);
-    }
-);
+//Route::get('demo/{a}',
+//    function($a){
+//        return redirect('/theme/templates/admin/demo/'.$a);
+//    }
+//);
 
 Route::get('/', 'WelcomeController@index');
 
@@ -41,6 +41,5 @@ Route::get('home', 'HomeController@index');
 
 Route::controllers([
     'auth' => 'Auth\AuthController',
-    'password' => 'Auth\PasswordController',
-    'assets' => 'dcResController',
+    'password' => 'Auth\PasswordController'
 ]);

@@ -11,9 +11,9 @@ var elixir = require('laravel-elixir');
  |
  */
 
-elixir(function(mix) {
-    mix.sass('*.scss');
-});
+//elixir(function(mix) {
+//    mix.sass('*.scss');
+//});
 // sys-user view js&css
 //elixir(function(mix){
 //    mix.scripts([
@@ -24,12 +24,12 @@ elixir(function(mix) {
 //        'public/metronic/theme/topical/default/js/controllers/GeneralPageController.js'
 //    ],'public/js/view/sys-user.js','public');
 //});
-elixir(function(mix){
-    mix.styles([
-        "public/metronic/assets/global/plugins/font-awesome/css/font-awesome.min.css",
-        "public/metronic/assets/global/plugins/simple-line-icons/simple-line-icons.min.css",
-        "public/metronic/assets/global/plugins/bootstrap/css/bootstrap.min.css",
-        "public/metronic/assets/global/plugins/uniform/css/uniform.default.css",
-        "public/metronic/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css"
-    ],'public/css/BEGINGLOBALMANDATORYSTYLES.css','public');
-});
+//elixir(function(mix){
+//    mix.styles([
+//        "public/metronic/assets/global/plugins/font-awesome/css/font-awesome.min.css",
+//        "public/metronic/assets/global/plugins/simple-line-icons/simple-line-icons.min.css",
+//        "public/metronic/assets/global/plugins/bootstrap/css/bootstrap.min.css",
+//        "public/metronic/assets/global/plugins/uniform/css/uniform.default.css",
+//        "public/metronic/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css"
+//    ],'public/css/BEGINGLOBALMANDATORYSTYLES.css','public');
+//});
