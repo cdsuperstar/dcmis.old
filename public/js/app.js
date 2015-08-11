@@ -149,7 +149,7 @@ DcmisApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
                         insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
                         files: [
 
-                            'js/controllers/GeneralPageController.js'
+                            '/js/controllers/GeneralPageController.js'
                         ] 
                     });
                 }]
@@ -168,14 +168,14 @@ DcmisApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
                         name: 'DcmisApp',
                         insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
                         files: [
-                            '../../../assets/global/plugins/select2/select2.css',
-                            '../../../assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css',
+                            '/assets/global/plugins/select2/select2.css',
+                            '/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css',
 
-                            '../../../assets/global/plugins/datatables/media/js/jquery.dataTables.min.js',
-                            '../../../assets/global/plugins/select2/select2.min.js',
-                            '../../../assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js',
-                            'views/sys-seting/sys-users.js',
-                            'js/controllers/GeneralPageController.js'
+                            '/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js',
+                            '/assets/global/plugins/select2/select2.min.js',
+                            '/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js',
+                            '/views/sys-seting/sys-users.js',
+                            '/js/controllers/GeneralPageController.js'
                         ]
                     });
                 }]
@@ -194,14 +194,14 @@ DcmisApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
                         name: 'DcmisApp',
                         insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
                         files: [
-                            '../../../assets/global/plugins/select2/select2.css',
-                            '../../../assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css',
+                            '/assets/global/plugins/select2/select2.css',
+                            '/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css',
 
-                            '../../../assets/global/plugins/datatables/media/js/jquery.dataTables.min.js',
-                            '../../../assets/global/plugins/select2/select2.min.js',
-                            '../../../assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js',
-                            'views/sys-model/sys-model.js',
-                            'js/controllers/GeneralPageController.js'
+                            '/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js',
+                            '/assets/global/plugins/select2/select2.min.js',
+                            '/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js',
+                            '/views/sys-model/sys-model.js',
+                            '/js/controllers/GeneralPageController.js'
                         ]
                     });
                 }]
@@ -220,15 +220,17 @@ DcmisApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
                         name: 'DcmisApp',
                         insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
                         files: [
-                            '../../../assets/global/plugins/select2/select2.css',
+                            '/assets/global/plugins/select2/select2.css',
+                            '/assets/global/plugins/bootstrap-select/bootstrap-select.min.css',
+                            '/assets/global/plugins/jquery-multi-select/css/multi-select.css',
 
-                            '../../../assets/global/plugins/jquery-validation/js/jquery.validate.min.js',
-                            '../../../assets/global/plugins/jquery-validation/js/additional-methods.min.js',
-                            '../../../assets/global/plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js',
-                            '../../../assets/global/plugins/select2/select2.min.js',
-                            '../../../assets/global/plugins/jquery-multi-select/js/jquery.multi-select.js',
-                            'views/sys-model/sys-addmodel.js',
-                            'js/controllers/GeneralPageController.js'
+                            '/assets/global/plugins/jquery-validation/js/jquery.validate.min.js',
+                            '/assets/global/plugins/jquery-validation/js/additional-methods.min.js',
+                            '/assets/global/plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js',
+                            '/assets/global/plugins/select2/select2.min.js',
+                            '/assets/global/plugins/jquery-multi-select/js/jquery.multi-select.js',
+                            '/views/sys-model/sys-addmodel.js',
+                            '/js/controllers/GeneralPageController.js'
                         ]
                     });
                 }]
