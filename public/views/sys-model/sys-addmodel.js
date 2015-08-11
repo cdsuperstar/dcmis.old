@@ -1,27 +1,16 @@
 var FormWizard = function () {
 
+    var handleMultiSelect = function () {
+        $('#modelzj').multiSelect();
+    }
 
     return {
         //main function to initiate the module
         init: function () {
+            handleMultiSelect();
             if (!jQuery().bootstrapWizard) {
                 return;
             }
-
-            function format(state) {
-                if (!state.id) return state.text; // optgroup
-                return "<img class='flag' src='../../../assets/global/img/flags/" + state.id.toLowerCase() + ".png'/>&nbsp;&nbsp;" + state.text;
-            }
-
-            $("#country_list").select2({
-                placeholder: "Select",
-                allowClear: true,
-                formatResult: format,
-                formatSelection: format,
-                escapeMarkup: function (m) {
-                    return m;
-                }
-            });
 
             var form = $('#submit_form');
             var error = $('.alert-danger', form);
@@ -46,55 +35,35 @@ var FormWizard = function () {
                         minlength: 5,
                         required: true
                     },
-                    modeclsx: {
+                    modelsx: {
                         required: true
                     },
                     //profile
                     modelicon: {
                         required: true
                     },
-                    phone: {
-                        required: true
-                    },
-                    gender: {
-                        required: true
-                    },
-                    address: {
-                        required: true
-                    },
-                    city: {
-                        required: true
-                    },
-                    country: {
-                        required: true
-                    },
-                    //payment
-                    modelsx: {
-                        required: true
-                    },
-                    modelzj: {
-                        required: true
+                    'modelzj[]': {
+                        required: true,
+                        minlength: 1
                     }
                 },
 
                 messages: { // custom messages for radio buttons and checkboxes
-                    'payment[]': {
-                        required: "Please select at least one option",
-                        minlength: jQuery.validator.format("Please select at least one option")
+                    'modelzj[]': {
+                        required: "请至少选择一个组件！",
+                        minlength: jQuery.validator.format("请至少选择一个组件！")
                     }
                 },
 
                 errorPlacement: function (error, element) { // render error placement for each input type
-                    if (element.attr("name") == "gender") { // for uniform radio buttons, insert the after the given container
-                        error.insertAfter("#form_gender_error");
-                    } else if (element.attr("name") == "payment[]") { // for uniform checkboxes, insert the after the given container
+                    if (element.attr("name") == "modelzj[]") { // for uniform checkboxes, insert the after the given container
                         error.insertAfter("#form_payment_error");
                     } else {
                         error.insertAfter(element); // for other inputs, just perform default behavior
                     }
                 },
 
-                invalidHandler: function (event, validator) { //display error alert on form submit   
+                invalidHandler: function (event, validator) { //display error alert on form submit
                     success.hide();
                     error.show();
                     Metronic.scrollTo(error, -200);
@@ -144,7 +113,7 @@ var FormWizard = function () {
                         $(this).html(input.attr("data-title"));
                     } else if ($(this).attr("data-display") == 'payment[]') {
                         var payment = [];
-                        $('[name="payment[]"]:checked', form).each(function(){ 
+                        $('[name="payment[]"]:checked', form).each(function(){
                             payment.push($(this).attr('data-title'));
                         });
                         $(this).html(payment.join("<br>"));
