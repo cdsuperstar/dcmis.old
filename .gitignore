@@ -1,6 +1,7 @@
 /vendor
 /node_modules
-/public/metronic
+/public/theme
+/public/assets
 /.idea
 Homestead.yaml
 .env
