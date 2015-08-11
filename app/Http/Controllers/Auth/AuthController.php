@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -38,6 +38,10 @@ class AuthController extends Controller
 
     }
 
+//    public function logout()
+//    {
+//        Auth::logout();
+//    }
     /**
      * Get a validator for an incoming registration request.
      *

@@ -1,0 +1,245 @@
+<!-- BEGIN PAGE HEADER-->
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a href="#/dashboard.html">主页</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a href="#">系统设置</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a href="#sys_admin/sys_admin_users.php">用户管理</a>
+        </li>
+    </ul>
+    <div class="page-toolbar">
+        <div class="btn-group pull-right">
+            <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true">
+                选 项  <i class="fa fa-angle-down"></i>
+            </button>
+            <ul class="dropdown-menu pull-right" role="menu">
+                <li>
+                    <a href="#">
+                        <i class="icon-envelope-open"></i> 新消息 </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-calendar"></i> 新日历项 <span class="badge badge-success">4</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- END PAGE HEADER-->
+<!-- BEGIN MAIN CONTENT -->
+<!-- BEGIN start search CONTENT -->
+<div class="portlet box blue">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-search-plus"></i>查询
+        </div>
+        <div class="tools">
+            <a href="javascript:;" class="collapse">
+            </a>
+        </div>
+    </div>
+    <div class="portlet-body">
+        <table>
+            <tr>
+                <td>用户名 / 昵称 : &nbsp;</td>
+                <td><input type="text" class="form-control" placeholder="请输入用户名"></td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-default red-pink">
+                    <i class="fa fa-search"></i> &nbsp;查询 </button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- END start search CONTENT -->
+<div class="portlet box yellow">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-user"></i>用户管理
+        </div>
+        <div class="tools">
+            <button id="dcmiss_editable_new" class="btn btn-default yellow">
+                <i class="fa fa-pencil"></i> &nbsp;添加 </button>
+            <a href="javascript:;" class="reload">
+            </a>
+            <a href="javascript:;" class="collapse">
+            </a>
+        </div>
+    </div>
+    <div class="portlet-body">
+        <table class="table table-striped table-hover table-bordered" id="dcmiss_editable">
+            <thead>
+            <tr>
+                <th>
+                    用户名
+                </th>
+                <th>
+                    昵称
+                </th>
+                <th>
+                    密码
+                </th>
+                <th>
+                    角色
+                </th>
+                <th>
+                    Edit
+                </th>
+                <th>
+                    Delete
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    alex
+                </td>
+                <td>
+                    Alex Nilson
+                </td>
+                <td>
+                    1234
+                </td>
+                <td class="center">
+                    power user
+                </td>
+                <td>
+                    <a class="edit" href="javascript:;">
+                        Edit </a>
+                </td>
+                <td>
+                    <a class="delete" href="javascript:;">
+                        Delete </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    lisa
+                </td>
+                <td>
+                    Lisa Wong
+                </td>
+                <td>
+                    434
+                </td>
+                <td class="center">
+                    new user
+                </td>
+                <td>
+                    <a class="edit" href="javascript:;">
+                        Edit </a>
+                </td>
+                <td>
+                    <a class="delete" href="javascript:;">
+                        Delete </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    nick12
+                </td>
+                <td>
+                    Nick Roberts
+                </td>
+                <td>
+                    232
+                </td>
+                <td class="center">
+                    power user
+                </td>
+                <td>
+                    <a class="edit" href="javascript:;">
+                        Edit </a>
+                </td>
+                <td>
+                    <a class="delete" href="javascript:;">
+                        Delete </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    goldweb
+                </td>
+                <td>
+                    Sergio Jackson
+                </td>
+                <td>
+                    132
+                </td>
+                <td class="center">
+                    elite user
+                </td>
+                <td>
+                    <a class="edit" href="javascript:;">
+                        Edit </a>
+                </td>
+                <td>
+                    <a class="delete" href="javascript:;">
+                        Delete </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    webriver
+                </td>
+                <td>
+                    Antonio Sanches
+                </td>
+                <td>
+                    462
+                </td>
+                <td class="center">
+                    new user
+                </td>
+                <td>
+                    <a class="edit" href="javascript:;">
+                        Edit </a>
+                </td>
+                <td>
+                    <a class="delete" href="javascript:;">
+                        Delete </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    gist124
+                </td>
+                <td>
+                    Nick Roberts
+                </td>
+                <td>
+                    62
+                </td>
+                <td class="center">
+                    new user
+                </td>
+                <td>
+                    <a class="edit" href="javascript:;">
+                        Edit </a>
+                </td>
+                <td>
+                    <a class="delete" href="javascript:;">
+                        Delete </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<!-- END MAIN CONTENT -->
+<!-- BEGIN MAIN JS & CSS -->
+<script language="JavaScript" type="text/javascript">
+    TableEditable.init();
+</script>
+<!-- BEGIN MAIN JS & CSS -->

@@ -26,12 +26,12 @@ License: You must have a valid license purchased only from themeforest(the above
   <meta content="" name="author"/>
 
   <!-- BEGIN GLOBAL MANDATORY STYLES -->
-  <link href="css/OpenSans.css" rel="stylesheet" type="text/css"/>
-  <link href="../../../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-  <link href="../../../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
-  <link href="../../../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-  <link href="../../../assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
-  <link href="../../../assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css"/>
+  <link href="/css/OpenSans.css" rel="stylesheet" type="text/css"/>
+  <link href="/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+  <link href="/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
+  <link href="/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+  <link href="/assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+  <link href="/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css"/>
   <!-- END GLOBAL MANDATORY STYLES -->
 
   <!-- BEGIN DYMANICLY LOADED CSS FILES(all plugin and page related styles must be loaded between GLOBAL and THEME css files ) -->
@@ -40,11 +40,11 @@ License: You must have a valid license purchased only from themeforest(the above
 
   <!-- BEGIN THEME STYLES -->
   <!-- DOC: To use 'rounded corners' style just load 'components-rounded.css' stylesheet instead of 'components.css' in the below style tag -->
-  <link href="../../../assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css"/>
-  <link href="../../../assets/global/css/plugins.css" rel="stylesheet" type="text/css"/>
-  <link href="../../../assets/admin/layout/css/layout.css" rel="stylesheet" type="text/css"/>
-  <link href="../../../assets/admin/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css" id="style_color"/>
-  <link href="../../../assets/admin/layout/css/custom.css" rel="stylesheet" type="text/css"/>
+  <link href="/assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css"/>
+  <link href="/assets/global/css/plugins.css" rel="stylesheet" type="text/css"/>
+  <link href="/assets/admin/layout/css/layout.css" rel="stylesheet" type="text/css"/>
+  <link href="/assets/admin/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css" id="style_color"/>
+  <link href="/assets/admin/layout/css/custom.css" rel="stylesheet" type="text/css"/>
   <!-- END THEME STYLES -->
 
   <link rel="shortcut icon" href="favicon.ico"/>
@@ -72,7 +72,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- END PAGE SPINNER -->
 
 <!-- BEGIN HEADER -->
-<div data-ng-include="'tpl/header.html'" data-ng-controller="HeaderController" class="page-header navbar navbar-fixed-top">
+<div data-ng-include="'/tpls/default/header.html'" data-ng-controller="HeaderController" class="page-header navbar navbar-fixed-top">
 </div>
 <!-- END HEADER -->
 
@@ -82,7 +82,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- BEGIN CONTAINER -->
 <div class="page-container">
   <!-- BEGIN SIDEBAR -->
-  <div data-ng-include="'tpl/sidebar.html'" data-ng-controller="SidebarController" class="page-sidebar-wrapper">
+  <div data-ng-include="'/tpls/default/sidebar.html'" data-ng-controller="SidebarController" class="page-sidebar-wrapper">
   </div>
   <!-- END SIDEBAR -->
 
@@ -100,13 +100,13 @@ License: You must have a valid license purchased only from themeforest(the above
 
   <!-- BEGIN QUICK SIDEBAR -->
   <a href="javascript:;" class="page-quick-sidebar-toggler"><i class="icon-close"></i></a>
-  <div data-ng-include="'tpl/quick-sidebar.html'" data-ng-controller="QuickSidebarController" class="page-quick-sidebar-wrapper"></div>
+  <div data-ng-include="'/tpls/default/quick-sidebar.html'" data-ng-controller="QuickSidebarController" class="page-quick-sidebar-wrapper"></div>
   <!-- END QUICK SIDEBAR -->
 
 </div>
 <!-- END CONTAINER -->
 <!-- BEGIN FOOTER -->
-<div data-ng-include="'tpl/footer.html'" data-ng-controller="FooterController" class="page-footer">
+<div data-ng-include="'/tpls/default/footer.html'" data-ng-controller="FooterController" class="page-footer">
 </div>
 <!-- END FOOTER -->
 
@@ -114,27 +114,27 @@ License: You must have a valid license purchased only from themeforest(the above
 
 <!-- BEGIN CORE JQUERY PLUGINS -->
 <!--[if lt IE 9]>
-<script src="../../../assets/global/plugins/respond.min.js"></script>
-<script src="../../../assets/global/plugins/excanvas.min.js"></script>
+<script src="/assets/global/plugins/respond.min.js"></script>
+<script src="/assets/global/plugins/excanvas.min.js"></script>
 <![endif]-->
-<script src="../../../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
-<script src="../../../assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
-<script src="../../../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="../../../assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
-<script src="../../../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
-<script src="../../../assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
-<script src="../../../assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
-<script src="../../../assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
-<script src="../../../assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+<script src="/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+<script src="/assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+<script src="/assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+<script src="/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="/assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="/assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+<script src="/assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+<script src="/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
 <!-- END CORE JQUERY PLUGINS -->
 
 <!-- BEGIN CORE ANGULARJS PLUGINS -->
-<script src="../../../assets/global/plugins/angularjs/angular.min.js" type="text/javascript"></script>
-<script src="../../../assets/global/plugins/angularjs/angular-sanitize.min.js" type="text/javascript"></script>
-<script src="../../../assets/global/plugins/angularjs/angular-touch.min.js" type="text/javascript"></script>
-<script src="../../../assets/global/plugins/angularjs/plugins/angular-ui-router.min.js" type="text/javascript"></script>
-<script src="../../../assets/global/plugins/angularjs/plugins/ocLazyLoad.min.js" type="text/javascript"></script>
-<script src="../../../assets/global/plugins/angularjs/plugins/ui-bootstrap-tpls.min.js" type="text/javascript"></script>
+<script src="/assets/global/plugins/angularjs/angular.min.js" type="text/javascript"></script>
+<script src="/assets/global/plugins/angularjs/angular-sanitize.min.js" type="text/javascript"></script>
+<script src="/assets/global/plugins/angularjs/angular-touch.min.js" type="text/javascript"></script>
+<script src="/assets/global/plugins/angularjs/plugins/angular-ui-router.min.js" type="text/javascript"></script>
+<script src="/assets/global/plugins/angularjs/plugins/ocLazyLoad.min.js" type="text/javascript"></script>
+<script src="/assets/global/plugins/angularjs/plugins/ui-bootstrap-tpls.min.js" type="text/javascript"></script>
 <!-- END CORE ANGULARJS PLUGINS -->
 
 <!-- BEGIN APP LEVEL ANGULARJS SCRIPTS -->
@@ -143,17 +143,17 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- END APP LEVEL ANGULARJS SCRIPTS -->
 
 <!-- BEGIN APP LEVEL JQUERY SCRIPTS -->
-<script src="../../../assets/global/scripts/metronic.js" type="text/javascript"></script>
-<script src="../../../assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
-<script src="../../../assets/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
-<script src="../../../assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
+<script src="/assets/global/scripts/metronic.js" type="text/javascript"></script>
+<script src="/assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
+<script src="/assets/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
+<script src="/assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
 <!-- END APP LEVEL JQUERY SCRIPTS -->
 
 <script type="text/javascript">
   /* Init Metronic's core jquery plugins and layout scripts */
   $(document).ready(function() {
     Metronic.init(); // Run metronic theme
-    Metronic.setAssetsPath('../../../assets/'); // Set the assets folder path
+    Metronic.setAssetsPath('/assets/'); // Set the assets folder path
   });
 </script>
 <!-- END JAVASCRIPTS -->
