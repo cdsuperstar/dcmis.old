@@ -159,7 +159,7 @@ DcmisApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
         //用户管理
         .state('sys-users', {
             url: "/sys-users.html",
-            templateUrl: "views/sys-seting/sys-users.html",
+            templateUrl: "views/sys-users/sys-users.html",
             data: {pageTitle: '用户管理'},
             controller: "GeneralPageController",
             resolve: {
@@ -174,7 +174,7 @@ DcmisApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
                             '/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js',
                             '/assets/global/plugins/select2/select2.min.js',
                             '/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js',
-                            '/views/sys-seting/sys-users.js',
+                            '/views/sys-users/sys-users.js',
                             '/js/controllers/GeneralPageController.js'
                         ]
                     });
@@ -237,6 +237,31 @@ DcmisApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
             }
         })
 
+        //角色管理
+        .state('sys-role', {
+            url: "/sys-role.html",
+            templateUrl: "views/sys-role/sys-role.html",
+            data: {pageTitle: '角色管理'},
+            controller: "GeneralPageController",
+            resolve: {
+                deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                    return $ocLazyLoad.load({
+                        name: 'DcmisApp',
+                        insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                        files: [
+                            '/assets/global/plugins/select2/select2.css',
+                            '/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css',
+
+                            '/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js',
+                            '/assets/global/plugins/select2/select2.min.js',
+                            '/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js',
+                            '/views/sys-role/sys-role.js',
+                            '/js/controllers/GeneralPageController.js'
+                        ]
+                    });
+                }]
+            }
+        })
 //add you menu
 
 }]);
