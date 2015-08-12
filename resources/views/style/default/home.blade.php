@@ -138,8 +138,8 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- END CORE ANGULARJS PLUGINS -->
 
 <!-- BEGIN APP LEVEL ANGULARJS SCRIPTS -->
-<script src="js/app.js" type="text/javascript"></script>
-<script src="js/directives.js" type="text/javascript"></script>
+<script src="/js/app.js" type="text/javascript"></script>
+<script src="/js/directives.js" type="text/javascript"></script>
 <!-- END APP LEVEL ANGULARJS SCRIPTS -->
 
 <!-- BEGIN APP LEVEL JQUERY SCRIPTS -->

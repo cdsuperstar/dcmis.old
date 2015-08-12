@@ -208,7 +208,7 @@ DcmisApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
             }
         })
 
-        //模块管理-添加模块
+        //模块管理-模块编辑
         .state('sys-addmodel', {
             url: "/sys-addmodel.html",
             templateUrl: "views/sys-model/sys-addmodel.html",

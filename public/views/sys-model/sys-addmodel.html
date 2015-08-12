@@ -15,7 +15,7 @@
             <i class="fa fa-angle-right"></i>
         </li>
         <li>
-            <a href="#sys_admin/sys_admin_users.php">添加模块</a>
+            <a href="#sys_admin/sys_admin_users.php">模块编辑</a>
         </li>
     </ul>
     <div class="page-toolbar">
@@ -45,7 +45,7 @@
         <div class="portlet box blue" id="form_wizard_1">
             <div class="portlet-title">
                 <div class="caption">
-                    <i class="fa fa-gift"></i> 添加新模块 - <span class="step-title">
+                    <i class="fa fa-gift"></i> 模块编辑 - <span class="step-title">
 								Step 1 of 4 </span>
                 </div>
                 <div class="tools hidden-xs">
@@ -145,7 +145,7 @@
 													* </span>
                                         </label>
                                         <div class="col-md-4">
-                                            <input type="text" class="form-control" name="modelsx"/>
+                                            <input type="text" class="form-control" name="modelsx" onkeyup="(this.v=function(){this.value=this.value.replace(/[^0-9-]+/,'');}).call(this)" onblur="this.v();"/>
 														<span class="help-block">
                                                         请输入模块顺序 </span>
                                         </div>
@@ -334,33 +334,133 @@
                                     <h3 class="block">请选择组件ID</h3>
 
                                     <div class="form-group">
-                                        <label class="control-label col-md-3">组件列表</label>
-                                        <div class="col-md-9">
+                                        <div class="col-md-5">
                                             <select multiple="multiple" class="multi-select" id="modelzj" name="modelzj">
-                                                <option>Dallas Cowboys</option>
-                                                <option>New York Giants</option>
-                                                <option>Philadelphia Eagles</option>
-                                                <option>Washington Redskins</option>
-                                                <option>Chicago Bears</option>
-                                                <option>Detroit Lions</option>
-                                                <option>Green Bay Packers</option>
-                                                <option>Minnesota Vikings</option>
-                                                <option selected>Atlanta Falcons</option>
-                                                <option>Carolina Panthers</option>
-                                                <option>New Orleans Saints</option>
-                                                <option>Tampa Bay Buccaneers</option>
-                                                <option>Arizona Cardinals</option>
-                                                <option>St. Louis Rams</option>
-                                                <option>San Francisco 49ers</option>
-                                                <option>Seattle Seahawks</option>
-                                            </select>
+                                                <option>|charts_amcharts</option>
+                                                <option>|charts_flotcharts</option>
+                                                <option>|components_context_menu</option>
+                                                <option>|components_dropdowns</option>
+                                                <option>|components_editors</option>
+                                                <option>|components_form_tools</option>
+                                                <option>|components_form_tools2</option>
+                                                <option>|components_ion_sliders</option>
+                                                <option>|components_jqueryui_sliders</option>
+                                                <option>|components_knob_dials</option>
+                                                <option>|components_noui_sliders</option>
+                                                <option>|components_pickers</option>
+                                                <option>|ecommerce_index</option>
+                                                <option>|ecommerce_orders</option>
+                                                <option>|ecommerce_orders_view</option>
+                                                <option>|ecommerce_products</option>
+                                                <option>|ecommerce_products_edit</option>
+                                                <option>|form_controls</option>
+                                                <option>|form_controls_md</option>
+                                                <option>|form_dropzone</option>
+                                                <option>|form_editable</option>
+                                                <option>|form_fileupload</option>
+                                                <option>|form_icheck</option>
+                                                <option>|form_image_crop</option>
+                                                <option>|form_layouts</option>
+                                                <option>|form_validation</option>
+                                                <option>|form_wizard</option>
+                                                <option>|inbox</option>
+                                                <option>|inbox_compose</option>
+                                                <option>|inbox_inbox</option>
+                                                <option>|inbox_reply</option>
+                                                <option>|inbox_view</option>
+                                                <option>|layout_ajax</option>
+                                                <option>|layout_ajax_content_1</option>
+                                                <option>|layout_ajax_content_2</option>
+                                                <option>|layout_ajax_content_3</option>
+                                                <option>|layout_blank_page</option>
+                                                <option>|layout_boxed_page</option>
+                                                <option>|layout_disabled_menu</option>
+                                                <option>|layout_fontawesome_icons</option>
+                                                <option>|layout_full_height_content</option>
+                                                <option>|layout_full_height_portlet</option>
+                                                <option>|layout_glyphicons</option>
+                                                <option>|layout_horizontal_menu1</option>
+                                                <option>|layout_horizontal_menu2</option>
+                                                <option>|layout_horizontal_sidebar_menu</option>
+                                                <option>|layout_language_bar</option>
+                                                <option>|layout_search_on_header1</option>
+                                                <option>|layout_search_on_header2</option>
+                                                <option>|layout_sidebar_closed</option>
+                                                <option>|layout_sidebar_fixed</option>
+                                                <option>|layout_sidebar_reversed</option>
+                                                <option>|layout_sidebar_search_option1</option>
+                                                <option>|layout_sidebar_search_option2</option>
+                                                <option>|maps_google</option>
+                                                <option>|maps_vector</option>
+                                                <option>|page_about</option>
+                                                <option>|page_blog</option>
+                                                <option>|page_blog_item</option>
+                                                <option>|page_calendar</option>
+                                                <option>|page_coming_soon</option>
+                                                <option>|page_contact</option>
+                                                <option>|page_news</option>
+                                                <option>|page_news_item</option>
+                                                <option>|page_portfolio</option>
+                                                <option>|page_timeline</option>
+                                                <option>|page_timeline_old</option>
+                                                <option>|page_todo</option>
+                                                <option>|portlet_ajax</option>
+                                                <option>|portlet_ajax_content_1</option>
+                                                <option>|portlet_ajax_content_2</option>
+                                                <option>|portlet_ajax_content_3</option>
+                                                <option>|portlet_draggable</option>
+                                                <option>|portlet_general</option>
+                                                <option>|portlet_general2</option>
+                                                <option>|portlet_general3</option>
+                                                <option>|quick_sidebar_on_boxed_layout</option>
+                                                <option>|quick_sidebar_over_content</option>
+                                                <option>|quick_sidebar_over_content_transparent</option>
+                                                <option>|quick_sidebar_push_content</option>
+                                                <option>|quick_sidebar_push_page</option>
+                                                <option>|table_advanced</option>
+                                                <option>|table_ajax</option>
+                                                <option>|table_basic</option>
+                                                <option>|table_editable</option>
+                                                <option>|table_managed</option>
+                                                <option>|table_responsive</option>
+                                                <option>|table_tree</option>
+                                                <option>|ui_alert_dialog_api</option>
+                                                <option>|ui_blockui</option>
+                                                <option>|ui_bootstrap_growl</option>
+                                                <option>|ui_buttons</option>
+                                                <option>|ui_colors</option>
+                                                <option>|ui_confirmations</option>
+                                                <option>|ui_datepaginator</option>
+                                                <option>|ui_extended_modals</option>
+                                                <option>|ui_extended_modals_ajax_sample</option>
+                                                <option>|ui_general</option>
+                                                <option>|ui_icons</option>
+                                                <option>|ui_idle_timeout</option>
+                                                <option>|ui_modals</option>
+                                                <option>|ui_modals_ajax_sample</option>
+                                                <option>|ui_nestable</option>
+                                                <option>|ui_notific8</option>
+                                                <option>|ui_page_progress_style_1</option>
+                                                <option>|ui_page_progress_style_2</option>
+                                                <option>|ui_page_progress_style_3</option>
+                                                <option>|ui_page_progress_style_4</option>
+                                                <option>|ui_session_timeout</option>
+                                                <option>|ui_tabs_accordions_navs</option>
+                                                <option>|ui_tiles</option>
+                                                <option>|ui_toastr</option>
+                                                <option>|ui_tree</option>
+                                                <option>|ui_typography</option>
+                                          </select>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <textarea class="form-control autosizeme" rows="10" placeholder="显示模块CSS/JS..."></textarea>
                                         </div>
                                     </div>
 
                                 </div>
                                 <div class="tab-pane" id="tab4">
-                                    <h3 class="block">Confirm your account</h3>
-                                    <h4 class="form-section">模块信息</h4>
+                                    <h3 class="block">确认模块信息</h3>
+                                    <h4 class="form-section">基本信息</h4>
 
                                     <div class="form-group">
                                         <label class="control-label col-md-3">模块ID:</label>
@@ -394,7 +494,7 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <h4 class="form-section">Profile</h4>
+                                        <h4 class="form-section">链接信息</h4>
                                     <div class="form-group">
                                         <label class="control-label col-md-3">模块图标:</label>
 
