@@ -8,7 +8,8 @@ var DcmisApp = angular.module("DcmisApp", [
     "ui.bootstrap",
     "oc.lazyLoad",  
     "ngSanitize",
-    "smart-table"
+    "smart-table",
+    "ngDialog"
 ]);
 
 /* Configure ocLazyLoader(refer: https://github.com/ocombe/ocLazyLoad) */
@@ -181,11 +182,11 @@ DcmisApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
             }
         })
 
-        //模块管理
+        //模块列表
         .state('sys-model', {
             url: "/sys-model.html",
             templateUrl: "views/sys-model/sys-model.html",
-            data: {pageTitle: '模块管理'},
+            data: {pageTitle: '模块列表'},
             controller: "GeneralPageController",
             resolve: {
                 deps: ['$ocLazyLoad', function($ocLazyLoad) {
