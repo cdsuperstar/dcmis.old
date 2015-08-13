@@ -223,7 +223,7 @@ DcmisApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
                             '/assets/global/plugins/select2/select2.css',
                             '/assets/global/plugins/bootstrap-select/bootstrap-select.min.css',
                             '/assets/global/plugins/jquery-multi-select/css/multi-select.css',
-                            '/views/sys-model/sys-model.css',
+                            '/views/sys-addmodel/sys-addmodel.css',
 
                             '/assets/global/plugins/jquery-validation/js/jquery.validate.min.js',
                             '/assets/global/plugins/jquery-validation/js/additional-methods.min.js',
