@@ -4,11 +4,12 @@ Metronic AngularJS App Main Script
 
 /* Metronic App */
 var DcmisApp = angular.module("DcmisApp", [
-    "ui.router", 
-    "ui.bootstrap", 
+    "ui.router",
+    "ui.bootstrap",
     "oc.lazyLoad",  
-    "ngSanitize"
-]); 
+    "ngSanitize",
+    "smart-table"
+]);
 
 /* Configure ocLazyLoader(refer: https://github.com/ocombe/ocLazyLoad) */
 DcmisApp.config(['$ocLazyLoadProvider', function($ocLazyLoadProvider) {
@@ -170,10 +171,8 @@ DcmisApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
                         files: [
                             '/assets/global/plugins/select2/select2.css',
                             '/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css',
+                            '/views/sys-users/sys-users.css',
 
-                            '/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js',
-                            '/assets/global/plugins/select2/select2.min.js',
-                            '/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js',
                             '/views/sys-users/sys-users.js',
                             '/js/controllers/GeneralPageController.js'
                         ]

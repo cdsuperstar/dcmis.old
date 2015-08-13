@@ -46,7 +46,7 @@
             </a>
         </div>
     </div>
-    <div class="portlet-body">
+    <div class="portlet-body" >
         <table>
             <tr>
                 <td>用户名 / 昵称 : &nbsp;</td>
@@ -60,9 +60,9 @@
     </div>
 </div>
 <!-- END start search CONTENT -->
-<div class="portlet box yellow">
+<div class="portlet box yellow"  >
     <div class="portlet-title">
-        <div class="caption">
+        <div class="caption" onclick="console.log(DcmisApp)">
             <i class="fa fa-user"></i>用户管理
         </div>
         <div class="tools">
@@ -74,17 +74,19 @@
             </a>
         </div>
     </div>
-    <div class="portlet-body">
-        <table class="table table-striped table-hover table-bordered" id="dcmiss_editable">
+    <div class="portlet-body table-container"  ng-controller="pipeCtrl as mc">
+        <input class="input-sm form-control ng-valid ng-dirty ng-valid-number ng-touched" name="items" id="items" type="number" ng-model="itemsByPage">
+        <table st-pipe="mc.callServer"  st-table="mc.displayed"   class="table table-striped table-hover table-bordered">
             <thead>
             <tr>
-                <th>
-                    用户名
+                <th></th>
+                <th st-sort="email">
+                    用户名1
                 </th>
-                <th>
-                    昵称
+                <th st-sort='name'>
+                    姓名
                 </th>
-                <th>
+                <th st-sort='password'>
                     密码
                 </th>
                 <th>
@@ -97,130 +99,30 @@
                     Delete
                 </th>
             </tr>
+            <tr>
+                <ht></ht>
+                <th>
+                    <input st-search="email" placeholder="请输入需要查找的邮件" class="input-sm form-control" type="search"/>
+                </th>
+                <th colspan="5">
+                    <input st-search placeholder="请输入需要全局查找的信息" class="input-sm form-control" type="search"/>
+                </th>
+            </tr>
             </thead>
-            <tbody>
-            <tr>
+            <tbody ng-hide="mc.isLoading">
+            <tr ng-repeat="user in mc.displayed">
+                <td cs-select="row"></td>
                 <td>
-                    alex
-                </td>
-                <td>
-                    Alex Nilson
+                    {{ user.email }}
                 </td>
                 <td>
-                    1234
-                </td>
-                <td class="center">
-                    power user
+                    {{user.name}}
                 </td>
                 <td>
-                    <a class="edit" href="javascript:;">
-                        Edit </a>
+                    {{user.password}}
                 </td>
-                <td>
-                    <a class="delete" href="javascript:;">
-                        Delete </a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    lisa
-                </td>
-                <td>
-                    Lisa Wong
-                </td>
-                <td>
-                    434
-                </td>
-                <td class="center">
-                    new user
-                </td>
-                <td>
-                    <a class="edit" href="javascript:;">
-                        Edit </a>
-                </td>
-                <td>
-                    <a class="delete" href="javascript:;">
-                        Delete </a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    nick12
-                </td>
-                <td>
-                    Nick Roberts
-                </td>
-                <td>
-                    232
-                </td>
-                <td class="center">
-                    power user
-                </td>
-                <td>
-                    <a class="edit" href="javascript:;">
-                        Edit </a>
-                </td>
-                <td>
-                    <a class="delete" href="javascript:;">
-                        Delete </a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    goldweb
-                </td>
-                <td>
-                    Sergio Jackson
-                </td>
-                <td>
-                    132
-                </td>
-                <td class="center">
-                    elite user
-                </td>
-                <td>
-                    <a class="edit" href="javascript:;">
-                        Edit </a>
-                </td>
-                <td>
-                    <a class="delete" href="javascript:;">
-                        Delete </a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    webriver
-                </td>
-                <td>
-                    Antonio Sanches
-                </td>
-                <td>
-                    462
-                </td>
-                <td class="center">
-                    new user
-                </td>
-                <td>
-                    <a class="edit" href="javascript:;">
-                        Edit </a>
-                </td>
-                <td>
-                    <a class="delete" href="javascript:;">
-                        Delete </a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    gist124
-                </td>
-                <td>
-                    Nick Roberts
-                </td>
-                <td>
-                    62
-                </td>
-                <td class="center">
-                    new user
+                <td class="center" >
+                    ...
                 </td>
                 <td>
                     <a class="edit" href="javascript:;">
@@ -232,6 +134,17 @@
                 </td>
             </tr>
             </tbody>
+            <tbody ng-show="mc.isLoading">
+            <tr>
+                <td colspan="7" class="text-center">Loading ... </td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="7"  st-pagination st-items-by-page="4" class="text-center">
+                </td>
+            </tr>
+            </tfoot>
         </table>
     </div>
 </div>
@@ -240,6 +153,6 @@
 <!-- END MAIN CONTENT -->
 <!-- BEGIN MAIN JS & CSS -->
 <script language="JavaScript" type="text/javascript">
-    TableEditable.init();
+//    TableEditable.init();
 </script>
 <!-- BEGIN MAIN JS & CSS -->

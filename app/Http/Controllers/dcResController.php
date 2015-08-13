@@ -95,19 +95,10 @@ class dcResController extends Controller
         $mycomp = new dcComponentSelector();
         $mycomp->attachComponentFilesystem($disk);
         $mycomp->setPathToComponents('theme/templates/admin');
-        $aTmp=explode('+',$id);
+        $aTmp = explode('+', $id);
         foreach ($aTmp as $sComp) {
             $mycomp->analyseMetronicIntoComponents($sComp);
         }
-        return view('assets.comdemo', ['mycomp'=>$mycomp]);
-    }
-
-    /**
-     * @param string $sUrl
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
-     */
-    public function missingMethod($sUrl = '')
-    {
-        return redirect('/theme/assets/' . $sUrl);
+        return view('assets.comdemo', ['mycomp' => $mycomp]);
     }
 }
