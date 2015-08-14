@@ -13,7 +13,8 @@
         "zizaco/confide": "^4.3",
         "barryvdh/laravel-debugbar": "^2.0",
         "yohang/finite": "^1.0",
-        "filp/whoops": "^1.1"
+        "filp/whoops": "^1.1",
+        "aziz/smartmodel": "^2.5"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
