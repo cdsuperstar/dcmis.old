@@ -137,7 +137,6 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="/assets/global/plugins/angularjs/plugins/ocLazyLoad.min.js" type="text/javascript"></script>
 <script src="/assets/global/plugins/angularjs/plugins/ui-bootstrap-tpls.min.js" type="text/javascript"></script>
 <script src="/js/smart-table.min.js" type="text/javascript"></script>
-<script src="/js/ngDialog.min.js" type="text/javascript"></script>
 <!-- END CORE ANGULARJS PLUGINS -->
 
 <!-- BEGIN APP LEVEL ANGULARJS SCRIPTS -->

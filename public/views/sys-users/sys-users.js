@@ -17,24 +17,7 @@ DcmisApp.factory('Resource', ['$q', '$http',
 
     }]);
 
-DcmisApp.controller('pipeCtrl', ['Resource','$scope','$http', '$filter','ngDialog',function (service,$scope,$http,$filter,ngDialog) {
-
-    $scope.email='email';
-    $scope.name='';
-    $scope.password='';
-
-    $http.get('/users').success(function(data) {
-        $scope.email = data;
-        console.log($scope.email);
-    });
-
-    $scope.clickToEdit = function (email) {
-        $scope.email = email;
-        ngDialog.open({ template: '/sys-usersedit.html',//模式对话框内容为test.html
-            className: 'ngdialog-theme-plain',
-            scope:$scope //将scope传给test.html,以便显示地址详细信息
-        });
-    };
+DcmisApp.controller('pipeCtrl', ['Resource','$scope', '$filter',function (service,$scope,$filter) {
 
     var ctrl = this;
 
