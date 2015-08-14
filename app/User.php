@@ -6,7 +6,6 @@ use Illuminate\Auth\Authenticatable;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
-use Illuminate\Database\Eloquent\Model;
 use LaravelBook\Ardent\Ardent;
 use Zizaco\Entrust\Traits\EntrustUserTrait;
 
@@ -17,6 +16,7 @@ class User extends Ardent implements AuthenticatableContract, CanResetPasswordCo
         'name'                  => 'required|between:4,16',
         'email'                 => 'required|email',
         'password'              => 'required|alpha_num|between:4,8|confirmed',
+        'password_confirmation' => 'required|alpha_num|between:4,8'
     );
     /**
      * The database table used by the model.
