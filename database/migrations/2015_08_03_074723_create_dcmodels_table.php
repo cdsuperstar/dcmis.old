@@ -18,6 +18,7 @@ class CreateDcmodelsTable extends Migration
             $table->string('title');
             $table->string('group')->nullable();
             $table->boolean('isgroup');
+            $table->tinyInteger('ismenu');
             $table->string('icon');
             $table->string('url');
             $table->string('templateUrl');
