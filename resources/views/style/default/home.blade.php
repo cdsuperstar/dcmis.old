@@ -32,6 +32,9 @@ License: You must have a valid license purchased only from themeforest(the above
   <link href="/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
   <link href="/assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
   <link href="/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css"/>
+  <link href="/css/ngDialog.css" rel="stylesheet" type="text/css"/>
+  <link href="/css/ngDialog-theme-plain.css " rel="stylesheet" type="text/css"/>
+  <link href="/css/ngDialog-theme-default.css" rel="stylesheet" type="text/css"/>
   <!-- END GLOBAL MANDATORY STYLES -->
 
   <!-- BEGIN DYMANICLY LOADED CSS FILES(all plugin and page related styles must be loaded between GLOBAL and THEME css files ) -->
@@ -129,14 +132,15 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- END CORE JQUERY PLUGINS -->
 
 <!-- BEGIN CORE ANGULARJS PLUGINS -->
-<script src="/assets/global/plugins/angularjs/angular.min.js" type="text/javascript"></script>
-{{--<script src="/js/bower_components/angular/angular.js" type="text/javascript"></script>--}}
+{{--<script src="/assets/global/plugins/angularjs/angular.min.js" type="text/javascript"></script>--}}
+<script src="/js/angular.js" type="text/javascript"></script>
 <script src="/assets/global/plugins/angularjs/angular-sanitize.min.js" type="text/javascript"></script>
 <script src="/assets/global/plugins/angularjs/angular-touch.min.js" type="text/javascript"></script>
 <script src="/assets/global/plugins/angularjs/plugins/angular-ui-router.min.js" type="text/javascript"></script>
 <script src="/assets/global/plugins/angularjs/plugins/ocLazyLoad.min.js" type="text/javascript"></script>
 <script src="/assets/global/plugins/angularjs/plugins/ui-bootstrap-tpls.min.js" type="text/javascript"></script>
 <script src="/js/smart-table.min.js" type="text/javascript"></script>
+<script src="/js/ngDialog.js" type="text/javascript"></script>
 <!-- END CORE ANGULARJS PLUGINS -->
 
 <!-- BEGIN APP LEVEL ANGULARJS SCRIPTS -->

@@ -1,17 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
 
-use App\Http\dcClass\dcComponentSelector;
+use App\User;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Http\Controllers\Controller;
 
-/**
- * Class dcResController
- * @package App\Http\Controllers
- */
-class dcResController extends Controller
+class userController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,6 +18,8 @@ class dcResController extends Controller
      */
     public function index()
     {
+        $users = User::all();
+        return response()->json($users);
         //
     }
 
@@ -52,9 +52,11 @@ class dcResController extends Controller
      */
     public function show($id)
     {
-        //
     }
 
+    public function getAll()
+    {
+    }
     /**
      * Show the form for editing the specified resource.
      *
@@ -71,7 +73,7 @@ class dcResController extends Controller
      *
      * @param  Request $request
      * @param  int $id
-     * @return Response
+     * @return
      */
     public function update(Request $request, $id)
     {
@@ -86,24 +88,8 @@ class dcResController extends Controller
      */
     public function destroy($id)
     {
-        //
-    }
+        $deletedRows = User::where('id', $id)->delete();
 
-    public function getEdition()
-    {
-        return view('pages.edition');
-    }
-
-    public function getCompDemo($id)
-    {
-        $disk = \Storage::disk('local_public');
-        $mycomp = new dcComponentSelector();
-        $mycomp->attachComponentFilesystem($disk);
-        $mycomp->setPathToComponents('theme/templates/admin');
-        $aTmp = explode('+', $id);
-        foreach ($aTmp as $sComp) {
-            $mycomp->analyseMetronicIntoComponents($sComp);
-        }
-        return view('assets.comdemo', ['mycomp' => $mycomp]);
+        return response()->json($deletedRows);
     }
 }

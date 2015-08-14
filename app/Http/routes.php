@@ -38,6 +38,7 @@ Route::get('home', 'HomeController@index');
 //Route::get('admin', function () {
 //    return view('admin_template');
 //});
+Route::resource('user','User\userController');
 
 Route::controllers([
     'auth' => 'Auth\AuthController',

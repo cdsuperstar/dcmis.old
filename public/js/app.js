@@ -8,7 +8,8 @@ var DcmisApp = angular.module("DcmisApp", [
     "ui.bootstrap",
     "oc.lazyLoad",  
     "ngSanitize",
-    "smart-table"
+    "smart-table",
+    "ngDialog"
 ]);
 
 /* Configure ocLazyLoader(refer: https://github.com/ocombe/ocLazyLoad) */
