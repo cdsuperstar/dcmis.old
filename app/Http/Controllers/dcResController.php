@@ -110,22 +110,20 @@ class dcResController extends Controller
     public function getComMetrcss($id)
     {
         $mycomp=$this->dcComponentSelector($id);
-        return implode("
-",$mycomp->getMetronicStuffs($id,$mycomp::PM_PAGE_LEVEL_STYLES));
+        return json_encode($mycomp->getMetronicStuffs($id,$mycomp::PM_PAGE_LEVEL_STYLES));
     }
 
     public function getComMetrjs($id)
     {
         $mycomp=$this->dcComponentSelector($id);
-        return implode("
-",$mycomp->getMetronicStuffs($id,$mycomp::PM_PAGE_LEVEL_PLUGINS));
+
+        return json_encode($mycomp->getMetronicStuffs($id,$mycomp::PM_PAGE_LEVEL_PLUGINS));
     }
 
     public function getComMetrinitjs($id)
     {
         $mycomp=$this->dcComponentSelector($id);
-        return implode("
-",$mycomp->getMetronicStuffs($id,$mycomp::PM_PAGE_INIT_SCRIPT));
+        return json_encode($mycomp->getMetronicStuffs($id,$mycomp::PM_PAGE_INIT_SCRIPT));
     }
 
     public function getCompDemo($id)
