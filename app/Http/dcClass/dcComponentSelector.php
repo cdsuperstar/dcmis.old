@@ -203,7 +203,7 @@ class dcComponentSelector extends Crawler
      */
     public function getMetronicStuffs($sComponent, $sStuf)
     {
-        return $this->aComponents[$sComponent]['Metronic'][$sStuf];
+        return isset($this->aComponents[$sComponent]['Metronic'][$sStuf])?$this->aComponents[$sComponent]['Metronic'][$sStuf]:array();
     }
 
     /**
