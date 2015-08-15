@@ -23,7 +23,7 @@ DcmisApp.controller('pipeCtrl',
         function (service, $scope, $filter, $http, ngDialog,$state,$stateParams) {
 
             var ctrl = this;
-console.log($route);
+//console.log($route);
             //$scope.reload = function(){
             //    $state.transitionTo('myState');//.
             //}
@@ -82,7 +82,7 @@ DcmisApp.directive('confirmationNeeded', function () {
         priority: 1,
         terminal: true,
         link: function (scope, element, attr) {
-            var msg = attr.confirmationNeeded || "确定哇?";
+            var msg = attr.confirmationNeeded || "确定要删除该条数据吗？";
             var clickAction = attr.ngClick;
             element.bind('click', function () {
                 if (window.confirm(msg)) {
@@ -95,7 +95,7 @@ DcmisApp.directive('confirmationNeeded', function () {
 DcmisApp.directive('csSelect', function () {
     return {
         require: '^stTable',
-        template: '<input type="checkbox"/>',
+        template: '&nbsp;&nbsp;<input name="Datacheckbox" type="checkbox"/>',
         scope: {
             row: '=csSelect'
         },
@@ -117,4 +117,19 @@ DcmisApp.directive('csSelect', function () {
         }
     };
 });
+//checkbox 全选与全不选
+function checkout() {
+    if($("#checkPathAll").attr("checked"))
+    {
+        $("input[name='Datacheckbox']").each(function() {
+            $(this).attr("checked", true);
+        });
+    }
+    else
+    {
+        $("input[name='Datacheckbox']").each(function() {
+            $(this).attr("checked", false);
+        });
+    }
+}
 

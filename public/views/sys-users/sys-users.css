@@ -6,5 +6,11 @@
     content: '\25BC';
 }
 .st-selected{
-    border-left:4px solid black;
+    border-left: 4px solid black;
+}
+.portlet-body{
+    overflow: auto;
+}
+.dataTables-filter{
+    float: right;
 }

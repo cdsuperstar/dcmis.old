@@ -35,117 +35,122 @@
 </div>
 <!-- END PAGE HEADER-->
 <!-- BEGIN MAIN CONTENT -->
-<!-- BEGIN start search CONTENT -->
-<div class="portlet box blue">
-    <div class="portlet-title">
-        <div class="caption">
-            <i class="fa fa-search-plus"></i>查询
+<div class="row" ng-controller="pipeCtrl as mc">
+    <div class="col-md-12" st-pipe="mc.callServer"  st-table="mc.displayed">
+        <!-- BEGIN start search CONTENT -->
+        <div class="portlet box blue">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-search-plus"></i>查询
+                </div>
+                <div class="tools">
+                    <a href="javascript:;" class="collapse">
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body" >
+                    <div class="col-md-9">
+                        <label>
+                            用户名: &nbsp; <input st-search="email" placeholder="请输入用户名" class="input-sm input-inline form-control" type="search"/>
+                        </label>
+                    </div>
+                    <div class="col-md-3">
+                        <label>
+                            模糊查询 : &nbsp;<input st-search placeholder="请输入查找的信息" class="input-sm input-inline form-control" type="search"/>
+                        </label>
+                    </div>
+            </div>
         </div>
-        <div class="tools">
-            <a href="javascript:;" class="collapse">
-            </a>
+        <!-- END start search CONTENT -->
+        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+        <div class="portlet box yellow">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-user"></i>用户管理
+                </div>
+                <div class="tools">
+                    <button class="btn btn-default yellow">
+                        <i class="fa fa-plus"></i> &nbsp;添加 </button>
+                    <a href="javascript:;" class="reload">
+                    </a>
+                    <a href="javascript:;" class="collapse">
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="col-md-12">
+                    <label>
+                        显示 <input class="input-xsmall input-inline form-control ng-valid ng-dirty ng-valid-number ng-touched" name="items" id="items" type="number" ng-model="itemsByPage"> 条
+                    </label>
+                    <label class="dataTables-filter">
+                        <button class="btn btn-default grey">
+                            <i class="fa fa-trash-o"></i> &nbsp;批量删除 </button>
+                    </label>                </div>
+                <table class="table table-striped table-hover table-bordered">
+                    <thead>
+                    <tr>
+                        <th><input type="checkbox" id="checkPathAll" onclick="JavaScript:checkout();"/></th>
+                        <th st-sort="email">
+                            用户名1
+                        </th>
+                        <th st-sort='name'>
+                            姓名
+                        </th>
+                        <th st-sort='password'>
+                            密码
+                        </th>
+                        <th>
+                            角色
+                        </th>
+                        <th>
+                            Edit
+                        </th>
+                        <th>
+                            Delete
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody ng-hide="mc.isLoading">
+                    <tr ng-repeat="user in mc.displayed">
+                        <td cs-select="row"></td>
+                        <td>
+                            {{ user.email }}
+                        </td>
+                        <td>
+                            {{user.name}}
+                        </td>
+                        <td>
+                            {{user.password}}
+                        </td>
+                        <td class="center" >
+                            ...
+                        </td>
+                        <td>
+                            <a class="edit" ng-click="edituser(user.id)"  href="javascript:;">
+                                Edit </a>
+                        </td>
+                        <td>
+                            <a class="delete" ng-click="deluser(user)" confirmation-needed="确定要删除该条数据吗？"  href="javascript:;">
+                                Delete </a>
+                        </td>
+                    </tr>
+                    </tbody>
+                    <tbody ng-show="mc.isLoading">
+                    <tr>
+                        <td colspan="7" class="text-center">Loading ... </td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td colspan="7"  st-pagination st-items-by-page="itemsByPage" class="text-center">
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+
+            </div>
         </div>
-    </div>
-    <div class="portlet-body" >
-        <table>
-            <tr>
-                <td>用户名 / 昵称 : &nbsp;</td>
-                <td><input type="text" class="form-control" placeholder="请输入用户名"></td>
-                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button class="btn btn-default red-pink">
-                    <i class="fa fa-search"></i> &nbsp;查询 </button>
-                </td>
-            </tr>
-        </table>
-    </div>
-</div>
-<!-- END start search CONTENT -->
-<div class="portlet box yellow"  >
-    <div class="portlet-title">
-        <div class="caption" onclick="console.log(DcmisApp)">
-            <i class="fa fa-user"></i>用户管理
-        </div>
-        <div class="tools">
-            <button id="dcmiss_editable_new" class="btn btn-default yellow">
-                <i class="fa fa-pencil"></i> &nbsp;添加 </button>
-            <a href="javascript:;" class="reload">
-            </a>
-            <a href="javascript:;" class="collapse">
-            </a>
-        </div>
-    </div>
-    <div class="portlet-body table-container"  ng-controller="pipeCtrl as mc">
-        <input class="input-sm form-control ng-valid ng-dirty ng-valid-number ng-touched" name="items" id="items" type="number" ng-model="itemsByPage">
-        <table st-pipe="mc.callServer"  st-table="mc.displayed"   class="table table-striped table-hover table-bordered">
-            <thead>
-            <tr>
-                <th></th>
-                <th st-sort="email">
-                    用户名1
-                </th>
-                <th st-sort='name'>
-                    姓名
-                </th>
-                <th st-sort='password'>
-                    密码
-                </th>
-                <th>
-                    角色
-                </th>
-                <th>
-                    Edit
-                </th>
-                <th>
-                    Delete
-                </th>
-            </tr>
-            <tr>
-                <ht></ht>
-                <th>
-                    <input st-search="email" placeholder="请输入需要查找的邮件" class="input-sm form-control" type="search"/>
-                </th>
-                <th colspan="5">
-                    <input st-search placeholder="请输入需要全局查找的信息" class="input-sm form-control" type="search"/>
-                </th>
-            </tr>
-            </thead>
-            <tbody ng-hide="mc.isLoading">
-            <tr ng-repeat="user in mc.displayed">
-                <td cs-select="row"></td>
-                <td>
-                    {{ user.email }}
-                </td>
-                <td>
-                    {{user.name}}
-                </td>
-                <td>
-                    {{user.password}}
-                </td>
-                <td class="center" >
-                    ...
-                </td>
-                <td>
-                    <a class="edit" ng-click="edituser(user.id)"  href="javascript:;">
-                        Edit </a>
-                </td>
-                <td>
-                    <a class="delete" ng-click="deluser(user)" confirmation-needed="真的要删除哇？"  href="javascript:;">
-                        Delete </a>
-                </td>
-            </tr>
-            </tbody>
-            <tbody ng-show="mc.isLoading">
-            <tr>
-                <td colspan="7" class="text-center">Loading ... </td>
-            </tr>
-            </tbody>
-            <tfoot>
-            <tr>
-                <td colspan="7"  st-pagination st-items-by-page="itemsByPage" class="text-center">
-                </td>
-            </tr>
-            </tfoot>
-        </table>
+        <!-- END EXAMPLE TABLE PORTLET-->
     </div>
 </div>
 
