@@ -13,7 +13,6 @@
 
 //Route::get('/', 'PagesController@index');
 Route::get('about', 'PagesController@about');
-Route::get('/users', 'PagesController@users');
 Route::get('/adduser', 'PagesController@adduser');
 Route::get('/getc', 'PagesController@getUsercout');
 Route::get('/loginmain', 'PagesController@main');

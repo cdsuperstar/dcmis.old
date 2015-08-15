@@ -94,6 +94,38 @@ class dcResController extends Controller
         return view('pages.edition');
     }
 
+    public function dcComponentSelector($comId)
+    {
+        $disk = \Storage::disk('local_public');
+        $mycomp = new dcComponentSelector();
+        $mycomp->attachComponentFilesystem($disk);
+        $mycomp->setPathToComponents('theme/templates/admin');
+        $aTmp = explode('+', $comId);
+        foreach ($aTmp as $sComp) {
+            $mycomp->analyseMetronicIntoComponents($sComp);
+        }
+        return $mycomp;
+    }
+
+    public function getComMetrcss($id)
+    {
+        $mycomp=$this->dcComponentSelector($id);
+        return json_encode($mycomp->getMetronicStuffs($id,$mycomp::PM_PAGE_LEVEL_STYLES));
+    }
+
+    public function getComMetrjs($id)
+    {
+        $mycomp=$this->dcComponentSelector($id);
+
+        return json_encode($mycomp->getMetronicStuffs($id,$mycomp::PM_PAGE_LEVEL_PLUGINS));
+    }
+
+    public function getComMetrinitjs($id)
+    {
+        $mycomp=$this->dcComponentSelector($id);
+        return json_encode($mycomp->getMetronicStuffs($id,$mycomp::PM_PAGE_INIT_SCRIPT));
+    }
+
     public function getCompDemo($id)
     {
         $disk = \Storage::disk('local_public');
