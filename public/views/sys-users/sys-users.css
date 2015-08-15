@@ -14,3 +14,6 @@
 .dataTables-filter{
     float: right;
 }
+th{
+    text-align:center;
+}

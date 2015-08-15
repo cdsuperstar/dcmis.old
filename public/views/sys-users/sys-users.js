@@ -95,7 +95,7 @@ DcmisApp.directive('confirmationNeeded', function () {
 DcmisApp.directive('csSelect', function () {
     return {
         require: '^stTable',
-        template: '&nbsp;&nbsp;<input name="Datacheckbox" type="checkbox"/>',
+        template: '<input name="Datacheckbox" type="checkbox"/>',
         scope: {
             row: '=csSelect'
         },
