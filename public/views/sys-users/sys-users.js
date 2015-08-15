@@ -8,7 +8,7 @@ DcmisApp.factory('Resource', ['$q', '$http',
         }
 
         function getPage(start, number, params) {
-            console.log(number);
+
             return getRandomItems();
         }
 

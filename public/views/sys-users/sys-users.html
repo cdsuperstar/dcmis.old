@@ -51,12 +51,12 @@
             <div class="portlet-body" >
                     <div class="col-md-9">
                         <label>
-                            用户名: &nbsp; <input st-search="email" placeholder="请输入用户名" class="input-sm input-inline form-control" type="search"/>
+                            用户名: &nbsp; <input st-search="email" st-input-event="blur" placeholder="请输入用户名" class="input-sm input-inline form-control" type="search"/>
                         </label>
                     </div>
                     <div class="col-md-3">
                         <label>
-                            模糊查询 : &nbsp;<input st-search placeholder="请输入查找的信息" class="input-sm input-inline form-control" type="search"/>
+                            模糊查询 : &nbsp;<input st-search st-input-event="blur" placeholder="请输入查找的信息" class="input-sm input-inline form-control" type="search"/>
                         </label>
                     </div>
             </div>
@@ -80,7 +80,7 @@
             <div class="portlet-body">
                 <div class="col-md-12">
                     <label>
-                        显示 <input class="input-xsmall input-inline form-control ng-valid ng-dirty ng-valid-number ng-touched" name="items" id="items" type="number" ng-model="itemsByPage"> 条
+                        显示 <input onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')" class="input-xsmall input-inline form-control ng-valid ng-dirty ng-valid-number ng-touched" name="items" id="items" type="number" ng-model="itemsByPage" ng-model-options="{ updateOn: 'blur' }" /> 条
                     </label>
                     <label class="dataTables-filter">
                         <button class="btn btn-default grey">
