@@ -110,32 +110,46 @@ class dcResController extends Controller
     public function getComMetrcss($id)
     {
         $mycomp=$this->dcComponentSelector($id);
-        return json_encode($mycomp->getMetronicStuffs($id,$mycomp::PM_PAGE_LEVEL_STYLES));
+        $aTmp = explode('+', $id);
+        $sRet='';
+        foreach ($aTmp as $sComp) {
+            $sRet.="\r\n<!-- Component: ".$sComp." -->\r\n";
+            $sRet.=implode("\r\n",$mycomp->getMetronicStuffs($sComp,$mycomp::PM_PAGE_LEVEL_STYLES));
+            $sRet.="\r\n";
+        }
+        return $sRet;
     }
 
     public function getComMetrjs($id)
     {
         $mycomp=$this->dcComponentSelector($id);
-
-        return json_encode($mycomp->getMetronicStuffs($id,$mycomp::PM_PAGE_LEVEL_PLUGINS));
+        $aTmp = explode('+', $id);
+        $sRet='';
+        foreach ($aTmp as $sComp) {
+            $sRet.="\r\n<!-- Component: ".$sComp." -->\r\n";
+            $sRet.=implode("\r\n",$mycomp->getMetronicStuffs($sComp,$mycomp::PM_PAGE_LEVEL_PLUGINS));
+            $sRet.="\r\n";
+        }
+        dump($sRet);
+        return $sRet;
     }
 
     public function getComMetrinitjs($id)
     {
         $mycomp=$this->dcComponentSelector($id);
-        return json_encode($mycomp->getMetronicStuffs($id,$mycomp::PM_PAGE_INIT_SCRIPT));
+        $aTmp = explode('+', $id);
+        $sRet='';
+        foreach ($aTmp as $sComp) {
+            $sRet.="\r\n<!-- Component: ".$sComp." -->\r\n";
+            $sRet.=implode("\r\n",$mycomp->getMetronicStuffs($sComp,$mycomp::PM_PAGE_INIT_SCRIPT));
+            $sRet.="\r\n";
+        }
+        return $sRet;
     }
 
     public function getCompDemo($id)
     {
-        $disk = \Storage::disk('local_public');
-        $mycomp = new dcComponentSelector();
-        $mycomp->attachComponentFilesystem($disk);
-        $mycomp->setPathToComponents('theme/templates/admin');
-        $aTmp = explode('+', $id);
-        foreach ($aTmp as $sComp) {
-            $mycomp->analyseMetronicIntoComponents($sComp);
-        }
+        $mycomp=$this->dcComponentSelector($id);
         return view('assets.comdemo', ['mycomp' => $mycomp]);
     }
 }
