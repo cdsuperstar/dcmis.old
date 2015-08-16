@@ -56,7 +56,7 @@
                     </div>
                     <div class="col-md-3">
                         <label>
-                            模糊查询 : &nbsp;<input st-search st-input-event="blur" placeholder="请输入查找的信息" class="input-sm input-inline form-control" type="search"/>
+                            查询全部 : &nbsp;<input st-search st-input-event="blur" placeholder="请输入查找的信息" class="input-sm input-inline form-control" type="search"/>
                         </label>
                     </div>
             </div>
@@ -122,9 +122,11 @@
                         <td>
                             {{user.password}}
                         </td>
-                        <td class="center" >
-                            <select>
-                                <option>系统管理员</option>
+                        <td>
+                            <select class="styled-select">
+                                <option value="系统管理员">系统管理员</option>
+                                <option value="营销主管">营销主管</option>
+                                <option value="行政主管">行政主管</option>
                             </select>
                         </td>
                         <td>
