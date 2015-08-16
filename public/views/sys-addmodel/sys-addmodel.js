@@ -50,8 +50,8 @@ var FormWizard = function () {
 
                 messages: { // custom messages for radio buttons and checkboxes
                     'modelzj[]': {
-                        required: "ÇëÖÁÉÙÑ¡ÔñÒ»¸ö×é¼þ£¡",
-                        minlength: jQuery.validator.format("ÇëÖÁÉÙÑ¡ÔñÒ»¸ö×é¼þ£¡")
+                        required: "è¯·è‡³å°‘é€‰æ‹©ä¸€ä¸ªç»„ä»¶ï¼",
+                        minlength: jQuery.validator.format("è¯·è‡³å°‘é€‰æ‹©ä¸€ä¸ªç»„ä»¶ï¼")
                     }
                 },
 
@@ -87,7 +87,7 @@ var FormWizard = function () {
                     } else { // display success icon for other inputs
                         label
                             .addClass('valid') // mark the current input as valid and display OK icon
-                        .closest('.form-group').removeClass('has-error').addClass('has-success'); // set success class to the control group
+                            .closest('.form-group').removeClass('has-error').addClass('has-success'); // set success class to the control group
                     }
                 },
 
@@ -157,13 +157,13 @@ var FormWizard = function () {
                 onTabClick: function (tab, navigation, index, clickedIndex) {
                     return false;
                     /*
-                    success.hide();
-                    error.hide();
-                    if (form.valid() == false) {
-                        return false;
-                    }
-                    handleTitle(tab, navigation, clickedIndex);
-                    */
+                     success.hide();
+                     error.hide();
+                     if (form.valid() == false) {
+                     return false;
+                     }
+                     handleTitle(tab, navigation, clickedIndex);
+                     */
                 },
                 onNext: function (tab, navigation, index) {
                     success.hide();
