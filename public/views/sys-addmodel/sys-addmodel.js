@@ -208,9 +208,9 @@ var FormWizard = function () {
 
 function selectval(){
     var tmpVal=$("#modelzj").val();
-    var recssurl="http://wxb/dcassets/com-metrcss/" + tmpVal.join("+");
-    var rejsurl="http://wxb/dcassets/com-metrjs/" + tmpVal.join("+");
-    var reinitjsurl="http://wxb/dcassets/com-metrinitjs/" + tmpVal.join("+");
+    var recssurl="dcassets/com-metrcss/" + tmpVal.join("+");
+    var rejsurl="dcassets/com-metrjs/" + tmpVal.join("+");
+    var reinitjsurl="dcassets/com-metrinitjs/" + tmpVal.join("+");
 
     $("#modelcss").load(recssurl);
     $("#modelscript").load(rejsurl);
