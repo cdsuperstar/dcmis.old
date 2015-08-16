@@ -130,7 +130,6 @@ class dcResController extends Controller
             $sRet.=implode("\r\n",$mycomp->getMetronicStuffs($sComp,$mycomp::PM_PAGE_LEVEL_PLUGINS));
             $sRet.="\r\n";
         }
-        dump($sRet);
         return $sRet;
     }
 
