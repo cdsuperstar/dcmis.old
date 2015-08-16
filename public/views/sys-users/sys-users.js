@@ -44,7 +44,7 @@ DcmisApp.controller('pipeCtrl',
                             var index = ctrl.displayed.indexOf(user);
                             if (index !== -1) {
                                 ctrl.displayed.splice(index, 1);
-                                $state.transitionTo($state.current, $stateParams, { reload: true, inherit: true, notify: true });
+                                //$state.transitionTo($state.current, $stateParams, { reload: true, inherit: true, notify: true });
                                 //$state.transitionTo('sys-users');
                             }else{
                             }
