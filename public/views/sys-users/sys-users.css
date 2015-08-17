@@ -17,13 +17,3 @@
 th{
     text-align:center;
 }
-
-.styled-select {
-    height:28px;
-    width:160px;
-    line-height:28px;
-    border:1px solid #ddd63e;
-    -moz-border-radius:2px;
-    -webkit-border-radius:2px;
-    border-radius:2px;
-}

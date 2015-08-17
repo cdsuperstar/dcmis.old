@@ -13,6 +13,17 @@ var datePickers = function () {
 
         /* Workaround to restrict daterange past date select: http://stackoverflow.com/questions/11933173/how-to-restrict-the-selectable-date-ranges-in-bootstrap-datepicker */
     }
+    var handleSelect2 = function () {
+
+        $('#dcMultiselect1').select2({
+            placeholder: "请选择……",
+            allowClear: true
+        });
+        $('#dcMultiselect2').select2({
+            placeholder: "请至少选择一条数据",
+            allowClear: true
+        });
+    }
     var handleDatetimePicker = function () {
 
         if (!jQuery().datetimepicker) {
@@ -38,6 +49,7 @@ var datePickers = function () {
             handleDatePickers();
             handleDatetimePicker();
             handleSummernote();
+            handleSelect2();
         }
     };
 }();
