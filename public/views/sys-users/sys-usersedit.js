@@ -37,18 +37,12 @@ var datePickers = function () {
             pickerPosition: (Metronic.isRTL() ? "bottom-right" : "bottom-left")
         });
     }
-    var handleSummernote = function () {
-        $('#dc_editor').summernote({height: 300});
-        //API:
-        //var sHTML = $('#dc_editor').code(); // get code
-        //$('#dc_editor').destroy(); // destroy
-    }
+
     return {
         //main function to initiate the module
         init: function () {
             handleDatePickers();
             handleDatetimePicker();
-            handleSummernote();
             handleSelect2();
         }
     };

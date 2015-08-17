@@ -198,7 +198,6 @@ DcmisApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
                             '/assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css',
                             '/assets/global/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css',
                             '/assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css',
-                            '/assets/global/plugins/bootstrap-summernote/summernote.css',
                             '/assets/global/plugins/bootstrap-select/bootstrap-select.min.css',
                             '/assets/global/plugins/select2/select2.css',
                             '/assets/global/plugins/jquery-multi-select/css/multi-select.css',
@@ -209,7 +208,6 @@ DcmisApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
                             '/assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js',
                             '/assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js',
                             '/assets/global/plugins/bootstrap-markdown/js/bootstrap-markdown.js',
-                            '/assets/global/plugins/bootstrap-summernote/summernote.min.js',
                             '/views/sys-users/sys-usersedit.js',
                             '/js/controllers/GeneralPageController.js'
                         ]
