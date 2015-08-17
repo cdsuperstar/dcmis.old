@@ -1,54 +1,214 @@
 <!-- BEGIN PAGE -->
-<div class="col-md-6">
+<div class="row">
+<div class="col-md-10">
     <div class="portlet box blue">
         <div class="portlet-title">
             <div class="caption">
-                <i class="fa fa-gift"></i> 用户编辑
+                <i class="fa fa-gift"></i> xx[title]编辑
             </div>
             <div class="tools">
-                <a href="" class="collapse">
-                </a>
-                <a href="#portlet-config" data-toggle="modal" class="config">
-                </a>
                 <a href="" class="reload">
                 </a>
-                <a href="" class="remove">
+                <a href="" class="collapse">
                 </a>
             </div>
         </div>
-        <div class="portlet-body form">
-            <form role="form">
-                <div class="form-body">
-                    <div class="form-group">
-                        <label class="col-md-2">用户ID</label>
-                        <div class="input-group col-md-4">
-											<span class="input-group-addon">
-											<i class="fa fa-envelope"></i>
-											</span>
-                            <input type="text" class="form-control" placeholder="用户Email" value="{{address.email}}">
+        <div class="portlet-body">
+            <div class="portlet light">
+                <div class="portlet-body form">
+                    <form role="form" class="form-horizontal">
+                        <div class="form-body">
+                            <div class="form-group form-md-line-input">
+                                <label class="col-md-2 control-label" for="form_control_1">input属性名</label>
+                                <div class="col-md-10">
+                                    <input type="text" class="form-control" id="form_control_1" placeholder="提示信息">
+                                    <div class="form-control-focus">
+                                    </div>
+                                    <span class="help-block">只能输入文字或者字符，最长不超过xx;只能输入文字或者字符，最长不超过xx;</span>
+                                </div>
+                            </div>
+                            <div class="form-group form-md-line-input">
+                                <label class="col-md-2 control-label" for="form_control_1">select属性名</label>
+                                <div class="col-md-10">
+                                    <select class="form-control" id="form_control_1">
+                                        <option value=""></option>
+                                        <option value="">Option 1</option>
+                                        <option value="">Option 2</option>
+                                        <option value="">Option 3</option>
+                                        <option value="">Option 4</option>
+                                    </select>
+                                    <div class="form-control-focus">
+                                    </div>
+                                    <span class="help-block">请对应选择合适的选项;</span>
+                                </div>
+                            </div>
+                            <div class="form-group form-md-line-input">
+                                <label class="col-md-2 control-label" for="form_control_1">Textarea属性名</label>
+                                <div class="col-md-10">
+                                    <textarea class="form-control" rows="3" placeholder="Enter more text"></textarea>
+                                    <div class="form-control-focus">
+                                    </div>
+                                    <span class="help-block">请限定在300字以内;</span>
+                                </div>
+                            </div>
+                            <div class="form-group form-md-line-input">
+                                <label class="col-md-2 control-label" for="form_control_1">Disabled属性</label>
+                                <div class="col-md-10">
+                                    <input type="text" class="form-control" disabled id="form_control_1" placeholder="Placeholder...">
+                                    <div class="form-control-focus">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group form-md-line-input">
+                                <label class="col-md-2 control-label" for="form_control_1">Readonly属性</label>
+                                <div class="col-md-10">
+                                    <input type="text" class="form-control" readonly value="Some value" id="form_control_1" placeholder="Placeholder...">
+                                    <div class="form-control-focus">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group form-checkbox-inline">
+                                <label class="col-md-2 control-label">Checkboxes属性</label>
+                                <div class="col-md-10" style="margin-top: 10px;">
+                                    <div class="md-checkbox">
+                                        <input type="checkbox" id="checkbox6" class="md-check">
+                                        <label for="checkbox6">
+                                            <span></span>
+                                            <span class="check"></span>
+                                            <span class="box"></span>
+                                            Option 1 </label>
+                                    </div>
+                                    <div class="md-checkbox">
+                                        <input type="checkbox" id="checkbox7" class="md-check">
+                                        <label for="checkbox7">
+                                            <span></span>
+                                            <span class="check"></span>
+                                            <span class="box"></span>
+                                            Option 2 </label>
+                                    </div>
+                                    <div class="md-checkbox">
+                                        <input type="checkbox" id="checkbox8" class="md-check">
+                                        <label for="checkbox8">
+                                            <span></span>
+                                            <span class="check"></span>
+                                            <span class="box"></span>
+                                            Option 3 </label>
+                                    </div>
+                                    <div class="form-control-focus">
+                                        <hr>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group form-radio-inline">
+                                <label class="col-md-2 control-label">radio属性</label>
+                                <div class="col-md-10" style="margin-top: 10px;">
+                                    <div class="md-radio">
+                                        <input type="radio" id="radio6" name="radio2" class="md-radiobtn">
+                                        <label for="radio6">
+                                            <span></span>
+                                            <span class="check"></span>
+                                            <span class="box"></span>
+                                            Option 1 </label>
+                                    </div>
+                                    <div class="md-radio">
+                                        <input type="radio" id="radio7" name="radio2" class="md-radiobtn" checked>
+                                        <label for="radio7">
+                                            <span></span>
+                                            <span class="check"></span>
+                                            <span class="box"></span>
+                                            Option 2 </label>
+                                    </div>
+                                    <div class="md-radio">
+                                        <input type="radio" id="radio8" name="radio2" class="md-radiobtn">
+                                        <label for="radio8">
+                                            <span></span>
+                                            <span class="check"></span>
+                                            <span class="box"></span>
+                                            Option 3 </label>
+                                    </div>
+                                    <div class="form-control-focus">
+                                        <hr>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group form-md-line-input">
+                                <label class="col-md-2 control-label">Date选择</label>
+                                <div class="col-md-10">
+                                    <div class="input-group date date-picker" data-date-format="yyyy-mm-dd" data-date-start-date="+0d">
+                                        <input type="text" class="form-control">
+												<span class="input-group-btn">
+												<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
+												</span>
+                                    </div>
+                                    <div class="form-control-focus">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group form-md-line-input">
+                                <label class="control-label col-md-2">Datetime选择</label>
+                                <div class="col-md-10">
+                                    <div class="input-group date form_datetime" data-date-format="yyyy-mm-dd">
+                                        <input type="text" class="form-control">
+												<span class="input-group-btn">
+												<button class="btn default date-set" type="button"><i class="fa fa-calendar"></i></button>
+												</span>
+                                    </div>
+                                    <div class="form-control-focus">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group form-md-line-input">
+                                <label class="control-label col-md-2">Date区间</label>
+                                <div class="col-md-10">
+                                    <div class="input-group date-picker input-daterange" data-date-format="yyyy-mm-dd">
+                                        <input type="text" class="form-control" name="from" style="text-align:left; vertical-align:middle">
+												<span class="input-group-addon">
+												to </span>
+                                        <input type="text" class="form-control" name="to" style="text-align:left; vertical-align:middle">
+                                    </div>
+                                    <div class="form-control-focus">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group form">
+                                <label class="control-label col-md-2">Editor插件</label>
+                                <div class="col-md-10">
+                                    <div name="dc_editor" id="dc_editor">
+                                    </div>
+                                    <div class="form-control-focus">
+                                        <hr>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group form">
+                                <label class="control-label col-md-2">markdown插件</label>
+                                <div class="col-md-10">
+                                    <textarea name="content" data-provide="markdown" rows="10"></textarea>
+                                    <div class="form-control-focus">
+                                        <hr>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-2">姓名</label>
-                        <div class="input-group col-md-4">
-											<span class="input-group-addon">
-											<i class="fa fa-envelope"></i>
-											</span>
-                            <input type="text" class="form-control" placeholder="姓名" value="{{address.name}}">
+                        <div class="form-actions">
+                            <div class="row">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <button type="button" class="btn blue"> - 确定编辑 - </button>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <button type="button" class="btn yellow"> - 返回列表 - </button>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-2">密码</label>
-                        <div class="input-group col-md-4">
-											<span class="input-group-addon">
-											<i class="fa fa-envelope"></i>
-											</span>
-                            <input type="text" class="form-control" placeholder="密码" value="{{address.password}}">
-                        </div>
-                    </div>
+                    </form>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
 </div>
+</div>
 <!-- END PAGE -->
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        datePickers.init();
+    });
+</script>
