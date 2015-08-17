@@ -182,6 +182,37 @@ DcmisApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
             }
         })
 
+        //测试ui commponents
+        .state('sys-usersedit', {
+            url: "/sys-usersedit.html",
+            templateUrl: "views/sys-users/sys-usersedit.html",
+            data: {pageTitle: '用户编辑'},
+            controller: "GeneralPageController",
+            resolve: {
+                deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                    return $ocLazyLoad.load({
+                        name: 'DcmisApp',
+                        insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                        files: [
+                            '/assets/global/plugins/clockface/css/clockface.css',
+                            '/assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css',
+                            '/assets/global/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css',
+                            '/assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css',
+                            '/assets/global/plugins/bootstrap-summernote/summernote.css',
+
+                            '/assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js',
+                            '/assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js',
+                            '/assets/global/plugins/bootstrap-markdown/js/bootstrap-markdown.js',
+                            '/assets/global/plugins/bootstrap-summernote/summernote.min.js',
+                            '/views/sys-users/sys-usersedit.js',
+                            '/js/controllers/GeneralPageController.js'
+                        ]
+                    });
+                }]
+            }
+        })
+
+
         //模块列表
         .state('sys-model', {
             url: "/sys-model.html",
