@@ -12,13 +12,17 @@ use Zizaco\Entrust\Traits\EntrustUserTrait;
 class User extends Ardent implements AuthenticatableContract, CanResetPasswordContract
 {
     use Authenticatable, CanResetPassword, EntrustUserTrait;
-//    public static $rules = array(
-//        'name' => 'required|between:4,16',
-//        'email' => 'required|email',
-//        'password' => 'required|alpha_num|between:4,8|confirmed',
-//        'password_confirmation' => 'required|alpha_num|between:4,8'
-//    );
-    public $autoPurgeRedundantAttributes=true;
+    public static $rules = array(
+        'name' => 'required|between:4,16',
+        'email' => 'required|email|unique:users',
+        'password' => 'required|alpha_num|between:4,8|confirmed',
+        'password_confirmation' => 'required|alpha_num|between:4,8'
+    );
+    public $autoPurgeRedundantAttributes = true;
+    public static $passwordAttributes = array('password');
+    public $autoHashPasswordAttributes = true;
+//    public $autoHydrateEntityFromInput = true;
+
     /**
      * The database table used by the model.
      *

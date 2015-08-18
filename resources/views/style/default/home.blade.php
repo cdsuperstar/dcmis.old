@@ -33,7 +33,7 @@ License: You must have a valid license purchased only from themeforest(the above
   <link href="/assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
   <link href="/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css"/>
   <link href="/css/ngDialog.css" rel="stylesheet" type="text/css"/>
-  <link href="/css/ngDialog-theme-plain.css " rel="stylesheet" type="text/css"/>
+  <link href="/css/ngDialog-theme-plain.css" rel="stylesheet" type="text/css"/>
   <link href="/css/ngDialog-theme-default.css" rel="stylesheet" type="text/css"/>
   <!-- END GLOBAL MANDATORY STYLES -->
 
@@ -153,6 +153,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="/assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
 <script src="/assets/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
 <script src="/assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
+<script src="/vendor/jsvalidation/js/jsvalidation.js" type="text/javascript"></script>
 <!-- END APP LEVEL JQUERY SCRIPTS -->
 
 <script type="text/javascript">

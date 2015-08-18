@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\dcClass\dcComponentSelector;
+use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -91,7 +92,15 @@ class dcResController extends Controller
 
     public function getEdition()
     {
-        return view('pages.edition');
+        $aMessage=trans('validation');
+        $validator=\JsValidator::make(User::$rules);
+        $validator->selector("#dcEdition");
+
+        return view('assets.edition')->with([
+            'validator'=>$validator,
+            'fields'=>User::$rules,
+            'title'=>'用户编辑器',
+        ]);
     }
 
     public function dcComponentSelector($comId)

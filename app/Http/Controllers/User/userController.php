@@ -3,9 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\User;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -52,11 +50,16 @@ class userController extends Controller
      */
     public function show($id)
     {
+        $user = User::findorFail($id);
+//        $res=$user->update();
+//        dump($res);
+        return 1;
     }
 
     public function getAll()
     {
     }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -78,6 +81,24 @@ class userController extends Controller
     public function update(Request $request, $id)
     {
         //
+        if (!$id) return false;
+
+        $user = User::findOrFail($id);
+        if ($user) {
+            foreach ($request->input() as $key => $val) {
+                $user->$key = $val;
+            }
+            if ($user->updateUniques()) {
+                return response()->json([
+                    'messages' => trans('users.updatesuccess'),
+                    'success' => true,
+                    'data' => $user->toJson(),
+                    ]);
+            } else {
+                return response()->json(['errors' => $user->errors()->all()]);
+            }
+        }
+        return response()->json(['errors' => [trans('users.nofound')]]);
     }
 
     /**
@@ -88,8 +109,7 @@ class userController extends Controller
      */
     public function destroy($id)
     {
-        $deletedRows = User::where('id', $id)->delete();
-
+        $deletedRows = User::destroy($id);
         return response()->json($deletedRows);
     }
 }

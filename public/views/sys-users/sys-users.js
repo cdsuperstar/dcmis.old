@@ -19,26 +19,40 @@ DcmisApp.factory('Resource', ['$q', '$http',
     }]);
 
 DcmisApp.controller('pipeCtrl',
-    ['Resource', '$scope', '$filter', '$http', 'ngDialog','$state','$stateParams',
-        function (service, $scope, $filter, $http, ngDialog,$state,$stateParams) {
+    ['Resource', '$scope', '$filter', '$http', 'ngDialog', '$state', '$stateParams',
+        function (service, $scope, $filter, $http, ngDialog, $state, $stateParams) {
 
             var ctrl = this;
-//console.log($route);
-            //$scope.reload = function(){
-            //    $state.transitionTo('myState');//.
-            //}
-            //
-            $scope.edituser = function (id) {
-                ngDialog.open({
+
+            $scope.edituser = function (user) {
+                ngDialog.openConfirm({
                     template: '/dcassets/edition',
                     className: 'ngdialog-theme-default',
                     scope: $scope,
+                    controller: ['$scope', function ($scope) {
+                        $scope.editing = user;
+                        $scope.editing.password_confirmation = user.password;
+                    }],
                     showClose: true,
                     closeByEscape: false
+                }).then(function (editing) {
+                    $http.put('/user/' + editing.id, editing).then(
+                        function (res) {
+                            if(res.data.success){
+                                var index = ctrl.displayed.indexOf(res.data.data);
+                                ctrl.displayed[index] = res.data.data;
+                            }else{
+                                // TODO add error message to system
+                                console.log('update failed!');
+                            }
+                        }
+                    );
+                }, function (reason) {
+                    console.log('Modal promise rejected. Reason: ', reason);
                 });
             };
             $scope.deluser = function (user) {
-                $http.delete('user/'+user.id).then(
+                $http.delete('user/' + user.id).then(
                     function (res) {
                         if (res.data) {
                             var index = ctrl.displayed.indexOf(user);
@@ -46,7 +60,7 @@ DcmisApp.controller('pipeCtrl',
                                 ctrl.displayed.splice(index, 1);
                                 //$state.transitionTo($state.current, $stateParams, { reload: true, inherit: true, notify: true });
                                 //$state.transitionTo('sys-users');
-                            }else{
+                            } else {
                             }
                         } else {
                         }
@@ -72,11 +86,13 @@ DcmisApp.controller('pipeCtrl',
                     }
 
                     ctrl.displayed = filtered.slice(start, start + number);
-                    tableState.pagination.numberOfPages = Math.ceil(result.data.length/$scope.itemsByPage);//result.numberOfPages;//set the number of pages so the pagination can update
+                    tableState.pagination.numberOfPages = Math.ceil(result.data.length / $scope.itemsByPage);//result.numberOfPages;//set the number of pages so the pagination can update
                     ctrl.isLoading = false;
                 });
             };
         }]);
+
+
 DcmisApp.directive('confirmationNeeded', function () {
     return {
         priority: 1,
@@ -119,15 +135,13 @@ DcmisApp.directive('csSelect', function () {
 });
 //checkbox 全选与全不选
 function checkout() {
-    if($("#checkPathAll").attr("checked"))
-    {
-        $("input[name='Datacheckbox']").each(function() {
+    if ($("#checkPathAll").attr("checked")) {
+        $("input[name='Datacheckbox']").each(function () {
             $(this).attr("checked", true);
         });
     }
-    else
-    {
-        $("input[name='Datacheckbox']").each(function() {
+    else {
+        $("input[name='Datacheckbox']").each(function () {
             $(this).attr("checked", false);
         });
     }

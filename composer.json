@@ -14,7 +14,8 @@
         "barryvdh/laravel-debugbar": "^2.0",
         "yohang/finite": "^1.0",
         "filp/whoops": "^1.1",
-        "aziz/smartmodel": "^2.5"
+        "aziz/smartmodel": "^2.5",
+        "proengsoft/laravel-jsvalidation": "^1.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
