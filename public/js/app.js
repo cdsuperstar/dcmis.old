@@ -207,6 +207,7 @@ DcmisApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
                             '/assets/global/plugins/jquery-multi-select/js/jquery.multi-select.js',
                             '/assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js',
                             '/assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js',
+                            '/assets/ckeditor/ckeditor.js',
                             '/views/sys-users/sys-usersedit.js',
                             '/js/controllers/GeneralPageController.js'
                         ]

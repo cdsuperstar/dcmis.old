@@ -178,7 +178,8 @@
                             <div class="form-group">
                                 <label class="control-label col-md-2">Editor插件</label>
                                 <div class="col-md-10">
-                                    <div name="dc_editor" id="dc_editor">
+                                    <div id="dcdefaulteditor">
+                                        <p>请输入...</p>
                                     </div>
                                     <div class="form-control-focus">
                                         <hr>
@@ -188,9 +189,9 @@
                             <div class="form-group">
                                 <label class="control-label col-md-2">markdown插件</label>
                                 <div class="col-md-10">
-                                    <script type="text/plain" id="editor" name="myEditor">
-                                            <p>请在此输入内容！</p>
-                                        </script>
+                                    <div id="dcsimpleeditor">
+                                        <p>请输入...</p>
+                                    </div>
                                     <div class="form-control-focus">
                                         <hr>
                                     </div>
@@ -215,6 +216,15 @@
 </div>
 <!-- END PAGE -->
 <script type="text/javascript">
+    CKEDITOR.replace( 'dcdefaulteditor',
+            {
+                toolbar : 'Default'
+            });
+    CKEDITOR.replace( 'dcsimpleeditor',
+            {
+                toolbar : 'Basic',
+                height : 200
+            });
     jQuery(document).ready(function() {
         datePickers.init();
     });
