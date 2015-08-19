@@ -39,7 +39,23 @@ class userController extends Controller
      */
     public function store(Request $request)
     {
+
         //
+        $user = new User();
+        if ($user) {
+            foreach ($request->input() as $key => $val) {
+                $user->$key = $val;
+            }
+            if ($user->save()) {
+                return response()->json([
+                    'messages' => trans('users.savesuccess'),
+                    'success' => true,
+                    'data' => $user->toJson(),
+                ]);
+            }
+        }
+        return response()->json(['errors' => $user->errors()->all()]);
+
     }
 
     /**

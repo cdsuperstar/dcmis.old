@@ -1,72 +1,86 @@
 /***
-Metronic AngularJS App Main Script
-***/
+ Metronic AngularJS App Main Script
+ ***/
 
 /* Metronic App */
 var DcmisApp = angular.module("DcmisApp", [
     "ui.router",
     "ui.bootstrap",
-    "oc.lazyLoad",  
+    "oc.lazyLoad",
     "ngSanitize",
     "smart-table",
-    "ngDialog"
+    "ngDialog",
+    "ghiscoding.validation","pascalprecht.translate",
 ]);
+DcmisApp.value('validationConfig', {
+    debounce: 500,
+    displayOnlyLastErrorMsg: false,
+    preValidateFormElements: false
+});
 
 /* Configure ocLazyLoader(refer: https://github.com/ocombe/ocLazyLoad) */
-DcmisApp.config(['$ocLazyLoadProvider', function($ocLazyLoadProvider) {
+DcmisApp.config(['$ocLazyLoadProvider','$translateProvider', function($ocLazyLoadProvider,$translateProvider) {
     $ocLazyLoadProvider.config({
         // global configs go here
     });
+    $translateProvider.useStaticFilesLoader({
+        prefix: '/js/bower_components/angular-validation-ghiscoding/locales/validation/',
+        suffix: '.json'
+    });
+
+    // define translation maps you want to use on startup
+    $translateProvider.preferredLanguage('en');
+
 }]);
 
 /********************************************
  BEGIN: BREAKING CHANGE in AngularJS v1.3.x:
-*********************************************/
+ *********************************************/
 /**
-`$controller` will no longer look for controllers on `window`.
-The old behavior of looking on `window` for controllers was originally intended
-for use in examples, demos, and toy apps. We found that allowing global controller
-functions encouraged poor practices, so we resolved to disable this behavior by
-default.
+ `$controller` will no longer look for controllers on `window`.
+ The old behavior of looking on `window` for controllers was originally intended
+ for use in examples, demos, and toy apps. We found that allowing global controller
+ functions encouraged poor practices, so we resolved to disable this behavior by
+ default.
 
-To migrate, register your controllers with modules rather than exposing them
-as globals:
+ To migrate, register your controllers with modules rather than exposing them
+ as globals:
 
-Before:
+ Before:
 
-```javascript
-function MyController() {
+ ```javascript
+ function MyController() {
   // ...
 }
-```
+ ```
 
-After:
+ After:
 
-```javascript
-angular.module('myApp', []).controller('MyController', [function() {
+ ```javascript
+ angular.module('myApp', []).controller('MyController', [function() {
   // ...
 }]);
 
-Although it's not recommended, you can re-enable the old behavior like this:
+ Although it's not recommended, you can re-enable the old behavior like this:
 
-```javascript
-angular.module('myModule').config(['$controllerProvider', function($controllerProvider) {
+ ```javascript
+ angular.module('myModule').config(['$controllerProvider', function($controllerProvider) {
   // this option might be handy for migrating old apps, but please don't use it
   // in new ones!
   $controllerProvider.allowGlobals();
 }]);
-**/
+ **/
 
 //AngularJS v1.3.x workaround for old style controller declarition in HTML
 DcmisApp.config(['$controllerProvider', function($controllerProvider) {
-  // this option might be handy for migrating old apps, but please don't use it
-  // in new ones!
-  $controllerProvider.allowGlobals();
+    // this option might be handy for migrating old apps, but please don't use it
+    // in new ones!
+    $controllerProvider.allowGlobals();
 }]);
 
 /********************************************
  END: BREAKING CHANGE in AngularJS v1.3.x:
-*********************************************/
+ *********************************************/
 
 /* Setup global settings */
 DcmisApp.factory('settings', ['$rootScope', function($rootScope) {
@@ -90,15 +104,15 @@ DcmisApp.factory('settings', ['$rootScope', function($rootScope) {
 DcmisApp.controller('AppController', ['$scope', '$rootScope', function($scope, $rootScope) {
     $scope.$on('$viewContentLoaded', function() {
         Metronic.initComponents(); // init core components
-        //Layout.init(); //  Init entire layout(header, footer, sidebar, etc) on page load if the partials included in server side instead of loading with ng-include directive 
+        //Layout.init(); //  Init entire layout(header, footer, sidebar, etc) on page load if the partials included in server side instead of loading with ng-include directive
     });
 }]);
 
 /***
-Layout Partials.
-By default the partials are loaded through AngularJS ng-include directive. In case they loaded in server side(e.g: PHP include function) then below partial 
-initialization can be disabled and Layout.init() should be called on page load complete as explained above.
-***/
+ Layout Partials.
+ By default the partials are loaded through AngularJS ng-include directive. In case they loaded in server side(e.g: PHP include function) then below partial
+ initialization can be disabled and Layout.init() should be called on page load complete as explained above.
+ ***/
 
 /* Setup Layout Part - Header */
 DcmisApp.controller('HeaderController', ['$scope', function($scope) {
@@ -115,7 +129,7 @@ DcmisApp.controller('SidebarController', ['$scope', function($scope) {
 }]);
 
 /* Setup Layout Part - Quick Sidebar */
-DcmisApp.controller('QuickSidebarController', ['$scope', function($scope) {    
+DcmisApp.controller('QuickSidebarController', ['$scope', function($scope) {
     $scope.$on('$includeContentLoaded', function() {
         Demo.init(); //init theme panel
         setTimeout(function(){
@@ -134,14 +148,14 @@ DcmisApp.controller('FooterController', ['$scope', function($scope) {
 /* Setup Rounting For All Pages */
 DcmisApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
     // Redirect any unmatched url
-    $urlRouterProvider.otherwise("/dashboard.html");  
-    
+    $urlRouterProvider.otherwise("/dashboard.html");
+
     $stateProvider
 
         // Dashboard
         .state('dashboard', {
             url: "/dashboard.html",
-            templateUrl: "views/dashboard.html",            
+            templateUrl: "views/dashboard.html",
             data: {pageTitle: '主页'},
             controller: "GeneralPageController",
             resolve: {
@@ -152,7 +166,7 @@ DcmisApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
                         files: [
 
                             '/js/controllers/GeneralPageController.js'
-                        ] 
+                        ]
                     });
                 }]
             }
@@ -207,9 +221,10 @@ DcmisApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
                             '/assets/global/plugins/jquery-multi-select/js/jquery.multi-select.js',
                             '/assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js',
                             '/assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js',
-                            '/assets/ckeditor/ckeditor.js',
                             '/views/sys-users/sys-usersedit.js',
-                            '/js/controllers/GeneralPageController.js'
+                            '/js/controllers/GeneralPageController.js',
+                            '/assets/ckeditor/ckeditor.js',
+
                         ]
                     });
                 }]

@@ -15,5 +15,7 @@ return [
 
     'nofound' => 'the user not found.',
     'updatesuccess' => 'the user is updated.',
+    'savesuccess' => 'the user is added.',
+    'deletesuccess' => 'the user is deleted.',
 
 ];

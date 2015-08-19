@@ -153,8 +153,22 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="/assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
 <script src="/assets/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
 <script src="/assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
-<script src="/vendor/jsvalidation/js/jsvalidation.js" type="text/javascript"></script>
+{{--<script src="/vendor/jsvalidation/js/jsvalidation.js" type="text/javascript"></script>--}}
 <!-- END APP LEVEL JQUERY SCRIPTS -->
+
+<!-- Angular-Translate with the JSON loader -->
+<script type="text/javascript" src="/js/bower_components/angular-translate/angular-translate.min.js"></script>
+<script type="text/javascript" src="/js/bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
+
+<!-- Angular-Validation library -->
+<script type="text/javascript" src="/js/bower_components/angular-validation-ghiscoding/dist/angular-validation.min.js"></script>
+
+<!-- OR use uncompressed files for development, which are angular-validation, the directive and service are totally independent -->
+<!-- you can load one or the other or use them in parallel. But `-common.js` and `-rules.js` are mandatory. -->
+<script type="text/javascript" src="/js/bower_components/angular-validation-ghiscoding/src/validation-directive.js"></script>
+<script type="text/javascript" src="/js/bower_components/angular-validation-ghiscoding/src/validation-service.js"></script>
+<script type="text/javascript" src="/js/bower_components/angular-validation-ghiscoding/src/validation-common.js"></script>
+<script type="text/javascript" src="/js/bower_components/angular-validation-ghiscoding/src/validation-rules.js"></script>
 
 <script type="text/javascript">
   /* Init Metronic's core jquery plugins and layout scripts */

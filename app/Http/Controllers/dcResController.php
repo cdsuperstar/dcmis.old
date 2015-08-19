@@ -92,13 +92,9 @@ class dcResController extends Controller
 
     public function getEdition()
     {
-        $aMessage=trans('validation');
-        $validator=\JsValidator::make(User::$rules);
-        $validator->selector("#dcEdition");
 
         return view('assets.edition')->with([
-            'validator'=>$validator,
-            'fields'=>User::$rules,
+            'fields'=>User::$angularrules,
             'title'=>'用户编辑器',
         ]);
     }

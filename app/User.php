@@ -15,13 +15,30 @@ class User extends Ardent implements AuthenticatableContract, CanResetPasswordCo
     public static $rules = array(
         'name' => 'required|between:4,16',
         'email' => 'required|email|unique:users',
-        'password' => 'required|alpha_num|between:4,8|confirmed',
-        'password_confirmation' => 'required|alpha_num|between:4,8'
+        'password' => 'required|min:4|confirmed',
+        'password_confirmation' => ''
+    );
+    public static $angularrules = array(
+        'name' => 'required|between:4,16|min_len:4|max_len:16',
+        'email' => 'required|email|unique:users',
+        'password' => 'required|min_len:4',
+        'password_confirmation' => 'match:dcEdition.password,Password|required',
     );
     public $autoPurgeRedundantAttributes = true;
     public static $passwordAttributes = array('password');
-    public $autoHashPasswordAttributes = true;
 //    public $autoHydrateEntityFromInput = true;
+//    public $autoHashPasswordAttributes = true;
+
+    public function beforeSave()
+    {
+        // if there's a new password, hash it
+        if ($this->isDirty('password')) {
+            $this->password = \Hash::make($this->password);
+        }
+
+        return true;
+        //or don't return nothing, since only a boolean false will halt the operation
+    }
 
     /**
      * The database table used by the model.

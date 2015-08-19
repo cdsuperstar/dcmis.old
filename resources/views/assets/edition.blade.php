@@ -16,7 +16,7 @@
             <div class="portlet-body">
                 <div class="portlet light">
                     <div class="portlet-body form">
-                        <form role="form" id="dcEdition" class="form-horizontal" id="">
+                        <form role="form" name="dcEditionFm" class="form-horizontal" id="">
                             <div class="form-body">
                             @foreach($fields as $field=>$fieldval)
                                     @include('assets.widgets.'.$field)
@@ -31,9 +31,9 @@
                             <div class="form-actions">
                                 <div class="row">
                                     <div class="col-md-offset-2 col-md-12 ngdialog-buttons">
-                                        <button type="button" class="btn blue" ng-click="confirm(editing)"> - 确定保存 -</button>
+                                        <button type="button" class="btn blue" ng-click="confirm(dcEdition)" ng-disabled="dcEditionFm.$invalid"> - 确定保存 -</button>
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <button type="button" class="btn yellow" ng-click="closeThisDialog('Cancel')"> - 取消保存 -</button>
+                                        <button type="button" class="btn yellow" ng-click="closeThisDialog(dcEdition)"> - 取消保存 -</button>
                                     </div>
                                 </div>
                             </div>
@@ -45,7 +45,6 @@
     </div>
 </div>
 <!-- END PAGE -->
-{!! $validator !!}
 <script type="text/javascript">
 //    jQuery(document).ready(function() {
 //        datePickers.init();

@@ -19,36 +19,69 @@ DcmisApp.factory('Resource', ['$q', '$http',
     }]);
 
 DcmisApp.controller('pipeCtrl',
-    ['Resource', '$scope', '$filter', '$http', 'ngDialog', '$state', '$stateParams',
-        function (service, $scope, $filter, $http, ngDialog, $state, $stateParams) {
+    //['Resource', '$scope', '$filter', '$http', 'ngDialog', '$state', '$stateParams',
+    //    function (service, $scope, $filter, $http, ngDialog, $state, $stateParams) {
+    ['Resource', '$scope', '$filter', '$http', 'ngDialog',
+        function (service, $scope, $filter, $http, ngDialog) {
 
             var ctrl = this;
-
-            $scope.edituser = function (user) {
+            $scope.adduser = function () {
                 ngDialog.openConfirm({
                     template: '/dcassets/edition',
                     className: 'ngdialog-theme-default',
                     scope: $scope,
-                    controller: ['$scope', function ($scope) {
-                        $scope.editing = user;
-                        $scope.editing.password_confirmation = user.password;
+                    controller: ['$scope', 'validationConfig', function ($scope, validationConfig) {
+                        $scope.$validationOptions = validationConfig;
                     }],
                     showClose: true,
                     closeByEscape: false
-                }).then(function (editing) {
-                    $http.put('/user/' + editing.id, editing).then(
+                }).then(function (dcEdition) {
+                    $http.post('/user', dcEdition).then(
                         function (res) {
-                            if(res.data.success){
-                                var index = ctrl.displayed.indexOf(res.data.data);
-                                ctrl.displayed[index] = res.data.data;
-                            }else{
+                            if (res.data.success) {
+                                ctrl.displayed.push(JSON.parse(res.data.data));
+                                console.log("save success",res);
+                            } else {
+                                // TODO add error message to system
+                                console.log('add failed!',res);
+                            }
+                        }
+                    );
+                }, function (dcEdition) {
+                    console.log('Modal promise rejected. Reason: ', dcEdition);
+                });
+            };
+
+            $scope.edituser = function (user) {
+                $scope.dcEditiontmp = angular.copy(user);
+                ngDialog.openConfirm({
+                    template: '/dcassets/edition',
+                    className: 'ngdialog-theme-default',
+                    scope: $scope,
+                    controller: ['$scope', 'validationConfig', function ($scope, validationConfig) {
+                        $scope.$validationOptions = validationConfig;
+                        $scope.dcEdition = user;
+                        $scope.dcEdition.password_confirmation = user.password;
+                    }],
+                    showClose: true,
+                    closeByEscape: false
+                }).then(function (dcEdition) {
+                    $http.put('/user/' + dcEdition.id, dcEdition).then(
+                        function (res) {
+                            if (res.data.success) {
+                                var index = ctrl.displayed.indexOf(dcEdition);
+                                ctrl.displayed[index] = JSON.parse(res.data.data);
+                            } else {
                                 // TODO add error message to system
                                 console.log('update failed!');
                             }
                         }
                     );
-                }, function (reason) {
-                    console.log('Modal promise rejected. Reason: ', reason);
+                }, function (dcEdition) {
+                    delete dcEdition.password_confirmation;
+                    var index = ctrl.displayed.indexOf(dcEdition);
+                    ctrl.displayed[index] = angular.copy($scope.dcEditiontmp);
+                    console.log('Modal promise rejected. Reason: ', index);
                 });
             };
             $scope.deluser = function (user) {

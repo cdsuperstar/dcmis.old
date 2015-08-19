@@ -146,7 +146,6 @@ return [
         Laracasts\Generators\GeneratorsServiceProvider::class,
         Zizaco\Entrust\EntrustServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
-        Proengsoft\JsValidation\JsValidationServiceProvider::class,
 
     ],
 
@@ -197,7 +196,6 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
         'Entrust'    => Zizaco\Entrust\EntrustFacade::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
-        'JsValidator' => Proengsoft\JsValidation\Facades\JsValidatorFacade::class,
     ],
 
 ];

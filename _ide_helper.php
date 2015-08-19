@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.1.10 (LTS) on 2015-08-17.
+ * Generated for Laravel 5.1.10 (LTS) on 2015-08-19.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -12433,50 +12433,6 @@ namespace {
         public static function offsetUnset($key){
             //Method inherited from \DebugBar\DebugBar            
             return \Barryvdh\Debugbar\LaravelDebugbar::offsetUnset($key);
-        }
-        
-    }
-
-
-    class JsValidator extends \Proengsoft\JsValidation\Facades\JsValidatorFacade{
-        
-        /**
-         * Creates JsValidator instance based on rules and message arrays.
-         *
-         * @param array $rules
-         * @param array $messages
-         * @param array $customAttributes
-         * @param null|string $selector
-         * @return \Proengsoft\JsValidation\Manager 
-         * @static 
-         */
-        public static function make($rules, $messages = array(), $customAttributes = array(), $selector = null){
-            return \Proengsoft\JsValidation\Factory::make($rules, $messages, $customAttributes, $selector);
-        }
-        
-        /**
-         * Creates JsValidator instance based on FormRequest.
-         *
-         * @param $formRequest
-         * @param null $selector
-         * @return \Proengsoft\JsValidation\Manager 
-         * @throws FormRequestArgumentException
-         * @static 
-         */
-        public static function formRequest($formRequest, $selector = null){
-            return \Proengsoft\JsValidation\Factory::formRequest($formRequest, $selector);
-        }
-        
-        /**
-         * Creates JsValidator instance based on Validator.
-         *
-         * @param \Proengsoft\JsValidation\ValidatorContract $validator
-         * @param string|null $selector
-         * @return \Proengsoft\JsValidation\Manager 
-         * @static 
-         */
-        public static function validator($validator, $selector = null){
-            return \Proengsoft\JsValidation\Factory::validator($validator, $selector);
         }
         
     }
