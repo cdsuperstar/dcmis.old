@@ -18,6 +18,7 @@ DcmisApp.factory('Resource', ['$q', '$http',
 
     }]);
 
+
 DcmisApp.controller('pipeCtrl',
     //['Resource', '$scope', '$filter', '$http', 'ngDialog', '$state', '$stateParams',
     //    function (service, $scope, $filter, $http, ngDialog, $state, $stateParams) {
@@ -40,10 +41,12 @@ DcmisApp.controller('pipeCtrl',
                         function (res) {
                             if (res.data.success) {
                                 ctrl.displayed.push(JSON.parse(res.data.data));
-                                console.log("save success",res);
+                                showMsg(res.data.messages.toString(),'信息','lime');
+                                console.log("save success", res);
                             } else {
                                 // TODO add error message to system
-                                console.log('add failed!',res);
+                                showMsg(res.data.errors.toString(),'错误','ruby');
+                                console.log('add failed!', res);
                             }
                         }
                     );
@@ -71,8 +74,10 @@ DcmisApp.controller('pipeCtrl',
                             if (res.data.success) {
                                 var index = ctrl.displayed.indexOf(dcEdition);
                                 ctrl.displayed[index] = JSON.parse(res.data.data);
+                                showMsg(res.data.messages.toString(),'信息','lime');
                             } else {
                                 // TODO add error message to system
+                                showMsg(res.data.errors.toString(),'错误','ruby');
                                 console.log('update failed!');
                             }
                         }
@@ -87,15 +92,17 @@ DcmisApp.controller('pipeCtrl',
             $scope.deluser = function (user) {
                 $http.delete('user/' + user.id).then(
                     function (res) {
-                        if (res.data) {
+                        if (res.data.success) {
                             var index = ctrl.displayed.indexOf(user);
                             if (index !== -1) {
                                 ctrl.displayed.splice(index, 1);
+                                showMsg(res.data.messages.toString(),'信息','lime');
                                 //$state.transitionTo($state.current, $stateParams, { reload: true, inherit: true, notify: true });
                                 //$state.transitionTo('sys-users');
                             } else {
                             }
                         } else {
+                            showMsg(res.data.errors.toString(),'错误','ruby');
                         }
                     }
                 ), function (data) {

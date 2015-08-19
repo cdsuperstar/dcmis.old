@@ -188,8 +188,8 @@ DcmisApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
                             '/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css',
                             '/views/sys-users/sys-users.css',
 
+                            '/js/controllers/GeneralPageController.js',
                             '/views/sys-users/sys-users.js',
-                            '/js/controllers/GeneralPageController.js'
                         ]
                     });
                 }]
@@ -314,6 +314,25 @@ DcmisApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
 //add you menu
 
 }]);
+
+function showMsg(msg,title,style,secs,hor,ver,stk){
+    if(!title)title='提示';
+    if(!style)style='teal';
+    if(!secs)secs=5000;
+    if(!hor)hor='top';
+    if(!ver)ver='right';
+    if(!stk)stk=false;
+    var settings = {
+        theme: style,
+        sticky: stk,
+        horizontalEdge: hor,
+        verticalEdge: ver,
+        life:secs,
+        heading:title,
+        zindex:11500
+    };
+    $.notific8(msg, settings);
+}
 
 /* Init global settings and run the app */
 DcmisApp.run(["$rootScope", "settings", "$state", function($rootScope, settings, $state) {

@@ -36,6 +36,7 @@ License: You must have a valid license purchased only from themeforest(the above
   <link href="/css/ngDialog-theme-plain.css" rel="stylesheet" type="text/css"/>
   <link href="/css/ngDialog-theme-default.css" rel="stylesheet" type="text/css"/>
   <!-- END GLOBAL MANDATORY STYLES -->
+  <link href="/assets/global/plugins/jquery-notific8/jquery.notific8.min.css" rel="stylesheet" type="text/css"/>
 
   <!-- BEGIN DYMANICLY LOADED CSS FILES(all plugin and page related styles must be loaded between GLOBAL and THEME css files ) -->
   <link id="ng_load_plugins_before"/>
@@ -152,6 +153,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="/assets/global/scripts/metronic.js" type="text/javascript"></script>
 <script src="/assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
 <script src="/assets/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
+<script src="/assets/global/plugins/jquery-notific8/jquery.notific8.min.js" type="text/javascript"></script>
 <script src="/assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
 {{--<script src="/vendor/jsvalidation/js/jsvalidation.js" type="text/javascript"></script>--}}
 <!-- END APP LEVEL JQUERY SCRIPTS -->
