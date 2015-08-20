@@ -49,14 +49,16 @@
                 </div>
             </div>
             <div class="portlet-body" style="overflow: auto;">
-                <table>
-                    <tr>
-                        <td class="col-md-1">用户名 : &nbsp;</td>
-                        <td class="col-md-8"><input st-search="email" st-input-event="blur" placeholder="请输入用户名" class="input-sm input-inline form-control" type="search"/></td>
-                        <td class="col-md-1">查询全部 : &nbsp;</td>
-                        <td class="col-md-2"><input st-search st-input-event="blur" placeholder="请输入查找的信息" class="input-sm input-inline form-control" type="search"/></td>
-                    </tr>
-                </table>
+                <div class="col-md-9">
+                    <label>
+                        用户名: &nbsp; <input st-search="email" st-input-event="blur" placeholder="请输入用户名" class="input-sm input-inline form-control" type="search"/>
+                    </label>
+                </div>
+                <div class="col-md-3">
+                    <label>
+                        查询全部 : &nbsp;<input st-search st-input-event="blur" placeholder="请输入查找的信息" class="input-sm input-inline form-control" type="search"/>
+                    </label>
+                </div>
             </div>
         </div>
         <!-- END start search CONTENT -->
