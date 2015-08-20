@@ -34,7 +34,9 @@ DcmisApp.controller('pipeCtrl',
                     controller: ['$scope', 'validationConfig', function ($scope, validationConfig) {
                         $scope.$validationOptions = validationConfig;
                     }],
-                    showClose: true,
+                    showClose: false,
+                    setBodyPadding:1,
+                    overlay:false,
                     closeByEscape: false
                 }).then(function (dcEdition) {
                     $http.post('/user', dcEdition).then(
@@ -66,7 +68,9 @@ DcmisApp.controller('pipeCtrl',
                         $scope.dcEdition = user;
                         $scope.dcEdition.password_confirmation = user.password;
                     }],
-                    showClose: true,
+                    showClose: false,
+                    setBodyPadding:1,
+                    overlay:false,
                     closeByEscape: false
                 }).then(function (dcEdition) {
                     $http.put('/user/' + dcEdition.id, dcEdition).then(

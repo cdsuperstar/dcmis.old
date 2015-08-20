@@ -48,17 +48,15 @@
                     </a>
                 </div>
             </div>
-            <div class="portlet-body" >
-                    <div class="col-md-9">
-                        <label>
-                            用户名: &nbsp; <input st-search="email" st-input-event="blur" placeholder="请输入用户名" class="input-sm input-inline form-control" type="search"/>
-                        </label>
-                    </div>
-                    <div class="col-md-3">
-                        <label>
-                            查询全部 : &nbsp;<input st-search st-input-event="blur" placeholder="请输入查找的信息" class="input-sm input-inline form-control" type="search"/>
-                        </label>
-                    </div>
+            <div class="portlet-body">
+                <table>
+                    <tr>
+                        <td class="col-md-1">用户名 : &nbsp;</td>
+                        <td class="col-md-8"><input st-search="email" st-input-event="blur" placeholder="请输入用户名" class="input-sm input-inline form-control" type="search"/></td>
+                        <td class="col-md-1">查询全部 : &nbsp;</td>
+                        <td class="col-md-2"><input st-search st-input-event="blur" placeholder="请输入查找的信息" class="input-sm input-inline form-control" type="search"/></td>
+                    </tr>
+                </table>
             </div>
         </div>
         <!-- END start search CONTENT -->
@@ -77,7 +75,7 @@
                     </a>
                 </div>
             </div>
-            <div class="portlet-body">
+            <div class="portlet-body" style="overflow: auto;">
                 <div class="col-md-12">
                     <label>
                         显示 <input onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')" class="input-xsmall input-inline form-control ng-valid ng-dirty ng-valid-number ng-touched" name="items" id="items" type="number" ng-model="itemsByPage" ng-model-options="{ updateOn: 'blur' }" /> 条

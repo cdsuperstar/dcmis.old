@@ -11,6 +11,8 @@
                     </a>
                     <a href="" class="collapse">
                     </a>
+                    <a href="" class="remove" ng-click="closeThisDialog(dcEdition)">
+                    </a>
                 </div>
             </div>
             <div class="portlet-body">
