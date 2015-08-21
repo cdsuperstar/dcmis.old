@@ -196,11 +196,11 @@ DcmisApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
             }
         })
 
-        //测试ui commponents
-        .state('sys-usersedit', {
-            url: "/sys-usersedit.html",
-            templateUrl: "views/sys-users/sys-usersedit.html",
-            data: {pageTitle: '用户编辑'},
+        //新闻管理 测试ui commponents
+        .state('sys-news', {
+            url: "/sys-news.html",
+            templateUrl: "views/sys-news/sys-news.html",
+            data: {pageTitle: '新闻管理'},
             controller: "GeneralPageController",
             resolve: {
                 deps: ['$ocLazyLoad', function($ocLazyLoad) {
@@ -208,22 +208,13 @@ DcmisApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
                         name: 'DcmisApp',
                         insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
                         files: [
-                            '/assets/global/plugins/clockface/css/clockface.css',
-                            '/assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css',
-                            '/assets/global/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css',
-                            '/assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css',
-                            '/assets/global/plugins/bootstrap-select/bootstrap-select.min.css',
                             '/assets/global/plugins/select2/select2.css',
-                            '/assets/global/plugins/jquery-multi-select/css/multi-select.css',
+                            '/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css',
+                            '/views/sys-news/sys-news.css',
 
-                            '/assets/global/plugins/bootstrap-select/bootstrap-select.min.js',
-                            '/assets/global/plugins/select2/select2.min.js',
-                            '/assets/global/plugins/jquery-multi-select/js/jquery.multi-select.js',
-                            '/assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js',
-                            '/assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js',
-                            '/views/sys-users/sys-usersedit.js',
+
+                            '/views/sys-news/sys-news.js',
                             '/js/controllers/GeneralPageController.js',
-                            '/assets/ckeditor/ckeditor.js',
 
                         ]
                     });

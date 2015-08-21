@@ -28,10 +28,14 @@ th{
      color: #444;
      font-family: 'Helvetica',sans-serif;
      font-size: 1.1em;
-     line-height: 1.5em;
+     line-height: 0.5em;
      margin: 0 auto;
      max-width: 100%;
-     padding: 1em;
+     padding: 0em;
+     padding-top: 0.5em;
+     padding-left: 0.5em;
+     padding-right: 0.5em;
+     padding-bottom: 0;
      position: relative;
      width: 800px;
  }
