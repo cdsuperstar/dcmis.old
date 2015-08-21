@@ -1,7 +1,5 @@
 var UITree = function () {
 
-
-
     var handleSample = function () {
         $('#slide_tree').jstree({
             'plugins': ["wholerow", "checkbox", "types"],
@@ -10,35 +8,78 @@ var UITree = function () {
                     "responsive": false
                 },
                 'data': [{
-                    "text": "Same but with checkboxes",
+                    "text": "主页",
+                    "icon": "icon-home"
+                },{
+                    "text": "系统设置",
+                    "icon":"icon-settings",
                     "children": [{
-                        "text": "initially selected",
+                        "text": "用户管理",
+                        "icon": "icon-users",
                         "state": {
                             "selected": true
                         }
                     }, {
-                        "text": "custom icon",
-                        "icon": "fa fa-warning icon-state-danger"
+                        "text": "角色管理",
+                        "icon": "icon-globe"
                     }, {
-                        "text": "initially open",
-                        "icon" : "fa fa-folder icon-state-default",
+                        "text": "模块管理",
+                        "icon" : "icon-support",
                         "state": {
                             "opened": true
                         },
-                        "children": ["Another node"]
-                    }, {
-                        "text": "custom icon",
-                        "icon": "fa fa-warning icon-state-warning"
-                    }, {
-                        "text": "disabled node",
-                        "icon": "fa fa-check icon-state-success",
-                        "state": {
-                            "disabled": true
-                        }
+                        "children": [{
+                            "text": "模块编辑",
+                            "icon" : "icon-direction",
+                        },{
+                            "text": "模块列表",
+                            "icon" : "icon-puzzle",
+                        }]
                     }]
-                },
-                    "And wholerow selection"
-                ]
+                },{
+                    "text": "个人中心",
+                    "icon":"icon-user-following",
+                    "children": [{
+                        "text": "新闻公告",
+                        "icon": "icon-bell",
+                        "state": {
+                            "selected": true
+                        },
+                        "children": [{
+                            "text": "发布新闻",
+                            "icon" : "icon-share",
+                        },{
+                            "text": "新闻列表",
+                            "icon" : "icon-share-alt",
+                        }]
+                    }, {
+                        "text": "即时信息",
+                        "icon": "icon-envelope",
+                        "state": {
+                            "opened": true
+                        },
+                        "children": [{
+                            "text": "发信息",
+                            "icon": "icon-envelope-open",
+                        }, {
+                            "text": "信息列表",
+                            "icon": "icon-envelope-letter",
+                        }]
+                    },{
+                        "text": "个人便签",
+                            "icon": "icon-notebook",
+                            "state": {
+                            "opened": true
+                        },
+                        "children": [{
+                            "text": "添加便签",
+                            "icon": "icon-book-open",
+                        }, {
+                            "text": "便签列表",
+                            "icon": "icon-map",
+                        }]
+                    }]
+                }]
             },
             "types" : {
                 "default" : {
@@ -50,8 +91,6 @@ var UITree = function () {
             }
         });
     }
-
-
 
     return {
         //main function to initiate the module
