@@ -35,19 +35,19 @@ DcmisApp.controller('pipeCtrl',
                         $scope.$validationOptions = validationConfig;
                     }],
                     showClose: false,
-                    setBodyPadding:1,
-                    overlay:false,
+                    setBodyPadding: 1,
+                    overlay: false,
                     closeByEscape: false
                 }).then(function (dcEdition) {
                     $http.post('/user', dcEdition).then(
                         function (res) {
                             if (res.data.success) {
                                 ctrl.displayed.push(JSON.parse(res.data.data));
-                                showMsg(res.data.messages.toString(),'信息','lime');
+                                showMsg(res.data.messages.toString(), '信息', 'lime');
                                 console.log("save success", res);
                             } else {
                                 // TODO add error message to system
-                                showMsg(res.data.errors.toString(),'错误','ruby');
+                                showMsg(res.data.errors.toString(), '错误', 'ruby');
                                 console.log('add failed!', res);
                             }
                         }
@@ -69,8 +69,8 @@ DcmisApp.controller('pipeCtrl',
                         $scope.dcEdition.password_confirmation = user.password;
                     }],
                     showClose: false,
-                    setBodyPadding:1,
-                    overlay:false,
+                    setBodyPadding: 1,
+                    overlay: false,
                     closeByEscape: false
                 }).then(function (dcEdition) {
                     $http.put('/user/' + dcEdition.id, dcEdition).then(
@@ -78,10 +78,10 @@ DcmisApp.controller('pipeCtrl',
                             if (res.data.success) {
                                 var index = ctrl.displayed.indexOf(dcEdition);
                                 ctrl.displayed[index] = JSON.parse(res.data.data);
-                                showMsg(res.data.messages.toString(),'信息','lime');
+                                showMsg(res.data.messages.toString(), '信息', 'lime');
                             } else {
                                 // TODO add error message to system
-                                showMsg(res.data.errors.toString(),'错误','ruby');
+                                showMsg(res.data.errors.toString(), '错误', 'ruby');
                                 console.log('update failed!');
                             }
                         }
@@ -100,18 +100,48 @@ DcmisApp.controller('pipeCtrl',
                             var index = ctrl.displayed.indexOf(user);
                             if (index !== -1) {
                                 ctrl.displayed.splice(index, 1);
-                                showMsg(res.data.messages.toString(),'信息','lime');
+                                showMsg(res.data.messages.toString(), '信息', 'lime');
                                 //$state.transitionTo($state.current, $stateParams, { reload: true, inherit: true, notify: true });
                                 //$state.transitionTo('sys-users');
                             } else {
                             }
                         } else {
-                            showMsg(res.data.errors.toString(),'错误','ruby');
+                            showMsg(res.data.errors.toString(), '错误', 'ruby');
                         }
                     }
                 ), function (data) {
                 };
 
+            }
+            $scope.delusers = function () {
+                var aTodel = [];
+                $("input[name='Datacheckbox']").each(function () {
+                    if ($(this).attr("checked")) {
+                        aTodel.push($(this).attr("value"));
+                    }
+                });
+
+                $http.delete('user/' + JSON.stringify(aTodel))
+                    .then(
+                    function (res) {
+                        if (res.data.success) {
+                            for(var delkey in aTodel){
+                                for (var key in ctrl.displayed) {
+                                    if (ctrl.displayed[key].id == aTodel[delkey] ) {
+                                        ctrl.displayed.splice(key,1);
+                                    }
+                                }
+                            }
+                            //$scope.$apply();
+
+                            showMsg(res.data.messages.toString(), '信息', 'lime');
+                        } else {
+                            showMsg(res.data.errors.toString(), '错误', 'ruby');
+                        }
+                    }
+                ),
+                    function (data) {
+                    };
             }
             this.callServer = function callServer(tableState) {
 
@@ -134,7 +164,8 @@ DcmisApp.controller('pipeCtrl',
                     ctrl.isLoading = false;
                 });
             };
-        }]);
+        }])
+;
 
 
 DcmisApp.directive('confirmationNeeded', function () {
@@ -155,25 +186,25 @@ DcmisApp.directive('confirmationNeeded', function () {
 DcmisApp.directive('csSelect', function () {
     return {
         require: '^stTable',
-        template: '<input name="Datacheckbox" type="checkbox"/>',
+        template: '<input name="Datacheckbox" value="{{row.id}}" type="checkbox"/>',
         scope: {
             row: '=csSelect'
         },
         link: function (scope, element, attr, ctrl) {
 
-            element.bind('change', function (evt) {
-                scope.$apply(function () {
-                    ctrl.select(scope.row, 'multiple');
-                });
-            });
-
-            scope.$watch('row.isSelected', function (newValue, oldValue) {
-                if (newValue === true) {
-                    element.parent().addClass('st-selected');
-                } else {
-                    element.parent().removeClass('st-selected');
-                }
-            });
+            //element.bind('change', function (evt) {
+            //    scope.$apply(function () {
+            //        ctrl.select(scope.row, 'multiple');
+            //    });
+            //});
+            //
+            //scope.$watch('row.isSelected', function (newValue, oldValue) {
+            //    if (newValue === true) {
+            //        element.parent().addClass('st-selected');
+            //    } else {
+            //        element.parent().removeClass('st-selected');
+            //    }
+            //});
         }
     };
 });

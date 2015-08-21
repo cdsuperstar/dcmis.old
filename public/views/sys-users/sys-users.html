@@ -83,7 +83,7 @@
                         显示 <input onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')" class="input-xsmall input-inline form-control ng-valid ng-dirty ng-valid-number ng-touched" name="items" id="items" type="number" ng-model="itemsByPage" ng-model-options="{ updateOn: 'blur' }" /> 条
                     </label>
                     <label class="dataTables-filter">
-                        <button class="btn btn-default grey">
+                        <button class="btn btn-default grey" ng-click="delusers()" confirmation-needed="确定要删除该条数据吗？">
                             <i class="fa fa-trash-o"></i> &nbsp;批量删除 </button>
                     </label>                </div>
                 <table class="table table-striped table-hover table-bordered">
@@ -112,7 +112,7 @@
                     </thead>
                     <tbody ng-hide="mc.isLoading">
                     <tr ng-repeat="user in mc.displayed">
-                        <td cs-select="row" align="center"></td>
+                        <td cs-select="user" align="center"></td>
                         <td>
                             {{ user.email }}
                         </td>

@@ -125,7 +125,15 @@ class userController extends Controller
      */
     public function destroy($id)
     {
-        $deletedRows = User::destroy($id);
+        $aTodel=array();
+        $aTmp=json_decode($id);
+        if( is_array($aTmp)){
+            $aTodel=$aTmp;
+        }else{
+            $aTodel[]=$id;
+        }
+
+        $deletedRows = User::destroy($aTodel);
         if($deletedRows){
             return response()->json([
                 'messages' => trans('users.deletesuccess',['rows'=>$deletedRows]),
