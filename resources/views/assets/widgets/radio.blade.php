@@ -1,29 +1,21 @@
 <div class="form-group form-radio-inline">
-    <label class="col-md-2 control-label">radio属性</label>
+    <label class="col-md-2 control-label"> 性 别 </label>
     <div class="col-md-10" style="margin-top: 10px;">
         <div class="md-radio">
-            <input type="radio" id="radio6" name="radio2" class="md-radiobtn">
+            <input type="radio" id="radio6" name="sex" value="1" ng-model="dcEdition.sex" class="md-radiobtn" ng-checked="dcEdition.sex==1">
             <label for="radio6">
                 <span></span>
                 <span class="check"></span>
                 <span class="box"></span>
-                Option 1 </label>
+                男 </label>
         </div>
         <div class="md-radio">
-            <input type="radio" id="radio7" name="radio2" class="md-radiobtn" checked>
+            <input type="radio" id="radio7" name="sex" value="0" ng-model="dcEdition.sex" class="md-radiobtn" ng-checked="dcEdition.sex==0">
             <label for="radio7">
                 <span></span>
                 <span class="check"></span>
                 <span class="box"></span>
-                Option 2 </label>
-        </div>
-        <div class="md-radio">
-            <input type="radio" id="radio8" name="radio2" class="md-radiobtn">
-            <label for="radio8">
-                <span></span>
-                <span class="check"></span>
-                <span class="box"></span>
-                Option 3 </label>
+                女 </label>
         </div>
         <div class="form-control-focus">
             <hr>

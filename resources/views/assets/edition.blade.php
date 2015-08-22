@@ -47,8 +47,3 @@
     </div>
 </div>
 <!-- END PAGE -->
-<script type="text/javascript">
-//    jQuery(document).ready(function() {
-//        datePickers.init();
-//    });
-</script>
