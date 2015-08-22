@@ -62,10 +62,10 @@
                             描述
                         </th>
                         <th>
-                            Edit
+                            编辑
                         </th>
                         <th>
-                            Delete
+                            删除
                         </th>
                     </tr>
                     </thead>
@@ -82,12 +82,12 @@
                             @{{user.description}}
                         </td>
                         <td align="center">
-                            <a href="javascript:;" class="dcaedit" ng-click="edituser(user)">
+                            <a href="javascript:;" class="dcaedit" ng-click="edituser(user)" title="编辑该条数据！">
                                 Edit <i class="fa fa-edit"></i>
                             </a>
                         </td>
                         <td align="center">
-                            <a href="javascript:;" class="dcadel" ng-click="deluser(user)" confirmation-needed="确定要删除该条数据吗？">
+                            <a href="javascript:;" class="dcadel" ng-click="deluser(user)" confirmation-needed="确定要删除该条数据吗？" title="删除该条数据！">
                                 Delete <i class="fa fa-times"></i>
                             </a>
                         </td>
