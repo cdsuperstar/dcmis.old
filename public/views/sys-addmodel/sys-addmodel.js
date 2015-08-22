@@ -32,10 +32,9 @@ var FormWizard = function () {
                         required: true
                     },
                     modelin: {
-                        minlength: 5,
-                        required: true
+                        minlength: 1
                     },
-                    modelsx: {
+                    modellx: {
                         required: true
                     },
                     //profile
@@ -193,6 +192,9 @@ var FormWizard = function () {
 
             $('#form_wizard_1').find('.button-previous').hide();
             $('#form_wizard_1 .button-submit').click(function () {
+                jsontmp = onClik();
+                alert(jsontmp);
+
                 alert('Finished! Hope you like it :)');
             }).hide();
 
@@ -205,6 +207,29 @@ var FormWizard = function () {
     };
 
 }();
+$.fn.serializeObject = function()
+{
+    var o = {};
+    var a = this.serializeArray();
+    $.each(a, function() {
+        if (o[this.name]) {
+            if (!o[this.name].push) {
+                o[this.name] = [o[this.name]];
+            }
+            o[this.name].push(this.value || '');
+        } else {
+            o[this.name] = this.value || '';
+        }
+    });
+    return o;
+};
+
+function onClik(){
+    //var data = $("#form1").serializeArray(); //自动将form表单封装成json
+    //alert(JSON.stringify(data));
+    var jsonuserinfo = $('#submit_form').serializeObject();
+    return JSON.stringify(jsonuserinfo);
+}
 
 function selectval(){
     var tmpVal=$("#modelzj").val();
