@@ -94,9 +94,27 @@ class dcResController extends Controller
     {
 
         return view('assets.edition')->with([
-            'fields'=>User::$angularrules,
-            'title'=>'用户编辑器',
+            'fields' => User::$angularrules,
+            'title' => '用户编辑器',
         ]);
+    }
+
+    public function getDjs($sJsFile)
+    {
+        \Debugbar::disable();
+        header('text/javascript');
+        return view('assets.' . $sJsFile);
+    }
+
+    public function getTpls($sTpls)
+    {
+        return view('style.default.tpls.' . $sTpls);
+    }
+
+    public function getTemplateurl($sModel)
+    {
+
+        return view('style.default.templateurl', ['sModel' => $sModel]);
     }
 
     public function dcComponentSelector($comId)
@@ -114,46 +132,46 @@ class dcResController extends Controller
 
     public function getComMetrcss($id)
     {
-        $mycomp=$this->dcComponentSelector($id);
+        $mycomp = $this->dcComponentSelector($id);
         $aTmp = explode('+', $id);
-        $sRet='';
+        $sRet = '';
         foreach ($aTmp as $sComp) {
-            $sRet.="\r\n<!-- Component: ".$sComp." -->\r\n";
-            $sRet.=implode("\r\n",$mycomp->getMetronicStuffs($sComp,$mycomp::PM_PAGE_LEVEL_STYLES));
-            $sRet.="\r\n";
+            $sRet .= "\r\n<!-- Component: " . $sComp . " -->\r\n";
+            $sRet .= implode("\r\n", $mycomp->getMetronicStuffs($sComp, $mycomp::PM_PAGE_LEVEL_STYLES));
+            $sRet .= "\r\n";
         }
         return $sRet;
     }
 
     public function getComMetrjs($id)
     {
-        $mycomp=$this->dcComponentSelector($id);
+        $mycomp = $this->dcComponentSelector($id);
         $aTmp = explode('+', $id);
-        $sRet='';
+        $sRet = '';
         foreach ($aTmp as $sComp) {
-            $sRet.="\r\n<!-- Component: ".$sComp." -->\r\n";
-            $sRet.=implode("\r\n",$mycomp->getMetronicStuffs($sComp,$mycomp::PM_PAGE_LEVEL_PLUGINS));
-            $sRet.="\r\n";
+            $sRet .= "\r\n<!-- Component: " . $sComp . " -->\r\n";
+            $sRet .= implode("\r\n", $mycomp->getMetronicStuffs($sComp, $mycomp::PM_PAGE_LEVEL_PLUGINS));
+            $sRet .= "\r\n";
         }
         return $sRet;
     }
 
     public function getComMetrinitjs($id)
     {
-        $mycomp=$this->dcComponentSelector($id);
+        $mycomp = $this->dcComponentSelector($id);
         $aTmp = explode('+', $id);
-        $sRet='';
+        $sRet = '';
         foreach ($aTmp as $sComp) {
-            $sRet.="\r\n<!-- Component: ".$sComp." -->\r\n";
-            $sRet.=implode("\r\n",$mycomp->getMetronicStuffs($sComp,$mycomp::PM_PAGE_INIT_SCRIPT));
-            $sRet.="\r\n";
+            $sRet .= "\r\n<!-- Component: " . $sComp . " -->\r\n";
+            $sRet .= implode("\r\n", $mycomp->getMetronicStuffs($sComp, $mycomp::PM_PAGE_INIT_SCRIPT));
+            $sRet .= "\r\n";
         }
         return $sRet;
     }
 
     public function getCompDemo($id)
     {
-        $mycomp=$this->dcComponentSelector($id);
+        $mycomp = $this->dcComponentSelector($id);
         return view('assets.comdemo', ['mycomp' => $mycomp]);
     }
 }
