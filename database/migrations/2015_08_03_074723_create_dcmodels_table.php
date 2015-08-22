@@ -17,9 +17,10 @@ class CreateDcmodelsTable extends Migration
             $table->string('name')->unique();
             $table->string('title');
             $table->tinyInteger('ismenu');
-            $table->string('icon');
-            $table->string('url');
-            $table->string('templateUrl');
+            $table->string('icon')->nullable();
+            $table->string('url')->nullable();
+            $table->string('templateUrl')->nullable();
+            $table->text('files')->nullable();
             $table->timestamps();
         });
     }

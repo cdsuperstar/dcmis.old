@@ -212,7 +212,6 @@ DcmisApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
                             '/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css',
                             '/views/sys-news/sys-news.css',
 
-
                             '/views/sys-news/sys-news.js',
                             '/js/controllers/GeneralPageController.js',
 

@@ -13,7 +13,7 @@
         </li>
         <!-- BEGIN SYS PATH -->
         <li>
-            <a href="{##}">{##}</a>
+            <a href="#"></a>
         </li>
         <!-- END SYS PATH -->
     </ul>
@@ -40,5 +40,5 @@
     </div>
 </div>
 <!-- END PAGE HEADER-->
-@include('style.default.views.'.$sModel.'.'.$sModel);
+@include('style.default.views.'.$sModel.'.'.$sModel)
 
