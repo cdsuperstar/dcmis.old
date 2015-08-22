@@ -188,8 +188,8 @@ DcmisApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
                             '/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css',
                             '/views/sys-users/sys-users.css',
 
-                            '/js/controllers/GeneralPageController.js',
                             '/views/sys-users/sys-users.js',
+                            '/js/controllers/GeneralPageController.js'
                         ]
                     });
                 }]
@@ -291,10 +291,10 @@ DcmisApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
                         name: 'DcmisApp',
                         insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
                         files: [
-                            '/assets/global/plugins/jstree/dist/themes/default/style.min.css',
+                            '/assets/global/plugins/select2/select2.css',
+                            '/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css',
+                            '/views/sys-role/sys-role.css',
 
-                            '/assets/global/plugins/jstree/dist/jstree.min.js',
-                            '/assets/admin/pages/scripts/ui-tree.js',
                             '/views/sys-role/sys-role.js',
                             '/js/controllers/GeneralPageController.js'
                         ]

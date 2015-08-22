@@ -13,12 +13,12 @@
                 </div>
             </div>
             <div class="portlet-body" style="overflow: auto;">
-                <div class="col-md-9">
+                <div class="col-md-8">
                     <label>
                         用户名: &nbsp; <input st-search="email" st-input-event="blur" placeholder="请输入用户名" class="input-sm input-inline form-control" type="search"/>
                     </label>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <label>
                         查询全部 : &nbsp;<input st-search st-input-event="blur" placeholder="请输入查找的信息" class="input-sm input-inline form-control" type="search"/>
                     </label>
@@ -93,13 +93,15 @@
                                 <option value="行政主管">行政主管</option>
                             </select>
                         </td>
-                        <td>
-                            <a class="edit" ng-click="edituser(user)"  href="javascript:;">
-                                Edit </a>
+                        <td align="center">
+                            <a href="javascript:;" class="dcaedit" ng-click="edituser(user)">
+                                Edit <i class="fa fa-edit"></i>
+                            </a>
                         </td>
-                        <td>
-                            <a class="delete" ng-click="deluser(user)" confirmation-needed="确定要删除该条数据吗？"  href="javascript:;">
-                                Delete </a>
+                        <td align="center">
+                            <a href="javascript:;" class="dcadel" ng-click="deluser(user)" confirmation-needed="确定要删除该条数据吗？">
+                                Delete <i class="fa fa-times"></i>
+                            </a>
                         </td>
                     </tr>
                     </tbody>

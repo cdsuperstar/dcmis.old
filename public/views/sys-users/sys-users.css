@@ -40,3 +40,12 @@ th{
      width: 800px;
  }
 .jquery-notific8-container.top { top: 60px; }
+
+.dcaedit:hover {
+    BORDER-RIGHT: #26A69A 0px solid; PADDING-RIGHT: 0px; BORDER-TOP: #26A69A 0px solid; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; BORDER-LEFT: #26A69A 0px solid; COLOR: #3379B5; PADDING-TOP: 0px; BORDER-BOTTOM: #E4FFFC 0px solid
+}
+
+.dcadel:hover {
+    BORDER-RIGHT: #26A69A 0px solid; PADDING-RIGHT: 0px; BORDER-TOP: #26A69A 0px solid; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; BORDER-LEFT: #26A69A 0px solid; COLOR: #C23F44; PADDING-TOP: 0px; BORDER-BOTTOM: #E4FFFC 0px solid
+}
+
