@@ -146,6 +146,8 @@ return [
         Laracasts\Generators\GeneratorsServiceProvider::class,
         Zizaco\Entrust\EntrustServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
+        Baum\Providers\BaumServiceProvider::class,
+    //watson/validating
 
     ],
 

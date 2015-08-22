@@ -155,7 +155,7 @@ DcmisApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
         // Dashboard
         .state('dashboard', {
             url: "/dashboard.html",
-            templateUrl: "views/dashboard.html",
+            templateUrl: "/dcassets/templateurl//dashboard",
             data: {pageTitle: '主页'},
             controller: "GeneralPageController",
             resolve: {
@@ -175,7 +175,7 @@ DcmisApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
         //用户管理
         .state('sys-users', {
             url: "/sys-users.html",
-            templateUrl: "views/sys-users/sys-users.html",
+            templateUrl: "/dcassets/templateurl/sys-users",
             data: {pageTitle: '用户管理'},
             controller: "GeneralPageController",
             resolve: {
@@ -199,7 +199,7 @@ DcmisApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
         //新闻管理 测试ui commponents
         .state('sys-news', {
             url: "/sys-news.html",
-            templateUrl: "views/sys-news/sys-news.html",
+            templateUrl: "/dcassets/templateurl/sys-news",
             data: {pageTitle: '新闻管理'},
             controller: "GeneralPageController",
             resolve: {
@@ -226,7 +226,7 @@ DcmisApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
         //模块列表
         .state('sys-model', {
             url: "/sys-model.html",
-            templateUrl: "views/sys-model/sys-model.html",
+            templateUrl: "/dcassets/templateurl/sys-model",
             data: {pageTitle: '模块列表'},
             controller: "GeneralPageController",
             resolve: {
@@ -252,7 +252,7 @@ DcmisApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
         //模块管理-模块编辑
         .state('sys-addmodel', {
             url: "/sys-addmodel.html",
-            templateUrl: "views/sys-addmodel/sys-addmodel.html",
+            templateUrl: "/dcassets/templateurl/sys-addmodel",
             data: {pageTitle: '模块编辑'},
             controller: "GeneralPageController",
             resolve: {
@@ -282,7 +282,7 @@ DcmisApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
         //角色管理
         .state('sys-role', {
             url: "/sys-role.html",
-            templateUrl: "views/sys-role/sys-role.html",
+            templateUrl: "/dcassets/templateurl/sys-role",
             data: {pageTitle: '角色管理'},
             controller: "GeneralPageController",
             resolve: {

@@ -76,7 +76,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- END PAGE SPINNER -->
 
 <!-- BEGIN HEADER -->
-<div data-ng-include="'/tpls/default/header.html'" data-ng-controller="HeaderController" class="page-header navbar navbar-fixed-top">
+<div data-ng-include="'/dcassets/tpls/header'" data-ng-controller="HeaderController" class="page-header navbar navbar-fixed-top">
 </div>
 <!-- END HEADER -->
 
@@ -86,7 +86,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- BEGIN CONTAINER -->
 <div class="page-container">
   <!-- BEGIN SIDEBAR -->
-  <div data-ng-include="'/tpls/default/sidebar.html'" data-ng-controller="SidebarController" class="page-sidebar-wrapper">
+  <div data-ng-include="'/dcassets/tpls/sidebar'" data-ng-controller="SidebarController" class="page-sidebar-wrapper">
   </div>
   <!-- END SIDEBAR -->
 
@@ -104,13 +104,13 @@ License: You must have a valid license purchased only from themeforest(the above
 
   <!-- BEGIN QUICK SIDEBAR -->
   <a href="javascript:;" class="page-quick-sidebar-toggler"><i class="icon-close"></i></a>
-  <div data-ng-include="'/tpls/default/quick-sidebar.html'" data-ng-controller="QuickSidebarController" class="page-quick-sidebar-wrapper"></div>
+  <div data-ng-include="'/dcassets/tpls/quick-sidebar'" data-ng-controller="QuickSidebarController" class="page-quick-sidebar-wrapper"></div>
   <!-- END QUICK SIDEBAR -->
 
 </div>
 <!-- END CONTAINER -->
 <!-- BEGIN FOOTER -->
-<div data-ng-include="'/tpls/default/footer.html'" data-ng-controller="FooterController" class="page-footer">
+<div data-ng-include="'/dcassets/tpls/footer'" data-ng-controller="FooterController" class="page-footer">
 </div>
 <!-- END FOOTER -->
 
@@ -134,18 +134,18 @@ License: You must have a valid license purchased only from themeforest(the above
 
 <!-- BEGIN CORE ANGULARJS PLUGINS -->
 {{--<script src="/assets/global/plugins/angularjs/angular.min.js" type="text/javascript"></script>--}}
-<script src="/js/angular.js" type="text/javascript"></script>
+<script src="/js/bower_components/angular/angular.js" type="text/javascript"></script>
 <script src="/assets/global/plugins/angularjs/angular-sanitize.min.js" type="text/javascript"></script>
 <script src="/assets/global/plugins/angularjs/angular-touch.min.js" type="text/javascript"></script>
 <script src="/assets/global/plugins/angularjs/plugins/angular-ui-router.min.js" type="text/javascript"></script>
 <script src="/assets/global/plugins/angularjs/plugins/ocLazyLoad.min.js" type="text/javascript"></script>
 <script src="/assets/global/plugins/angularjs/plugins/ui-bootstrap-tpls.min.js" type="text/javascript"></script>
-<script src="/js/smart-table.min.js" type="text/javascript"></script>
+<script src="/js/bower_components/angular-smart-table/dist/smart-table.js" type="text/javascript"></script>
 <script src="/js/ngDialog.js" type="text/javascript"></script>
 <!-- END CORE ANGULARJS PLUGINS -->
 
 <!-- BEGIN APP LEVEL ANGULARJS SCRIPTS -->
-<script src="/js/app.js" type="text/javascript"></script>
+<script src="/dcassets/djs/appjs" type="text/javascript"></script>
 <script src="/js/directives.js" type="text/javascript"></script>
 <!-- END APP LEVEL ANGULARJS SCRIPTS -->
 

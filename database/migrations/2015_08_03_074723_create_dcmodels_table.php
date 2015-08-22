@@ -16,17 +16,10 @@ class CreateDcmodelsTable extends Migration
             $table->increments('id');
             $table->string('name')->unique();
             $table->string('title');
-            $table->string('group')->nullable();
-            $table->boolean('isgroup');
             $table->tinyInteger('ismenu');
             $table->string('icon');
             $table->string('url');
             $table->string('templateUrl');
-            $table->tinyInteger('order');
-            $table->string('controller');
-            $table->text('componentid');
-            $table->text('script');
-            $table->text('css');
             $table->timestamps();
         });
     }
