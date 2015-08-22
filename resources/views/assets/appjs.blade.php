@@ -155,7 +155,7 @@ DcmisApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
         // Dashboard
         .state('dashboard', {
             url: "/dashboard.html",
-            templateUrl: "/dcassets/templateurl//dashboard",
+            templateUrl: "/dcassets/templateurl/dashboard",
             data: {pageTitle: '主页'},
             controller: "GeneralPageController",
             resolve: {
