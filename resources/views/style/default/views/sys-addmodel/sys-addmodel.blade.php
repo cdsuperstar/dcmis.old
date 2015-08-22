@@ -1,4 +1,44 @@
-
+<!-- BEGIN PAGE HEADER-->
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a href="#/dashboard.html">主页</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a href="#">系统设置</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a href="#sys-model.html">模块管理</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a href="#sys-addmodel.html">模块编辑</a>
+        </li>
+    </ul>
+    <div class="page-toolbar">
+        <div class="btn-group pull-right">
+            <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown"
+                    data-hover="dropdown" data-delay="1000" data-close-others="true">
+                选 项 <i class="fa fa-angle-down"></i>
+            </button>
+            <ul class="dropdown-menu pull-right" role="menu">
+                <li>
+                    <a href="#">
+                        <i class="icon-envelope-open"></i> 新消息 </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-calendar"></i> 新便签 <span class="badge badge-success">4</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- END PAGE HEADER-->
 <!-- BEGIN MAIN CONTENT -->
 <div class="row">
     <div class="col-md-12">
@@ -90,24 +130,26 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-md-3">父节点 <span class="required">
+                                        <label class="control-label col-md-3">菜单类型 <span class="required">
 													* </span>
+                                        </label>
+                                        <div class="col-md-4">
+                                            <select name="modellx" class="form-control">
+                                                <option value="1"> 显示 </option>
+                                                <option value="0"> 隐藏 </option>
+                                            </select>
+														<span class="help-block">
+                                                        请选择菜单类型 </span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3"> 模 板
                                         </label>
 
                                         <div class="col-md-4">
                                             <input type="text" class="form-control" name="modelin"/>
 														<span class="help-block">
-														请输入父节点 </span>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3">模块顺序 <span class="required">
-													* </span>
-                                        </label>
-                                        <div class="col-md-4">
-                                            <input type="text" class="form-control" name="modelsx" onkeyup="(this.v=function(){this.value=this.value.replace(/[^0-9-]+/,'');}).call(this)" onblur="this.v();"/>
-														<span class="help-block">
-                                                        请输入模块顺序 </span>
+														请输入模板 </span>
                                         </div>
                                     </div>
                                 </div>
@@ -445,18 +487,18 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-md-3">父节点:</label>
+                                        <label class="control-label col-md-3">模块类型:</label>
 
                                         <div class="col-md-4">
-                                            <p class="form-control-static" data-display="modelin">
+                                            <p class="form-control-static" data-display="modellx">
                                             </p>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-md-3">模块顺序:</label>
+                                        <label class="control-label col-md-3">模板:</label>
 
                                         <div class="col-md-4">
-                                            <p class="form-control-static" data-display="modelsx">
+                                            <p class="form-control-static" data-display="modelin">
                                             </p>
                                         </div>
                                     </div>
@@ -474,6 +516,31 @@
 
                                         <div class="col-md-4">
                                             <p class="form-control-static" data-display="modelzj">
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <h4 class="form-section">加载信息</h4>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">加载css:</label>
+
+                                        <div class="col-md-4">
+                                            <p class="form-control-static" data-display="modelcss">
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">加载JavaScript:</label>
+
+                                        <div class="col-md-4">
+                                            <p class="form-control-static" data-display="modelscript">
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">加载INIT信息:</label>
+
+                                        <div class="col-md-8">
+                                            <p class="form-control-static" data-display="modelinitscript">
                                             </p>
                                         </div>
                                     </div>
