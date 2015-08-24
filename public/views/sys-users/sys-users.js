@@ -146,6 +146,7 @@ DcmisApp.controller('pipeCtrl',
             this.callServer = function callServer(tableState) {
 
                 ctrl.isLoading = true;
+                ctrl.noResult = false;
 
                 var pagination = tableState.pagination;
 
@@ -158,6 +159,8 @@ DcmisApp.controller('pipeCtrl',
                     if (tableState.sort.predicate) {
                         filtered = $filter('orderBy')(filtered, tableState.sort.predicate, tableState.sort.reverse);
                     }
+                    if(filtered.length==0) ctrl.noResult = true;
+                    else ctrl.noResult = false;
 
                     ctrl.displayed = filtered.slice(start, start + number);
                     tableState.pagination.numberOfPages = Math.ceil(result.data.length / $scope.itemsByPage);//result.numberOfPages;//set the number of pages so the pagination can update

@@ -77,7 +77,13 @@
                         </th>
                     </tr>
                     </thead>
-                    <tbody ng-hide="mc.isLoading">
+                    <tbody>
+                    <tr ng-show="mc.isLoading">
+                        <td colspan="8" ng-show="mc.isLoading" class="text-center"> 数据加载中 ... </td>
+                    </tr>
+                    <tr ng-show="mc.noResult">
+                        <td colspan="8" ng-show="mc.noResult" class="text-center" bgcolor="#f0f8ff"> 无符合条件数据! 请输入条件重新查询...  </td>
+                    </tr>
                     <tr ng-repeat="user in mc.displayed">
                         <td cs-select="user" align="center"></td>
                         <td align="center">@{{ $index+1 }}</td>
@@ -109,14 +115,9 @@
                         </td>
                     </tr>
                     </tbody>
-                    <tbody ng-show="mc.isLoading">
-                    <tr>
-                        <td colspan="7" class="text-center">Loading ... </td>
-                    </tr>
-                    </tbody>
                     <tfoot>
                     <tr>
-                        <td colspan="7"  st-pagination st-items-by-page="itemsByPage" class="text-center">
+                        <td colspan="8"  st-pagination st-items-by-page="itemsByPage" class="text-center">
                         </td>
                     </tr>
                     </tfoot>
