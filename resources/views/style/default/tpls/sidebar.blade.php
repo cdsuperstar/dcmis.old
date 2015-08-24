@@ -21,7 +21,6 @@
             </li>
         </ul>
     </script>
-    <input type="button" ng-click="" value="xxxx">
 
     <ul ng-repeat="tree in ::mdTreeJson " class="page-sidebar-menu" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" ng-class="{'page-sidebar-menu-closed': settings.layout.pageSidebarClosed}">
 		<!-- DOC: To remove the search box from the sidebar you just need to completely remove the below "sidebar-search-wrapper" LI element -->
@@ -41,7 +40,6 @@
 			</form>
 			<!-- END RESPONSIVE QUICK SEARCH FORM -->
 		</li>
-
         <li  ng-repeat="tree in ::tree.children" ng-include="'categoryTree'"></li>
 
         {{--<li >--}}
