@@ -54,8 +54,11 @@
                     <thead>
                     <tr>
                         <th><input type="checkbox" id="checkPathAll" onclick="JavaScript:checkout();"/></th>
+                        <th>
+                            序
+                        </th>
                         <th st-sort="email">
-                            用户名1
+                            用户名
                         </th>
                         <th st-sort='name'>
                             姓名
@@ -77,6 +80,7 @@
                     <tbody ng-hide="mc.isLoading">
                     <tr ng-repeat="user in mc.displayed">
                         <td cs-select="user" align="center"></td>
+                        <td align="center">@{{ $index+1 }}</td>
                         <td>
                             @{{ user.email }}
                         </td>
