@@ -97,7 +97,7 @@ FILESIN
                     'name' => 'sys-modelst',
                     'title' => '模块管理',
                     'ismenu' => '1',
-                    'icon' => '',
+                    'icon' => 'icon-support',
                     'url' => '',
                     'templateUrl' => '',
                     'files' => <<<FILESIN
@@ -118,9 +118,9 @@ FILESIN
                     'name' => 'sys-addmodel',
                     'title' => '模块编辑',
                     'ismenu' => '0',
-                    'icon' => '/sys-addmodel.html',
-                    'url' => '#/dcassets/templateurl/sys-addmodel',
-                    'templateUrl' => '',
+                    'icon' => 'icon-direction',
+                    'url' => '#/sys-addmodel.html',
+                    'templateUrl' => '/dcassets/templateurl/sys-addmodel',
                     'files' => <<<FILESIN
                             '/assets/global/plugins/select2/select2.css',
                             '/assets/global/plugins/bootstrap-select/bootstrap-select.min.css',
