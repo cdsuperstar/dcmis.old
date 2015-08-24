@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\dcClass\dcComponentSelector;
+use App\models\dcMdGrp;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -102,8 +103,9 @@ class dcResController extends Controller
     public function getDjs($sJsFile)
     {
         \Debugbar::disable();
+        $mdTreeJson=dcMdGrp::with(['dcmodel'=>function($q){$q->addSelect(array('id','name','title','ismenu','icon','url','templateUrl','files'));}])->get()->tohierarchy()->toJson();
         header('text/javascript');
-        return view('assets.' . $sJsFile);
+        return view('assets.' . $sJsFile,['mdTreeJson'=>$mdTreeJson]);
     }
 
     public function getTpls($sTpls)

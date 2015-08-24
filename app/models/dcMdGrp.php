@@ -24,5 +24,9 @@ class dcMdGrp extends Node
     // guard attributes from mass-assignment
     protected $guarded = array('id', 'parent_id', 'lft', 'rgt', 'depth');
 
+    public function dcmodel()
+    {
+        return $this->belongsTo('App\models\dcmodel');
+    }
 
 }

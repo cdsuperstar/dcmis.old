@@ -61,4 +61,8 @@ class User extends Ardent implements AuthenticatableContract, CanResetPasswordCo
      */
     protected $hidden = ['remember_token'];
 
+    public function roles()
+    {
+        return $this->belongsToMany('App\models\role');
+    }
 }

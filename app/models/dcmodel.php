@@ -20,4 +20,8 @@ class dcmodel extends Model
      *
      * @return string
      */
+    public function dcmdgrp()
+    {
+        return $this->hasOne('App\models\dcMdGrp');
+    }
 }
