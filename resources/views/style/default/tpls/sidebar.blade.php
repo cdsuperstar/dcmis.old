@@ -7,11 +7,11 @@
 	<!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
 	<!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
     <script type="text/ng-template" id="categoryTree">
-        <a ng-href="#@{{ ::tree.dcmodel.url }}"  ng-if="::tree.children.length==0">
+        <a href="#@{{ ::tree.dcmodel.url }}"  ng-if="::tree.children.length==0">
             <i class="@{{ ::tree.dcmodel.icon }}"></i>
             @{{ ::tree.dcmodel.title }}
         </a>
-        <a ng-href="javascript:;" ng-if="::tree.children.length>0">
+        <a href="javascript:;" ng-if="::tree.children.length>0">
             <i class="@{{ ::tree.dcmodel.icon }}"></i>
             <span class="title">@{{ ::tree.dcmodel.title }}</span>
             <span class="arrow "></span>

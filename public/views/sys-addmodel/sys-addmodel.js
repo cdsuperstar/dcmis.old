@@ -195,7 +195,7 @@ var FormWizard = function () {
                 var dcmodelinfo = $('#submit_form').serializeArray();
 
                 //$('#submit_form').submit();
-                //alert(jsontmp);
+                console.log(dcmodelinfo);
                 $.post("/dcmodel",'{1}').success(function(res){
                         console.log('return !',res);
                         //if(res.data.success){
