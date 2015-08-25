@@ -1,7 +1,7 @@
 <div class="form-group form-md-line-input">
-    <label class="col-md-2 control-label" for="name">Í¼±ê</label>
+    <label class="col-md-2 control-label" for="name">å›¾æ ‡</label>
     <div class="col-md-10">
-        <input type="text" name="icon" class="form-control" ng-model="dcEdition.icon" validation="{{ $fieldval }}" placeholder="ÇëÊäÈëÍ¼±ê´úÂë">
+        <input type="text" name="icon" class="form-control" ng-model="dcEdition.icon" validation="{{ $fieldval }}" placeholder="è¯·è¾“å…¥å›¾æ ‡ä»£ç ">
         <i class="{{ $fieldval }}"></i>
         <div class="form-control-focus">
         </div>

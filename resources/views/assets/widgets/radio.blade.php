@@ -1,5 +1,5 @@
 <div class="form-group form-radio-inline">
-    <label class="col-md-2 control-label"> ÐÔ ±ð </label>
+    <label class="col-md-2 control-label"> æ€§ åˆ« </label>
     <div class="col-md-10" style="margin-top: 10px;">
         <div class="md-radio">
             <input type="radio" id="radio6" name="sex" value="1" ng-model="dcEdition.sex" class="md-radiobtn" ng-checked="dcEdition.sex==1">
@@ -7,7 +7,7 @@
                 <span></span>
                 <span class="check"></span>
                 <span class="box"></span>
-                ÄÐ </label>
+                ç”· </label>
         </div>
         <div class="md-radio">
             <input type="radio" id="radio7" name="sex" value="0" ng-model="dcEdition.sex" class="md-radiobtn" ng-checked="dcEdition.sex==0">
@@ -15,7 +15,7 @@
                 <span></span>
                 <span class="check"></span>
                 <span class="box"></span>
-                Å® </label>
+                å¥³ </label>
         </div>
         <div class="form-control-focus">
             <hr>
