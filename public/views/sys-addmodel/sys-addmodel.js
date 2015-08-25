@@ -203,11 +203,11 @@ var FormWizard = function () {
                     success: function (res) {
                         if (res.success) {
                             showMsg(res.messages.toString(), '信息', 'lime');
-                            console.log("save success", res);
+                            //console.log("save success", res);
                         } else {
                             // TODO add error message to system
                             showMsg(res.errors.toString(), '错误', 'ruby');
-                            console.log('add failed!', res);
+                            //console.log('add failed!', res);
                         }
                     }
                 });
