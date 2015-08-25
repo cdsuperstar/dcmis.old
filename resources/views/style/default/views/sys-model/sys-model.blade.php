@@ -1,6 +1,6 @@
 <!-- BEGIN MAIN CONTENT -->
-<div class="row" ng-controller="modellistcontroll as mc">
-    <div class="col-md-12" st-pipe="mc.callServer"  st-table="mc.displayed">
+<div class="row" ng-controller="modellistcontroll as modelc">
+    <div class="col-md-12" st-pipe="modelc.callServer"  st-table="modelc.displayed">
         <!-- BEGIN start search CONTENT -->
         <div class="portlet box blue">
             <div class="portlet-title">
@@ -81,13 +81,13 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr ng-show="mc.isLoading">
-                        <td colspan="10" ng-show="mc.isLoading" class="text-center"> 数据加载中 ... </td>
+                    <tr ng-show="modelc.isLoading">
+                        <td colspan="10" ng-show="modelc.isLoading" class="text-center"> 数据加载中 ... </td>
                     </tr>
-                    <tr ng-show="mc.noResult">
-                        <td colspan="10" ng-show="mc.noResult" class="text-center" bgcolor="#f0f8ff"> 无符合条件数据! 请输入条件重新查询...  </td>
+                    <tr ng-show="modelc.noResult">
+                        <td colspan="10" ng-show="modelc.noResult" class="text-center" bgcolor="#f0f8ff"> 无符合条件数据! 请输入条件重新查询...  </td>
                     </tr>
-                    <tr ng-repeat="model in mc.displayed">
+                    <tr ng-repeat="model in modelc.displayed">
                         <td align="center">@{{ $index+1 }}</td>
                         <td>
                             @{{ model.name }}
