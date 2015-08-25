@@ -19,7 +19,7 @@ DcmisApp.factory('Resource', ['$q', '$http',
     }]);
 
 
-DcmisApp.controller('pipeCtrl1',
+DcmisApp.controller('modellistcontroll',
     //['Resource', '$scope', '$filter', '$http', 'ngDialog', '$state', '$stateParams',
     //    function (service, $scope, $filter, $http, ngDialog, $state, $stateParams) {
     ['Resource', '$scope', '$filter', '$http', 'ngDialog',
