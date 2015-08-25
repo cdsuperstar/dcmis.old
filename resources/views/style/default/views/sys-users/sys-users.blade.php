@@ -57,7 +57,7 @@
                         <th>
                             序
                         </th>
-                        <th st-sort="email">ho
+                        <th st-sort="email">
                             用户名
                         </th>
                         <th st-sort='name'>

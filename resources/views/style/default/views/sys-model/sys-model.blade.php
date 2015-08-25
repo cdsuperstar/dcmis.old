@@ -1,5 +1,5 @@
 <!-- BEGIN MAIN CONTENT -->
-<div class="row" ng-controller="pipeCtrl1 as mc">
+<div class="row" ng-controller="modellistcontroll as mc">
     <div class="col-md-12" st-pipe="mc.callServer"  st-table="mc.displayed">
         <!-- BEGIN start search CONTENT -->
         <div class="portlet box blue">
