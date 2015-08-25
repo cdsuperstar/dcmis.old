@@ -1,5 +1,5 @@
 <!-- BEGIN MAIN CONTENT -->
-<div class="row" ng-controller="pipeCtrl as mc">
+<div class="row" ng-controller="pipeCtrl1 as mc">
     <div class="col-md-12" st-pipe="mc.callServer"  st-table="mc.displayed">
         <!-- BEGIN start search CONTENT -->
         <div class="portlet box blue">
@@ -47,7 +47,7 @@
                 </div>
                 <table class="table table-striped table-hover table-bordered">
                     <thead>
-                    <tr>
+                    <tr class="text-center">
                         <th>
                             序
                         </th>
@@ -55,19 +55,22 @@
                             模块ID
                         </th>
                         <th st-sort='title'>
-                            模块标题
+                            标题
                         </th>
                         <th st-sort='icon'>
-                            模块图标
+                            图标
                         </th>
                         <th st-sort='ismenu'>
-                            是否显示
+                            显示
                         </th>
                         <th st-sort='url'>
-                            模块RUL
+                            模块URL
                         </th>
-                        <th st-sort='templateUrl'>
-                                模块TemplateURL
+                        <th st-sort='templateurl'>
+                            模块TemplateURL
+                        </th>
+                        <th st-sort='files' width="320">
+                            模块引入文件
                         </th>
                         <th>
                             编辑
@@ -79,38 +82,41 @@
                     </thead>
                     <tbody>
                     <tr ng-show="mc.isLoading">
-                        <td colspan="9" ng-show="mc.isLoading" class="text-center"> 数据加载中 ... </td>
+                        <td colspan="10" ng-show="mc.isLoading" class="text-center"> 数据加载中 ... </td>
                     </tr>
                     <tr ng-show="mc.noResult">
-                        <td colspan="9" ng-show="mc.noResult" class="text-center" bgcolor="#f0f8ff"> 无符合条件数据! 请输入条件重新查询...  </td>
+                        <td colspan="10" ng-show="mc.noResult" class="text-center" bgcolor="#f0f8ff"> 无符合条件数据! 请输入条件重新查询...  </td>
                     </tr>
-                    <tr ng-repeat="user in mc.displayed">
+                    <tr ng-repeat="model in mc.displayed">
                         <td align="center">@{{ $index+1 }}</td>
                         <td>
-                            @{{ user.name }}
+                            @{{ model.name }}
                         </td>
                         <td>
-                            @{{user.title}}
+                            @{{model.title}}
                         </td>
                         <td>
-                            @{{user.icon}}
+                            @{{model.icon}}
                         </td>
                         <td>
-                            @{{user.ismenu}}
+                            @{{model.ismenu}}
                         </td>
                         <td>
-                            @{{user.url}}
+                            @{{model.url}}
                         </td>
                         <td>
-                            @{{user.templateUrl}}
+                            @{{model.templateurl}}
+                        </td>
+                        <td>
+                            @{{model.files}}
                         </td>
                         <td align="center">
-                            <a href="javascript:;" class="dcaedit" ng-click="edituser(user)" title="编辑该条数据！">
+                            <a href="javascript:;" class="dcaedit" ng-click="editmodel(model)" title="编辑该条数据！">
                                 Edit <i class="fa fa-edit"></i>
                             </a>
                         </td>
                         <td align="center">
-                            <a href="javascript:;" class="dcadel" ng-click="deluser(user)" confirmation-needed="确定要删除该条数据吗？" title="删除该条数据！">
+                            <a href="javascript:;" class="dcadel" ng-click="delmodel(model)" confirmation-needed="确定要删除该条数据吗？" title="删除该条数据！">
                                 Delete <i class="fa fa-times"></i>
                             </a>
                         </td>
@@ -118,7 +124,7 @@
                     </tbody>
                     <tfoot>
                     <tr>
-                        <td colspan="9"  st-pagination st-items-by-page="itemsByPage" class="text-center">
+                        <td colspan="10"  st-pagination st-items-by-page="itemsByPage" class="text-center">
                         </td>
                     </tr>
                     </tfoot>

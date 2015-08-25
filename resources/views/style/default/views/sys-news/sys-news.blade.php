@@ -15,7 +15,7 @@
             <div class="portlet-body" style="overflow: auto;">
                 <div class="col-md-9">
                     <label>
-                        用户名: &nbsp; <input st-search="email" st-input-event="blur" placeholder="请输入用户名" class="input-sm input-inline form-control" type="search"/>
+                        标题查询: &nbsp; <input st-search="email" st-input-event="blur" placeholder="请输入用户名" class="input-sm input-inline form-control" type="search"/>
                     </label>
                 </div>
                 <div class="col-md-3">
@@ -30,13 +30,11 @@
         <div class="portlet box yellow">
             <div class="portlet-title">
                 <div class="caption">
-                    <i class="fa fa-user"></i>用户管理
+                    <i class="fa fa-user"></i>公告管理
                 </div>
                 <div class="tools">
                     <button class="btn btn-default yellow" ng-click="adduser()">
                         <i class="fa fa-plus"></i> &nbsp;添加 </button>
-                    <a href="javascript:;" class="reload">
-                    </a>
                     <a href="javascript:;" class="collapse">
                     </a>
                 </div>
@@ -55,16 +53,19 @@
                     <tr>
                         <th><input type="checkbox" id="checkPathAll" onclick="JavaScript:checkout();"/></th>
                         <th st-sort="email">
-                            用户名1
+                            公告标题
                         </th>
                         <th st-sort='name'>
-                            姓名
+                            发布者
                         </th>
                         <th st-sort='password'>
-                            密码
+                            接收者
                         </th>
                         <th>
-                            角色
+                            发布时间
+                        </th>
+                        <th>
+                            结束时间
                         </th>
                         <th>
                             Edit
@@ -74,7 +75,7 @@
                         </th>
                     </tr>
                     </thead>
-                    <tbody ng-hide="mc.isLoading">
+                    <tbody ng-hide="mc.isLoading" ng-hide="mc.noResult">
                     <tr ng-repeat="user in mc.displayed">
                         <td cs-select="user" align="center"></td>
                         <td>
@@ -105,12 +106,17 @@
                     </tbody>
                     <tbody ng-show="mc.isLoading">
                     <tr>
-                        <td colspan="7" class="text-center">Loading ... </td>
+                        <td colspan="8" class="text-center">数据加载中 ... </td>
+                    </tr>
+                    </tbody>
+                    <tbody ng-show="mc.noResult">
+                    <tr>
+                        <td colspan="8" class="text-center">无符合条件数据 </td>
                     </tr>
                     </tbody>
                     <tfoot>
                     <tr>
-                        <td colspan="7"  st-pagination st-items-by-page="itemsByPage" class="text-center">
+                        <td colspan="8"  st-pagination st-items-by-page="itemsByPage" class="text-center">
                         </td>
                     </tr>
                     </tfoot>

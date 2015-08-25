@@ -192,12 +192,12 @@ FILESIN
                     'updated_at' => $faker->dateTime,
                 ]
             , [
-                    'name' => 'msglist',
+                    'name' => 'sys-msg',
                     'title' => '消息列表',
                     'ismenu' => '1',
                     'icon' => 'icon-envelope-open',
-                    'url' => '/msglist.html',
-                    'templateurl' => '/dcassets/templateurl/msglist',
+                    'url' => '/sys-msg.html',
+                    'templateurl' => '/dcassets/templateurl/sys-msg',
                     'files' => <<<FILESIN
 FILESIN
                     ,
