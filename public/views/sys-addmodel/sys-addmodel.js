@@ -192,20 +192,25 @@ var FormWizard = function () {
 
             $('#form_wizard_1').find('.button-previous').hide();
             $('#form_wizard_1 .button-submit').click(function () {
-                var dcmodelinfo = $('#submit_form').serializeArray();
-
-                //$('#submit_form').submit();
+                var dcmodelinfo = $('#submit_form').serializeObject();
                 console.log(dcmodelinfo);
-                $.post("/dcmodel",'{1}').success(function(res){
-                        console.log('return !',res);
-                        //if(res.data.success){
-                        //    showMsg(res.data.messages.toString(), '信息', 'lime');
-                        //    console.log(res);
-                        //}else{
-                        //    showMsg(res.data.errors.toString(), '错误', 'ruby');
-                        //    console.log(res);
-                        //}
-                    });
+                var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+                $.ajax({
+                    url: '/dcmodel',
+                    type: 'POST',
+                    data: dcmodelinfo,
+                    dataType: 'JSON',
+                    success: function (res) {
+                        if (res.success) {
+                            showMsg(res.messages.toString(), '信息', 'lime');
+                            console.log("save success", res);
+                        } else {
+                            // TODO add error message to system
+                            showMsg(res.errors.toString(), '错误', 'ruby');
+                            console.log('add failed!', res);
+                        }
+                    }
+                });
             }).hide();
 
             //apply validation on select2 dropdown value change, this only needed for chosen dropdown integration.

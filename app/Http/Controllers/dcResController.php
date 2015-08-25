@@ -108,8 +108,13 @@ class dcResController extends Controller
 
     public function getTemplateurl($sModel)
     {
-
-        return view('style.default.templateurl', ['sModel' => $sModel]);
+        $aTitle=[];
+        dcmodel::where('name',$sModel)->first()->dcMdGrp->getAncestorsAndSelf()->each(function($e) use (&$aTitle){
+            $aTitle[]=$e->dcmodel->title;
+        });
+        array_shift($aTitle);
+//        dump($aTitle);exit;
+        return view('style.default.templateurl', ['sModel' => $sModel,'aTitle'=>$aTitle]);
     }
 
     public function dcComponentSelector($comId)

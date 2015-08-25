@@ -24,6 +24,7 @@ License: You must have a valid license purchased only from themeforest(the above
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <meta content="" name="description"/>
   <meta content="" name="author"/>
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <!-- BEGIN GLOBAL MANDATORY STYLES -->
   <link href="/css/OpenSans.css" rel="stylesheet" type="text/css"/>

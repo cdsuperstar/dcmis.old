@@ -4,23 +4,21 @@
         <li>
             <i class="fa fa-home"></i>
             <a href="#/dashboard.html">主页</a>
-            <i class="fa fa-angle-right"></i>
-        </li>
-
-        <li>
-            <a href="#">系统设置</a>
-            <i class="fa fa-angle-right"></i>
-        </li>
-        <!-- BEGIN SYS PATH -->
-        <li>
-            <a href="#"></a>
-        </li>
-        <!-- END SYS PATH -->
+            @foreach($aTitle as $title)
+                <i class="fa fa-angle-right"></i>
+            </li>
+            <li>
+                <a href="#">{{ $title }}</a>
+            @endforeach
+            </li>
+                    <!-- BEGIN SYS PATH -->
+            <!-- END SYS PATH -->
     </ul>
     <div class="page-toolbar">
         <div class="btn-group pull-right">
-            <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true">
-                选 项  <i class="fa fa-angle-down"></i>
+            <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown"
+                    data-hover="dropdown" data-delay="1000" data-close-others="true">
+                选 项 <i class="fa fa-angle-down"></i>
             </button>
             <ul class="dropdown-menu pull-right" role="menu">
                 <!-- BEGIN SYS SET -->
