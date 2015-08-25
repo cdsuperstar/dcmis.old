@@ -21,7 +21,7 @@ class dcmodelsTableSeeder extends Seeder
                     'ismenu' => '0',
                     'icon' => '',
                     'url' => '',
-                    'templateUrl' => '',
+                    'templateurl' => '',
                     'files' => <<<FILESIN
 FILESIN
                     ,
@@ -33,8 +33,8 @@ FILESIN
                     'title' => '主页',
                     'ismenu' => '1',
                     'icon' => 'icon-home',
-                    'url' => '#/dashboard.html',
-                    'templateUrl' => '/dcassets/templateurl/dashboard',
+                    'url' => '/dashboard.html',
+                    'templateurl' => '/dcassets/templateurl/dashboard',
                     'files' => <<<FILESIN
                             '/js/controllers/GeneralPageController.js'
 FILESIN
@@ -48,7 +48,7 @@ FILESIN
                     'ismenu' => '1',
                     'icon' => 'icon-settings',
                     'url' => null,
-                    'templateUrl' => null,
+                    'templateurl' => null,
                     'files' => <<<FILESIN
 FILESIN
                     ,
@@ -60,8 +60,8 @@ FILESIN
                     'title' => '用户管理',
                     'ismenu' => '1',
                     'icon' => 'icon-users',
-                    'url' => '#/sys-users.html',
-                    'templateUrl' => '/dcassets/templateurl/sys-users',
+                    'url' => '/sys-users.html',
+                    'templateurl' => '/dcassets/templateurl/sys-users',
                     'files' => <<<FILESIN
                             '/assets/global/plugins/select2/select2.css',
                             '/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css',
@@ -79,8 +79,8 @@ FILESIN
                     'title' => '角色管理',
                     'ismenu' => '1',
                     'icon' => 'icon-globe',
-                    'url' => '#/sys-role.html',
-                    'templateUrl' => '/dcassets/templateurl/sys-role',
+                    'url' => '/sys-role.html',
+                    'templateurl' => '/dcassets/templateurl/sys-role',
                     'files' => <<<FILESIN
                             '/assets/global/plugins/jstree/dist/themes/default/style.min.css',
 
@@ -99,7 +99,7 @@ FILESIN
                     'ismenu' => '1',
                     'icon' => 'icon-support',
                     'url' => '',
-                    'templateUrl' => '',
+                    'templateurl' => '',
                     'files' => <<<FILESIN
                             '/assets/global/plugins/select2/select2.css',
                             '/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css',
@@ -119,8 +119,8 @@ FILESIN
                     'title' => '模块编辑',
                     'ismenu' => '0',
                     'icon' => 'icon-direction',
-                    'url' => '#/sys-addmodel.html',
-                    'templateUrl' => '/dcassets/templateurl/sys-addmodel',
+                    'url' => '/sys-addmodel.html',
+                    'templateurl' => '/dcassets/templateurl/sys-addmodel',
                     'files' => <<<FILESIN
                             '/assets/global/plugins/select2/select2.css',
                             '/assets/global/plugins/bootstrap-select/bootstrap-select.min.css',
@@ -144,8 +144,8 @@ FILESIN
                     'title' => '模块管理',
                     'ismenu' => '1',
                     'icon' => 'icon-puzzle',
-                    'url' => '#/sys-model.html',
-                    'templateUrl' => '/dcassets/templateurl/sys-model',
+                    'url' => '/sys-model.html',
+                    'templateurl' => '/dcassets/templateurl/sys-model',
                     'files' => <<<FILESIN
 FILESIN
                     ,
@@ -158,7 +158,7 @@ FILESIN
                     'ismenu' => '1',
                     'icon' => 'icon-user-following',
                     'url' => '',
-                    'templateUrl' => '',
+                    'templateurl' => '',
                     'files' => <<<FILESIN
 FILESIN
                     ,
@@ -171,7 +171,7 @@ FILESIN
                     'ismenu' => '1',
                     'icon' => 'icon-user-following',
                     'url' => '',
-                    'templateUrl' => '',
+                    'templateurl' => '',
                     'files' => <<<FILESIN
 FILESIN
                     ,
@@ -183,8 +183,8 @@ FILESIN
                     'title' => '发消息',
                     'ismenu' => '1',
                     'icon' => 'icon-envelope-open',
-                    'url' => '#/msger.html',
-                    'templateUrl' => '/dcassets/templateurl/msger',
+                    'url' => '/msger.html',
+                    'templateurl' => '/dcassets/templateurl/msger',
                     'files' => <<<FILESIN
 FILESIN
                     ,
@@ -196,8 +196,8 @@ FILESIN
                     'title' => '消息列表',
                     'ismenu' => '1',
                     'icon' => 'icon-envelope-open',
-                    'url' => '#/msglist.html',
-                    'templateUrl' => '/dcassets/templateurl/msglist',
+                    'url' => '/msglist.html',
+                    'templateurl' => '/dcassets/templateurl/msglist',
                     'files' => <<<FILESIN
 FILESIN
                     ,
@@ -209,8 +209,8 @@ FILESIN
                     'title' => '个人便签',
                     'ismenu' => '1',
                     'icon' => 'icon-book-open',
-                    'url' => '#/memo.html',
-                    'templateUrl' => '/dcassets/templateurl/memo',
+                    'url' => '/memo.html',
+                    'templateurl' => '/dcassets/templateurl/memo',
                     'files' => <<<FILESIN
 FILESIN
                     ,
@@ -222,8 +222,8 @@ FILESIN
                     'title' => '修改密码',
                     'ismenu' => '1',
                     'icon' => 'icon-lock',
-                    'url' => '#/userpwd.html',
-                    'templateUrl' => '/dcassets/templateurl/userpwd',
+                    'url' => '/userpwd.html',
+                    'templateurl' => '/dcassets/templateurl/userpwd',
                     'files' => <<<FILESIN
 FILESIN
                     ,

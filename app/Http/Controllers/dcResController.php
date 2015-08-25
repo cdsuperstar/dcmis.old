@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\dcClass\dcComponentSelector;
 use App\models\dcMdGrp;
+use App\models\dcmodel;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -91,21 +92,13 @@ class dcResController extends Controller
         //
     }
 
-    public function getEdition()
-    {
-
-        return view('assets.edition')->with([
-            'fields' => User::$angularrules,
-            'title' => '用户编辑器',
-        ]);
-    }
-
     public function getDjs($sJsFile)
     {
         \Debugbar::disable();
-        $mdTreeJson=dcMdGrp::with(['dcmodel'=>function($q){$q->addSelect(array('id','name','title','ismenu','icon','url','templateUrl','files'));}])->get()->tohierarchy()->toJson();
+        $mdTreeJson=dcMdGrp::with(['dcmodel'=>function($q){$q->addSelect(array('id','name','title','ismenu','icon','url','templateurl','files'));}])->get()->tohierarchy()->toJson();
+        $dcModels=dcmodel::where('url','<>','')->get();
         header('text/javascript');
-        return view('assets.' . $sJsFile,['mdTreeJson'=>$mdTreeJson]);
+        return view('assets.' . $sJsFile,['mdTreeJson'=>$mdTreeJson,'dcModels'=>$dcModels]);
     }
 
     public function getTpls($sTpls)
@@ -142,6 +135,7 @@ class dcResController extends Controller
             $sRet .= implode("\r\n", $mycomp->getMetronicStuffs($sComp, $mycomp::PM_PAGE_LEVEL_STYLES));
             $sRet .= "\r\n";
         }
+        $sRet=str_replace('../../assets','/assets',$sRet);
         return $sRet;
     }
 
@@ -155,6 +149,7 @@ class dcResController extends Controller
             $sRet .= implode("\r\n", $mycomp->getMetronicStuffs($sComp, $mycomp::PM_PAGE_LEVEL_PLUGINS));
             $sRet .= "\r\n";
         }
+        $sRet=str_replace('../../assets','/assets',$sRet);
         return $sRet;
     }
 

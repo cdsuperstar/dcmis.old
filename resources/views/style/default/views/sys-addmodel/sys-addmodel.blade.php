@@ -13,7 +13,9 @@
                 </div>
             </div>
             <div class="portlet-body form">
-                <form action="#" class="form-horizontal" id="submit_form" method="POST">
+                <form action="/dcmodel" class="form-horizontal" id="submit_form" method="POST">
+                    <input type="hidden" name="_method" value="STORE">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="form-wizard">
                         <div class="form-body">
                             <ul class="nav nav-pills nav-justified steps">

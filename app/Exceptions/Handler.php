@@ -41,7 +41,7 @@ class Handler extends ExceptionHandler
     public function render($request, Exception $e)
     {
         if ($e instanceof TokenMismatchException) {
-            return response()->view('welcome');
+            return response()->view('auth/login');
         }
         if (config('app.debug')) {
             return $this->renderExceptionWithWhoops($e);

@@ -28,7 +28,7 @@ DcmisApp.controller('pipeCtrl',
             var ctrl = this;
             $scope.adduser = function () {
                 ngDialog.openConfirm({
-                    template: '/dcassets/edition',
+                    template: '/user/edition',
                     className: 'ngdialog-theme-default',
                     scope: $scope,
                     controller: ['$scope', 'validationConfig', function ($scope, validationConfig) {
@@ -60,7 +60,7 @@ DcmisApp.controller('pipeCtrl',
             $scope.edituser = function (user) {
                 $scope.dcEditiontmp = angular.copy(user);
                 ngDialog.openConfirm({
-                    template: '/dcassets/edition',
+                    template: '/user/edition',
                     className: 'ngdialog-theme-default',
                     scope: $scope,
                     controller: ['$scope', 'validationConfig', function ($scope, validationConfig) {

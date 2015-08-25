@@ -38,10 +38,6 @@ class AuthController extends Controller
 
     }
 
-//    public function logout()
-//    {
-//        Auth::logout();
-//    }
     /**
      * Get a validator for an incoming registration request.
      *

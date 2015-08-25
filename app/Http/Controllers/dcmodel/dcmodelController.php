@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\User;
+namespace App\Http\Controllers\dcmodel;
 
-use App\User;
+use App\models\dcmodel;
 use Illuminate\Http\Request;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class userController extends Controller
+class dcmodelController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +17,18 @@ class userController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        return response()->json($users);
         //
+        $dcmodel = dcmodel::all();
+        return response()->json($dcmodel);
+
+    }
+    public function getEdition()
+    {
+
+        return view('assets.edition')->with([
+            'fields' => dcmodel::$angularrules,
+            'title' => '模块编辑器',
+        ]);
     }
 
     /**
@@ -34,52 +44,45 @@ class userController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  Request $request
+     * @param  Request  $request
      * @return Response
      */
     public function store(Request $request)
     {
-
         //
-        $user = new User();
-        if ($user) {
+        return $request->input();
+        $recData = new dcmodel();
+        if ($recData) {
             foreach ($request->input() as $key => $val) {
-                $user->$key = $val;
+                $recData->$key = $val;
             }
-            if ($user->save()) {
+            if ($recData->save()) {
                 return response()->json([
-                    'messages' => trans('users.savesuccess'),
+                    'messages' => trans('dcmodels.savesuccess'),
                     'success' => true,
-                    'data' => $user->toJson(),
+                    'data' => $recData->toJson(),
                 ]);
             }
         }
-        return response()->json(['errors' => $user->errors()->all()]);
+        return response()->json(['errors' => $recData->errors()->all()]);
 
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return Response
      */
     public function show($id)
     {
-        $user = User::findorFail($id);
-//        $res=$user->update();
-//        dump($res);
-        return 1;
-    }
-
-    public function getAll()
-    {
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return Response
      */
     public function edit($id)
@@ -87,53 +90,45 @@ class userController extends Controller
         //
     }
 
-    public function getEdition()
-    {
-
-        return view('assets.edition')->with([
-            'fields' => User::$angularrules,
-            'title' => '用户编辑器',
-        ]);
-    }
-
     /**
      * Update the specified resource in storage.
      *
-     * @param  Request $request
-     * @param  int $id
-     * @return
+     * @param  Request  $request
+     * @param  int  $id
+     * @return Response
      */
     public function update(Request $request, $id)
     {
-        //
         if (!$id) return false;
 
-        $user = User::findOrFail($id);
-        if ($user) {
+        $recData = dcmodel::findOrFail($id);
+        if ($recData) {
             foreach ($request->input() as $key => $val) {
-                $user->$key = $val;
+                $recData->$key = $val;
             }
-            if ($user->updateUniques()) {
+            if ($recData->updateUniques()) {
                 return response()->json([
-                    'messages' => trans('users.updatesuccess'),
+                    'messages' => trans('dcmodels.updatesuccess'),
                     'success' => true,
-                    'data' => $user->toJson(),
-                    ]);
+                    'data' => $recData->toJson(),
+                ]);
             } else {
-                return response()->json(['errors' => $user->errors()->all()]);
+                return response()->json(['errors' => $recData->errors()->all()]);
             }
         }
-        return response()->json(['errors' => [trans('users.nofound')]]);
+        return response()->json(['errors' => [trans('dcmodels.nofound')]]);
+
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return Response
      */
     public function destroy($id)
     {
+        //
         $aTodel=array();
         $aTmp=json_decode($id);
         if( is_array($aTmp)){
@@ -142,15 +137,16 @@ class userController extends Controller
             $aTodel[]=$id;
         }
 
-        $deletedRows = User::destroy($aTodel);
+        $deletedRows = dcmodel::destroy($aTodel);
         if($deletedRows){
             return response()->json([
-                'messages' => trans('users.deletesuccess',['rows'=>$deletedRows]),
+                'messages' => trans('dcmodels.deletesuccess',['rows'=>$deletedRows]),
                 'success' => true,
                 'data' => $deletedRows,
             ]);
         }else{
-            return response()->json(['errors' => trans('users.deletesuccess',['rows'=>$deletedRows])]);
+            return response()->json(['errors' => trans('dcmodels.deletesuccess',['rows'=>$deletedRows])]);
         }
     }
+
 }

@@ -157,12 +157,11 @@ DcmisApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
     $urlRouterProvider.otherwise("/dashboard.html");
 
     $stateProvider
-
-        // Dashboard
-        .state('dashboard', {
-            url: "/dashboard.html",
-            templateUrl: "/dcassets/templateurl/dashboard",
-            data: {pageTitle: '主页'},
+@foreach($dcModels as $model)
+        .state('{{$model->name}}', {
+            url: "{!! $model->url !!}",
+            templateUrl: "{!! $model->templateurl !!}",
+            data: {pageTitle: '{{$model->title}}'},
             controller: "GeneralPageController",
             resolve: {
                 deps: ['$ocLazyLoad', function($ocLazyLoad) {
@@ -170,143 +169,13 @@ DcmisApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
                         name: 'DcmisApp',
                         insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
                         files: [
-
-                            '/js/controllers/GeneralPageController.js'
+                            {!! $model->files !!}
                         ]
                     });
                 }]
             }
         })
-
-        //用户管理
-        .state('sys-users', {
-            url: "/sys-users.html",
-            templateUrl: "/dcassets/templateurl/sys-users",
-            data: {pageTitle: '用户管理'},
-            controller: "GeneralPageController",
-            resolve: {
-                deps: ['$ocLazyLoad', function($ocLazyLoad) {
-                    return $ocLazyLoad.load({
-                        name: 'DcmisApp',
-                        insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
-                        files: [
-                            '/assets/global/plugins/select2/select2.css',
-                            '/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css',
-                            '/views/sys-users/sys-users.css',
-
-                            '/js/controllers/GeneralPageController.js',
-                            '/views/sys-users/sys-users.js',
-                        ]
-                    });
-                }]
-            }
-        })
-
-        //新闻管理 测试ui commponents
-        .state('sys-news', {
-            url: "/sys-news.html",
-            templateUrl: "/dcassets/templateurl/sys-news",
-            data: {pageTitle: '新闻管理'},
-            controller: "GeneralPageController",
-            resolve: {
-                deps: ['$ocLazyLoad', function($ocLazyLoad) {
-                    return $ocLazyLoad.load({
-                        name: 'DcmisApp',
-                        insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
-                        files: [
-                            '/assets/global/plugins/select2/select2.css',
-                            '/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css',
-                            '/views/sys-news/sys-news.css',
-
-                            '/views/sys-news/sys-news.js',
-                            '/js/controllers/GeneralPageController.js',
-
-                        ]
-                    });
-                }]
-            }
-        })
-
-
-        //模块列表
-        .state('sys-model', {
-            url: "/sys-model.html",
-            templateUrl: "/dcassets/templateurl/sys-model",
-            data: {pageTitle: '模块列表'},
-            controller: "GeneralPageController",
-            resolve: {
-                deps: ['$ocLazyLoad', function($ocLazyLoad) {
-                    return $ocLazyLoad.load({
-                        name: 'DcmisApp',
-                        insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
-                        files: [
-                            '/assets/global/plugins/select2/select2.css',
-                            '/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css',
-
-                            '/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js',
-                            '/assets/global/plugins/select2/select2.min.js',
-                            '/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js',
-                            '/views/sys-model/sys-model.js',
-                            '/js/controllers/GeneralPageController.js'
-                        ]
-                    });
-                }]
-            }
-        })
-
-        //模块管理-模块编辑
-        .state('sys-addmodel', {
-            url: "/sys-addmodel.html",
-            templateUrl: "/dcassets/templateurl/sys-addmodel",
-            data: {pageTitle: '模块编辑'},
-            controller: "GeneralPageController",
-            resolve: {
-                deps: ['$ocLazyLoad', function($ocLazyLoad) {
-                    return $ocLazyLoad.load({
-                        name: 'DcmisApp',
-                        insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
-                        files: [
-                            '/assets/global/plugins/select2/select2.css',
-                            '/assets/global/plugins/bootstrap-select/bootstrap-select.min.css',
-                            '/assets/global/plugins/jquery-multi-select/css/multi-select.css',
-                            '/views/sys-addmodel/sys-addmodel.css',
-
-                            '/assets/global/plugins/jquery-validation/js/jquery.validate.min.js',
-                            '/assets/global/plugins/jquery-validation/js/additional-methods.min.js',
-                            '/assets/global/plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js',
-                            '/assets/global/plugins/select2/select2.min.js',
-                            '/assets/global/plugins/jquery-multi-select/js/jquery.multi-select.js',
-                            '/views/sys-addmodel/sys-addmodel.js',
-                            '/js/controllers/GeneralPageController.js'
-                        ]
-                    });
-                }]
-            }
-        })
-
-        //角色管理
-        .state('sys-role', {
-            url: "/sys-role.html",
-            templateUrl: "/dcassets/templateurl/sys-role",
-            data: {pageTitle: '角色管理'},
-            controller: "GeneralPageController",
-            resolve: {
-                deps: ['$ocLazyLoad', function($ocLazyLoad) {
-                    return $ocLazyLoad.load({
-                        name: 'DcmisApp',
-                        insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
-                        files: [
-                            '/assets/global/plugins/jstree/dist/themes/default/style.min.css',
-
-                            '/assets/global/plugins/jstree/dist/jstree.min.js',
-                            '/assets/admin/pages/scripts/ui-tree.js',
-                            '/views/sys-role/sys-role.js',
-                            '/js/controllers/GeneralPageController.js'
-                        ]
-                    });
-                }]
-            }
-        })
+@endforeach
 
         // TODO insert here for models
         //BEGIN INSERT MODEL

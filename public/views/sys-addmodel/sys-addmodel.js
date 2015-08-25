@@ -192,10 +192,20 @@ var FormWizard = function () {
 
             $('#form_wizard_1').find('.button-previous').hide();
             $('#form_wizard_1 .button-submit').click(function () {
-                jsontmp = onClik();
-                alert(jsontmp);
+                var dcmodelinfo = $('#submit_form').serializeArray();
 
-                alert('Finished! Hope you like it :)');
+                //$('#submit_form').submit();
+                //alert(jsontmp);
+                $.post("/dcmodel",'{1}').success(function(res){
+                        console.log('return !',res);
+                        //if(res.data.success){
+                        //    showMsg(res.data.messages.toString(), '信息', 'lime');
+                        //    console.log(res);
+                        //}else{
+                        //    showMsg(res.data.errors.toString(), '错误', 'ruby');
+                        //    console.log(res);
+                        //}
+                    });
             }).hide();
 
             //apply validation on select2 dropdown value change, this only needed for chosen dropdown integration.
@@ -224,12 +234,6 @@ $.fn.serializeObject = function()
     return o;
 };
 
-function onClik(){
-    //var data = $("#form1").serializeArray(); //自动将form表单封装成json
-    //alert(JSON.stringify(data));
-    var jsonuserinfo = $('#submit_form').serializeObject();
-    return JSON.stringify(jsonuserinfo);
-}
 
 function selectval(){
     var tmpVal=$("#modelzj").val();

@@ -11,20 +11,13 @@
 |
 */
 
-Route::get('about', 'PagesController@about');
-Route::get('/adduser', 'PagesController@adduser');
-Route::get('/getc', 'PagesController@getUsercout');
-Route::get('/loginmain', 'PagesController@main');
-Route::get('/login', 'PagesController@login');
-
-Route::get('/', 'WelcomeController@index');
-
 Route::get('home', 'HomeController@index');
 
 Route::resource('user','User\userController');
+Route::resource('dcmodel','dcmodel\dcmodelController');
 
 Route::controllers([
     'auth' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController',
-    'dcassets'=>'dcResController'
+    'dcassets'=>'dcResController',
 ]);

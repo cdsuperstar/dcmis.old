@@ -75,6 +75,8 @@ DcmisApp.config(['$ocLazyLoadProvider','$translateProvider', function($ocLazyLoa
 DcmisApp.config(['$controllerProvider', function($controllerProvider) {
     // this option might be handy for migrating old apps, but please don't use it
     // in new ones!
+    //$compileProvider.debugInfoEnabled(false);
+
     $controllerProvider.allowGlobals();
 }]);
 
@@ -123,9 +125,13 @@ DcmisApp.controller('HeaderController', ['$scope', function($scope) {
 
 /* Setup Layout Part - Sidebar */
 DcmisApp.controller('SidebarController', ['$scope', function($scope) {
+    $scope.mdTreeJson={"1":{"id":1,"parent_id":null,"lft":1,"rgt":28,"depth":0,"dcmodel_id":1,"created_at":"2015-08-23 06:01:37","updated_at":"2015-08-23 06:17:16","dcmodel":{"id":1,"name":"root","title":"System","ismenu":0,"icon":"","url":"","templateurl":"","files":""},"children":[{"id":2,"parent_id":1,"lft":2,"rgt":3,"depth":1,"dcmodel_id":2,"created_at":"2015-08-23 06:03:39","updated_at":"2015-08-23 06:03:39","dcmodel":{"id":2,"name":"dashboard","title":"\u4e3b\u9875","ismenu":1,"icon":"icon-home","url":"\/dashboard.html","templateurl":"\/dcassets\/templateurl\/dashboard","files":"                            '\/js\/controllers\/GeneralPageController.js'"},"children":[]},{"id":4,"parent_id":1,"lft":4,"rgt":15,"depth":1,"dcmodel_id":3,"created_at":"2015-08-23 06:10:09","updated_at":"2015-08-23 06:14:41","dcmodel":{"id":3,"name":"sys-setting","title":"\u7cfb\u7edf\u8bbe\u7f6e","ismenu":1,"icon":"icon-settings","url":null,"templateurl":null,"files":""},"children":[{"id":6,"parent_id":4,"lft":5,"rgt":6,"depth":2,"dcmodel_id":4,"created_at":"2015-08-23 06:13:42","updated_at":"2015-08-23 06:13:42","dcmodel":{"id":4,"name":"sys-users","title":"\u7528\u6237\u7ba1\u7406","ismenu":1,"icon":"icon-users","url":"\/sys-users.html","templateurl":"\/dcassets\/templateurl\/sys-users","files":"                            '\/assets\/global\/plugins\/select2\/select2.css',\n                            '\/assets\/global\/plugins\/datatables\/plugins\/bootstrap\/dataTables.bootstrap.css',\n                            '\/views\/sys-users\/sys-users.css',\n\n                            '\/js\/controllers\/GeneralPageController.js',\n                            '\/views\/sys-users\/sys-users.js',"},"children":[]},{"id":7,"parent_id":4,"lft":7,"rgt":8,"depth":2,"dcmodel_id":5,"created_at":"2015-08-23 06:13:47","updated_at":"2015-08-23 06:13:47","dcmodel":{"id":5,"name":"sys-role","title":"\u89d2\u8272\u7ba1\u7406","ismenu":1,"icon":"icon-globe","url":"\/sys-role.html","templateurl":"\/dcassets\/templateurl\/sys-role","files":"                            '\/assets\/global\/plugins\/jstree\/dist\/themes\/default\/style.min.css',\n\n                            '\/assets\/global\/plugins\/jstree\/dist\/jstree.min.js',\n                            '\/assets\/admin\/pages\/scripts\/ui-tree.js',\n                            '\/views\/sys-role\/sys-role.js',\n                            '\/js\/controllers\/GeneralPageController.js'"},"children":[]},{"id":8,"parent_id":4,"lft":9,"rgt":14,"depth":2,"dcmodel_id":6,"created_at":"2015-08-23 06:13:52","updated_at":"2015-08-23 06:14:41","dcmodel":{"id":6,"name":"sys-modelst","title":"\u6a21\u5757\u7ba1\u7406","ismenu":1,"icon":"icon-support","url":"","templateurl":"","files":"                            '\/assets\/global\/plugins\/select2\/select2.css',\n                            '\/assets\/global\/plugins\/datatables\/plugins\/bootstrap\/dataTables.bootstrap.css',\n\n                            '\/assets\/global\/plugins\/datatables\/media\/js\/jquery.dataTables.min.js',\n                            '\/assets\/global\/plugins\/select2\/select2.min.js',\n                            '\/assets\/global\/plugins\/datatables\/plugins\/bootstrap\/dataTables.bootstrap.js',\n                            '\/views\/sys-model\/sys-model.js',\n                            '\/js\/controllers\/GeneralPageController.js'"},"children":[{"id":9,"parent_id":8,"lft":10,"rgt":11,"depth":3,"dcmodel_id":7,"created_at":"2015-08-23 06:14:39","updated_at":"2015-08-23 06:14:39","dcmodel":{"id":7,"name":"sys-addmodel","title":"\u6a21\u5757\u7f16\u8f91","ismenu":0,"icon":"icon-direction","url":"\/sys-addmodel.html","templateurl":"\/dcassets\/templateurl\/sys-addmodel","files":"                            '\/assets\/global\/plugins\/select2\/select2.css',\n                            '\/assets\/global\/plugins\/bootstrap-select\/bootstrap-select.min.css',\n                            '\/assets\/global\/plugins\/jquery-multi-select\/css\/multi-select.css',\n                            '\/views\/sys-addmodel\/sys-addmodel.css',\n\n                            '\/assets\/global\/plugins\/jquery-validation\/js\/jquery.validate.min.js',\n                            '\/assets\/global\/plugins\/jquery-validation\/js\/additional-methods.min.js',\n                            '\/assets\/global\/plugins\/bootstrap-wizard\/jquery.bootstrap.wizard.min.js',\n                            '\/assets\/global\/plugins\/select2\/select2.min.js',\n                            '\/assets\/global\/plugins\/jquery-multi-select\/js\/jquery.multi-select.js',\n                            '\/views\/sys-addmodel\/sys-addmodel.js',\n                            '\/js\/controllers\/GeneralPageController.js'"},"children":[]},{"id":10,"parent_id":8,"lft":12,"rgt":13,"depth":3,"dcmodel_id":8,"created_at":"2015-08-23 06:14:41","updated_at":"2015-08-23 06:14:41","dcmodel":{"id":8,"name":"sys-model","title":"\u6a21\u5757\u7ba1\u7406","ismenu":1,"icon":"icon-puzzle","url":"\/sys-model.html","templateurl":"\/dcassets\/templateurl\/sys-model","files":""},"children":[]}]}]},{"id":5,"parent_id":1,"lft":16,"rgt":27,"depth":1,"dcmodel_id":9,"created_at":"2015-08-23 06:10:14","updated_at":"2015-08-23 06:17:16","dcmodel":{"id":9,"name":"user-console","title":"\u4e2a\u4eba\u4e2d\u5fc3","ismenu":1,"icon":"icon-user-following","url":"","templateurl":"","files":""},"children":[{"id":11,"parent_id":5,"lft":17,"rgt":22,"depth":2,"dcmodel_id":10,"created_at":"2015-08-23 06:16:30","updated_at":"2015-08-23 06:16:54","dcmodel":{"id":10,"name":"user-msg","title":"\u6d88\u606f\u7ba1\u7406","ismenu":1,"icon":"icon-user-following","url":"","templateurl":"","files":""},"children":[{"id":12,"parent_id":11,"lft":18,"rgt":19,"depth":3,"dcmodel_id":11,"created_at":"2015-08-23 06:16:48","updated_at":"2015-08-23 06:16:48","dcmodel":{"id":11,"name":"msger","title":"\u53d1\u6d88\u606f","ismenu":1,"icon":"icon-envelope-open","url":"\/msger.html","templateurl":"\/dcassets\/templateurl\/msger","files":""},"children":[]},{"id":13,"parent_id":11,"lft":20,"rgt":21,"depth":3,"dcmodel_id":12,"created_at":"2015-08-23 06:16:54","updated_at":"2015-08-23 06:16:54","dcmodel":{"id":12,"name":"msglist","title":"\u6d88\u606f\u5217\u8868","ismenu":1,"icon":"icon-envelope-open","url":"\/msglist.html","templateurl":"\/dcassets\/templateurl\/msglist","files":""},"children":[]}]},{"id":14,"parent_id":5,"lft":23,"rgt":24,"depth":2,"dcmodel_id":13,"created_at":"2015-08-23 06:17:14","updated_at":"2015-08-23 06:17:14","dcmodel":{"id":13,"name":"memo","title":"\u4e2a\u4eba\u4fbf\u7b7e","ismenu":1,"icon":"icon-book-open","url":"\/memo.html","templateurl":"\/dcassets\/templateurl\/memo","files":""},"children":[]},{"id":15,"parent_id":5,"lft":25,"rgt":26,"depth":2,"dcmodel_id":14,"created_at":"2015-08-23 06:17:16","updated_at":"2015-08-23 06:17:16","dcmodel":{"id":14,"name":"userpwd","title":"\u4fee\u6539\u5bc6\u7801","ismenu":1,"icon":"icon-lock","url":"\/userpwd.html","templateurl":"\/dcassets\/templateurl\/userpwd","files":""},"children":[]}]}]}};
+    $scope.loaded=false;
     $scope.$on('$includeContentLoaded', function() {
-        Layout.initSidebar(); // init sidebar
+        if(!$scope.loaded)Layout.initSidebar(); // init sidebar
+        $scope.loaded=true;
     });
+
 }]);
 
 /* Setup Layout Part - Quick Sidebar */
@@ -151,11 +157,9 @@ DcmisApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
     $urlRouterProvider.otherwise("/dashboard.html");
 
     $stateProvider
-
-        // Dashboard
         .state('dashboard', {
             url: "/dashboard.html",
-            templateUrl: "views/dashboard.html",
+            templateUrl: "/dcassets/templateurl/dashboard",
             data: {pageTitle: '主页'},
             controller: "GeneralPageController",
             resolve: {
@@ -164,18 +168,15 @@ DcmisApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
                         name: 'DcmisApp',
                         insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
                         files: [
-
                             '/js/controllers/GeneralPageController.js'
                         ]
                     });
                 }]
             }
         })
-
-        //用户管理
         .state('sys-users', {
             url: "/sys-users.html",
-            templateUrl: "views/sys-users/sys-users.html",
+            templateUrl: "/dcassets/templateurl/sys-users",
             data: {pageTitle: '用户管理'},
             controller: "GeneralPageController",
             resolve: {
@@ -188,46 +189,17 @@ DcmisApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
                             '/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css',
                             '/views/sys-users/sys-users.css',
 
-                            '/views/sys-users/sys-users.js',
-                            '/js/controllers/GeneralPageController.js'
-                        ]
-                    });
-                }]
-            }
-        })
-
-        //新闻管理 测试ui commponents
-        .state('sys-news', {
-            url: "/sys-news.html",
-            templateUrl: "views/sys-news/sys-news.html",
-            data: {pageTitle: '新闻管理'},
-            controller: "GeneralPageController",
-            resolve: {
-                deps: ['$ocLazyLoad', function($ocLazyLoad) {
-                    return $ocLazyLoad.load({
-                        name: 'DcmisApp',
-                        insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
-                        files: [
-                            '/assets/global/plugins/select2/select2.css',
-                            '/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css',
-                            '/views/sys-news/sys-news.css',
-
-
-                            '/views/sys-news/sys-news.js',
                             '/js/controllers/GeneralPageController.js',
-
+                            '/views/sys-users/sys-users.js',
                         ]
                     });
                 }]
             }
         })
-
-
-        //模块列表
-        .state('sys-model', {
-            url: "/sys-model.html",
-            templateUrl: "views/sys-model/sys-model.html",
-            data: {pageTitle: '模块列表'},
+        .state('sys-role', {
+            url: "/sys-role.html",
+            templateUrl: "/dcassets/templateurl/sys-role",
+            data: {pageTitle: '角色管理'},
             controller: "GeneralPageController",
             resolve: {
                 deps: ['$ocLazyLoad', function($ocLazyLoad) {
@@ -235,24 +207,20 @@ DcmisApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
                         name: 'DcmisApp',
                         insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
                         files: [
-                            '/assets/global/plugins/select2/select2.css',
-                            '/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css',
+                            '/assets/global/plugins/jstree/dist/themes/default/style.min.css',
 
-                            '/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js',
-                            '/assets/global/plugins/select2/select2.min.js',
-                            '/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js',
-                            '/views/sys-model/sys-model.js',
+                            '/assets/global/plugins/jstree/dist/jstree.min.js',
+                            '/assets/admin/pages/scripts/ui-tree.js',
+                            '/views/sys-role/sys-role.js',
                             '/js/controllers/GeneralPageController.js'
                         ]
                     });
                 }]
             }
         })
-
-        //模块管理-模块编辑
         .state('sys-addmodel', {
             url: "/sys-addmodel.html",
-            templateUrl: "views/sys-addmodel/sys-addmodel.html",
+            templateUrl: "/dcassets/templateurl/sys-addmodel",
             data: {pageTitle: '模块编辑'},
             controller: "GeneralPageController",
             resolve: {
@@ -278,12 +246,10 @@ DcmisApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
                 }]
             }
         })
-
-        //角色管理
-        .state('sys-role', {
-            url: "/sys-role.html",
-            templateUrl: "views/sys-role/sys-role.html",
-            data: {pageTitle: '角色管理'},
+        .state('sys-model', {
+            url: "/sys-model.html",
+            templateUrl: "/dcassets/templateurl/sys-model",
+            data: {pageTitle: '模块管理'},
             controller: "GeneralPageController",
             resolve: {
                 deps: ['$ocLazyLoad', function($ocLazyLoad) {
@@ -291,21 +257,234 @@ DcmisApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
                         name: 'DcmisApp',
                         insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
                         files: [
-                            '/assets/global/plugins/select2/select2.css',
-                            '/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css',
-                            '/views/sys-role/sys-role.css',
 
-                            '/views/sys-role/sys-role.js',
-                            '/js/controllers/GeneralPageController.js'
                         ]
                     });
                 }]
             }
         })
+        .state('msger', {
+            url: "/msger.html",
+            templateUrl: "/dcassets/templateurl/msger",
+            data: {pageTitle: '发消息'},
+            controller: "GeneralPageController",
+            resolve: {
+                deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                    return $ocLazyLoad.load({
+                        name: 'DcmisApp',
+                        insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                        files: [
 
-        // TODO insert here for models
-        //BEGIN INSERT MODEL
-        //END INSERT MODEL
+                        ]
+                    });
+                }]
+            }
+        })
+        .state('msglist', {
+            url: "/msglist.html",
+            templateUrl: "/dcassets/templateurl/msglist",
+            data: {pageTitle: '消息列表'},
+            controller: "GeneralPageController",
+            resolve: {
+                deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                    return $ocLazyLoad.load({
+                        name: 'DcmisApp',
+                        insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                        files: [
+
+                        ]
+                    });
+                }]
+            }
+        })
+        .state('memo', {
+            url: "/memo.html",
+            templateUrl: "/dcassets/templateurl/memo",
+            data: {pageTitle: '个人便签'},
+            controller: "GeneralPageController",
+            resolve: {
+                deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                    return $ocLazyLoad.load({
+                        name: 'DcmisApp',
+                        insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                        files: [
+
+                        ]
+                    });
+                }]
+            }
+        })
+        .state('userpwd', {
+            url: "/userpwd.html",
+            templateUrl: "/dcassets/templateurl/userpwd",
+            data: {pageTitle: '修改密码'},
+            controller: "GeneralPageController",
+            resolve: {
+                deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                    return $ocLazyLoad.load({
+                        name: 'DcmisApp',
+                        insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                        files: [
+
+                        ]
+                    });
+                }]
+            }
+        })
+    /*
+     // Dashboard
+     .state('dashboard', {
+     url: "/dashboard.html",
+     templateUrl: "/dcassets/templateurl/dashboard",
+     data: {pageTitle: '主页'},
+     controller: "GeneralPageController",
+     resolve: {
+     deps: ['$ocLazyLoad', function($ocLazyLoad) {
+     return $ocLazyLoad.load({
+     name: 'DcmisApp',
+     insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+     files: [
+
+     '/js/controllers/GeneralPageController.js'
+     ]
+     });
+     }]
+     }
+     })
+
+     //用户管理
+     .state('sys-users', {
+     url: "/sys-users.html",
+     templateUrl: "/dcassets/templateurl/sys-users",
+     data: {pageTitle: '用户管理'},
+     controller: "GeneralPageController",
+     resolve: {
+     deps: ['$ocLazyLoad', function($ocLazyLoad) {
+     return $ocLazyLoad.load({
+     name: 'DcmisApp',
+     insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+     files: [
+     '/assets/global/plugins/select2/select2.css',
+     '/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css',
+     '/views/sys-users/sys-users.css',
+
+     '/js/controllers/GeneralPageController.js',
+     '/views/sys-users/sys-users.js',
+     ]
+     });
+     }]
+     }
+     })
+
+     //新闻管理 测试ui commponents
+     .state('sys-news', {
+     url: "/sys-news.html",
+     templateUrl: "/dcassets/templateurl/sys-news",
+     data: {pageTitle: '新闻管理'},
+     controller: "GeneralPageController",
+     resolve: {
+     deps: ['$ocLazyLoad', function($ocLazyLoad) {
+     return $ocLazyLoad.load({
+     name: 'DcmisApp',
+     insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+     files: [
+     '/assets/global/plugins/select2/select2.css',
+     '/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css',
+     '/views/sys-news/sys-news.css',
+
+     '/views/sys-news/sys-news.js',
+     '/js/controllers/GeneralPageController.js',
+
+     ]
+     });
+     }]
+     }
+     })
+
+
+     //模块列表
+     .state('sys-model', {
+     url: "/sys-model.html",
+     templateUrl: "/dcassets/templateurl/sys-model",
+     data: {pageTitle: '模块列表'},
+     controller: "GeneralPageController",
+     resolve: {
+     deps: ['$ocLazyLoad', function($ocLazyLoad) {
+     return $ocLazyLoad.load({
+     name: 'DcmisApp',
+     insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+     files: [
+     '/assets/global/plugins/select2/select2.css',
+     '/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css',
+
+     '/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js',
+     '/assets/global/plugins/select2/select2.min.js',
+     '/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js',
+     '/views/sys-model/sys-model.js',
+     '/js/controllers/GeneralPageController.js'
+     ]
+     });
+     }]
+     }
+     })
+
+     //模块管理-模块编辑
+     .state('sys-addmodel', {
+     url: "/sys-addmodel.html",
+     templateUrl: "/dcassets/templateurl/sys-addmodel",
+     data: {pageTitle: '模块编辑'},
+     controller: "GeneralPageController",
+     resolve: {
+     deps: ['$ocLazyLoad', function($ocLazyLoad) {
+     return $ocLazyLoad.load({
+     name: 'DcmisApp',
+     insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+     files: [
+     '/assets/global/plugins/select2/select2.css',
+     '/assets/global/plugins/bootstrap-select/bootstrap-select.min.css',
+     '/assets/global/plugins/jquery-multi-select/css/multi-select.css',
+     '/views/sys-addmodel/sys-addmodel.css',
+
+     '/assets/global/plugins/jquery-validation/js/jquery.validate.min.js',
+     '/assets/global/plugins/jquery-validation/js/additional-methods.min.js',
+     '/assets/global/plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js',
+     '/assets/global/plugins/select2/select2.min.js',
+     '/assets/global/plugins/jquery-multi-select/js/jquery.multi-select.js',
+     '/views/sys-addmodel/sys-addmodel.js',
+     '/js/controllers/GeneralPageController.js'
+     ]
+     });
+     }]
+     }
+     })
+
+     //角色管理
+     .state('sys-role', {
+     url: "/sys-role.html",
+     templateUrl: "/dcassets/templateurl/sys-role",
+     data: {pageTitle: '角色管理'},
+     controller: "GeneralPageController",
+     resolve: {
+     deps: ['$ocLazyLoad', function($ocLazyLoad) {
+     return $ocLazyLoad.load({
+     name: 'DcmisApp',
+     insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+     files: [
+     '/assets/global/plugins/jstree/dist/themes/default/style.min.css',
+
+     '/assets/global/plugins/jstree/dist/jstree.min.js',
+     '/assets/admin/pages/scripts/ui-tree.js',
+     '/views/sys-role/sys-role.js',
+     '/js/controllers/GeneralPageController.js'
+     ]
+     });
+     }]
+     }
+     })
+     */
+    // TODO insert here for models
+    //BEGIN INSERT MODEL
+    //END INSERT MODEL
 
 //add you menu
 
