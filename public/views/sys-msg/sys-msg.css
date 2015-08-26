@@ -1,0 +1,22 @@
+.timeline{
+    border-bottom:solid 2px #BDCDCE;
+    padding-bottom: 20px;
+    padding-top: 10px;
+    border-top:solid 2px #BDCDCE;
+}
+.timeline-reply-content {
+    font-size: 14px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    background-color: #fcf8e3;
+}
+.mini-hr{
+    margin-top: 1px;
+    padding-bottom: 1px;
+    padding-top: 1px;
+    margin-bottom: 1px;
+}
+.record-list{
+    border-bottom:solid 1px #BDCDCE;
+
+}

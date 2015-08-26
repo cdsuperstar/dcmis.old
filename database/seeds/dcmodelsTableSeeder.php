@@ -205,12 +205,12 @@ FILESIN
                     'updated_at' => $faker->dateTime,
                 ]
             , [
-                    'name' => 'memo',
+                    'name' => 'sys-memo',
                     'title' => '个人便签',
                     'ismenu' => '1',
                     'icon' => 'icon-book-open',
-                    'url' => '/memo.html',
-                    'templateurl' => '/dcassets/templateurl/memo',
+                    'url' => '/sys-memo.html',
+                    'templateurl' => '/dcassets/templateurl/sys-memo',
                     'files' => <<<FILESIN
 FILESIN
                     ,

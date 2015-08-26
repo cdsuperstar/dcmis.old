@@ -1,6 +1,6 @@
 'use strict';
 
-DcmisApp.factory('Resource', ['$q', '$http',
+DcmisApp.factory('Resource1', ['$q', '$http',
     function ($q, $http) {
 
         function getRandomItems() {
@@ -22,7 +22,7 @@ DcmisApp.factory('Resource', ['$q', '$http',
 DcmisApp.controller('pipeCtrl',
     //['Resource', '$scope', '$filter', '$http', 'ngDialog', '$state', '$stateParams',
     //    function (service, $scope, $filter, $http, ngDialog, $state, $stateParams) {
-    ['Resource', '$scope', '$filter', '$http', 'ngDialog',
+    ['Resource1', '$scope', '$filter', '$http', 'ngDialog',
         function (service, $scope, $filter, $http, ngDialog) {
 
             var ctrl = this;
