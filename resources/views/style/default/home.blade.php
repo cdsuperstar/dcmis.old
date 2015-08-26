@@ -172,6 +172,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <script type="text/javascript" src="/js/bower_components/angular-validation-ghiscoding/src/validation-service.js"></script>
 <script type="text/javascript" src="/js/bower_components/angular-validation-ghiscoding/src/validation-common.js"></script>
 <script type="text/javascript" src="/js/bower_components/angular-validation-ghiscoding/src/validation-rules.js"></script>
+<script type="text/javascript" src="/js/bower_components/angular-resource/angular-resource.js "></script>
 
 <script type="text/javascript">
   /* Init Metronic's core jquery plugins and layout scripts */

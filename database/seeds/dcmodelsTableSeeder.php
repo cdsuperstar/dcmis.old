@@ -147,6 +147,14 @@ FILESIN
                     'url' => '/sys-model.html',
                     'templateurl' => '/dcassets/templateurl/sys-model',
                     'files' => <<<FILESIN
+                            '/assets/global/plugins/select2/select2.css',
+                            '/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css',
+
+                            '/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js',
+                            '/assets/global/plugins/select2/select2.min.js',
+                            '/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js',
+                            '/views/sys-model/sys-model.js',
+                            '/js/controllers/GeneralPageController.js'
 FILESIN
                     ,
                     'created_at' => $faker->dateTime,
@@ -247,6 +255,7 @@ INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created
 INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (5, 1, 16, 27, 1, 9, '2015-08-23 06:10:14', '2015-08-23 06:17:16');
 INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (15, 5, 25, 26, 2, 14, '2015-08-23 06:17:16', '2015-08-23 06:17:16');
         ");
+
 //        DB::table('users')->insert(TestDummy::times(20)->create('App\User')->toArray());
 //        TestDummy::times(10)->save('App\User');
 //

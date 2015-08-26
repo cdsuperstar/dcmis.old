@@ -15,12 +15,21 @@ class dcmodelController extends Controller
      *
      * @return Response
      */
-    public function index()
+    public function getData($id = '')
     {
         //
-        $dcmodel = dcmodel::all();
+        if ($id == '') {
+            $dcmodel = dcmodel::all();
+        } else {
+            $dcmodel = dcmodel::where('id', $id)->get();
+        }
         return response()->json($dcmodel);
+    }
 
+    public function getList()
+    {
+        $datas = dcmodel::all();
+        return response()->json($datas);
     }
 
     public function getEdition()
@@ -33,22 +42,12 @@ class dcmodelController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  Request $request
      * @return Response
      */
-    public function store(Request $request)
+    public function postData(Request $request)
     {
         //
         $recData = new dcmodel();
@@ -57,9 +56,9 @@ class dcmodelController extends Controller
             $recData->fill($request->input());
             if ($request->input('modelcss') || $request->input('modelscript')) {
                 $recData->files = $request->input('modelcss');
-                $recData->files.=sprintf("'/views/%s/%s.css',",$request->input('name'),$request->input('name'));
+                $recData->files .= sprintf("'/views/%s/%s.css',", $request->input('name'), $request->input('name'));
                 $recData->files .= $request->input('modelscript');
-                $recData->files.=sprintf("'/views/%s/%s.js',",$request->input('name'),$request->input('name'));
+                $recData->files .= sprintf("'/views/%s/%s.js',", $request->input('name'), $request->input('name'));
             }
             $recData->url = '/' . $request->input('name') . '.html';
             $recData->templateurl = '/dcassets/templateurl/' . $request->input('name');
@@ -79,35 +78,13 @@ class dcmodelController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     * @return Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int $id
-     * @return Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param  Request $request
      * @param  int $id
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function putData(Request $request, $id)
     {
         if (!$id) return false;
 
@@ -136,7 +113,7 @@ class dcmodelController extends Controller
      * @param  int $id
      * @return Response
      */
-    public function destroy($id)
+    public function deleteData($id)
     {
         //
         $aTodel = array();

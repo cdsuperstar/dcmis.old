@@ -1,86 +1,134 @@
 'use strict';
 
-DcmisApp.factory('Resource', ['$q', '$http',
-    function ($q, $http) {
-
-        function getRandomItems() {
-            return $http.get('/dcmodel');//, {cache: 'true'});
-        }
-
-        function getPage(start, number, params) {
-
-            return getRandomItems();
-        }
-
-        return {
-            getPage: getPage
-        };
-
-    }]);
-
-
 DcmisApp.controller('modellistcontroll',
-    //['Resource', '$scope', '$filter', '$http', 'ngDialog', '$state', '$stateParams',
-    //    function (service, $scope, $filter, $http, ngDialog, $state, $stateParams) {
-    ['Resource', '$scope', '$filter', '$http', 'ngDialog',
-        function (service, $scope, $filter, $http, ngDialog) {
+    ['$scope', '$filter', 'ngDialog', '$resource',
+        function ($scope, $filter, ngDialog, $resource) {
 
             var ctrl = this;
+            var dataServer = $resource('/dcmodel/data/:id', null, {
+                update: {method: 'PUT'},
+                list: {url: '/dcmodel/list/', method: 'GET', isArray: true}
+            });
 
-            $scope.editmodel = function (model) {
-                $scope.dcEditiontmp = angular.copy(model);
+            // add user
+            $scope.add = function () {
                 ngDialog.openConfirm({
                     template: '/dcmodel/edition',
                     className: 'ngdialog-theme-default',
                     scope: $scope,
                     controller: ['$scope', 'validationConfig', function ($scope, validationConfig) {
                         $scope.$validationOptions = validationConfig;
-                        $scope.dcEdition = model;
                     }],
                     showClose: false,
                     setBodyPadding: 1,
                     overlay: false,
                     closeByEscape: false
                 }).then(function (dcEdition) {
-                    $http.put('/dcmodel/' + dcEdition.id, dcEdition).then(
+                    dataServer.save(dcEdition).$promise.then(
                         function (res) {
-                            if (res.data.success) {
-                                var index = ctrl.displayed.indexOf(dcEdition);
-                                ctrl.displayed[index] = JSON.parse(res.data.data);
-                                showMsg(res.data.messages.toString(), '信息', 'lime');
+                            if (res.success) {
+                                ctrl.displayed.push(JSON.parse(res.data));
+                                showMsg(res.messages.toString(), '信息', 'lime');
+                                //console.log("save success", res);
                             } else {
                                 // TODO add error message to system
-                                showMsg(res.data.errors.toString(), '错误', 'ruby');
+                                showMsg(res.errors.toString(), '错误', 'ruby');
+                                //console.log('add failed!', res);
+                            }
+                        }
+                    );
+                }, function (dcEdition) {
+                    console.log('Modal promise rejected. Reason: ', dcEdition);
+                });
+            };
+
+            // edit user
+            $scope.edit = function (dataRec) {
+                $scope.dcEditiontmp = angular.copy(dataRec);
+                ngDialog.openConfirm({
+                    template: '/dcmodel/edition',
+                    className: 'ngdialog-theme-default',
+                    scope: $scope,
+                    controller: ['$scope', 'validationConfig', function ($scope, validationConfig) {
+                        $scope.$validationOptions = validationConfig;
+                        $scope.dcEdition = dataRec;
+                    }],
+                    showClose: false,
+                    setBodyPadding: 1,
+                    overlay: false,
+                    closeByEscape: false
+                }).then(function (dcEdition) {
+                    dataServer.update({id: dcEdition.id}, dcEdition).$promise.then(
+                        function (res) {
+                            if (res.success) {
+                                var index = ctrl.displayed.indexOf(dcEdition);
+                                ctrl.displayed[index] = JSON.parse(res);
+                                showMsg(res.messages.toString(), '信息', 'lime');
+                            } else {
+                                // TODO add error message to system
+                                showMsg(res.errors.toString(), '错误', 'ruby');
                                 console.log('update failed!');
                             }
                         }
                     );
                 }, function (dcEdition) {
+                    delete dcEdition.password_confirmation;
                     var index = ctrl.displayed.indexOf(dcEdition);
                     ctrl.displayed[index] = angular.copy($scope.dcEditiontmp);
                     console.log('Modal promise rejected. Reason: ', index);
                 });
             };
-            $scope.delmodel = function (model) {
-                $http.delete('dcmodel/' + model.id).then(
+
+            $scope.del = function (user) {
+                dataServer.remove({id: user.id}).$promise.then(
                     function (res) {
-                        if (res.data.success) {
-                            var index = ctrl.displayed.indexOf(model);
+                        if (res.success) {
+                            var index = ctrl.displayed.indexOf(user);
                             if (index !== -1) {
                                 ctrl.displayed.splice(index, 1);
-                                showMsg(res.data.messages.toString(), '信息', 'lime');
+                                showMsg(res.messages.toString(), '信息', 'lime');
                                 //$state.transitionTo($state.current, $stateParams, { reload: true, inherit: true, notify: true });
                                 //$state.transitionTo('sys-users');
                             } else {
                             }
                         } else {
-                            showMsg(res.data.errors.toString(), '错误', 'ruby');
+                            showMsg(res.errors.toString(), '错误', 'ruby');
                         }
                     }
                 ), function (data) {
                 };
-
             }
+
+            $scope.dels = function () {
+                var aTodel = [];
+                $("input[name='Datacheckbox']").each(function () {
+                    if ($(this).attr("checked")) {
+                        aTodel.push($(this).attr("value"));
+                    }
+                });
+                dataServer.remove({id: JSON.stringify(aTodel)}).$promise
+                    .then(
+                    function (res) {
+                        if (res.success) {
+                            for (var delkey in aTodel) {
+                                for (var key in ctrl.displayed) {
+                                    if (ctrl.displayed[key].id == aTodel[delkey]) {
+                                        ctrl.displayed.splice(key, 1);
+                                    }
+                                }
+                            }
+                            //$scope.$apply();
+
+                            showMsg(res.messages.toString(), '信息', 'lime');
+                        } else {
+                            showMsg(res.errors.toString(), '错误', 'ruby');
+                        }
+                    }
+                ),
+                    function (data) {
+                    };
+            }
+
             this.callServer = function callServer(tableState) {
 
                 ctrl.isLoading = true;
@@ -91,23 +139,21 @@ DcmisApp.controller('modellistcontroll',
                 var start = pagination.start || 0;     // This is NOT the page number, but the index of item in the list that you want to use to display the table.
                 var number = pagination.number || $scope.itemsByPage;  // Number of entries showed per page.
 
-                service.getPage(start, number, tableState).then(function (result) {
-
-                    var filtered = tableState.search.predicateObject ? $filter('filter')(result.data, tableState.search.predicateObject) : result.data;
+                dataServer.list().$promise.then(function (result) {
+                    var filtered = tableState.search.predicateObject ? $filter('filter')(result, tableState.search.predicateObject) : result;
                     if (tableState.sort.predicate) {
                         filtered = $filter('orderBy')(filtered, tableState.sort.predicate, tableState.sort.reverse);
                     }
-                    if(filtered.length==0) ctrl.noResult = true;
+
+                    if (filtered.length == 0) ctrl.noResult = true;
                     else ctrl.noResult = false;
 
                     ctrl.displayed = filtered.slice(start, start + number);
-                    tableState.pagination.numberOfPages = Math.ceil(result.data.length / $scope.itemsByPage);//result.numberOfPages;//set the number of pages so the pagination can update
+                    tableState.pagination.numberOfPages = Math.ceil(result.length / $scope.itemsByPage);//result.numberOfPages;//set the number of pages so the pagination can update
                     ctrl.isLoading = false;
                 });
             };
-        }])
-;
-
+        }]);
 
 DcmisApp.directive('confirmationNeeded', function () {
     return {

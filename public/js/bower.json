@@ -1,0 +1,32 @@
+{
+  "name": "js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/cdsuperstar/dcmis",
+  "authors": [
+    "cdsuperstar <181977814@qq.com>"
+  ],
+  "description": "project bower",
+  "main": "all.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "angular",
+    "angular-smart-table",
+    "ngDialog"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-smart-table": "~2.1.2",
+    "angular": "~1.4.4",
+    "ng-table": "~0.8.3",
+    "ngDialog": "~0.4.0"
+  }
+}

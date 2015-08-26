@@ -111,12 +111,12 @@
                             @{{model.files}}
                         </td>
                         <td align="center">
-                            <a href="javascript:;" class="dcaedit" ng-click="editmodel(model)" title="编辑该条数据！">
+                            <a href="javascript:;" class="dcaedit" ng-click="edit(model)" title="编辑该条数据！">
                                 Edit <i class="fa fa-edit"></i>
                             </a>
                         </td>
                         <td align="center">
-                            <a href="javascript:;" class="dcadel" ng-click="delmodel(model)" confirmation-needed="确定要删除该条数据吗？" title="删除该条数据！">
+                            <a href="javascript:;" class="dcadel" ng-click="del(model)" confirmation-needed="确定要删除该条数据吗？" title="删除该条数据！">
                                 Delete <i class="fa fa-times"></i>
                             </a>
                         </td>

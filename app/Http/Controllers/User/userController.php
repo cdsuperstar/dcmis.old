@@ -14,21 +14,21 @@ class userController extends Controller
      *
      * @return Response
      */
-    public function index()
+    public function getData($id = '')
     {
-        $users = User::all();
-        return response()->json($users);
+        $datas = User::where('id', '=', $id)->get();
+        return response()->json($datas);
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
-    public function create()
+    public function getList()
     {
-        //
+//        $count=DB::table('users')->count();
+//        $data=User::where($tableState->search->predicateobject,'>',0)
+//            ->orderBy($tableState->sort->predicate,$tableState->sort->reverse?'desc':'asc')
+//            ->paginate
+        $datas = User::all();
+        return response()->json($datas);
     }
 
     /**
@@ -37,7 +37,7 @@ class userController extends Controller
      * @param  Request $request
      * @return Response
      */
-    public function store(Request $request)
+    public function postData(Request $request)
     {
 
         //
@@ -58,34 +58,6 @@ class userController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     * @return Response
-     */
-    public function show($id)
-    {
-        $user = User::findorFail($id);
-//        $res=$user->update();
-//        dump($res);
-        return 1;
-    }
-
-    public function getAll()
-    {
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int $id
-     * @return Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
     public function getEdition()
     {
@@ -103,7 +75,7 @@ class userController extends Controller
      * @param  int $id
      * @return
      */
-    public function update(Request $request, $id)
+    public function putData(Request $request, $id)
     {
         //
         if (!$id) return false;
@@ -118,7 +90,7 @@ class userController extends Controller
                     'messages' => trans('users.updatesuccess'),
                     'success' => true,
                     'data' => $user->toJson(),
-                    ]);
+                ]);
             } else {
                 return response()->json(['errors' => $user->errors()->all()]);
             }
@@ -132,25 +104,25 @@ class userController extends Controller
      * @param  int $id
      * @return Response
      */
-    public function destroy($id)
+    public function deleteData($id)
     {
-        $aTodel=array();
-        $aTmp=json_decode($id);
-        if( is_array($aTmp)){
-            $aTodel=$aTmp;
-        }else{
-            $aTodel[]=$id;
+        $aTodel = array();
+        $aTmp = json_decode($id);
+        if (is_array($aTmp)) {
+            $aTodel = $aTmp;
+        } else {
+            $aTodel[] = $id;
         }
 
         $deletedRows = User::destroy($aTodel);
-        if($deletedRows){
+        if ($deletedRows) {
             return response()->json([
-                'messages' => trans('users.deletesuccess',['rows'=>$deletedRows]),
+                'messages' => trans('users.deletesuccess', ['rows' => $deletedRows]),
                 'success' => true,
                 'data' => $deletedRows,
             ]);
-        }else{
-            return response()->json(['errors' => trans('users.deletesuccess',['rows'=>$deletedRows])]);
+        } else {
+            return response()->json(['errors' => trans('users.deletesuccess', ['rows' => $deletedRows])]);
         }
     }
 }

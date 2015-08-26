@@ -10,6 +10,7 @@ var DcmisApp = angular.module("DcmisApp", [
     "ngSanitize",
     "smart-table",
     "ngDialog",
+    "ngResource",
     "ghiscoding.validation","pascalprecht.translate",
 ]);
 DcmisApp.value('validationConfig', {

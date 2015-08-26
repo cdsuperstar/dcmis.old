@@ -1,31 +1,18 @@
 'use strict';
 
-DcmisApp.factory('Resource1', ['$q', '$http',
-    function ($q, $http) {
-
-        function getRandomItems() {
-            return $http.get('/user');//, {cache: 'true'});
-        }
-
-        function getPage(start, number, params) {
-
-            return getRandomItems();
-        }
-
-        return {
-            getPage: getPage
-        };
-
-    }]);
-
-
 DcmisApp.controller('pipeCtrl',
     //['Resource', '$scope', '$filter', '$http', 'ngDialog', '$state', '$stateParams',
     //    function (service, $scope, $filter, $http, ngDialog, $state, $stateParams) {
-    ['Resource1', '$scope', '$filter', '$http', 'ngDialog',
-        function (service, $scope, $filter, $http, ngDialog) {
+    ['$scope', '$filter', '$http', 'ngDialog', '$resource',
+        function ($scope, $filter, $http, ngDialog, $resource) {
 
             var ctrl = this;
+            var User = $resource('/user/data/:id', null, {
+                update: {method: 'PUT'},
+                list: {url: '/user/list/', method: 'GET',isArray:true}
+            });
+
+            // add user
             $scope.adduser = function () {
                 ngDialog.openConfirm({
                     template: '/user/edition',
@@ -39,16 +26,16 @@ DcmisApp.controller('pipeCtrl',
                     overlay: false,
                     closeByEscape: false
                 }).then(function (dcEdition) {
-                    $http.post('/user', dcEdition).then(
+                    User.save(dcEdition).$promise.then(
                         function (res) {
-                            if (res.data.success) {
-                                ctrl.displayed.push(JSON.parse(res.data.data));
-                                showMsg(res.data.messages.toString(), '信息', 'lime');
-                                console.log("save success", res);
+                            if (res.success) {
+                                ctrl.displayed.push(JSON.parse(res.data));
+                                showMsg(res.messages.toString(), '信息', 'lime');
+                                //console.log("save success", res);
                             } else {
                                 // TODO add error message to system
-                                showMsg(res.data.errors.toString(), '错误', 'ruby');
-                                console.log('add failed!', res);
+                                showMsg(res.errors.toString(), '错误', 'ruby');
+                                //console.log('add failed!', res);
                             }
                         }
                     );
@@ -57,6 +44,7 @@ DcmisApp.controller('pipeCtrl',
                 });
             };
 
+            // edit user
             $scope.edituser = function (user) {
                 $scope.dcEditiontmp = angular.copy(user);
                 ngDialog.openConfirm({
@@ -73,15 +61,15 @@ DcmisApp.controller('pipeCtrl',
                     overlay: false,
                     closeByEscape: false
                 }).then(function (dcEdition) {
-                    $http.put('/user/' + dcEdition.id, dcEdition).then(
+                    User.update({id: dcEdition.id}, dcEdition).$promise.then(
                         function (res) {
-                            if (res.data.success) {
+                            if (res.success) {
                                 var index = ctrl.displayed.indexOf(dcEdition);
-                                ctrl.displayed[index] = JSON.parse(res.data.data);
-                                showMsg(res.data.messages.toString(), '信息', 'lime');
+                                ctrl.displayed[index] = JSON.parse(res);
+                                showMsg(res.messages.toString(), '信息', 'lime');
                             } else {
                                 // TODO add error message to system
-                                showMsg(res.data.errors.toString(), '错误', 'ruby');
+                                showMsg(res.errors.toString(), '错误', 'ruby');
                                 console.log('update failed!');
                             }
                         }
@@ -93,26 +81,27 @@ DcmisApp.controller('pipeCtrl',
                     console.log('Modal promise rejected. Reason: ', index);
                 });
             };
+
             $scope.deluser = function (user) {
-                $http.delete('user/' + user.id).then(
+                User.remove({id: user.id}).$promise.then(
                     function (res) {
-                        if (res.data.success) {
+                        if (res.success) {
                             var index = ctrl.displayed.indexOf(user);
                             if (index !== -1) {
                                 ctrl.displayed.splice(index, 1);
-                                showMsg(res.data.messages.toString(), '信息', 'lime');
+                                showMsg(res.messages.toString(), '信息', 'lime');
                                 //$state.transitionTo($state.current, $stateParams, { reload: true, inherit: true, notify: true });
                                 //$state.transitionTo('sys-users');
                             } else {
                             }
                         } else {
-                            showMsg(res.data.errors.toString(), '错误', 'ruby');
+                            showMsg(res.errors.toString(), '错误', 'ruby');
                         }
                     }
                 ), function (data) {
                 };
-
             }
+
             $scope.delusers = function () {
                 var aTodel = [];
                 $("input[name='Datacheckbox']").each(function () {
@@ -120,23 +109,22 @@ DcmisApp.controller('pipeCtrl',
                         aTodel.push($(this).attr("value"));
                     }
                 });
-
-                $http.delete('user/' + JSON.stringify(aTodel))
+                User.remove({id: JSON.stringify(aTodel)}).$promise
                     .then(
                     function (res) {
-                        if (res.data.success) {
-                            for(var delkey in aTodel){
+                        if (res.success) {
+                            for (var delkey in aTodel) {
                                 for (var key in ctrl.displayed) {
-                                    if (ctrl.displayed[key].id == aTodel[delkey] ) {
-                                        ctrl.displayed.splice(key,1);
+                                    if (ctrl.displayed[key].id == aTodel[delkey]) {
+                                        ctrl.displayed.splice(key, 1);
                                     }
                                 }
                             }
                             //$scope.$apply();
 
-                            showMsg(res.data.messages.toString(), '信息', 'lime');
+                            showMsg(res.messages.toString(), '信息', 'lime');
                         } else {
-                            showMsg(res.data.errors.toString(), '错误', 'ruby');
+                            showMsg(res.errors.toString(), '错误', 'ruby');
                         }
                     }
                 ),
@@ -153,17 +141,17 @@ DcmisApp.controller('pipeCtrl',
                 var start = pagination.start || 0;     // This is NOT the page number, but the index of item in the list that you want to use to display the table.
                 var number = pagination.number || $scope.itemsByPage;  // Number of entries showed per page.
 
-                service.getPage(start, number, tableState).then(function (result) {
-
-                    var filtered = tableState.search.predicateObject ? $filter('filter')(result.data, tableState.search.predicateObject) : result.data;
+                User.list().$promise.then(function (result) {
+                    var filtered = tableState.search.predicateObject ? $filter('filter')(result, tableState.search.predicateObject) : result;
                     if (tableState.sort.predicate) {
                         filtered = $filter('orderBy')(filtered, tableState.sort.predicate, tableState.sort.reverse);
                     }
-                    if(filtered.length==0) ctrl.noResult = true;
+
+                    if (filtered.length == 0) ctrl.noResult = true;
                     else ctrl.noResult = false;
 
                     ctrl.displayed = filtered.slice(start, start + number);
-                    tableState.pagination.numberOfPages = Math.ceil(result.data.length / $scope.itemsByPage);//result.numberOfPages;//set the number of pages so the pagination can update
+                    tableState.pagination.numberOfPages = Math.ceil(result.length / $scope.itemsByPage);//result.numberOfPages;//set the number of pages so the pagination can update
                     ctrl.isLoading = false;
                 });
             };

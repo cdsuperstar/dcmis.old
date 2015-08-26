@@ -13,11 +13,15 @@
 
 Route::get('home', 'HomeController@index');
 
-Route::resource('user','User\userController');
-Route::resource('dcmodel','dcmodel\dcmodelController');
 
 Route::controllers([
     'auth' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController',
     'dcassets'=>'dcResController',
+    'user'=>'User\userController',
+    'dcmodel'=>'dcmodel\dcmodelController',
 ]);
+
+//Route::resource('user','User\userController');
+//Route::resource('dcmodel','dcmodel\dcmodelController');
+
