@@ -89,11 +89,13 @@ class dcmodelController extends Controller
         if (!$id) return false;
 
         $recData = dcmodel::findOrFail($id);
+        $oldName=$recData->name;
         if ($recData) {
             foreach ($request->input() as $key => $val) {
                 $recData->$key = $val;
             }
             if ($recData->updateUniques()) {
+                $recData->updateModel($oldName);
                 return response()->json([
                     'messages' => trans('dcmodels.updatesuccess'),
                     'success' => true,
@@ -124,7 +126,12 @@ class dcmodelController extends Controller
             $aTodel[] = $id;
         }
 
+        foreach ($aTodel as $key) {
+            $recData = dcmodel::findOrFail($key);
+            $recData->delModel();
+        }
         $deletedRows = dcmodel::destroy($aTodel);
+
         if ($deletedRows) {
             return response()->json([
                 'messages' => trans('dcmodels.deletesuccess', ['rows' => $deletedRows]),

@@ -56,12 +56,31 @@ class dcmodel extends Ardent
         }
     }
 
+    public function updateModel($oldName, $sTemp = "default")
+    {
+        if ($oldName == $this->name) return false;
+        $bladeDir = base_path() . "/resources/views/style/$sTemp/views/" . $oldName;
+        $viewDir = public_path() . "/views/" . $oldName;
+
+        $newbladeDir = base_path() . "/resources/views/style/$sTemp/views/" . $this->name;
+        $newviewDir = public_path() . "/views/" . $this->name;
+
+        if ($this->name) {
+            File::move($bladeDir, $newbladeDir);
+            File::move($viewDir, $newviewDir);
+
+            File::move($newviewDir . "/" . $oldName . ".css", $newviewDir . "/" . $this->name . ".css");
+            File::move($newviewDir . "/" . $oldName . ".js", $newviewDir . "/" . $this->name . ".js");
+            File::move($newbladeDir . "/" . $oldName . ".blade.php" , $newbladeDir . "/" . $this->name . ".blade.php");
+        }
+    }
+
     public function delModel($sTemp = "default")
     {
         $bladeDir = base_path() . "/resources/views/style/$sTemp/views/" . $this->name;
         $viewDir = public_path() . "/views/" . $this->name;
 
-        if ($this->name<>''&&(is_dir($viewDir) || is_dir($bladeDir))) {
+        if ($this->name <> '' && (is_dir($viewDir) || is_dir($bladeDir))) {
             File::deleteDirectory($bladeDir);
             File::deleteDirectory($viewDir);
         }
