@@ -181,6 +181,18 @@ FILESIN
                     'url' => '',
                     'templateurl' => '',
                     'files' => <<<FILESIN
+                    '/assets/admin/pages/css/timeline.css',
+                    '/assets/global/plugins/bootstrap-select/bootstrap-select.min.css',
+                    '/assets/global/plugins/select2/select2.css',
+                    '/assets/global/plugins/jquery-multi-select/css/multi-select.css',
+                    '/views/sys-msg/sys-msg.css',
+
+                    '/assets/global/plugins/bootstrap-select/bootstrap-select.min.js',
+                    '/assets/global/plugins/select2/select2.min.js',
+                    '/assets/global/plugins/jquery-multi-select/js/jquery.multi-select.js',
+                    '/views/sys-msg/sys-msg.js',
+                    '/js/controllers/GeneralPageController.js',
+                    '/assets/ckeditor/ckeditor.js'
 FILESIN
                     ,
                     'created_at' => $faker->dateTime,
@@ -220,6 +232,9 @@ FILESIN
                     'url' => '/sys-memo.html',
                     'templateurl' => '/dcassets/templateurl/sys-memo',
                     'files' => <<<FILESIN
+                    '/views/sys-memo/sys-memo.css',
+                    '/views/sys-memo/sys-memo.js',
+                    '/js/controllers/GeneralPageController.js'
 FILESIN
                     ,
                     'created_at' => $faker->dateTime,

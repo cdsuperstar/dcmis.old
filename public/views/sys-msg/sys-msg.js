@@ -9,3 +9,9 @@ function showrecord(){
     if(tmpdis=="none") document.getElementById("recorddv").style.display="";
     else document.getElementById("recorddv").style.display="none";
 }
+
+function addmsgrecord(){
+    tmpdis = document.getElementById("addmsg").style.display;
+    if(tmpdis=="none") document.getElementById("addmsg").style.display="";
+    else document.getElementById("addmsg").style.display="none";
+}

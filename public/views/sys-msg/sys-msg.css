@@ -11,10 +11,10 @@
     background-color: #fcf8e3;
 }
 .mini-hr{
-    margin-top: 1px;
-    padding-bottom: 1px;
-    padding-top: 1px;
-    margin-bottom: 1px;
+    margin-top: 3px;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    margin-bottom: 3px;
 }
 .record-list{
     border-bottom:solid 1px #BDCDCE;
