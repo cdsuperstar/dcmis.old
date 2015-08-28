@@ -177,12 +177,12 @@ FILESIN
                     'updated_at' => $faker->dateTime,
                 ]
             , [
-                    'name' => 'user-msg',
+                    'name' => 'sys-msg',
                     'title' => '消息管理',
                     'ismenu' => '1',
-                    'icon' => 'icon-user-following',
-                    'url' => '',
-                    'templateurl' => '',
+                    'icon' => 'icon-envelope-open',
+                    'url' => '/sys-msg.html',
+                    'templateurl' => '/dcassets/templateurl/sys-msg',
                     'files' => <<<FILESIN
                     '/assets/admin/pages/css/timeline.css',
                     '/assets/global/plugins/bootstrap-select/bootstrap-select.min.css',
