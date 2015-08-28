@@ -27,40 +27,21 @@
         </div>
         <!-- END start search CONTENT -->
         <script type="text/ng-template" id="treeTemp">
-            <div class="col-md-12">
-                <div class="portlet red-pink box">
-                    <div class="portlet-title">
-                        <div class="caption">
-                            <i class="fa fa-cogs"></i>模块树编辑器
-                        </div>
-                        <div class="tools">
-                            <a href="javascript:;" class="collapse">
-                            </a>
-                            <a href="#portlet-config" data-toggle="modal" class="config">
-                            </a>
-                            <a href="javascript:;" class="reload">
-                            </a>
-                            <a href="javascript:;" class="remove">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="portlet-body">
-                        <div id="modelTree" class="tree-demo">
-                        </div>
-                        <div class="alert alert-info no-margin margin-top-10">
-                            说明 !
-                        </div>
-                    </div>
+        <div class="portlet red-pink box">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-cogs"></i>模块树编辑器
+                </div>
+                <div class="tools">
+                    <a href="javascript:;" class="remove" ng-click="closeThisDialog()">
+                    </a>
                 </div>
             </div>
-
-            <div class="form-actions">
-                <div class="row">
-                    <div class="col-md-offset-2 col-md-12 ngdialog-buttons">
-                        <button type="button" class="btn yellow" ng-click="closeThisDialog()"> - 返  回 -</button>
-                    </div>
+            <div class="portlet-body">
+                <div id="modelTree" class="tree-demo">
                 </div>
             </div>
+        </div>
         </script>
         <!-- BEGIN EXAMPLE TABLE PORTLET-->
         <div class="portlet box yellow">

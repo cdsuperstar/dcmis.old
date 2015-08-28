@@ -10,110 +10,31 @@
         <span style="white-space: nowrap;"> 1 2 3 4  下一页</span>
     </div>
 </div>
-
-<div class="note-c">
-    <ul class="note-ul">
-        <li class="note-li">
-            <a href="#" class="note-a">
-                <h4 class="note-h2">标题一标题一标题12题一</h4>
-                <p class="note-p">
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    120容一二
-                </p>
-            </a>
-        </li>
-        <li class="note-li">
-            <a href="#" class="note-a">
-                <h4 class="note-h2">标题一标题一标题12题一</h4>
-                <p class="note-p">
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    120容一二
-                </p>
-            </a>
-        </li>
-        <li class="note-li">
-            <a href="#" class="note-a">
-                <h4 class="note-h2">标题一标题一标题12题一</h4>
-                <p class="note-p">
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    120容一二
-                </p>
-            </a>
-        </li>
-        <li class="note-li">
-            <a href="#" class="note-a">
-                <h4 class="note-h2">标题一标题一标题12题一</h4>
-                <p class="note-p">
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    120容一二
-                </p>
-            </a>
-        </li>
-        <li class="note-li">
-            <a href="#" class="note-a">
-                <h4 class="note-h2">标题一标题一标题12题一</h4>
-                <p class="note-p">
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    120容一二
-                </p>
-            </a>
-        </li>
-        <li class="note-li">
-            <a href="#" class="note-a">
-                <h4 class="note-h2">标题一标题一标题12题一</h4>
-                <p class="note-p">
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    内容一二内容一二内容一二三
-                    120容一二
-                </p>
-            </a>
-        </li>
-   </ul>
+<div class="portlet-body note-c">
+    <div class="note note-success">
+        <h4 class="block">Success! Some Header Goes Here</h4>
+        <p>
+            Duis mollis, est non commodo luctus, nisi erat mattis consectetur purus sit amet porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.
+        </p>
+    </div>
+    <div class="note note-info">
+        <h4 class="block">Info! Some Header Goes Here</h4>
+        <p>
+            Duis mollis, est non commodo luctus, nisi erat porttitor ligula, mattis consectetur purus sit amet eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.
+        </p>
+    </div>
+    <div class="note note-danger">
+        <h4 class="block">Danger! Some Header Goes Here</h4>
+        <p>
+            Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit mattis consectetur purus sit amet.\ Cras mattis consectetur purus sit amet fermentum.
+        </p>
+    </div>
+    <div class="note note-warning">
+        <h4 class="block">Warning! Some Header Goes Here</h4>
+        <p>
+            Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit mattis consectetur purus sit amet. Cras mattis consectetur purus sit amet fermentum.
+        </p>
+    </div>
+</div>
+    <!-- END ALERTS PORTLET-->
 </div>

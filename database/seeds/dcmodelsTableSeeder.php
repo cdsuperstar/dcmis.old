@@ -94,27 +94,6 @@ FILESIN
                     'updated_at' => $faker->dateTime,
                 ]
             , [
-                    'name' => 'sys-modelst',
-                    'title' => '模块管理',
-                    'ismenu' => '1',
-                    'icon' => 'icon-support',
-                    'url' => '',
-                    'templateurl' => '',
-                    'files' => <<<FILESIN
-                            '/assets/global/plugins/select2/select2.css',
-                            '/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css',
-
-                            '/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js',
-                            '/assets/global/plugins/select2/select2.min.js',
-                            '/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js',
-                            '/views/sys-model/sys-model.js',
-                            '/js/controllers/GeneralPageController.js'
-FILESIN
-                    ,
-                    'created_at' => $faker->dateTime,
-                    'updated_at' => $faker->dateTime,
-                ]
-            , [
                     'name' => 'sys-addmodel',
                     'title' => '模块编辑',
                     'ismenu' => '0',
@@ -148,12 +127,14 @@ FILESIN
                     'templateurl' => '/dcassets/templateurl/sys-model',
                     'files' => <<<FILESIN
                             '/assets/global/plugins/select2/select2.css',
-                            '/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css',
                             '/assets/global/plugins/jstree/dist/themes/default/style.min.css',
+                            '/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css',
+                            '/views/sys-model/sys-model.css',
 
                             '/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js',
                             '/assets/global/plugins/select2/select2.min.js',
                             '/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js',
+                            '/assets/global/plugins/jstree/dist/jstree.min.js',
                             '/views/sys-model/sys-model.js',
                             '/js/controllers/GeneralPageController.js'
 FILESIN
@@ -194,32 +175,6 @@ FILESIN
                     '/views/sys-msg/sys-msg.js',
                     '/js/controllers/GeneralPageController.js',
                     '/assets/ckeditor/ckeditor.js'
-FILESIN
-                    ,
-                    'created_at' => $faker->dateTime,
-                    'updated_at' => $faker->dateTime,
-                ]
-            , [
-                    'name' => 'msger',
-                    'title' => '发消息',
-                    'ismenu' => '1',
-                    'icon' => 'icon-envelope-open',
-                    'url' => '/msger.html',
-                    'templateurl' => '/dcassets/templateurl/msger',
-                    'files' => <<<FILESIN
-FILESIN
-                    ,
-                    'created_at' => $faker->dateTime,
-                    'updated_at' => $faker->dateTime,
-                ]
-            , [
-                    'name' => 'msglist',
-                    'title' => '消息列表',
-                    'ismenu' => '1',
-                    'icon' => 'icon-envelope-open',
-                    'url' => '/msglist.html',
-                    'templateurl' => '/dcassets/templateurl/msglist',
-                    'files' => <<<FILESIN
 FILESIN
                     ,
                     'created_at' => $faker->dateTime,
