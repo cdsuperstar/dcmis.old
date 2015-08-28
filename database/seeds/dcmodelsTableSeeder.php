@@ -148,14 +148,12 @@ FILESIN
                     'templateurl' => '/dcassets/templateurl/sys-model',
                     'files' => <<<FILESIN
                             '/assets/global/plugins/select2/select2.css',
-                            '/assets/global/plugins/jstree/dist/themes/default/style.min.css',
                             '/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css',
                             '/assets/global/plugins/jstree/dist/themes/default/style.min.css',
 
                             '/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js',
                             '/assets/global/plugins/select2/select2.min.js',
                             '/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js',
-                            '/assets/global/plugins/jstree/dist/jstree.min.js',
                             '/views/sys-model/sys-model.js',
                             '/js/controllers/GeneralPageController.js'
 FILESIN
