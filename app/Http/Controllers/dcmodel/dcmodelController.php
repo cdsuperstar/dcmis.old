@@ -93,6 +93,11 @@ class dcmodelController extends Controller
 
             if ($recData->save()) {
                 $recData->makeModel($request->input('template'));
+                $md=dcmodel::where('name','=',$recData->name)->first();
+
+                $pNode = dcMdGrp::where('id', '=', 1)->first();
+                $pNode->children()->create(['dcmodel_id' => $md->id]);
+
                 return response()->json([
                     'messages' => trans('dcmodels.savesuccess'),
                     'success' => true,

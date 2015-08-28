@@ -23,6 +23,9 @@ class CreateDcmdgrpsTable extends Migration {
       $table->integer('rgt')->nullable()->index();
       $table->integer('depth')->nullable();
       $table->integer('dcmodel_id');
+      $table->foreign('dcmodel_id')
+          ->references('id')->on('dcmodels')
+          ->onDelete('cascade');
       $table->unique('dcmodel_id');
 
       // Add needed columns here (f.ex: name, slug, path, etc.)

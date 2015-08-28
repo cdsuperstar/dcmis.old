@@ -196,7 +196,7 @@ var FormWizard = function () {
                 console.log(dcmodelinfo);
                 var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
                 $.ajax({
-                    url: '/dcmodel',
+                    url: '/dcmodel/data',
                     type: 'POST',
                     data: dcmodelinfo,
                     dataType: 'JSON',
