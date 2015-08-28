@@ -45,7 +45,7 @@ class dcmodelController extends Controller
 
     public function getTree()
     {
-        $tree = dcMdGrp::leftjoin('dcmodels', 'dcmdgrps.dcmodel_id', '=', 'dcmodels.id')->get(['dcmdgrps.id as id', 'dcmdgrps.parent_id as parent', 'dcmodels.title as text', 'dcmodels.icon', 'dcmdgrps.dcmodel_id as data']);
+        $tree = dcMdGrp::leftjoin('dcmodels', 'dcmdgrps.dcmodel_id', '=', 'dcmodels.id')->orderby('dcmdgrps.lft','asc')->get(['dcmdgrps.id as id', 'dcmdgrps.parent_id as parent', 'dcmodels.title as text', 'dcmodels.icon', 'dcmdgrps.dcmodel_id as data']);
         foreach ($tree as $node) {
             if ($node->parent == null) {
                 $node->parent = '#';
