@@ -163,5 +163,6 @@
 <!-- BEGIN MAIN JS & CSS -->
 <script language="JavaScript" type="text/javascript">
     //    TableEditable.init();
+    UITree.init();
 </script>
 <!-- BEGIN MAIN JS & CSS -->
