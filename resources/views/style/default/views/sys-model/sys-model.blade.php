@@ -26,6 +26,26 @@
             </div>
         </div>
         <!-- END start search CONTENT -->
+        <!-- tree start--->
+        <div id="modeltree" class="portlet red-pink box" style="display: none;">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-cogs"></i>菜单树管理
+                </div>
+                <div class="tools">
+                    <a href="javascript:;" class="collapse">
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div id="listtree" class="tree-demo">
+                </div>
+                <div class="alert alert-info no-margin margin-top-10">
+                    Note! The tree nodes are loaded from demo/jstree_ajax_data.php via ajax.
+                </div>
+            </div>
+        </div>
+        <!-- tree end -->
         <!-- BEGIN EXAMPLE TABLE PORTLET-->
         <div class="portlet box yellow">
             <div class="portlet-title">
@@ -33,7 +53,7 @@
                     <i class="fa fa-user"></i>模块管理
                 </div>
                 <div class="tools">
-                    <button class="btn btn-default yellow" onclick="JavaScript:window.location.href='#/sys-addmodel.html';">
+                    <button class="btn btn-default yellow" onclick="JavaScript:showtree();">
                         <i class="fa fa-edit"></i> &nbsp;编辑菜单树 </button>&nbsp;&nbsp;
                     <button class="btn btn-default yellow" onclick="JavaScript:window.location.href='#/sys-addmodel.html';">
                         <i class="fa fa-plus"></i> &nbsp;添加 </button>

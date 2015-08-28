@@ -15,7 +15,7 @@
         <span style="white-space: nowrap;"> 1 2 3 4  下一页</span>
     </div>
 </div>
-<div class="timeline">
+<div class="timeline portlet-body">
     <!-- TIMELINE ITEM -->
     <div class="timeline-item"  id="addmsg" style="display: none;">
         <div class="timeline-badge">
