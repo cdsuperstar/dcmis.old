@@ -211,20 +211,17 @@ FILESIN
                 ])
         );
         DB::connection()->getPdo()->exec("
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (2, 1, 2, 3, 1, 2, '2015-08-23 06:03:39', '2015-08-23 06:03:39');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (6, 4, 5, 6, 2, 4, '2015-08-23 06:13:42', '2015-08-23 06:13:42');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (7, 4, 7, 8, 2, 5, '2015-08-23 06:13:47', '2015-08-23 06:13:47');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (9, 8, 10, 11, 3, 7, '2015-08-23 06:14:39', '2015-08-23 06:14:39');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (4, 1, 4, 15, 1, 3, '2015-08-23 06:10:09', '2015-08-23 06:14:41');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (8, 4, 9, 14, 2, 6, '2015-08-23 06:13:52', '2015-08-23 06:14:41');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (10, 8, 12, 13, 3, 8, '2015-08-23 06:14:41', '2015-08-23 06:14:41');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (12, 11, 18, 19, 3, 11, '2015-08-23 06:16:48', '2015-08-23 06:16:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (11, 5, 17, 22, 2, 10, '2015-08-23 06:16:30', '2015-08-23 06:16:54');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (13, 11, 20, 21, 3, 12, '2015-08-23 06:16:54', '2015-08-23 06:16:54');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (14, 5, 23, 24, 2, 13, '2015-08-23 06:17:14', '2015-08-23 06:17:14');
 INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (1, null, 1, 28, 0, 1, '2015-08-23 06:01:37', '2015-08-23 06:17:16');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (5, 1, 16, 27, 1, 9, '2015-08-23 06:10:14', '2015-08-23 06:17:16');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (15, 5, 25, 26, 2, 14, '2015-08-23 06:17:16', '2015-08-23 06:17:16');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (4, 1, 4, 13, 1, 3, '2015-08-23 06:10:09', '2015-08-28 06:16:57');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (10, 1, 14, 27, 1, 8, '2015-08-23 06:14:41', '2015-08-28 06:16:57');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (12, 10, 19, 20, 2, 11, '2015-08-23 06:16:48', '2015-08-28 06:16:57');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (5, 10, 21, 26, 2, 9, '2015-08-23 06:10:14', '2015-08-28 06:16:57');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (11, 10, 15, 18, 2, 10, '2015-08-23 06:16:30', '2015-08-28 06:16:57');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (8, 4, 11, 12, 2, 6, '2015-08-23 06:13:52', '2015-08-28 06:16:57');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (6, 4, 5, 6, 2, 4, '2015-08-23 06:13:42', '2015-08-28 06:16:57');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (7, 4, 7, 8, 2, 5, '2015-08-23 06:13:47', '2015-08-28 06:16:57');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (9, 4, 9, 10, 2, 7, '2015-08-23 06:14:39', '2015-08-28 06:16:57');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (2, 1, 2, 3, 1, 2, '2015-08-23 06:03:39', '2015-08-28 06:16:57');
         ");
 
 //        DB::table('users')->insert(TestDummy::times(20)->create('App\User')->toArray());
