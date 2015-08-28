@@ -136,7 +136,7 @@ DcmisApp.controller('modellistcontroll',
                         function (res) {
                             if (res.success) {
                                 var index = ctrl.displayed.indexOf(dcEdition);
-                                ctrl.displayed[index] = JSON.parse(res);
+                                ctrl.displayed[index] = JSON.parse(res.data);
                                 showMsg(res.messages.toString(), '信息', 'lime');
                             } else {
                                 // TODO add error message to system
