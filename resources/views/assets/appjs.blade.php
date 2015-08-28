@@ -109,6 +109,8 @@ DcmisApp.controller('AppController', ['$scope', '$rootScope', function($scope, $
         Metronic.initComponents(); // init core components
         //Layout.init(); //  Init entire layout(header, footer, sidebar, etc) on page load if the partials included in server side instead of loading with ng-include directive
     });
+
+    $scope.mdTreeJson={!! $mdTreeJson !!};
 }]);
 
 /***
@@ -126,7 +128,6 @@ DcmisApp.controller('HeaderController', ['$scope', function($scope) {
 
 /* Setup Layout Part - Sidebar */
 DcmisApp.controller('SidebarController', ['$scope', function($scope) {
-    $scope.mdTreeJson={!! $mdTreeJson !!};
     $scope.loaded=false;
     $scope.$on('$includeContentLoaded', function() {
         if(!$scope.loaded)Layout.initSidebar(); // init sidebar

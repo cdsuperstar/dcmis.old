@@ -7,8 +7,82 @@ DcmisApp.controller('modellistcontroll',
             var ctrl = this;
             var dataServer = $resource('/dcmodel/data/:id', null, {
                 update: {method: 'PUT'},
-                list: {url: '/dcmodel/list/', method: 'GET', isArray: true}
+                list: {url: '/dcmodel/list/', method: 'GET', isArray: true},
+                movenode: {url: '/dcmodel/movenode', method: 'POST'}
             });
+
+            $scope.treeEditor = function () {
+                ngDialog.openConfirm({
+                    template: 'treeTemp',
+                    className: 'ngdialog-theme-default',
+                    scope: $scope,
+                    controller: ['$scope', 'validationConfig', function ($scope, validationConfig) {
+                        $scope.$validationOptions = validationConfig;
+
+                        $scope.$on('ngDialog.opened', function () {
+                            //console.log($scope.$parent.$parent.mdTreeJson);
+                            $("#modelTree").jstree({
+                                "core": {
+                                    "themes": {
+                                        "responsive": false
+                                    },
+                                    // so that create works
+                                    "check_callback": function (operation, node, parent, position, more) {
+                                        if (operation === "copy_node" || operation === "move_node") {
+                                            if (parent.id === "#") {
+                                                return false; // prevent moving a child above or below the root
+                                            }
+                                        }
+                                        return true; // allow everything else
+                                    },
+                                    'data': {
+                                        'url': function (node) {
+                                            return '/dcmodel/tree';
+                                        },
+                                        'data': function (node) {
+                                            return {'modelid': node.modelid};
+                                        }
+                                    }
+                                },
+                                "types": {
+                                    "default": {
+                                        "icon": "fa fa-folder icon-state-warning icon-lg"
+                                    },
+                                    "file": {
+                                        "icon": "fa fa-file icon-state-warning icon-lg"
+                                    }
+                                },
+                                "state": {"key": "demo3"},
+                                "plugins": ["dnd", "state", "types"]
+                            })
+                                .bind("move_node.jstree", function (e, data) {
+                                    console.log('the item being dragged ', data);
+                                    dataServer.movenode(data).$promise.then(
+                                        function (res) {
+                                            console.log(res);
+                                            if (res.success) {
+                                                showMsg(res.messages.toString(), '信息', 'lime');
+                                                //console.log("save success", res);
+                                            }
+                                        }
+                                    );
+                                })
+                                .bind("changed.jstree", function (e, data) {
+                                    console.log("The selected nodes are:");
+                                    console.log(data);
+                                });
+                        });
+                    }],
+                    showClose: false,
+                    setBodyPadding: 1,
+                    overlay: false,
+                    closeByEscape: false
+                }).then(function (dcEdition) {
+
+                }, function (dcEdition) {
+
+                });
+            }
 
             // add user
             $scope.add = function () {
@@ -170,51 +244,4 @@ DcmisApp.directive('confirmationNeeded', function () {
         }
     };
 });
-
-function showtree(){
-    var tmpdis = document.getElementById("modeltree").style.display;
-    if(tmpdis=="none") document.getElementById("modeltree").style.display="";
-    else document.getElementById("modeltree").style.display="none";
-}
-
-var UITree = function () {
-
-    var ajaxTreeSample = function() {
-        $("#listtree").jstree({
-            "core" : {
-                "themes" : {
-                    "responsive": false
-                },
-                // so that create works
-                "check_callback" : true,
-                'data' : {
-                    'url' : function (node) {
-                        return '/views/sys-model/jstree_data.php';
-                    },
-                    'data' : function (node) {
-                        return { 'parent' : node.id };
-                    }
-                }
-            },
-            "types" : {
-                "default" : {
-                    "icon" : "fa fa-folder icon-state-warning icon-lg"
-                },
-                "file" : {
-                    "icon" : "fa fa-file icon-state-warning icon-lg"
-                }
-            },
-            "state" : { "key" : "demo3" },
-            "plugins" : [ "dnd", "state", "types" ]
-        });
-    }
-
-
-    return {
-        init: function () {
-            ajaxTreeSample();
-        }
-    };
-}();
-
 

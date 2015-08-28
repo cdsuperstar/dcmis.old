@@ -17,5 +17,6 @@ return [
     'updatesuccess' => 'the rec is updated.',
     'savesuccess' => 'the rec is added.',
     'deletesuccess' => 'the :rows rec is deleted.',
+    'movesuccess' =>'the :cNode moved to :pNode success'
 
 ];

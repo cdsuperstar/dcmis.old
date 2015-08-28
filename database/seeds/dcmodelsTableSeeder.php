@@ -150,6 +150,7 @@ FILESIN
                             '/assets/global/plugins/select2/select2.css',
                             '/assets/global/plugins/jstree/dist/themes/default/style.min.css',
                             '/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css',
+                            '/assets/global/plugins/jstree/dist/themes/default/style.min.css',
 
                             '/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js',
                             '/assets/global/plugins/select2/select2.min.js',

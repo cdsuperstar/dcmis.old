@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\dcmodel;
 
+use App\models\dcMdGrp;
 use App\models\dcmodel;
 use Illuminate\Http\Request;
 
@@ -24,6 +25,33 @@ class dcmodelController extends Controller
             $dcmodel = dcmodel::where('id', $id)->get();
         }
         return response()->json($dcmodel);
+    }
+
+    public function postMovenode(Request $req)
+    {
+        $pNode = dcMdGrp::where('id', '=', $req->parent)->first();
+        $cNode = dcMdGrp::where('id', '=', $req->node['id'])->first();
+        $cNode->makeFirstChildOf($pNode);
+        for ($i = 0; $i < $req->position; $i++) {
+            if ($cNode->getRightSibling() != null)
+                $cNode->moveRight();
+        }
+        return response()->json([
+            'messages' => trans('dcmodels.movesuccess', ['cNode' => $cNode->dcmodel->title, 'pNode' => $pNode->dcmodel->title]),
+            'success' => true,
+            'data' => '',
+        ]);
+    }
+
+    public function getTree()
+    {
+        $tree = dcMdGrp::leftjoin('dcmodels', 'dcmdgrps.dcmodel_id', '=', 'dcmodels.id')->get(['dcmdgrps.id as id', 'dcmdgrps.parent_id as parent', 'dcmodels.title as text', 'dcmodels.icon', 'dcmdgrps.dcmodel_id as data']);
+        foreach ($tree as $node) {
+            if ($node->parent == null) {
+                $node->parent = '#';
+            }
+        }
+        return response()->json($tree);
     }
 
     public function getList()
@@ -89,7 +117,7 @@ class dcmodelController extends Controller
         if (!$id) return false;
 
         $recData = dcmodel::findOrFail($id);
-        $oldName=$recData->name;
+        $oldName = $recData->name;
         if ($recData) {
             foreach ($request->input() as $key => $val) {
                 $recData->$key = $val;

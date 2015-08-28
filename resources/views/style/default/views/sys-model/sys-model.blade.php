@@ -26,26 +26,42 @@
             </div>
         </div>
         <!-- END start search CONTENT -->
-        <!-- tree start--->
-        <div id="modeltree" class="portlet red-pink box" style="display: none;">
-            <div class="portlet-title">
-                <div class="caption">
-                    <i class="fa fa-cogs"></i>菜单树管理
-                </div>
-                <div class="tools">
-                    <a href="javascript:;" class="collapse">
-                    </a>
+        <script type="text/ng-template" id="treeTemp">
+            <div class="col-md-12">
+                <div class="portlet red-pink box">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-cogs"></i>模块树编辑器
+                        </div>
+                        <div class="tools">
+                            <a href="javascript:;" class="collapse">
+                            </a>
+                            <a href="#portlet-config" data-toggle="modal" class="config">
+                            </a>
+                            <a href="javascript:;" class="reload">
+                            </a>
+                            <a href="javascript:;" class="remove">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+                        <div id="modelTree" class="tree-demo">
+                        </div>
+                        <div class="alert alert-info no-margin margin-top-10">
+                            说明 !
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="portlet-body">
-                <div id="listtree" class="tree-demo">
-                </div>
-                <div class="alert alert-info no-margin margin-top-10">
-                    Note! The tree nodes are loaded from demo/jstree_ajax_data.php via ajax.
+
+            <div class="form-actions">
+                <div class="row">
+                    <div class="col-md-offset-2 col-md-12 ngdialog-buttons">
+                        <button type="button" class="btn yellow" ng-click="closeThisDialog()"> - 返  回 -</button>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- tree end -->
+        </script>
         <!-- BEGIN EXAMPLE TABLE PORTLET-->
         <div class="portlet box yellow">
             <div class="portlet-title">
@@ -53,7 +69,7 @@
                     <i class="fa fa-user"></i>模块管理
                 </div>
                 <div class="tools">
-                    <button class="btn btn-default yellow" onclick="JavaScript:showtree();">
+                    <button class="btn btn-default yellow" ng-click="treeEditor()">
                         <i class="fa fa-edit"></i> &nbsp;编辑菜单树 </button>&nbsp;&nbsp;
                     <button class="btn btn-default yellow" onclick="JavaScript:window.location.href='#/sys-addmodel.html';">
                         <i class="fa fa-plus"></i> &nbsp;添加 </button>
@@ -163,6 +179,6 @@
 <!-- BEGIN MAIN JS & CSS -->
 <script language="JavaScript" type="text/javascript">
     //    TableEditable.init();
-    UITree.init();
+//    UITree.init();
 </script>
 <!-- BEGIN MAIN JS & CSS -->
