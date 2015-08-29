@@ -136,7 +136,7 @@ class dcResController extends Controller
         $aTmp = explode('+', $id);
         $sRet = '';
         foreach ($aTmp as $sComp) {
-            $sRet .= "\r\n<!-- Component: " . $sComp . " -->\r\n";
+//            $sRet .= "\r\n<!-- Component: " . $sComp . " -->\r\n";
             $sRet .= implode("\r\n", $mycomp->getMetronicStuffs($sComp, $mycomp::PM_PAGE_LEVEL_STYLES));
             $sRet .= "\r\n";
         }
@@ -150,7 +150,7 @@ class dcResController extends Controller
         $aTmp = explode('+', $id);
         $sRet = '';
         foreach ($aTmp as $sComp) {
-            $sRet .= "\r\n<!-- Component: " . $sComp . " -->\r\n";
+//            $sRet .= "\r\n<!-- Component: " . $sComp . " -->\r\n";
             $sRet .= implode("\r\n", $mycomp->getMetronicStuffs($sComp, $mycomp::PM_PAGE_LEVEL_PLUGINS));
             $sRet .= "\r\n";
         }
@@ -164,7 +164,7 @@ class dcResController extends Controller
         $aTmp = explode('+', $id);
         $sRet = '';
         foreach ($aTmp as $sComp) {
-            $sRet .= "\r\n<!-- Component: " . $sComp . " -->\r\n";
+//            $sRet .= "\r\n<!-- Component: " . $sComp . " -->\r\n";
             $sRet .= implode("\r\n", $mycomp->getMetronicStuffs($sComp, $mycomp::PM_PAGE_INIT_SCRIPT));
             $sRet .= "\r\n";
         }

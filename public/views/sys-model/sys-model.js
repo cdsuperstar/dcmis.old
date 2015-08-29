@@ -68,7 +68,7 @@ DcmisApp.controller('modellistcontroll',
                                     );
                                 })
                                 .bind("changed.jstree", function (e, data) {
-                                    console.log("The selected nodes are:");
+                                    //console.log("The selected nodes are:");
                                     console.log(data);
                                 });
                         });
