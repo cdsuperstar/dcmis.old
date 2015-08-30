@@ -66,6 +66,16 @@
                     </div>
                 </div>
             </div>
+            <div class="form-group" style="margin-bottom: 1px;">
+                <label class="col-sm-1 control-label">&nbsp;</label>
+                <div class="col-sm-11">
+                <a href="javascript:;" class="btn blue">
+                    发消息 <i class="fa fa-link"></i>
+                </a>
+                &nbsp;&nbsp;
+                <a href="javascript:addmemorecord();"> 取消 </a>
+                </div>
+            </div>
         </form>
     </div>
 

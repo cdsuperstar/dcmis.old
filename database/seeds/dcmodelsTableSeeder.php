@@ -188,9 +188,24 @@ FILESIN
                     'url' => '/sys-memo.html',
                     'templateurl' => '/dcassets/templateurl/sys-memo',
                     'files' => <<<FILESIN
-                    '/views/sys-memo/sys-memo.css',
-                    '/views/sys-memo/sys-memo.js',
-                    '/js/controllers/GeneralPageController.js'
+                            '/assets/global/plugins/clockface/css/clockface.css',
+                            '/assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css',
+                            '/assets/global/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css',
+                            '/assets/global/plugins/bootstrap-colorpicker/css/colorpicker.css',
+                            '/assets/global/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css',
+                            '/assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css',
+                            '/views/sys-memo/sys-memo.css',
+
+                            '/assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js',
+                            '/assets/global/plugins/bootstrap-timepicker/js/bootstrap-timepicker.js',
+                            '/assets/global/plugins/clockface/js/clockface.js',
+                            '/assets/global/plugins/bootstrap-daterangepicker/moment.min.js',
+                            '/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.js',
+                            '/assets/global/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js',
+                            '/assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js',
+                            '/views/sys-memo/sys-memo.js',
+                            '/assets/ckeditor/ckeditor.js',
+                            '/js/controllers/GeneralPageController.js'
 FILESIN
                     ,
                     'created_at' => $faker->dateTime,
