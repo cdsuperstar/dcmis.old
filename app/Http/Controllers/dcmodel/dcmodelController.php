@@ -166,6 +166,7 @@ class dcmodelController extends Controller
         $deletedRows = dcmodel::destroy($aTodel);
 
         if ($deletedRows) {
+            dcMdGrp::rebuild(true);
             return response()->json([
                 'messages' => trans('dcmodels.deletesuccess', ['rows' => $deletedRows]),
                 'success' => true,
