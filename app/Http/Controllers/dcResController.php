@@ -137,7 +137,7 @@ class dcResController extends Controller
         $sRet = '';
         foreach ($aTmp as $sComp) {
 //            $sRet .= "\r\n<!-- Component: " . $sComp . " -->\r\n";
-            $sRet .= implode("\r\n", $mycomp->getMetronicStuffs($sComp, $mycomp::PM_PAGE_LEVEL_STYLES));
+            $sRet .= implode("\r\n'", $mycomp->getMetronicStuffs($sComp, $mycomp::PM_PAGE_LEVEL_STYLES))."',";
             $sRet .= "\r\n";
         }
         $sRet=str_replace('../../assets','/assets',$sRet);
@@ -151,7 +151,7 @@ class dcResController extends Controller
         $sRet = '';
         foreach ($aTmp as $sComp) {
 //            $sRet .= "\r\n<!-- Component: " . $sComp . " -->\r\n";
-            $sRet .= implode("\r\n", $mycomp->getMetronicStuffs($sComp, $mycomp::PM_PAGE_LEVEL_PLUGINS));
+            $sRet .= implode("\r\n'", $mycomp->getMetronicStuffs($sComp, $mycomp::PM_PAGE_LEVEL_PLUGINS))."',";
             $sRet .= "\r\n";
         }
         $sRet=str_replace('../../assets','/assets',$sRet);
