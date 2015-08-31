@@ -6,6 +6,7 @@ use App\User;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Hash;
 
 class userController extends Controller
 {
@@ -29,6 +30,26 @@ class userController extends Controller
 //            ->paginate
         $datas = User::all();
         return response()->json($datas);
+    }
+
+    public function postUserpwd(Request $request)
+    {
+        $user=$request->user();
+
+        if(!Hash::check($request->input('oldpwd'),$user->password))
+            return response()->json(['errors' => trans('users.userpwdfailed_notmatch')]);
+        $user->password=$request->input('newpwd');
+        $user->password_confirmation=$request->input('confirmnewpwd');
+        if($user->updateUniques()){
+            return response()->json([
+                'messages' => trans('users.userpwdsuccess'),
+                'success' => true,
+                'data' => '',
+            ]);
+        }else{
+            return response()->json(['errors' => $user->errors()->all()]);
+        }
+
     }
 
     /**

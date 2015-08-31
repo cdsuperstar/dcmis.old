@@ -16,6 +16,9 @@ return [
     'nofound' => 'the user not found.',
     'updatesuccess' => 'the user is updated.',
     'savesuccess' => 'the user is added.',
+    'userpwdsuccess' => 'user pwd update success.',
+    'userpwdfailed_notmatch' => 'user old pwd not match.',
+    'userpwdfailed_newpwdnotmatch' => 'user new pwd not match.',
     'deletesuccess' => 'the :rows user is deleted.',
 
 ];
