@@ -52,7 +52,7 @@ class dcmodel extends Ardent
 
             File::copy($tempBase . "/view/model.css", $viewCss);
             File::copy($tempBase . "/view/model.js", $viewJs);
-            File::copy($tempBase . "/model.blade.php", $bladeDir . "/" . $this->name . ".blade.name");
+            File::copy($tempBase . "/model.blade.php", $bladeDir . "/" . $this->name . ".blade.php");
         }
     }
 

@@ -141,6 +141,7 @@ class dcResController extends Controller
                 $sRet .="\r\n'".$sVal."',";
             }
         }
+        $sRet .="\r\n";
         $sRet=str_replace('../../assets','/assets',$sRet);
         return $sRet;
     }
@@ -156,6 +157,7 @@ class dcResController extends Controller
                 $sRet .="\r\n'".$sVal."',";
             }
         }
+        $sRet .="\r\n";
         $sRet=str_replace('../../assets','/assets',$sRet);
         return $sRet;
     }
