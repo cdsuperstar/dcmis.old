@@ -51,7 +51,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="col-md-2 control-label">紧急联系人及电话</label>
-                                <textarea class="form-control" rows="3" placeholder="某某某-与本人的关系-13900110011" style="width: 70%;"></textarea>
+                                <textarea class="form-control" rows="3" placeholder="某某某-与本人的关系-13900110011 【可以添加多人】" style="width: 70%;"></textarea>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-2 control-label">备注</label>
@@ -72,7 +72,7 @@
                             请选择个人头像图片，支持JPG、GIF、PNG格式图片，用图片编辑软件将图片像素修改为80px*80px，然后上传。
                         </p>
                         <form action="#" role="form">
-                            <div class="form-group">
+                            <div class="col-md-10 form-group">
                                 <div class="fileinput fileinput-new" data-provides="fileinput">
                                     <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
                                         <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt=""/>
@@ -96,9 +96,9 @@
                                     <span>  &nbsp;&nbsp;仅支持 Firefox（火狐浏览器）, Chrome（谷歌浏览器）, Opera（Opera 浏览器）, Safari（苹果浏览器） and Internet Explorer 10（IE10以上） </span>
                                 </div>
                             </div>
-                            <div class="margin-top-10">
+                            <div class="margin-top-10 col-md-10">
                                 <a href="#" class="btn green-haze">
-                                    保 存 </a>
+                                    保 存 </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <a href="#" class="btn default">
                                     取 消 </a>
                             </div>
@@ -109,20 +109,20 @@
                     <div class="tab-pane" id="personpassword">
                         <form action="#">
                             <div class="form-group">
-                                <label class="control-label">现 密 码</label>
-                                <input type="password" class="form-control"/>
+                                <label class="col-md-2 control-label">现 密 码</label>
+                                <input type="password" class="form-control" style="width: 70%;"/>
                             </div>
                             <div class="form-group">
-                                <label class="control-label">新 密 码</label>
-                                <input type="password" class="form-control"/>
+                                <label class="col-md-2 control-label">新 密 码</label>
+                                <input type="password" class="form-control" style="width: 70%;"/>
                             </div>
                             <div class="form-group">
-                                <label class="control-label">确认新密码</label>
-                                <input type="password" class="form-control"/>
+                                <label class="col-md-2 control-label">确认新密码</label>
+                                <input type="password" class="form-control" style="width: 70%;"/>
                             </div>
-                            <div class="margin-top-10">
+                            <div class="margin-top-10"  style="text-align: center;">
                                 <a href="#" class="btn green-haze">
-                                    保 存  </a>
+                                    保 存  </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <a href="#" class="btn default">
                                     取 消 </a>
                             </div>

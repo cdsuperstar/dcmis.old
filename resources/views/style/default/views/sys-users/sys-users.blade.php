@@ -35,10 +35,6 @@
                 <div class="tools">
                     <button class="btn btn-default yellow" ng-click="adduser()">
                         <i class="fa fa-plus"></i> &nbsp;添加 </button>
-                    <a href="javascript:;" class="reload">
-                    </a>
-                    <a href="javascript:;" class="collapse">
-                    </a>
                 </div>
             </div>
             <div class="portlet-body" style="overflow: auto;">

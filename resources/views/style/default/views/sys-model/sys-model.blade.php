@@ -54,8 +54,6 @@
                         <i class="fa fa-edit"></i> &nbsp;编辑菜单树 </button>&nbsp;&nbsp;
                     <button class="btn btn-default yellow" onclick="JavaScript:window.location.href='#/sys-addmodel.html';">
                         <i class="fa fa-plus"></i> &nbsp;添加 </button>
-                    <a href="javascript:;" class="collapse">
-                    </a>
                 </div>
             </div>
             <div class="portlet-body" style="overflow: auto;">

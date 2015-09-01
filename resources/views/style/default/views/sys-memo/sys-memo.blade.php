@@ -59,7 +59,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-1 control-label">内容</label>
+                <label class="col-sm-1 control-label"> 内 容 </label>
                 <div class="col-sm-11">
                     <div id="dcsimpleeditoradd">
                         请输入便签内容
