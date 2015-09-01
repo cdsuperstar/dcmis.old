@@ -117,7 +117,7 @@
                                 <input type="password" class="form-control"/>
                             </div>
                             <div class="form-group">
-                                <label class="control-label">再输入一次</label>
+                                <label class="control-label">确认新密码</label>
                                 <input type="password" class="form-control"/>
                             </div>
                             <div class="margin-top-10">
