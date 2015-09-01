@@ -3,7 +3,7 @@
     <div class="portlet box yellow">
         <div class="portlet-title">
             <div class="caption">
-                <i class="fa fa-gift"></i>
+                <i class="fa fa-lock"></i> 密码修改
             </div>
             <div class="tools">
                 <a href="" class="collapse" data-original-title="" title="">
@@ -51,7 +51,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
+                    <div class="col-md-offset-2 col-md-10" style="float: right">
                         <button type="submit" class="btn green" ng-click="changepwd(userpwd)" ng-disabled="userpwdfm.$invalid"> - 修  改 - </button>
                     </div>
                 </div>

@@ -219,8 +219,9 @@ FILESIN
                     'url' => '/userpwd.html',
                     'templateurl' => '/dcassets/templateurl/userpwd',
                     'files' => <<<FILESIN
-                    '/js/controllers/GeneralPageController.js',
-                    '/views/userpwd/userpwd.js'
+                            '/views/userpwd/userpwd.css',
+                            '/views/userpwd/userpwd.js',
+                            '/js/controllers/GeneralPageController.js'
 FILESIN
                     ,
                     'created_at' => $faker->dateTime,
