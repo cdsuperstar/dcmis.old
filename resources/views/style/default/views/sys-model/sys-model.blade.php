@@ -77,7 +77,7 @@
                         <th st-sort='icon'>
                             图标
                         </th>
-                        <th st-sort='ismenu'>
+                        <th st-sort='ismenu' width="50">
                             显示
                         </th>
                         <th st-sort='url'>
@@ -86,7 +86,7 @@
                         <th st-sort='templateurl'>
                             模块TemplateURL
                         </th>
-                        <th st-sort='files' width="320">
+                        <th st-sort='files' width="300">
                             模块引入文件
                         </th>
                         <th>

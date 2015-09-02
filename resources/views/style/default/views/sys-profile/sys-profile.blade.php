@@ -25,37 +25,50 @@
                         <form role="form" action="#">
                             <div class="form-group">
                                 <label class="col-md-2 control-label"> 姓 名 </label>
+                                <div class="col-md-10 input-group">
                                     <input type="text" placeholder="请输入姓名" class="form-control" style="width: 70%;"/>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-2 control-label"> 性 别 </label>
-                                <label class="uniform-inline">&nbsp;&nbsp;
-                                    <input type="radio" name="optionsRadios1" value="option1"/>
-                                    男 </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <label class="uniform-inline">
-                                    <input type="radio" name="optionsRadios1" value="option2" checked/>
-                                    女 </label>
-
+                                <div class="col-md-10 input-group">
+                                    <label class="uniform-inline">&nbsp;&nbsp;
+                                        <input type="radio" name="optionsRadios1" value="option1"/>
+                                        男 </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <label class="uniform-inline">
+                                        <input type="radio" name="optionsRadios1" value="option2" checked/>
+                                        女 </label>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-2 control-label">出生日期</label>
+                                <div class="col-md-10 input-group">
                                 <input type="text" placeholder="1985-02-10" class="form-control" style="width: 70%;"/>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-2 control-label">学历</label>
+                                <div class="col-md-10 input-group">
                                 <input type="text" placeholder="本科-学校名称-专业名称" class="form-control" style="width: 70%;"/>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-2 control-label">联系电话</label>
+                                <div class="col-md-10 input-group">
                                 <input type="text" placeholder="13900110011" class="form-control" style="width: 70%;"/>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-2 control-label">紧急联系人及电话</label>
+                                <div class="col-md-10 input-group">
                                 <textarea class="form-control" rows="3" placeholder="某某某-与本人的关系-13900110011 【可以添加多人】" style="width: 70%;"></textarea>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-2 control-label">备注</label>
+                                <div class="col-md-10 input-group">
                                 <textarea class="form-control" rows="3" placeholder="其他一些个人兴趣、爱好等" style="width: 70%;"></textarea>
+                                </div>
                             </div>
                             <div class="margiv-top-10" style="text-align: center;">
                                 <a href="#" class="btn green-haze">
@@ -106,22 +119,28 @@
                     </div>
                     <!-- END CHANGE AVATAR TAB -->
                     <!-- CHANGE PASSWORD TAB -->
-                    <div class="tab-pane" id="personpassword">
-                        <form action="#">
+                    <div class="tab-pane" id="personpassword" ng-controller="userpwdController">
+                        <form action="#" name="userpwdfm" role="form">
                             <div class="form-group">
                                 <label class="col-md-2 control-label">现 密 码</label>
-                                <input type="password" class="form-control" style="width: 70%;"/>
+                                <div class="col-md-10 input-group">
+                                <input type="password" class="form-control" style="width: 70%;" ng-model="userpwd.oldpwd" validation="required" name="oldpwd" placeholder="请输入原密码"/>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-2 control-label">新 密 码</label>
-                                <input type="password" class="form-control" style="width: 70%;"/>
+                                <div class="col-md-10 input-group">
+                                <input type="password" class="form-control" style="width: 70%;" ng-model="userpwd.newpwd" validation="required|min_len:4" name="newpwd" placeholder="设置新密码"/>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-2 control-label">确认新密码</label>
-                                <input type="password" class="form-control" style="width: 70%;"/>
+                                <div class="col-md-10 input-group">
+                                <input type="password" class="form-control" style="width: 70%;" ng-model="userpwd.confirmnewpwd" validation="match:userpwd.newpwd,Password|required" name="confirmnewpwd" placeholder="确认新密码"/>
+                                </div>
                             </div>
                             <div class="margin-top-10"  style="text-align: center;">
-                                <a href="#" class="btn green-haze">
+                                <a href="#" class="btn green-haze" ng-click="changepwd(userpwd)" ng-disabled="userpwdfm.$invalid">
                                     保 存  </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <a href="#" class="btn default">
                                     取 消 </a>

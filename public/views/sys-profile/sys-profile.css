@@ -40,3 +40,10 @@ th{
      width: 800px;
  }
 .jquery-notific8-container.top { top: 60px; }
+
+.validation{
+    text-align: justify;
+    display:block;
+    float: inherit;
+
+}
