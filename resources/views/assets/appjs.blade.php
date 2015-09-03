@@ -30,7 +30,7 @@ DcmisApp.config(['$ocLazyLoadProvider','$translateProvider', function($ocLazyLoa
     });
 
     // define translation maps you want to use on startup
-    $translateProvider.preferredLanguage('en');
+    $translateProvider.preferredLanguage('cn');
 
 }]);
 

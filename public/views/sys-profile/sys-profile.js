@@ -8,7 +8,8 @@ DcmisApp.controller('userpwdController',
             var dataServer = $resource('/user/data/:id', null, {
                 userpwd: {url:'/user/userpwd',method: 'POST'},
             });
-            $scope.changepwd=function(userpwd){
+            $scope.changepwd=function(userpwd,e){
+                if(e.target.disabled||e.target.disabled===undefined)return false;
                 dataServer.userpwd(userpwd).$promise.then(
                     function (res) {
                         if (res.success) {

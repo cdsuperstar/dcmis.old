@@ -319,6 +319,7 @@ INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created
 INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (10, 1, 14, 21, 1, 8, '2015-08-23 06:14:41', '2015-09-02 04:49:28');
 INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (1, null, 1, 22, 0, 1, '2015-08-23 06:01:37', '2015-09-02 04:49:28');
 select setval('dcmdgrps_id_seq', (select max(id) + 1 from dcmdgrps));
+select setval('dcmodels_id_seq', (select max(id) + 1 from dcmodels));
       ");
 
 //        DB::table('users')->insert(TestDummy::times(20)->create('App\User')->toArray());

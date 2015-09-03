@@ -140,7 +140,7 @@
                                 </div>
                             </div>
                             <div class="margin-top-10"  style="text-align: center;">
-                                <a href="#" class="btn green-haze" ng-click="changepwd(userpwd)" ng-disabled="userpwdfm.$invalid">
+                                <a href="#" class="btn green-haze" ng-click="changepwd(userpwd,$event)" ng-disabled="userpwdfm.$invalid">
                                     保 存  </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <a href="#" class="btn default">
                                     取 消 </a>
