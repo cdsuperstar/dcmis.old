@@ -26,13 +26,13 @@
                 <span class="input-group-addon">
                 <i class="fa fa-bank"></i>
                 </span>
-                        <input type="text" name="padtitle" class="form-control"/>
+                        <input type="text" name="padtitle" class="form-control" required/>
                     </div>
                 </div>
                 <label class="col-sm-2 control-label">提醒时间</label>
                 <div class="col-sm-4">
                     <div class="input-group">
-                        <input class="form-control data form_datetime" data-date-format="yyyy-mm-dd" type="text" placeholder="请选择日期&时间" />
+                        <input name="padtime" class="form-control data form_datetime" data-date-format="yyyy-mm-dd" type="text" placeholder="请选择日期&时间" required/>
                     </div>
                 </div>
             </div>
@@ -43,7 +43,7 @@
                 <span class="input-group-addon">
                 <i class="icon-badge"></i>
                 </span>
-                        <input type="text" id="spandfl" name="padfl" class="form-control" style="width: 50%;" value=""/>
+                        <input type="text" id="spandfl" name="padfl" class="form-control" style="width: 50%;" value="" required />
                         <div style="text-align: center;vertical-align:middle;margin-top: 5px;">
                             <span style="cursor: pointer" onclick="JavaScript:document.getElementById('spandfl').value='生活';">生活</span>&nbsp;&nbsp;
                             <span style="cursor: pointer" onclick="JavaScript:document.getElementById('spandfl').value='工作';">工作</span>&nbsp;&nbsp;
@@ -56,7 +56,7 @@
                 <label class="col-sm-2 control-label">便签背景</label>
                 <div class="col-sm-4">
                     {{--<input type="text" class="colorpicker-default form-control" value="#8fff00" style="width: 50%;"/>--}}
-                    <select class="form-control" style="width: 50%;">
+                    <select name="padback" class="form-control" style="width: 50%;" required>
                         <option value="note-danger">粉红色</option>
                         <option value="note-success">浅绿色</option>
                         <option value="note-warning">浅黄色</option>
@@ -69,7 +69,7 @@
             <div class="form-group">
                 <label class="col-sm-1 control-label"> 内 容 </label>
                 <div class="col-sm-11">
-                    <div id="dcsimpleeditoradd">
+                    <div id="dcsimpleeditoradd" name="padcontent">
                         请输入便签内容
                     </div>
                 </div>
@@ -77,7 +77,7 @@
             <div class="form-group" style="margin-bottom: 1px;">
                 <label class="col-sm-1 control-label">&nbsp;</label>
                 <div class="col-sm-11">
-                <a href="javascript:;" class="btn blue">
+                <a href="javascript:;" class="btn blue" onclick="addpad();">
                     发消息 <i class="fa fa-link"></i>
                 </a>
                 &nbsp;&nbsp;

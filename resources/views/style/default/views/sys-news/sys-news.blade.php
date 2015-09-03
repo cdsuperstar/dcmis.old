@@ -5,7 +5,7 @@
         <div class="portlet box blue">
             <div class="portlet-title">
                 <div class="caption">
-                    <i class="fa fa-search-plus"></i>Êü•ËØ¢
+                    <i class="fa fa-search-plus"></i>≤È—Ø
                 </div>
                 <div class="tools">
                     <a href="javascript:;" class="collapse">
@@ -13,14 +13,14 @@
                 </div>
             </div>
             <div class="portlet-body" style="overflow: auto;">
-                <div class="col-md-9">
+                <div class="col-md-8">
                     <label>
-                        Ê†áÈ¢òÊü•ËØ¢: &nbsp; <input st-search="email" st-input-event="blur" placeholder="ËØ∑ËæìÂÖ•Áî®Êà∑Âêç" class="input-sm input-inline form-control" type="search"/>
+                        ±ÍÃ‚: &nbsp; <input st-search="email" st-input-event="blur" placeholder="«Î ‰»Î±ÍÃ‚–≈œ¢" class="input-sm input-inline form-control" type="search"/>
                     </label>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <label>
-                        Êü•ËØ¢ÂÖ®ÈÉ® : &nbsp;<input st-search st-input-event="blur" placeholder="ËØ∑ËæìÂÖ•Êü•ÊâæÁöÑ‰ø°ÊÅØ" class="input-sm input-inline form-control" type="search"/>
+                        ≤È—Ø»´≤ø : &nbsp;<input st-search st-input-event="blur" placeholder="«Î ‰»Î≤È’“µƒ–≈œ¢" class="input-sm input-inline form-control" type="search"/>
                     </label>
                 </div>
             </div>
@@ -30,54 +30,59 @@
         <div class="portlet box yellow">
             <div class="portlet-title">
                 <div class="caption">
-                    <i class="fa fa-user"></i>ÂÖ¨ÂëäÁÆ°ÁêÜ
+                    <i class="fa fa-user"></i>π´∏Êπ‹¿Ì
                 </div>
                 <div class="tools">
                     <button class="btn btn-default yellow" ng-click="adduser()">
-                        <i class="fa fa-plus"></i> &nbsp;Ê∑ªÂä† </button>
-                    <a href="javascript:;" class="collapse">
-                    </a>
+                        <i class="fa fa-plus"></i> &nbsp;ÃÌº” </button>
                 </div>
             </div>
             <div class="portlet-body" style="overflow: auto;">
                 <div class="col-md-12">
                     <label>
-                        ÊòæÁ§∫ <input onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')" class="input-xsmall input-inline form-control ng-valid ng-dirty ng-valid-number ng-touched" name="items" id="items" type="number" ng-model="itemsByPage" ng-model-options="{ updateOn: 'blur' }" /> Êù°
+                        œ‘ æ <input onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')" class="input-xsmall input-inline form-control ng-valid ng-dirty ng-valid-number ng-touched" name="items" id="items" type="number" ng-model="itemsByPage" ng-model-options="{ updateOn: 'blur' }" /> Ãı
                     </label>
                     <label class="dataTables-filter">
-                        <button class="btn btn-default grey" ng-click="delusers()" confirmation-needed="Á°ÆÂÆöË¶ÅÂà†Èô§ËØ•Êù°Êï∞ÊçÆÂêóÔºü">
-                            <i class="fa fa-trash-o"></i> &nbsp;ÊâπÈáèÂà†Èô§ </button>
+                        <button class="btn btn-default grey" ng-click="delusers()" confirmation-needed="»∑∂®“™…æ≥˝∏√Ãı ˝æ›¬£ø">
+                            <i class="fa fa-trash-o"></i> &nbsp;≈˙¡ø…æ≥˝ </button>
                     </label>                </div>
                 <table class="table table-striped table-hover table-bordered">
                     <thead>
                     <tr>
                         <th><input type="checkbox" id="checkPathAll" onclick="JavaScript:checkout();"/></th>
+                        <th>
+                            –Ú
+                        </th>
                         <th st-sort="email">
-                            ÂÖ¨ÂëäÊ†áÈ¢ò
+                            ±ÍÃ‚
                         </th>
                         <th st-sort='name'>
-                            ÂèëÂ∏ÉËÄÖ
+                            ∑¢≤º»À
                         </th>
                         <th st-sort='password'>
-                            Êé•Êî∂ËÄÖ
+                            ∑¢≤º≤ø√≈
                         </th>
                         <th>
-                            ÂèëÂ∏ÉÊó∂Èó¥
+                            ƒ⁄»›
                         </th>
                         <th>
-                            ÁªìÊùüÊó∂Èó¥
+                            ±‡º≠
                         </th>
                         <th>
-                            Edit
-                        </th>
-                        <th>
-                            Delete
+                            …æ≥˝
                         </th>
                     </tr>
                     </thead>
-                    <tbody ng-hide="mc.isLoading" ng-hide="mc.noResult">
+                    <tbody>
+                    <tr ng-show="mc.isLoading">
+                        <td colspan="8" ng-show="mc.isLoading" class="text-center">  ˝æ›º”‘ÿ÷– ... </td>
+                    </tr>
+                    <tr ng-show="mc.noResult">
+                        <td colspan="8" ng-show="mc.noResult" class="text-center" bgcolor="#f0f8ff"> Œﬁ∑˚∫œÃıº˛ ˝æ›! «Î ‰»ÎÃıº˛÷ÿ–¬≤È—Ø...  </td>
+                    </tr>
                     <tr ng-repeat="user in mc.displayed">
                         <td cs-select="user" align="center"></td>
+                        <td align="center">@{{ $index+1 }}</td>
                         <td>
                             @{{ user.email }}
                         </td>
@@ -89,29 +94,21 @@
                         </td>
                         <td>
                             <select class="form-control">
-                                <option value="Á≥ªÁªüÁÆ°ÁêÜÂëò">Á≥ªÁªüÁÆ°ÁêÜÂëò</option>
-                                <option value="Ëê•ÈîÄ‰∏ªÁÆ°">Ëê•ÈîÄ‰∏ªÁÆ°</option>
-                                <option value="Ë°åÊîø‰∏ªÁÆ°">Ë°åÊîø‰∏ªÁÆ°</option>
+                                <option value="œµÕ≥π‹¿Ì‘±">œµÕ≥π‹¿Ì‘±</option>
+                                <option value="”™œ˙÷˜π‹">”™œ˙÷˜π‹</option>
+                                <option value="––’˛÷˜π‹">––’˛÷˜π‹</option>
                             </select>
                         </td>
-                        <td>
-                            <a class="edit" ng-click="edituser(user)"  href="javascript:;">
-                                Edit </a>
+                        <td align="center">
+                            <a href="javascript:;" class="dcaedit" ng-click="edituser(user)" title="±‡º≠∏√Ãı ˝æ›£°">
+                                Edit <i class="fa fa-edit"></i>
+                            </a>
                         </td>
-                        <td>
-                            <a class="delete" ng-click="deluser(user)" confirmation-needed="Á°ÆÂÆöË¶ÅÂà†Èô§ËØ•Êù°Êï∞ÊçÆÂêóÔºü"  href="javascript:;">
-                                Delete </a>
+                        <td align="center">
+                            <a href="javascript:;" class="dcadel" ng-click="deluser(user)" confirmation-needed="»∑∂®“™…æ≥˝∏√Ãı ˝æ›¬£ø" title="…æ≥˝∏√Ãı ˝æ›£°">
+                                Delete <i class="fa fa-times"></i>
+                            </a>
                         </td>
-                    </tr>
-                    </tbody>
-                    <tbody ng-show="mc.isLoading">
-                    <tr>
-                        <td colspan="8" class="text-center">Êï∞ÊçÆÂä†ËΩΩ‰∏≠ ... </td>
-                    </tr>
-                    </tbody>
-                    <tbody ng-show="mc.noResult">
-                    <tr>
-                        <td colspan="8" class="text-center">Êó†Á¨¶ÂêàÊù°‰ª∂Êï∞ÊçÆ </td>
                     </tr>
                     </tbody>
                     <tfoot>
@@ -128,10 +125,10 @@
     </div>
 </div>
 
-
 <!-- END MAIN CONTENT -->
 <!-- BEGIN MAIN JS & CSS -->
 <script language="JavaScript" type="text/javascript">
-    //    TableEditable.init();
+// BEGIN INIT SCRIPT
+// END INIT SCRIPT
 </script>
 <!-- BEGIN MAIN JS & CSS -->

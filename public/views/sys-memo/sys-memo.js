@@ -38,3 +38,8 @@ var ComponentsPickers = function () {
     };
 
 }();
+
+function addpad(){
+    var padtmp=formpad.submit();
+    alert(padtmp);
+}
