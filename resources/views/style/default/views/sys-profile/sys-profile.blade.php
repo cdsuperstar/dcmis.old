@@ -67,7 +67,7 @@
                             <div class="form-group">
                                 <label class="col-md-2 control-label">备注</label>
                                 <div class="col-md-10 input-group">
-                                <textarea class="form-control" rows="3" placeholder="其他一些个人兴趣、爱好等" style="width: 70%;"></textarea>
+                                    <textarea class="form-control" rows="3" placeholder="其他一些个人兴趣、爱好、家庭地址等" style="width: 70%;"></textarea>
                                 </div>
                             </div>
                             <div class="margiv-top-10" style="text-align: center;">

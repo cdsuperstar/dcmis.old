@@ -55,7 +55,15 @@
                 </div>
                 <label class="col-sm-2 control-label">便签背景</label>
                 <div class="col-sm-4">
-                    <input type="text" class="colorpicker-default form-control" value="#8fff00" style="width: 50%;"/>
+                    {{--<input type="text" class="colorpicker-default form-control" value="#8fff00" style="width: 50%;"/>--}}
+                    <select class="form-control" style="width: 50%;">
+                        <option value="note-danger">粉红色</option>
+                        <option value="note-success">浅绿色</option>
+                        <option value="note-warning">浅黄色</option>
+                        <option value="note-info">淡蓝色</option>
+                        <option value="note-primary">深蓝色</option>
+                        <option value="note-default">深灰色</option>
+                    </select>
                 </div>
             </div>
             <div class="form-group">
@@ -79,7 +87,7 @@
         </form>
     </div>
 
-    <div class="note note-success">
+    <div class="note note-default">
         <div style="float: right;">
              提醒时间：2015-8-15 13:05  分类：工作
             &nbsp;&nbsp;&nbsp;&nbsp;
@@ -90,7 +98,7 @@
             Duis mollis, est non commodo luctus, nisi erat mattis consectetur purus sit amet porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.
         </p>
     </div>
-    <div class="note note-info">
+    <div class="note note-primary">
         <h4 class="block">Info! Some Header Goes Here</h4>
         <p>
             Duis mollis, est non commodo luctus, nisi erat porttitor ligula, mattis consectetur purus sit amet eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.
