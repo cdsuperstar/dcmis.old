@@ -40,17 +40,16 @@
                 <label class="col-sm-1 control-label">分类</label>
                 <div class="col-sm-5">
                     <div class="input-group">
-                <span class="input-group-addon">
-                <i class="icon-badge"></i>
-                </span>
-                        <input type="text" id="spandfl" name="padfl" class="form-control" style="width: 50%;" value="" required />
-                        <div style="text-align: center;vertical-align:middle;margin-top: 5px;">
-                            <span style="cursor: pointer" onclick="JavaScript:document.getElementById('spandfl').value='生活';">生活</span>&nbsp;&nbsp;
-                            <span style="cursor: pointer" onclick="JavaScript:document.getElementById('spandfl').value='工作';">工作</span>&nbsp;&nbsp;
-                            <span style="cursor: pointer" onclick="JavaScript:document.getElementById('spandfl').value='个人';">个人</span>&nbsp;&nbsp;
-                            <span style="cursor: pointer" onclick="JavaScript:document.getElementById('spandfl').value='生日';">生日</span>&nbsp;&nbsp;
-                            <span style="cursor: pointer" onclick="JavaScript:document.getElementById('spandfl').value='其他';">其他</span>&nbsp;&nbsp;
-                        </div>
+                    <span class="input-group-addon">
+                    <i class="icon-badge"></i>
+                    </span>
+                        <select name="padfl" class="form-control" style="width: 50%;" required>
+                            <option value="生活">生活</option>
+                            <option value="工作">工作</option>
+                            <option value="学习">学习</option>
+                            <option value="个人">个人</option>
+                            <option value="其他">其他</option>
+                        </select>
                     </div>
                 </div>
                 <label class="col-sm-2 control-label">便签背景</label>
