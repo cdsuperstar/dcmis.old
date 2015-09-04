@@ -55,7 +55,7 @@
                 <label class="col-sm-2 control-label">便签背景</label>
                 <div class="col-sm-4">
                     {{--<input type="text" class="colorpicker-default form-control" value="#8fff00" style="width: 50%;"/>--}}
-                    <select name="padback" class="form-control" style="width: 50%;" required>
+                    <select name="padback" class="form-control" style="width: 50%;">
                         <option value="note-danger">粉红色</option>
                         <option value="note-success">浅绿色</option>
                         <option value="note-warning">浅黄色</option>
@@ -68,7 +68,7 @@
             <div class="form-group">
                 <label class="col-sm-1 control-label"> 内 容 </label>
                 <div class="col-sm-11">
-                    <div id="dcsimpleeditoradd" name="padcontent">
+                    <div name="padcontent" id="dcsimpleeditoradd">
                         请输入便签内容
                     </div>
                 </div>
@@ -113,7 +113,7 @@
     <!-- END ALERTS PORTLET-->
 </div>
 <script type="text/javascript">
-    CKEDITOR.replace( 'dcsimpleeditoradd',{
+    var myeditor = CKEDITOR.replace( 'dcsimpleeditoradd',{
         toolbar : 'Basic',
         height : 200,
         uiColor : '#9AB8F3'
