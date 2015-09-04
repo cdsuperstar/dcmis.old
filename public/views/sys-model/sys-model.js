@@ -52,7 +52,6 @@ DcmisApp.controller('modellistcontroll',
                                         "icon": "fa fa-file icon-state-warning icon-lg"
                                     }
                                 },
-                                "state": {"key": "demo3"},
                                 "plugins": ["dnd", "state", "types"]
                             })
                                 .bind("move_node.jstree", function (e, data) {
