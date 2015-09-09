@@ -82,13 +82,14 @@ class dcmodelController extends Controller
         if ($recData) {
 
             $recData->fill($request->input());
-            if ($request->input('modelcss') || $request->input('modelscript')) {
+            if ($request->input('modelcss'))
                 $recData->files = $request->input('modelcss');
-                $recData->files .= sprintf("'/views/%s/%s.css',", $request->input('name'), $request->input('name'));
+            $recData->files .= sprintf("'/views/%s/%s.css',", $request->input('name'), $request->input('name'));
+            if ($request->input('modelscript'))
                 $recData->files .= $request->input('modelscript');
-                $recData->files .= sprintf("'/views/%s/%s.js',", $request->input('name'), $request->input('name'));
-                $recData->files .= "'/js/controllers/GeneralPageController.js',";
-            }
+            $recData->files .= sprintf("'/views/%s/%s.js',", $request->input('name'), $request->input('name'));
+            $recData->files .= "'/js/controllers/GeneralPageController.js',";
+
             $recData->url = '/' . $request->input('name') . '.html';
             $recData->templateurl = '/dcassets/templateurl/' . $request->input('name');
 
