@@ -55,10 +55,10 @@ DcmisApp.controller('modellistcontroll',
                                 "plugins": ["dnd", "state", "types"]
                             })
                                 .bind("move_node.jstree", function (e, data) {
-                                    console.log('the item being dragged ', data);
+                                    //console.log('the item being dragged ', data);
                                     dataServer.movenode(data).$promise.then(
                                         function (res) {
-                                            console.log(res);
+                                            //console.log(res);
                                             if (res.success) {
                                                 showMsg(res.messages.toString(), '信息', 'lime');
                                                 //console.log("save success", res);
@@ -68,7 +68,7 @@ DcmisApp.controller('modellistcontroll',
                                 })
                                 .bind("changed.jstree", function (e, data) {
                                     //console.log("The selected nodes are:");
-                                    console.log(data);
+                                    //console.log(data);
                                 });
                         });
                     }],
