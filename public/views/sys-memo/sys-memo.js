@@ -57,13 +57,10 @@ $.fn.serializeObject = function()
 };
 
 function addpad(){
-    //var data = $("#form1").serializeArray(); //自动将form表单封装成json
-    //alert(JSON.stringify(data));
+    var json = {};
     var jsonuserinfo = $('#formpad').serializeObject();
-    var jsonarray = eval('('+JSON.stringify(jsonuserinfo)+')');
     var content = myeditor.document.getBody().getHtml();
     var tmparr={"padcontent":content};
-    console.log(jsonarray);
-    console.log(tmparr);
-
+    json = eval('('+(JSON.stringify(jsonuserinfo)+JSON.stringify(tmparr)).replace(/}{/,',')+')');
+    console.log(json); //输出json结果
 }
