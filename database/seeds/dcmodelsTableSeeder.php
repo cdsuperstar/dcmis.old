@@ -307,18 +307,20 @@ INSERT INTO public.dcmodels (id, name, title, ismenu, icon, url, templateurl, fi
                             ''/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js'',
                             ''/views/sys-profile/sys-profile.js'',
                             ''/js/controllers/GeneralPageController.js''', '2015-09-01 01:19:17', '2015-09-01 12:08:01');
-INSERT INTO public.dcmodels (id, name, title, ismenu, icon, url, templateurl, files, created_at, updated_at) VALUES (56, 'dc-standard-xx', '学校信息', 1, 'icon-flag', '/dc-standard-xx.html', '/dcassets/templateurl/dc-standard-xx', '                            ''/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css'',
-                            ''/assets/global/plugins/typeahead/typeahead.css'',
-														''/views/dc-standard-xx/dc-standard-xx.css'',
-
-                            ''/assets/global/plugins/jquery.sparkline.min.js'',
-                            ''/assets/global/plugins/typeahead/typeahead.bundle.min.js'',
-                            ''/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js'',
-                            ''/views/dc-standard-xx/dc-standard-xx.js'',
-                            ''/js/controllers/GeneralPageController.js''', '2015-09-04 07:59:10', '2015-09-04 07:59:10');
 INSERT INTO public.dcmodels (id, name, title, ismenu, icon, url, templateurl, files, created_at, updated_at) VALUES (15, 'sys-news', '系统公告', 1, 'icon-bell', '/sys-news.html', '/dcassets/templateurl/sys-news', '''/views/sys-news/sys-news.css'',
 ''/views/sys-news/sys-news.js'',
 ''/js/controllers/GeneralPageController.js'',', '2015-09-03 12:03:11', '2015-09-03 12:03:11');
+INSERT INTO public.dcmodels (id, name, title, ismenu, icon, url, templateurl, files, created_at, updated_at) VALUES (56, 'dc-standard-xx', '组织结构设置', 1, 'icon-flag', '/dc-standard-xx.html', '/dcassets/templateurl/dc-standard-xx', '                            ''/assets/global/plugins/select2/select2.css'',
+                            ''/assets/global/plugins/jstree/dist/themes/default/style.min.css'',
+                            ''/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css'',
+														''/views/dc-standard-xx/dc-standard-xx.css'',
+
+                            ''/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js'',
+                            ''/assets/global/plugins/select2/select2.min.js'',
+                            ''/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js'',
+                            ''/assets/global/plugins/jstree/dist/jstree.min.js'',
+                            ''/views/dc-standard-xx/dc-standard-xx.js'',
+                            ''/js/controllers/GeneralPageController.js''', '2015-09-04 07:59:10', '2015-09-10 10:47:21');
 INSERT INTO public.dcmodels (id, name, title, ismenu, icon, url, templateurl, files, created_at, updated_at) VALUES (20, 'dc-market-hb', '合作伙伴', 1, 'icon-bubbles', '/dc-market-hb.html', '/dcassets/templateurl/dc-market-hb', '''/views/dc-market-hb/dc-market-hb.css'',
 ''/views/dc-market-hb/dc-market-hb.js'',
 ''/js/controllers/GeneralPageController.js'',', '2015-09-04 06:26:04', '2015-09-04 06:26:04');
@@ -424,12 +426,6 @@ INSERT INTO public.dcmodels (id, name, title, ismenu, icon, url, templateurl, fi
 INSERT INTO public.dcmodels (id, name, title, ismenu, icon, url, templateurl, files, created_at, updated_at) VALUES (55, 'dc-standard', '标准设置', 1, 'icon-star', '/dc-standard.html', '/dcassets/templateurl/dc-standard', '''/views/dc-standard/dc-standard.css'',
 ''/views/dc-standard/dc-standard.js'',
 ''/js/controllers/GeneralPageController.js'',', '2015-09-04 07:58:05', '2015-09-04 07:58:05');
-INSERT INTO public.dcmodels (id, name, title, ismenu, icon, url, templateurl, files, created_at, updated_at) VALUES (57, 'dc-standard-xq', '校区设置', 1, 'icon-pointer', '/dc-standard-xq.html', '/dcassets/templateurl/dc-standard-xq', '''/views/dc-standard-xq/dc-standard-xq.css'',
-''/views/dc-standard-xq/dc-standard-xq.js'',
-''/js/controllers/GeneralPageController.js'',', '2015-09-04 08:00:26', '2015-09-04 08:00:26');
-INSERT INTO public.dcmodels (id, name, title, ismenu, icon, url, templateurl, files, created_at, updated_at) VALUES (58, 'dc-standard-bm', '部门设置', 1, 'icon-film', '/dc-standard-bm.html', '/dcassets/templateurl/dc-standard-bm', '''/views/dc-standard-bm/dc-standard-bm.css'',
-''/views/dc-standard-bm/dc-standard-bm.js'',
-''/js/controllers/GeneralPageController.js'',', '2015-09-04 08:01:02', '2015-09-04 08:01:02');
 INSERT INTO public.dcmodels (id, name, title, ismenu, icon, url, templateurl, files, created_at, updated_at) VALUES (59, 'dc-standard-zw', '职位设置', 1, 'icon-chemistry', '/dc-standard-zw.html', '/dcassets/templateurl/dc-standard-zw', '''/views/dc-standard-zw/dc-standard-zw.css'',
 ''/views/dc-standard-zw/dc-standard-zw.js'',
 ''/js/controllers/GeneralPageController.js'',', '2015-09-04 08:01:45', '2015-09-04 08:01:45');
@@ -508,83 +504,80 @@ INSERT INTO public.dcmodels (id, name, title, ismenu, icon, url, templateurl, fi
 INSERT INTO public.dcmodels (id, name, title, ismenu, icon, url, templateurl, files, created_at, updated_at) VALUES (85, 'dc-analysis-lyfx', '来源分析', 1, 'icon-size-fullscreen', '/dc-analysis-lyfx.html', '/dcassets/templateurl/dc-analysis-lyfx', '''/views/dc-analysis-lyfx/dc-analysis-lyfx.css'',
 ''/views/dc-analysis-lyfx/dc-analysis-lyfx.js'',
 ''/js/controllers/GeneralPageController.js'',', '2015-09-04 09:31:33', '2015-09-04 09:31:33');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (81, 78, 147, 148, 2, 82, '2015-09-04 09:28:35', '2015-09-04 09:34:01');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (84, 78, 141, 142, 2, 85, '2015-09-04 09:31:34', '2015-09-04 09:34:01');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (1, null, 1, 154, 0, 1, '2015-08-23 06:01:37', '2015-09-04 09:31:34');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (17, 4, 23, 24, 2, 15, '2015-09-03 12:03:11', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (6, 4, 25, 26, 2, 4, '2015-08-23 06:13:42', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (7, 4, 27, 28, 2, 5, '2015-08-23 06:13:47', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (9, 4, 29, 30, 2, 7, '2015-08-23 06:14:39', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (8, 4, 31, 32, 2, 6, '2015-08-23 06:13:52', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (4, 1, 22, 33, 1, 3, '2015-08-23 06:10:09', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (22, 18, 41, 42, 2, 20, '2015-09-04 06:26:04', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (31, 29, 59, 60, 2, 31, '2015-09-04 07:13:12', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (32, 29, 61, 62, 2, 33, '2015-09-04 07:17:10', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (33, 29, 63, 64, 2, 34, '2015-09-04 07:18:10', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (29, 1, 56, 65, 1, 29, '2015-09-04 06:54:26', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (35, 34, 67, 68, 2, 36, '2015-09-04 07:25:55', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (38, 34, 73, 74, 2, 39, '2015-09-04 07:29:47', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (39, 34, 75, 76, 2, 40, '2015-09-04 07:31:21', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (40, 34, 77, 78, 2, 41, '2015-09-04 07:32:39', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (34, 1, 66, 79, 1, 35, '2015-09-04 07:24:43', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (37, 34, 69, 70, 2, 38, '2015-09-04 07:28:15', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (36, 34, 71, 72, 2, 37, '2015-09-04 07:26:57', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (46, 41, 81, 82, 2, 47, '2015-09-04 07:43:02', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (42, 41, 85, 86, 2, 43, '2015-09-04 07:39:25', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (44, 41, 87, 88, 2, 45, '2015-09-04 07:41:28', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (45, 41, 89, 90, 2, 46, '2015-09-04 07:42:27', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (43, 41, 83, 84, 2, 44, '2015-09-04 07:40:42', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (41, 1, 80, 91, 1, 42, '2015-09-04 07:38:33', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (51, 47, 97, 98, 2, 52, '2015-09-04 07:53:03', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (82, 78, 151, 152, 2, 83, '2015-09-04 09:29:25', '2015-09-04 09:34:01');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (79, 78, 143, 144, 2, 80, '2015-09-04 09:27:15', '2015-09-04 09:34:01');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (64, 54, 113, 114, 2, 65, '2015-09-04 08:54:16', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (65, 54, 111, 112, 2, 66, '2015-09-04 08:54:50', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (54, 1, 110, 115, 1, 55, '2015-09-04 07:58:05', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (60, 54, 106, 107, 2, 61, '2015-09-04 08:03:31', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (61, 54, 108, 109, 2, 62, '2015-09-04 08:04:34', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (69, 66, 121, 122, 2, 70, '2015-09-04 09:02:53', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (72, 71, 127, 125, 2, 73, '2015-09-04 09:07:09', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (70, 66, 123, 124, 2, 71, '2015-09-04 09:03:34', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (67, 66, 119, 120, 2, 68, '2015-09-04 09:01:42', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (68, 66, 117, 118, 2, 69, '2015-09-04 09:02:19', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (76, 71, 132, 133, 2, 77, '2015-09-04 09:10:24', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (75, 71, 128, 131, 2, 76, '2015-09-04 09:09:43', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (73, 71, 126, 131, 2, 74, '2015-09-04 09:08:05', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (55, 54, 2, 3, 2, 56, '2015-09-04 07:59:11', '2015-09-04 08:56:47');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (58, 54, 8, 9, 2, 59, '2015-09-04 08:01:45', '2015-09-04 08:56:47');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (59, 54, 10, 11, 2, 60, '2015-09-04 08:02:24', '2015-09-04 08:56:47');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (83, 78, 149, 150, 2, 84, '2015-09-04 09:30:41', '2015-09-04 09:34:01');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (78, 1, 140, 153, 1, 79, '2015-09-04 09:26:36', '2015-09-04 09:34:01');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (80, 78, 145, 146, 2, 81, '2015-09-04 09:28:05', '2015-09-04 09:34:01');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (2, 1, 12, 13, 1, 2, '2015-08-23 06:03:39', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (15, 10, 15, 16, 2, 13, '2015-09-01 01:19:17', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (11, 10, 17, 18, 2, 10, '2015-08-23 06:16:30', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (5, 10, 19, 20, 2, 9, '2015-08-23 06:10:14', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (10, 1, 14, 21, 1, 8, '2015-08-23 06:14:41', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (19, 18, 35, 36, 2, 17, '2015-09-04 06:18:24', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (20, 18, 37, 38, 2, 18, '2015-09-04 06:21:36', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (21, 18, 39, 40, 2, 19, '2015-09-04 06:24:28', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (18, 1, 34, 43, 1, 16, '2015-09-04 06:13:33', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (24, 23, 45, 46, 2, 22, '2015-09-04 06:38:09', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (26, 23, 47, 48, 2, 24, '2015-09-04 06:40:32', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (25, 23, 49, 50, 2, 23, '2015-09-04 06:39:15', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (27, 23, 51, 52, 2, 25, '2015-09-04 06:42:30', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (28, 23, 53, 54, 2, 28, '2015-09-04 06:45:53', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (23, 1, 44, 55, 1, 21, '2015-09-04 06:35:45', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (30, 29, 57, 58, 2, 30, '2015-09-04 06:56:03', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (50, 47, 99, 100, 2, 51, '2015-09-04 07:52:15', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (52, 47, 101, 102, 2, 53, '2015-09-04 07:53:56', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (53, 47, 103, 104, 2, 54, '2015-09-04 07:55:13', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (48, 47, 93, 94, 2, 49, '2015-09-04 07:50:51', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (49, 47, 95, 96, 2, 50, '2015-09-04 07:51:34', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (47, 1, 92, 105, 1, 48, '2015-09-04 07:50:03', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (66, 1, 116, 130, 1, 67, '2015-09-04 08:59:26', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (77, 71, 137, 138, 2, 78, '2015-09-04 09:10:54', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (71, 1, 128, 139, 1, 72, '2015-09-04 09:06:14', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (74, 71, 129, 135, 2, 75, '2015-09-04 09:08:59', '2015-09-04 09:33:48');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (56, 54, 4, 5, 2, 57, '2015-09-04 08:00:26', '2015-09-04 08:56:47');
-INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (57, 54, 6, 7, 2, 58, '2015-09-04 08:01:03', '2015-09-04 08:56:47');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (17, 4, 13, 14, 2, 15, '2015-09-03 12:03:11', '2015-09-10 10:46:14');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (6, 4, 15, 16, 2, 4, '2015-08-23 06:13:42', '2015-09-10 10:46:14');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (7, 4, 17, 18, 2, 5, '2015-08-23 06:13:47', '2015-09-10 10:46:14');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (9, 4, 19, 20, 2, 7, '2015-08-23 06:14:39', '2015-09-10 10:46:14');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (8, 4, 21, 22, 2, 6, '2015-08-23 06:13:52', '2015-09-10 10:46:14');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (4, 1, 12, 23, 1, 3, '2015-08-23 06:10:09', '2015-09-10 10:46:14');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (22, 18, 31, 32, 2, 20, '2015-09-04 06:26:04', '2015-09-10 10:46:14');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (31, 29, 49, 50, 2, 31, '2015-09-04 07:13:12', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (32, 29, 51, 52, 2, 33, '2015-09-04 07:17:10', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (33, 29, 53, 54, 2, 34, '2015-09-04 07:18:10', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (29, 1, 46, 55, 1, 29, '2015-09-04 06:54:26', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (35, 34, 57, 58, 2, 36, '2015-09-04 07:25:55', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (37, 34, 59, 60, 2, 38, '2015-09-04 07:28:15', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (36, 34, 61, 62, 2, 37, '2015-09-04 07:26:57', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (38, 34, 63, 64, 2, 39, '2015-09-04 07:29:47', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (39, 34, 65, 66, 2, 40, '2015-09-04 07:31:21', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (40, 34, 67, 68, 2, 41, '2015-09-04 07:32:39', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (34, 1, 56, 69, 1, 35, '2015-09-04 07:24:43', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (46, 41, 71, 72, 2, 47, '2015-09-04 07:43:02', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (43, 41, 73, 74, 2, 44, '2015-09-04 07:40:42', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (42, 41, 75, 76, 2, 43, '2015-09-04 07:39:25', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (44, 41, 77, 78, 2, 45, '2015-09-04 07:41:28', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (45, 41, 79, 80, 2, 46, '2015-09-04 07:42:27', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (41, 1, 70, 81, 1, 42, '2015-09-04 07:38:33', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (51, 47, 87, 88, 2, 52, '2015-09-04 07:53:03', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (84, 78, 135, 136, 2, 85, '2015-09-04 09:31:34', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (81, 78, 141, 142, 2, 82, '2015-09-04 09:28:35', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (1, null, 1, 148, 0, 1, '2015-08-23 06:01:37', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (55, 54, 97, 98, 2, 56, '2015-09-04 07:59:11', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (58, 54, 99, 100, 2, 59, '2015-09-04 08:01:45', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (59, 54, 101, 102, 2, 60, '2015-09-04 08:02:24', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (60, 54, 103, 104, 2, 61, '2015-09-04 08:03:31', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (61, 54, 105, 106, 2, 62, '2015-09-04 08:04:34', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (65, 54, 107, 108, 2, 66, '2015-09-04 08:54:50', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (64, 54, 109, 110, 2, 65, '2015-09-04 08:54:16', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (54, 1, 96, 111, 1, 55, '2015-09-04 07:58:05', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (68, 66, 113, 114, 2, 69, '2015-09-04 09:02:19', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (69, 66, 115, 116, 2, 70, '2015-09-04 09:02:53', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (70, 66, 117, 118, 2, 71, '2015-09-04 09:03:34', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (73, 71, 121, 122, 2, 74, '2015-09-04 09:08:05', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (72, 71, 123, 124, 2, 73, '2015-09-04 09:07:09', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (75, 71, 125, 126, 2, 76, '2015-09-04 09:09:43', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (76, 71, 129, 130, 2, 77, '2015-09-04 09:10:24', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (79, 78, 137, 138, 2, 80, '2015-09-04 09:27:15', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (82, 78, 145, 146, 2, 83, '2015-09-04 09:29:25', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (80, 78, 139, 140, 2, 81, '2015-09-04 09:28:05', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (83, 78, 143, 144, 2, 84, '2015-09-04 09:30:41', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (78, 1, 134, 147, 1, 79, '2015-09-04 09:26:36', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (2, 1, 2, 3, 1, 2, '2015-08-23 06:03:39', '2015-09-10 10:46:14');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (15, 10, 5, 6, 2, 13, '2015-09-01 01:19:17', '2015-09-10 10:46:14');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (11, 10, 7, 8, 2, 10, '2015-08-23 06:16:30', '2015-09-10 10:46:14');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (5, 10, 9, 10, 2, 9, '2015-08-23 06:10:14', '2015-09-10 10:46:14');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (10, 1, 4, 11, 1, 8, '2015-08-23 06:14:41', '2015-09-10 10:46:14');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (19, 18, 25, 26, 2, 17, '2015-09-04 06:18:24', '2015-09-10 10:46:14');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (20, 18, 27, 28, 2, 18, '2015-09-04 06:21:36', '2015-09-10 10:46:14');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (21, 18, 29, 30, 2, 19, '2015-09-04 06:24:28', '2015-09-10 10:46:14');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (18, 1, 24, 33, 1, 16, '2015-09-04 06:13:33', '2015-09-10 10:46:14');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (24, 23, 35, 36, 2, 22, '2015-09-04 06:38:09', '2015-09-10 10:46:14');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (26, 23, 37, 38, 2, 24, '2015-09-04 06:40:32', '2015-09-10 10:46:14');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (25, 23, 39, 40, 2, 23, '2015-09-04 06:39:15', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (27, 23, 41, 42, 2, 25, '2015-09-04 06:42:30', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (28, 23, 43, 44, 2, 28, '2015-09-04 06:45:53', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (23, 1, 34, 45, 1, 21, '2015-09-04 06:35:45', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (30, 29, 47, 48, 2, 30, '2015-09-04 06:56:03', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (48, 47, 83, 84, 2, 49, '2015-09-04 07:50:51', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (49, 47, 85, 86, 2, 50, '2015-09-04 07:51:34', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (50, 47, 89, 90, 2, 51, '2015-09-04 07:52:15', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (52, 47, 91, 92, 2, 53, '2015-09-04 07:53:56', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (53, 47, 93, 94, 2, 54, '2015-09-04 07:55:13', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (47, 1, 82, 95, 1, 48, '2015-09-04 07:50:03', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (66, 1, 112, 119, 1, 67, '2015-09-04 08:59:26', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (74, 71, 127, 128, 2, 75, '2015-09-04 09:08:59', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (77, 71, 131, 132, 2, 78, '2015-09-04 09:10:54', '2015-09-10 10:46:15');
+INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (71, 1, 120, 133, 1, 72, '2015-09-04 09:06:14', '2015-09-10 10:46:15');
 select setval('dcmdgrps_id_seq', (select max(id) + 1 from dcmdgrps));
 select setval('dcmodels_id_seq', (select max(id) + 1 from dcmodels));
       ");
