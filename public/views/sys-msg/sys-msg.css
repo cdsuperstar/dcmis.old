@@ -1,22 +1,14 @@
 .timeline{
-    border-bottom:solid 2px #BDCDCE;
-    padding-bottom: 20px;
-    padding-top: 10px;
-    border-top:solid 2px #BDCDCE;
-}
-.timeline-reply-content {
-    font-size: 14px;
-    margin-top: 1px;
-    margin-bottom: 1px;
-    background-color: #fcf8e3;
-}
-.mini-hr{
-    margin-top: 3px;
-    padding-bottom: 3px;
-    padding-top: 3px;
-    margin-bottom: 3px;
+    border-bottom:solid 1px #F7F7F7;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    border-top:solid 1px #F7F7F7;
 }
 .record-list{
     border-bottom:solid 1px #BDCDCE;
 
+}
+.portlet-body{
+    padding-top: 2px;
+    border-top:solid 1px #2e6da4;
 }
