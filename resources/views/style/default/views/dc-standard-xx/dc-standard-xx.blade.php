@@ -14,7 +14,19 @@
                 <div class="form-group">
                     <label class="col-md-1 control-label">学校名称</label>
                     <div class="col-md-11 input-group">
-                        <input type="text" placeholder="请输入学校名称" class="form-control" style="width: 50%;"/>
+                        <input type="text" name="name" placeholder="请输入学校名称" class="form-control" style="width: 50%;"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-1 control-label">学校固话</label>
+                    <div class="col-md-11 input-group">
+                        <input type="text" name="phone" placeholder="请输入学校固话（区号-电话号码）" class="form-control" style="width: 50%;"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-1 control-label">学校网址</label>
+                    <div class="col-md-11 input-group">
+                        <input type="text" name="web" placeholder="请输入学校网址（www.xxx.com.cn）" class="form-control" style="width: 50%;"/>
                     </div>
                 </div>
                 <div class="form-group">
