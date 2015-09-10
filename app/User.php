@@ -70,7 +70,4 @@ class User extends Ardent implements AuthenticatableContract, CanResetPasswordCo
     {
         return $this->hasMany('App\models\sysmemo');
     }
-    public function pxxxb(){
-        return $this->hasOne('App\models\pxxxb');
-    }
 }
