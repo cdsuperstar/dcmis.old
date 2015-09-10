@@ -457,18 +457,15 @@ INSERT INTO public.dcmodels (id, name, title, ismenu, icon, url, templateurl, fi
 INSERT INTO public.dcmodels (id, name, title, ismenu, icon, url, templateurl, files, created_at, updated_at) VALUES (67, 'dc-personnel', '人事管理', 1, 'icon-support', '/dc-personnel.html', '/dcassets/templateurl/dc-personnel', '''/views/dc-personnel/dc-personnel.css'',
 ''/views/dc-personnel/dc-personnel.js'',
 ''/js/controllers/GeneralPageController.js'',', '2015-09-04 08:59:25', '2015-09-04 08:59:25');
-INSERT INTO public.dcmodels (id, name, title, ismenu, icon, url, templateurl, files, created_at, updated_at) VALUES (68, 'dc-personnel-js', '教师管理', 1, 'icon-notebook', '/dc-personnel-js.html', '/dcassets/templateurl/dc-personnel-js', '''/views/dc-personnel-js/dc-personnel-js.css'',
-''/views/dc-personnel-js/dc-personnel-js.js'',
-''/js/controllers/GeneralPageController.js'',', '2015-09-04 09:01:42', '2015-09-04 09:01:42');
-INSERT INTO public.dcmodels (id, name, title, ismenu, icon, url, templateurl, files, created_at, updated_at) VALUES (69, 'dc-personnel-yg', '员工管理', 1, 'icon-user-following', '/dc-personnel-yg.html', '/dcassets/templateurl/dc-personnel-yg', '''/views/dc-personnel-yg/dc-personnel-yg.css'',
-''/views/dc-personnel-yg/dc-personnel-yg.js'',
-''/js/controllers/GeneralPageController.js'',', '2015-09-04 09:02:19', '2015-09-04 09:02:19');
 INSERT INTO public.dcmodels (id, name, title, ismenu, icon, url, templateurl, files, created_at, updated_at) VALUES (70, 'dc-personnel-jz', '兼职管理', 1, 'icon-user-unfollow', '/dc-personnel-jz.html', '/dcassets/templateurl/dc-personnel-jz', '''/views/dc-personnel-jz/dc-personnel-jz.css'',
 ''/views/dc-personnel-jz/dc-personnel-jz.js'',
 ''/js/controllers/GeneralPageController.js'',', '2015-09-04 09:02:53', '2015-09-04 09:02:53');
-INSERT INTO public.dcmodels (id, name, title, ismenu, icon, url, templateurl, files, created_at, updated_at) VALUES (71, 'dc-personnel-ht', '员工合同管理', 1, 'icon-login', '/dc-personnel-ht.html', '/dcassets/templateurl/dc-personnel-ht', '''/views/dc-personnel-ht/dc-personnel-ht.css'',
+INSERT INTO public.dcmodels (id, name, title, ismenu, icon, url, templateurl, files, created_at, updated_at) VALUES (69, 'dc-personnel-yg', '职员管理', 1, 'icon-user-following', '/dc-personnel-yg.html', '/dcassets/templateurl/dc-personnel-yg', '''/views/dc-personnel-yg/dc-personnel-yg.css'',
+''/views/dc-personnel-yg/dc-personnel-yg.js'',
+''/js/controllers/GeneralPageController.js'',', '2015-09-04 09:02:19', '2015-09-10 07:36:15');
+INSERT INTO public.dcmodels (id, name, title, ismenu, icon, url, templateurl, files, created_at, updated_at) VALUES (71, 'dc-personnel-ht', '职员合同管理', 1, 'icon-login', '/dc-personnel-ht.html', '/dcassets/templateurl/dc-personnel-ht', '''/views/dc-personnel-ht/dc-personnel-ht.css'',
 ''/views/dc-personnel-ht/dc-personnel-ht.js'',
-''/js/controllers/GeneralPageController.js'',', '2015-09-04 09:03:34', '2015-09-04 09:03:34');
+''/js/controllers/GeneralPageController.js'',', '2015-09-04 09:03:34', '2015-09-10 07:36:22');
 INSERT INTO public.dcmodels (id, name, title, ismenu, icon, url, templateurl, files, created_at, updated_at) VALUES (72, 'dc-finance', '财务管理', 1, 'icon-wallet', '/dc-finance.html', '/dcassets/templateurl/dc-finance', '''/views/dc-finance/dc-finance.css'',
 ''/views/dc-finance/dc-finance.js'',
 ''/js/controllers/GeneralPageController.js'',', '2015-09-04 09:06:14', '2015-09-04 09:06:14');
