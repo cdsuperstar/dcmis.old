@@ -1,83 +1,145 @@
-
 <!-- BEGIN MAIN CONTENT -->
-<div class="row">
-    <div class="col-md-12">
-        <div class="portlet light">
-            <div class="portlet-title tabbable-line">
-                <div class="caption caption-md">
-                    <i class="icon-globe theme-font hide"></i>
-                    <span class="caption-subject font-blue-madison bold uppercase">学校信息设置</span>
+<div class="row" ng-controller="modellistcontroll as modelc">
+    <div class="col-md-12" st-pipe="modelc.callServer"  st-table="modelc.displayed">
+        <!-- BEGIN start search CONTENT -->
+        <div class="portlet box blue">
+            <div class="portlet-title">
+                <div class="caption">
+                        <i class="fa fa-search-plus"></i>查询
+                </div>
+                <div class="tools">
+                    <a href="javascript:;" class="collapse">
+                    </a>
                 </div>
             </div>
-            <div class="portlet-body">
-                <form action="#" role="form">
-                <div class="form-group">
-                    <label class="col-md-1 control-label">学校名称</label>
-                    <div class="col-md-11 input-group">
-                        <input type="text" name="name" placeholder="请输入学校名称" class="form-control" style="width: 50%;"/>
-                    </div>
+            <div class="portlet-body" style="overflow: auto;">
+                <div class="col-md-8">
+                    <label>
+                        组织名称: &nbsp; <input st-search="name" st-input-event="blur" placeholder="请输入组织名称" class="input-sm input-inline form-control" type="search"/>
+                    </label>
                 </div>
-                <div class="form-group">
-                    <label class="col-md-1 control-label">学校固话</label>
-                    <div class="col-md-11 input-group">
-                        <input type="text" name="phone" placeholder="请输入学校固话（区号-电话号码）" class="form-control" style="width: 50%;"/>
-                    </div>
+                <div class="col-md-4">
+                    <label>
+                        查询全部 : &nbsp;<input st-search st-input-event="blur" placeholder="请输入查找的信息" class="input-sm input-inline form-control" type="search"/>
+                    </label>
                 </div>
-                <div class="form-group">
-                    <label class="col-md-1 control-label">学校网址</label>
-                    <div class="col-md-11 input-group">
-                        <input type="text" name="web" placeholder="请输入学校网址（www.xxx.com.cn）" class="form-control" style="width: 50%;"/>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-1 control-label">学校LOGO</label>
-                    <div class="col-md-11 input-group" style="border-style:solid; border-width:1px; border-color:#F7F7F7;">
-                        <p>
-                            请选择LOGO图片，支持JPG、GIF、PNG格式图片，用图片编辑软件将图片像素修改为80px*80px，然后上传。
-                        </p>
-                        <div class="col-md-11 form-group">
-                            <div class="fileinput fileinput-new" data-provides="fileinput">
-                                <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
-                                    <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt=""/>
-                                </div>
-                                <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;">
-                                </div>
-                                <div>
-                                    <span class="btn default btn-file">
-                                    <span class="fileinput-new">
-                                    添加图像 </span>
-                                    <span class="fileinput-exists">
-                                    变更图像 </span>
-                                    <input type="file" name="...">
-                                    </span>
-                                    <a href="#" class="btn default fileinput-exists" data-dismiss="fileinput">
-                                        删除图像 </a>
-                                </div>
-                            </div>
-                            <div class="clearfix margin-top-10">
-                                <span class="label label-danger">注意! </span>
-                                <span>  &nbsp;&nbsp;仅支持 Firefox（火狐浏览器）, Chrome（谷歌浏览器）, Opera（Opera 浏览器）, Safari（苹果浏览器） and Internet Explorer 10（IE10以上） </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                    <div class="margin-top-10 col-md-10">
-                        <a href="#" class="btn green-haze">
-                            保 存 </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="#" class="btn default">
-                            取 消 </a>
-                    </div>
-                </form>
             </div>
         </div>
+        <!-- END start search CONTENT -->
+        <script type="text/ng-template" id="treeTemp">
+            <div class="portlet red-pink box">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-cogs"></i>组织机构编辑
+                    </div>
+                    <div class="tools">
+                        <a href="javascript:;" class="remove" ng-click="closeThisDialog()">
+                        </a>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div id="modelTree" class="tree-demo">
+                    </div>
+                </div>
+            </div>
+        </script>
+        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+        <div class="portlet box yellow">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-user"></i>组织机构设置
+                </div>
+                <div class="tools">
+                    <button class="btn btn-default yellow" ng-click="treeEditor()">
+                        <i class="fa fa-edit"></i> &nbsp;编辑组织结构树 </button>&nbsp;&nbsp;
+                    <button class="btn btn-default yellow" ng-click="add()">
+                        <i class="fa fa-plus"></i> &nbsp;添加 </button>
+                </div>
+            </div>
+            <div class="portlet-body" style="overflow: auto;">
+                <div class="col-md-12">
+                    <label>
+                        显示 <input onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')" class="input-xsmall input-inline form-control ng-valid ng-dirty ng-valid-number ng-touched" name="items" id="items" type="number" ng-model="itemsByPage" ng-model-options="{ updateOn: 'blur' }" /> 条
+                    </label>
+                </div>
+                <table class="table table-striped table-hover table-bordered">
+                    <thead>
+                    <tr class="text-center">
+                        <th>
+                            序
+                        </th>
+                        <th st-sort="name">
+                            组织名称
+                        </th>
+                        <th st-sort='phone'>
+                            电话
+                        </th>
+                        <th>
+                            主页地址
+                        </th>
+                        <th width="50">
+                            图标
+                        </th>
+                        <th>
+                            编辑
+                        </th>
+                        <th>
+                            删除
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-show="modelc.isLoading">
+                        <td colspan="10" ng-show="modelc.isLoading" class="text-center"> 数据加载中 ... </td>
+                    </tr>
+                    <tr ng-show="modelc.noResult">
+                        <td colspan="10" ng-show="modelc.noResult" class="text-center" bgcolor="#f0f8ff"> 无符合条件数据! 请输入条件重新查询...  </td>
+                    </tr>
+                    <tr ng-repeat="model in modelc.displayed">
+                        <td align="center">@{{ $index+1 }}</td>
+                        <td>
+                            @{{ model.name }}
+                        </td>
+                        <td>
+                            @{{model.phone}}
+                        </td>
+                        <td>
+                            @{{model.web}}
+                        </td>
+                        <td>
+                            @{{model.logo}}
+                        </td>
+                        <td align="center">
+                            <a href="javascript:;" class="dcaedit" ng-click="edit(model)" title="编辑该条数据！">
+                                Edit <i class="fa fa-edit"></i>
+                            </a>
+                        </td>
+                        <td align="center">
+                            <a href="javascript:;" class="dcadel" ng-click="del(model)" confirmation-needed="确定要删除该条数据吗？" title="删除该条数据！">
+                                Delete <i class="fa fa-times"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td colspan="10"  st-pagination st-items-by-page="itemsByPage" class="text-center">
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+
+            </div>
+        </div>
+        <!-- END EXAMPLE TABLE PORTLET-->
     </div>
 </div>
+
 
 <!-- END MAIN CONTENT -->
 <!-- BEGIN MAIN JS & CSS -->
 <script language="JavaScript" type="text/javascript">
-// BEGIN INIT SCRIPT
-// END INIT SCRIPT
+    //    TableEditable.init();
+    //    UITree.init();
 </script>
 <!-- BEGIN MAIN JS & CSS -->
