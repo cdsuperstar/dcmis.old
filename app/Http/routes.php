@@ -20,6 +20,7 @@ Route::controllers([
     'dcassets'=>'dcResController',
     'user'=>'User\userController',
     'dcmodel'=>'dcmodel\dcmodelController',
+    'pxunit'=>'pxunit\pxunitController',
 ]);
 
 //Route::resource('user','User\userController');

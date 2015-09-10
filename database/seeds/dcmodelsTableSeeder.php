@@ -578,8 +578,15 @@ INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created
 INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (74, 71, 127, 128, 2, 75, '2015-09-04 09:08:59', '2015-09-10 10:46:15');
 INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (77, 71, 131, 132, 2, 78, '2015-09-04 09:10:54', '2015-09-10 10:46:15');
 INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (71, 1, 120, 133, 1, 72, '2015-09-04 09:06:14', '2015-09-10 10:46:15');
+
 select setval('dcmdgrps_id_seq', (select max(id) + 1 from dcmdgrps));
 select setval('dcmodels_id_seq', (select max(id) + 1 from dcmodels));
+
+
+INSERT INTO public.pxunits (id, name, logo, phone, web, created_at, updated_at) VALUES (1, 'CloudSchool', 'Cloud', 'Cloud', 'Cloud', '2015-09-10 15:14:20', '2015-09-10 15:14:20');
+INSERT INTO public.pxunitgrps (id, parent_id, lft, rgt, depth, pxunit_id, created_at, updated_at) VALUES (1, null, 1, 2, 0, 1, '2015-09-10 15:15:33', '2015-09-10 15:15:39');
+select setval('pxunitgrps_id_seq', (select max(id) + 1 from pxunitgrps));
+select setval('pxunits_id_seq', (select max(id) + 1 from pxunits));
       ");
 
 //        DB::table('users')->insert(TestDummy::times(20)->create('App\User')->toArray());
