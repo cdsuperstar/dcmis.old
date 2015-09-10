@@ -12,4 +12,9 @@ class pxunit extends Model
         return $this->hasOne('App\models\pxunitgrp');
     }
 
+    public function user()
+    {
+        return $this->hasMany('App\User');
+    }
+
 }

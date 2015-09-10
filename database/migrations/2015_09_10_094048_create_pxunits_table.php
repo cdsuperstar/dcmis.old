@@ -20,6 +20,18 @@ class CreatePxunitsTable extends Migration
             $table->text('web');
             $table->timestamps();
         });
+        Schema::create('user_pxunit', function (Blueprint $table) {
+            $table->integer('user_id')->unsigned();
+            $table->integer('pxunit_id')->unsigned();
+
+            $table->foreign('user_id')->references('id')->on('users')
+                ->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('pxunit_id')->references('id')->on('pxunits')
+                ->onUpdate('cascade')->onDelete('cascade');
+
+            $table->primary(['user_id', 'pxunit_id']);
+        });
+
     }
 
     /**
@@ -29,6 +41,7 @@ class CreatePxunitsTable extends Migration
      */
     public function down()
     {
+        Schema::drop('user_pxunit');
         Schema::drop('pxunits');
     }
 }
