@@ -45,7 +45,7 @@ class dcmodelController extends Controller
 
     public function getTree()
     {
-        $tree = dcMdGrp::leftjoin('dcmodels', 'dcmdgrps.dcmodel_id', '=', 'dcmodels.id')->orderby('dcmdgrps.lft','asc')->get(['dcmdgrps.id as id', 'dcmdgrps.parent_id as parent', 'dcmodels.title as text', 'dcmodels.icon', 'dcmdgrps.dcmodel_id as data']);
+        $tree = dcMdGrp::leftjoin('dcmodels', 'dcmdgrps.dcmodel_id', '=', 'dcmodels.id')->orderby('dcmdgrps.lft', 'asc')->get(['dcmdgrps.id as id', 'dcmdgrps.parent_id as parent', 'dcmodels.title as text', 'dcmodels.icon', 'dcmdgrps.dcmodel_id as data']);
         foreach ($tree as $node) {
             if ($node->parent == null) {
                 $node->parent = '#';
@@ -82,18 +82,20 @@ class dcmodelController extends Controller
         if ($recData) {
 
             $recData->fill($request->input());
-            if ($request->input('modelcss') || $request->input('modelscript')) {
+            if ($request->input('modelcss'))
                 $recData->files = $request->input('modelcss');
-                $recData->files .= sprintf("'/views/%s/%s.css',", $request->input('name'), $request->input('name'));
+            $recData->files .= sprintf("'/views/%s/%s.css',", $request->input('name'), $request->input('name'));
+            if ($request->input('modelscript'))
                 $recData->files .= $request->input('modelscript');
-                $recData->files .= sprintf("'/views/%s/%s.js',", $request->input('name'), $request->input('name'));
-            }
+            $recData->files .= sprintf("'/views/%s/%s.js',", $request->input('name'), $request->input('name'));
+            $recData->files .= "'/js/controllers/GeneralPageController.js',";
+
             $recData->url = '/' . $request->input('name') . '.html';
             $recData->templateurl = '/dcassets/templateurl/' . $request->input('name');
 
             if ($recData->save()) {
                 $recData->makeModel($request->input('template'));
-                $md=dcmodel::where('name','=',$recData->name)->first();
+                $md = dcmodel::where('name', '=', $recData->name)->first();
 
                 $pNode = dcMdGrp::where('id', '=', 1)->first();
                 $pNode->children()->create(['dcmodel_id' => $md->id]);
