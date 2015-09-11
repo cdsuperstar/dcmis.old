@@ -74,10 +74,10 @@
                         <th st-sort='phone'>
                             电话
                         </th>
-                        <th>
+                        <th width="200">
                             主页地址
                         </th>
-                        <th width="50">
+                        <th width="100">
                             图标
                         </th>
                         <th>

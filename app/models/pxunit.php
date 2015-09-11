@@ -9,18 +9,18 @@ class pxunit extends Ardent
     //
     public static $rules = array(
         'name' => 'required',
-        'logo' => 'required',
         'phone' => 'required',
         'web' => '',
+        'logo' => '',
     );
     public static $angularrules = array(
         'name' => 'required',
-        'logo' => 'required',
         'phone' => 'required',
         'web' => '',
+        'logo' => '',
     );
     protected $table = 'pxunits';
-    protected $fillable = ['name', 'logo', 'phone', 'web'];
+    protected $fillable = ['name', 'phone', 'web','logo'];
 
     public function pxunitgrp()
     {

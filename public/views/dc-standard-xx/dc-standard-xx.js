@@ -37,7 +37,7 @@ DcmisApp.controller('modellistcontroll',
                                     },
                                     'data': {
                                         'url': function (node) {
-                                            return '/dcmodel/tree';
+                                            return '/pxunit/tree';
                                         },
                                         'data': function (node) {
                                             return {'modelid': node.modelid};
@@ -60,7 +60,7 @@ DcmisApp.controller('modellistcontroll',
                                         function (res) {
                                             //console.log(res);
                                             if (res.success) {
-                                                showMsg(res.messages.toString(), '–≈œ¢', 'lime');
+                                                showMsg(res.messages.toString(), '‰ø°ÊÅØ', 'lime');
                                                 //console.log("save success", res);
                                             }
                                         }
@@ -86,7 +86,7 @@ DcmisApp.controller('modellistcontroll',
             // add user
             $scope.add = function () {
                 ngDialog.openConfirm({
-                    template: '/dcmodel/edition',
+                    template: '/pxunit/edition',
                     className: 'ngdialog-theme-default',
                     scope: $scope,
                     controller: ['$scope', 'validationConfig', function ($scope, validationConfig) {
@@ -101,11 +101,11 @@ DcmisApp.controller('modellistcontroll',
                         function (res) {
                             if (res.success) {
                                 ctrl.displayed.push(JSON.parse(res.data));
-                                showMsg(res.messages.toString(), '–≈œ¢', 'lime');
+                                showMsg(res.messages.toString(), '‰ø°ÊÅØ', 'lime');
                                 //console.log("save success", res);
                             } else {
                                 // TODO add error message to system
-                                showMsg(res.errors.toString(), '¥ÌŒÛ', 'ruby');
+                                showMsg(res.errors.toString(), 'ÈîôËØØ', 'ruby');
                                 //console.log('add failed!', res);
                             }
                         }
@@ -119,7 +119,7 @@ DcmisApp.controller('modellistcontroll',
             $scope.edit = function (dataRec) {
                 $scope.dcEditiontmp = angular.copy(dataRec);
                 ngDialog.openConfirm({
-                    template: '/dcmodel/edition',
+                    template: '/pxunit/edition',
                     className: 'ngdialog-theme-default',
                     scope: $scope,
                     controller: ['$scope', 'validationConfig', function ($scope, validationConfig) {
@@ -136,10 +136,10 @@ DcmisApp.controller('modellistcontroll',
                             if (res.success) {
                                 var index = ctrl.displayed.indexOf(dcEdition);
                                 ctrl.displayed[index] = JSON.parse(res.data);
-                                showMsg(res.messages.toString(), '–≈œ¢', 'lime');
+                                showMsg(res.messages.toString(), '‰ø°ÊÅØ', 'lime');
                             } else {
                                 // TODO add error message to system
-                                showMsg(res.errors.toString(), '¥ÌŒÛ', 'ruby');
+                                showMsg(res.errors.toString(), 'ÈîôËØØ', 'ruby');
                                 console.log('update failed!');
                             }
                         }
@@ -159,13 +159,13 @@ DcmisApp.controller('modellistcontroll',
                             var index = ctrl.displayed.indexOf(user);
                             if (index !== -1) {
                                 ctrl.displayed.splice(index, 1);
-                                showMsg(res.messages.toString(), '–≈œ¢', 'lime');
+                                showMsg(res.messages.toString(), '‰ø°ÊÅØ', 'lime');
                                 //$state.transitionTo($state.current, $stateParams, { reload: true, inherit: true, notify: true });
                                 //$state.transitionTo('sys-users');
                             } else {
                             }
                         } else {
-                            showMsg(res.errors.toString(), '¥ÌŒÛ', 'ruby');
+                            showMsg(res.errors.toString(), 'ÈîôËØØ', 'ruby');
                         }
                     }
                 ), function (data) {
@@ -192,9 +192,9 @@ DcmisApp.controller('modellistcontroll',
                             }
                             //$scope.$apply();
 
-                            showMsg(res.messages.toString(), '–≈œ¢', 'lime');
+                            showMsg(res.messages.toString(), '‰ø°ÊÅØ', 'lime');
                         } else {
-                            showMsg(res.errors.toString(), '¥ÌŒÛ', 'ruby');
+                            showMsg(res.errors.toString(), 'ÈîôËØØ', 'ruby');
                         }
                     }
                 ),
@@ -233,7 +233,7 @@ DcmisApp.directive('confirmationNeeded', function () {
         priority: 1,
         terminal: true,
         link: function (scope, element, attr) {
-            var msg = attr.confirmationNeeded || "»∑∂®“™…æ≥˝∏√Ãı ˝æ›¬£ø";
+            var msg = attr.confirmationNeeded || "Á°ÆÂÆöË¶ÅÂà†Èô§ËØ•Êù°Êï∞ÊçÆÂêóÔºü";
             var clickAction = attr.ngClick;
             element.bind('click', function () {
                 if (window.confirm(msg)) {

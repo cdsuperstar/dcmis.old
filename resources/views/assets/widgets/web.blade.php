@@ -1,7 +1,7 @@
 <div class="form-group form-md-line-input">
-    <label class="col-md-2 control-label" for="name">Ö÷Ò³µØÖ·</label>
+    <label class="col-md-2 control-label" for="name">ä¸»é¡µåœ°å€</label>
     <div class="col-md-10">
-        <input type="text" name="web" class="form-control" ng-model="dcEdition.name" validation="{{ $fieldval }}" placeholder="ÇëÊäÈëÍøÖ·£¨www.xxx.com.cn£©"">
+        <input type="text" name="web" class="form-control" ng-model="dcEdition.web" validation="{{ $fieldval }}" placeholder="è¯·è¾“å…¥ç½‘å€ï¼ˆwww.xxx.com.cnï¼‰"">
         <div class="form-control-focus">
         </div>
     </div>

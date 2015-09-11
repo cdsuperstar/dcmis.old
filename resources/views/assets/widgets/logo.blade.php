@@ -1,10 +1,7 @@
 <div class="form-group">
-    <label class="col-md-1 control-label">Í¼Æ¬LOGO</label>
-    <div class="col-md-11 input-group" style="border-style:solid; border-width:1px; border-color:#F7F7F7;">
-        <p>
-            ÇëÑ¡ÔñLOGOÍ¼Æ¬£¬Ö§³ÖJPG¡¢GIF¡¢PNG¸ñÊ½Í¼Æ¬£¬ÓÃÍ¼Æ¬±à¼­Èí¼þ½«Í¼Æ¬ÏñËØÐÞ¸ÄÎª80px*80px£¬È»ºóÉÏ´«¡£
-        </p>
-        <div class="col-md-11 form-group">
+    <label class="col-md-2 control-label">å›¾ç‰‡LOGO</label>
+    <div class="col-md-10 input-group" style="margin-left:auto;margin-right:auto;vertical-align:middle;border-style:solid; border-width:1px; border-color:#F7F7F7;">
+        <div class="col-md-10">
             <div class="fileinput fileinput-new" data-provides="fileinput">
                 <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
                     <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt=""/>
@@ -12,20 +9,20 @@
                 <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;">
                 </div>
                 <div>
-                                    <span class="btn default btn-file">
-                                    <span class="fileinput-new">
-                                    Ìí¼ÓÍ¼Ïñ </span>
-                                    <span class="fileinput-exists">
-                                    ±ä¸üÍ¼Ïñ </span>
-                                    <input type="file" name="...">
-                                    </span>
+                    <span class="btn default btn-file">
+                    <span class="fileinput-new">
+                    æ·»åŠ å›¾åƒ </span>
+                    <span class="fileinput-exists">
+                    å˜æ›´å›¾åƒ </span>
+                    <input type="file" name="...">
+                    </span>
                     <a href="#" class="btn default fileinput-exists" data-dismiss="fileinput">
-                        É¾³ýÍ¼Ïñ </a>
+                        åˆ é™¤å›¾åƒ </a>
                 </div>
             </div>
             <div class="clearfix margin-top-10">
-                <span class="label label-danger">×¢Òâ! </span>
-                <span>  &nbsp;&nbsp;½öÖ§³Ö Firefox£¨»ðºüä¯ÀÀÆ÷£©, Chrome£¨¹È¸èä¯ÀÀÆ÷£©, Opera£¨Opera ä¯ÀÀÆ÷£©, Safari£¨Æ»¹ûä¯ÀÀÆ÷£© and Internet Explorer 10£¨IE10ÒÔÉÏ£© </span>
+                <span class="label label-danger">æ³¨æ„! </span>
+                <span style="line-height:20px;">  &nbsp;&nbsp;æ”¯æŒJPGã€GIFã€PNGæ ¼å¼å›¾ç‰‡ï¼Œç”¨å›¾ç‰‡ç¼–è¾‘è½¯ä»¶å°†å›¾ç‰‡åƒç´ ä¿®æ”¹ä¸º80px*80pxï¼Œç„¶åŽä¸Šä¼ ã€‚ </span>
             </div>
         </div>
     </div>
