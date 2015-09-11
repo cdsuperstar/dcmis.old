@@ -32,4 +32,13 @@ class pxunit extends Ardent
         return $this->hasMany('App\User');
     }
 
+    public function senSysnotices()
+    {
+        return $this->hasMany('App\models\sysnotice','senpart');
+    }
+    public function recSysnotices()
+    {
+        return $this->hasMany('App\models\sysnotice','recpart');
+    }
+
 }

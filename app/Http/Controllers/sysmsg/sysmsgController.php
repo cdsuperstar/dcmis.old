@@ -16,6 +16,9 @@ class sysmsgController extends Controller
         if ($id == '') {
             return;
         }
+
+        return;
+//        Cache::remember()
         $msgs = sysmsg::where('user_id', $id)->get();
         return response()->json($msgs);
     }

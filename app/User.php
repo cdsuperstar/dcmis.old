@@ -80,4 +80,9 @@ class User extends Ardent implements AuthenticatableContract, CanResetPasswordCo
     {
         return $this->hasMany('App\models\sysmsg');
     }
+
+    public function sysnotices()
+    {
+        return $this->hasMany('App\models\sysnotice');
+    }
 }
