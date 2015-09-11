@@ -49,14 +49,27 @@ class UsersTableSeeder extends Seeder
         //seed permission_role
         DB::table('permission_role')->delete();
         $permission_id = App\models\Permission::all()->lists('id')->toArray();
-        $role_id = App\models\Role::all()->lists('id')->toArray();
+//        $role_id = App\models\Role::all()->lists('id')->toArray();
         foreach (range(1, 20) as $index) {
-            $a = $faker->randomElement($role_id);
+            $a = $faker->randomElement($rolesId);
             $b = $faker->randomElement($permission_id);
             DB::table('permission_role')->where('role_id', '=', $a, 'and')->where('permission_id', '=', $b)->delete();
             DB::table('permission_role')->insert([
                 'role_id' => $a,
                 'permission_id' => $b,
+            ]);
+        }
+
+        DB::table('sysmsgs')->delete();
+        foreach (range(1, 300) as $index) {
+            DB::table('sysmsgs')->insert([
+                'user_id' => $faker->randomElement($usersId),
+                'friend_id' => $faker->randomElement($usersId),
+                'issend'=>$faker->boolean(),
+                'content'=>$faker->text,
+                'status'=>$faker->boolean(),
+                'created_at' => $faker->dateTime,
+                'updated_at' => $faker->dateTime,
             ]);
         }
 

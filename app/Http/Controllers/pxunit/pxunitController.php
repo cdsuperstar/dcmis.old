@@ -145,10 +145,6 @@ class pxunitController extends Controller
             $aTodel[] = $id;
         }
 
-        foreach ($aTodel as $key) {
-            $recData = pxunit::findOrFail($key);
-            $recData->delModel();
-        }
         $deletedRows = pxunit::destroy($aTodel);
 
         if ($deletedRows) {

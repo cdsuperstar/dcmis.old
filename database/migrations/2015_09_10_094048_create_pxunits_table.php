@@ -15,9 +15,9 @@ class CreatePxunitsTable extends Migration
         Schema::create('pxunits', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('logo');
+            $table->string('logo')->nullable();
             $table->string('phone');
-            $table->text('web');
+            $table->text('web')->nullable();
             $table->timestamps();
         });
         Schema::create('user_pxunit', function (Blueprint $table) {
