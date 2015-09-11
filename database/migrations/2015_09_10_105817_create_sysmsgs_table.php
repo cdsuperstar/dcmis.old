@@ -17,9 +17,9 @@ class CreateSysmsgsTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('friend_id')->unsigned();
-            $table->boolean('issend');
+            $table->boolean('sender');
             $table->text('content');
-            $table->boolean('status')->default(false);
+            $table->boolean('readed')->default(false);
             $table->timestamps();
         });
     }

@@ -65,9 +65,9 @@ class UsersTableSeeder extends Seeder
             DB::table('sysmsgs')->insert([
                 'user_id' => $faker->randomElement($usersId),
                 'friend_id' => $faker->randomElement($usersId),
-                'issend'=>$faker->boolean(),
+                'sender'=>$faker->boolean(),
                 'content'=>$faker->text,
-                'status'=>$faker->boolean(),
+                'readed'=>$faker->boolean(),
                 'created_at' => $faker->dateTime,
                 'updated_at' => $faker->dateTime,
             ]);

@@ -175,7 +175,7 @@ class dcmodelController extends Controller
                 'data' => $deletedRows,
             ]);
         } else {
-            return response()->json(['errors' => trans('dcmodels.deletesuccess', ['rows' => $deletedRows])]);
+            return response()->json(['errors' => trans('dcmodels.nofound')]);
         }
     }
 
