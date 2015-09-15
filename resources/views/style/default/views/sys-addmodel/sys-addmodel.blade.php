@@ -4,7 +4,7 @@
         <div class="portlet box blue" id="form_wizard_1">
             <div class="portlet-title">
                 <div class="caption">
-                    <i class="fa fa-gift"></i> 模块编辑 - <span class="step-title">
+                    <i class="icon-direction"></i> 模块编辑 - <span class="step-title">
 								Step 1 of 4 </span>
                 </div>
                 <div class="tools hidden-xs">

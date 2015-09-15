@@ -30,7 +30,7 @@
         <div class="portlet box yellow">
             <div class="portlet-title">
                 <div class="caption">
-                    <i class="fa fa-user"></i>角色管理
+                    <i class="icon-globe"></i>角色管理
                 </div>
                 <div class="tools">
                     <button class="btn btn-default yellow" ng-click="adduser()">

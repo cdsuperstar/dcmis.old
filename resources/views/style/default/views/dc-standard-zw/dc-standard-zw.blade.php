@@ -30,7 +30,7 @@
             <div class="portlet red-pink box">
                 <div class="portlet-title">
                     <div class="caption">
-                        <i class="fa fa-cogs"></i>职位编辑
+                        <i class="icon-chemistry"></i>职位编辑
                     </div>
                     <div class="tools">
                         <a href="javascript:;" class="remove" ng-click="closeThisDialog()">
@@ -47,7 +47,7 @@
         <div class="portlet box yellow">
             <div class="portlet-title">
                 <div class="caption">
-                    <i class="fa fa-user"></i>职位设置
+                    <i class="icon-chemistry"></i>职位设置
                 </div>
                 <div class="tools">
                     {{--<button class="btn btn-default yellow" ng-click="treeEditor()">--}}

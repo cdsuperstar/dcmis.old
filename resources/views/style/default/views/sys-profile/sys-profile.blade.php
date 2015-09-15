@@ -3,7 +3,7 @@
         <div class="portlet light">
             <div class="portlet-title tabbable-line">
                 <div class="caption caption-md">
-                    <i class="icon-globe theme-font hide"></i>
+                    <i class="icon-user"></i>
                     <span class="caption-subject font-blue-madison bold uppercase">个人信息设置</span>
                 </div>
                 <ul class="nav nav-tabs">

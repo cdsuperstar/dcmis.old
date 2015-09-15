@@ -30,7 +30,7 @@
         <div class="portlet red-pink box">
             <div class="portlet-title">
                 <div class="caption">
-                    <i class="fa fa-cogs"></i>模块树编辑器
+                    <i class="icon-puzzle"></i>模块树编辑器
                 </div>
                 <div class="tools">
                     <a href="javascript:;" class="remove" ng-click="closeThisDialog()">
@@ -47,7 +47,7 @@
         <div class="portlet box yellow">
             <div class="portlet-title">
                 <div class="caption">
-                    <i class="fa fa-user"></i>模块管理
+                    <i class="icon-puzzle"></i>模块管理
                 </div>
                 <div class="tools">
                     <button class="btn btn-default yellow" ng-click="treeEditor()">
