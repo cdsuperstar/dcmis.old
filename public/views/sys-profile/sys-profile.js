@@ -4,9 +4,9 @@ DcmisApp.controller('userpwdController',
     //    function (service, $scope, $filter, $http, ngDialog, $state, $stateParams) {
     ['$scope','$resource',
         function ($scope, $resource) {
-            var userpwd={};
             var dataServer = $resource('/user/data/:id', null, {
                 userpwd: {url:'/user/userpwd',method: 'POST'},
+                updateprof:{},
             });
             $scope.changepwd=function(userpwd,e){
                 if(e.target.disabled||e.target.disabled===undefined)return false;

@@ -14,6 +14,7 @@ class userprofile extends Model
         'name',
         'mz',
         'address',
+        'signpic',
         'sex',
         'tdate',
         'phone',
