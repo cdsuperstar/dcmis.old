@@ -11,9 +11,6 @@
                         <a href="#" data-target="#personmes" data-toggle="tab">基础信息</a>
                     </li>
                     <li>
-                        <a href="#" data-target="#personpic" data-toggle="tab">个人头像</a>
-                    </li>
-                    <li>
                         <a href="#" data-target="#personpassword" data-toggle="tab">密码修改</a>
                     </li>
                 </ul>
@@ -23,6 +20,35 @@
                     <!-- PERSONAL INFO TAB -->
                     <div class="tab-pane active" id="personmes">
                         <form role="form" action="#">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label"> 个人头像 </label>
+                                <div class="col-md-10 input-group">
+                                    <div class="col-md-10">
+                                        <div class="fileinput fileinput-new" data-provides="fileinput">
+                                            <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+                                                <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt=""/>
+                                            </div>
+                                            <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;">
+                                            </div>
+                                            <div>
+                                                <span class="btn default btn-file">
+                                                <span class="fileinput-new">
+                                                添加图像 </span>
+                                                <span class="fileinput-exists">
+                                                变更图像 </span>
+                                                <input type="file" name="...">
+                                                </span>
+                                                <a href="#" class="btn default fileinput-exists" data-dismiss="fileinput">
+                                                    删除图像 </a>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix margin-top-10">
+                                            <span class="label label-danger">注意! </span>
+                                            <span style="line-height:20px;">  &nbsp;&nbsp;支持JPG、GIF、PNG格式图片，用图片编辑软件将图片像素修改为80px*80px，然后上传。 </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <label class="col-md-2 control-label"> 姓 名 </label>
                                 <div class="col-md-10 input-group">
@@ -79,45 +105,6 @@
                         </form>
                     </div>
                     <!-- END PERSONAL INFO TAB -->
-                    <!-- CHANGE AVATAR TAB -->
-                    <div class="tab-pane" id="personpic">
-                        <p>
-                            请选择个人头像图片，支持JPG、GIF、PNG格式图片，用图片编辑软件将图片像素修改为80px*80px，然后上传。
-                        </p>
-                        <form action="#" role="form">
-                            <div class="col-md-10 form-group">
-                                <div class="fileinput fileinput-new" data-provides="fileinput">
-                                    <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
-                                        <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt=""/>
-                                    </div>
-                                    <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;">
-                                    </div>
-                                    <div>
-										<span class="btn default btn-file">
-										<span class="fileinput-new">
-										添加头像 </span>
-										<span class="fileinput-exists">
-										变更头像 </span>
-										<input type="file" name="...">
-										</span>
-                                        <a href="#" class="btn default fileinput-exists" data-dismiss="fileinput">
-                                        删除头像 </a>
-                                    </div>
-                                </div>
-                                <div class="clearfix margin-top-10">
-                                    <span class="label label-danger">注意! </span>
-                                    <span>  &nbsp;&nbsp;仅支持 Firefox（火狐浏览器）, Chrome（谷歌浏览器）, Opera（Opera 浏览器）, Safari（苹果浏览器） and Internet Explorer 10（IE10以上） </span>
-                                </div>
-                            </div>
-                            <div class="margin-top-10 col-md-10">
-                                <a href="#" class="btn green-haze">
-                                    保 存 </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <a href="#" class="btn default">
-                                    取 消 </a>
-                            </div>
-                        </form>
-                    </div>
-                    <!-- END CHANGE AVATAR TAB -->
                     <!-- CHANGE PASSWORD TAB -->
                     <div class="tab-pane" id="personpassword" ng-controller="userpwdController">
                         <form action="#" name="userpwdfm" role="form">
