@@ -22,6 +22,7 @@ Route::controllers([
     'dcmodel'=>'dcmodel\dcmodelController',
     'pxunit'=>'pxunit\pxunitController',
     'sysmsg'=>'sysmsg\sysmsgController',
+    'userprofile'=>'User\userprofileController',
 ]);
 
 //Route::resource('user','User\userController');
