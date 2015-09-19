@@ -20,6 +20,14 @@ class userprofileController extends Controller
         return response()->json($userprofile);
     }
 
+    public function getSelfdata(Request $request)
+    {
+        //
+        $userprofile=userprofile::firstOrCreate(['id'=>$request->user()->id]);
+
+        return response()->json($userprofile);
+    }
+
     /**
      * Store a newly created resource in storage.
      *

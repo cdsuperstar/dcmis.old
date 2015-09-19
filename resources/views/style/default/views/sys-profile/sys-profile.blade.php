@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" ng-controller="userpwdController">
     <div class="col-md-12">
         <div class="portlet light">
             <div class="portlet-title tabbable-line">
@@ -19,7 +19,7 @@
                 <div class="tab-content">
                     <!-- PERSONAL INFO TAB -->
                     <div class="tab-pane active" id="personmes">
-                        <form role="form" action="#">
+                        <form role="form" name="profilefm" action="#">
                             <div class="form-group">
                                 <label class="col-md-2 control-label"> 个人头像 </label>
                                 <div class="col-md-10 input-group">
@@ -36,10 +36,11 @@
                                                 添加图像 </span>
                                                 <span class="fileinput-exists">
                                                 变更图像 </span>
-                                                <input type="file" name="...">
+                                                <input type="file" data-file="profile.signpic" accept="image/png,image/jpg,image/jpeg,image/gif" >
                                                 </span>
                                                 <a href="#" class="btn default fileinput-exists" data-dismiss="fileinput">
                                                     删除图像 </a>
+                                                <div> 文件名：@{{profile.signpic}}</div>
                                             </div>
                                         </div>
                                         <div class="clearfix margin-top-10">
@@ -52,61 +53,67 @@
                             <div class="form-group">
                                 <label class="col-md-2 control-label"> 姓 名 </label>
                                 <div class="col-md-10 input-group">
-                                    <input type="text" placeholder="请输入姓名" class="form-control" style="width: 70%;"/>
+                                    <input type="text" ng-model="profile.name" placeholder="请输入姓名" class="form-control" style="width: 70%;"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-2 control-label"> 性 别 </label>
                                 <div class="col-md-10 input-group">
                                     <label class="uniform-inline">&nbsp;&nbsp;
-                                        <input type="radio" name="optionsRadios1" value="option1"/>
+                                        <input type="radio" name="sex" ng-model="profile.sex" ng-checked="dcEdition.sex==m" value="m"/>
                                         男 </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     <label class="uniform-inline">
-                                        <input type="radio" name="optionsRadios1" value="option2" checked/>
+                                        <input type="radio" name="sex" ng-model="profile.sex" ng-checked="dcEdition.sex==f" value="f"/>
                                         女 </label>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-2 control-label">出生日期</label>
                                 <div class="col-md-10 input-group">
-                                <input type="text" placeholder="1985-02-10" class="form-control" style="width: 70%;"/>
+                                <input type="text" ng-model="profile.tdate" placeholder="1985-02-10" class="form-control" style="width: 70%;"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-2 control-label">学历</label>
                                 <div class="col-md-10 input-group">
-                                <input type="text" placeholder="本科-学校名称-专业名称" class="form-control" style="width: 70%;"/>
+                                <input type="text" ng-model="profile.zgxl" placeholder="本科-学校名称-专业名称" class="form-control" style="width: 70%;"/>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-2 control-label">联系电话</label>
+                                <label class="col-md-2 control-label">联系电话1</label>
                                 <div class="col-md-10 input-group">
-                                <input type="text" placeholder="13900110011" class="form-control" style="width: 70%;"/>
+                                <input type="text" ng-model="profile.phone" placeholder="13900110011" class="form-control" style="width: 70%;"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">联系电话1</label>
+                                <div class="col-md-10 input-group">
+                                <input type="text" ng-model="profile.phone1" placeholder="13900110011" class="form-control" style="width: 70%;"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-2 control-label">紧急联系人及电话</label>
                                 <div class="col-md-10 input-group">
-                                <textarea class="form-control" rows="3" placeholder="某某某-与本人的关系-13900110011 【可以添加多人】" style="width: 70%;"></textarea>
+                                <textarea class="form-control" ng-model="profile.jjlxr" rows="3" placeholder="某某某-与本人的关系-13900110011 【可以添加多人】" style="width: 70%;"></textarea>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-2 control-label">备注</label>
                                 <div class="col-md-10 input-group">
-                                    <textarea class="form-control" rows="3" placeholder="其他一些个人兴趣、爱好、家庭地址等" style="width: 70%;"></textarea>
+                                    <textarea class="form-control" ng-model="profile.bz" rows="3" placeholder="其他一些个人兴趣、爱好、家庭地址等" style="width: 70%;"></textarea>
                                 </div>
                             </div>
                             <div class="margiv-top-10" style="text-align: center;">
-                                <a href="#" class="btn green-haze">
+                                <a href="#" class="btn green-haze" ng-click="saveprofile(profile)">
                                     保 存 </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <a href="#" class="btn default">
+                                <a href="#" class="btn default" onclick="profilefm.reset()">
                                     取 消 </a>
                             </div>
                         </form>
                     </div>
                     <!-- END PERSONAL INFO TAB -->
                     <!-- CHANGE PASSWORD TAB -->
-                    <div class="tab-pane" id="personpassword" ng-controller="userpwdController">
+                    <div class="tab-pane" id="personpassword" >
                         <form action="#" name="userpwdfm" role="form">
                             <div class="form-group">
                                 <label class="col-md-2 control-label">现 密 码</label>
@@ -129,7 +136,7 @@
                             <div class="margin-top-10"  style="text-align: center;">
                                 <a href="#" class="btn green-haze" ng-click="changepwd(userpwd,$event)" ng-disabled="userpwdfm.$invalid">
                                     保 存  </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <a href="#" class="btn default">
+                                <a href="#" class="btn default"  onclick="userpwdfm.reset()">
                                     取 消 </a>
                             </div>
                         </form>
