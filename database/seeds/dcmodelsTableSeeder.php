@@ -215,6 +215,62 @@ INSERT INTO public.dcmodels (id, name, title, ismenu, icon, url, templateurl, fi
                             ''/assets/global/plugins/jquery-multi-select/js/jquery.multi-select.js'',
                             ''/views/sys-addmodel/sys-addmodel.js'',
                             ''/js/controllers/GeneralPageController.js''', '1974-11-23 00:17:10', '2015-03-29 02:53:37');
+INSERT INTO public.dcmodels (id, name, title, ismenu, icon, url, templateurl, files, created_at, updated_at) VALUES (7, 'sys-model', '模块管理', 1, 'icon-puzzle', '/sys-model.html', '/dcassets/templateurl/sys-model', '                            ''/assets/global/plugins/select2/select2.css'',
+                            ''/assets/global/plugins/jstree/dist/themes/default/style.min.css'',
+                            ''/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css'',
+                            ''/views/sys-model/sys-model.css'',
+
+                            ''/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js'',
+                            ''/assets/global/plugins/select2/select2.min.js'',
+                            ''/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js'',
+                            ''/assets/global/plugins/jstree/dist/jstree.min.js'',
+                            ''/views/sys-model/sys-model.js'',
+                            ''/js/controllers/GeneralPageController.js''', '2002-12-15 20:25:38', '1978-11-19 13:00:49');
+INSERT INTO public.dcmodels (id, name, title, ismenu, icon, url, templateurl, files, created_at, updated_at) VALUES (15, 'sys-news', '系统公告', 1, 'icon-bell', '/sys-news.html', '/dcassets/templateurl/sys-news', '''/views/sys-news/sys-news.css'',
+''/views/sys-news/sys-news.js'',
+''/js/controllers/GeneralPageController.js'',', '2015-09-03 12:03:11', '2015-09-03 12:03:11');
+INSERT INTO public.dcmodels (id, name, title, ismenu, icon, url, templateurl, files, created_at, updated_at) VALUES (5, 'sys-role', '角色管理', 1, 'icon-globe', '/sys-role.html', '/dcassets/templateurl/sys-role', '                            ''/assets/global/plugins/jstree/dist/themes/default/style.min.css'',
+
+                            ''/assets/global/plugins/jstree/dist/jstree.min.js'',
+                            ''/assets/admin/pages/scripts/ui-tree.js'',
+                            ''/views/sys-role/sys-role.js'',
+                            ''/js/controllers/GeneralPageController.js''', '1989-04-28 02:26:40', '2004-03-02 14:47:52');
+INSERT INTO public.dcmodels (id, name, title, ismenu, icon, url, templateurl, files, created_at, updated_at) VALUES (9, 'sys-msg', '消息管理', 1, 'icon-envelope-open', '/sys-msg.html', '/dcassets/templateurl/sys-msg', '                    ''/assets/admin/pages/css/timeline.css'',
+                    ''/assets/global/plugins/bootstrap-select/bootstrap-select.min.css'',
+                    ''/assets/global/plugins/select2/select2.css'',
+                    ''/assets/global/plugins/jquery-multi-select/css/multi-select.css'',
+                    ''/views/sys-msg/sys-msg.css'',
+
+                    ''/assets/global/plugins/bootstrap-select/bootstrap-select.min.js'',
+                    ''/assets/global/plugins/select2/select2.min.js'',
+                    ''/assets/global/plugins/jquery-multi-select/js/jquery.multi-select.js'',
+                    ''/views/sys-msg/sys-msg.js'',
+                    ''/js/controllers/GeneralPageController.js'',', '1999-09-26 08:41:30', '1996-03-04 03:23:24');
+INSERT INTO public.dcmodels (id, name, title, ismenu, icon, url, templateurl, files, created_at, updated_at) VALUES (4, 'sys-users', '用户管理', 1, 'icon-users', '/sys-users.html', '/dcassets/templateurl/sys-users', '                            ''/assets/global/plugins/select2/select2.css'',
+                            ''/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css'',
+                            ''/views/sys-users/sys-users.css'',
+
+                            ''/js/controllers/GeneralPageController.js'',
+                            ''/views/sys-users/sys-users.js'',', '1995-05-11 02:20:06', '2010-12-29 11:58:31');
+INSERT INTO public.dcmodels (id, name, title, ismenu, icon, url, templateurl, files, created_at, updated_at) VALUES (3, 'sys-setting', '系统设置', 1, 'icon-settings', null, null, '', '1975-01-03 21:45:55', '1980-04-24 22:26:43');
+INSERT INTO public.dcmodels (id, name, title, ismenu, icon, url, templateurl, files, created_at, updated_at) VALUES (62, 'dc-standard-xj', '课程安排设置', 1, 'icon-equalizer', '/dc-standard-xj.html', '/dcassets/templateurl/dc-standard-xj', '''/views/dc-standard-xj/dc-standard-xj.css'',
+''/views/dc-standard-xj/dc-standard-xj.js'',
+''/js/controllers/GeneralPageController.js'',', '2015-09-04 08:04:34', '2015-09-15 07:14:14');
+INSERT INTO public.dcmodels (id, name, title, ismenu, icon, url, templateurl, files, created_at, updated_at) VALUES (13, 'sys-profile', '个人信息', 1, 'icon-user-following', '/sys-profile.html', '/dcassets/templateurl/sys-profile', '                            ''/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css'',
+                            ''/assets/global/plugins/typeahead/typeahead.css'',
+                            ''/assets/global/plugins/clockface/css/clockface.css'',
+                            ''/assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css'',
+                            ''/assets/global/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css'',
+                            ''/assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css'',
+														''/views/sys-profile/sys-profile.css'',
+
+                            ''/assets/global/plugins/jquery.sparkline.min.js'',
+                            ''/assets/global/plugins/typeahead/typeahead.bundle.min.js'',
+                            ''/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js'',
+                            ''/assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js'',
+                            ''/assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js'',
+                            ''/views/sys-profile/sys-profile.js'',
+                            ''/js/controllers/GeneralPageController.js''', '2015-09-01 01:19:17', '2015-09-01 12:08:01');
 INSERT INTO public.dcmodels (id, name, title, ismenu, icon, url, templateurl, files, created_at, updated_at) VALUES (10, 'sys-memo', '个人便签', 1, 'icon-book-open', '/sys-memo.html', '/dcassets/templateurl/sys-memo', '                            ''/assets/global/plugins/clockface/css/clockface.css'',
                             ''/assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css'',
                             ''/assets/global/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css'',
@@ -231,59 +287,8 @@ INSERT INTO public.dcmodels (id, name, title, ismenu, icon, url, templateurl, fi
                             ''/assets/global/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js'',
                             ''/assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js'',
                             ''/views/sys-memo/sys-memo.js'',
-                            ''/assets/ckeditor/ckeditor.js'',
                             ''/js/controllers/GeneralPageController.js''', '1986-01-12 03:45:56', '1983-05-08 01:02:03');
-INSERT INTO public.dcmodels (id, name, title, ismenu, icon, url, templateurl, files, created_at, updated_at) VALUES (7, 'sys-model', '模块管理', 1, 'icon-puzzle', '/sys-model.html', '/dcassets/templateurl/sys-model', '                            ''/assets/global/plugins/select2/select2.css'',
-                            ''/assets/global/plugins/jstree/dist/themes/default/style.min.css'',
-                            ''/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css'',
-                            ''/views/sys-model/sys-model.css'',
 
-                            ''/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js'',
-                            ''/assets/global/plugins/select2/select2.min.js'',
-                            ''/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js'',
-                            ''/assets/global/plugins/jstree/dist/jstree.min.js'',
-                            ''/views/sys-model/sys-model.js'',
-                            ''/js/controllers/GeneralPageController.js''', '2002-12-15 20:25:38', '1978-11-19 13:00:49');
-INSERT INTO public.dcmodels (id, name, title, ismenu, icon, url, templateurl, files, created_at, updated_at) VALUES (9, 'sys-msg', '消息管理', 1, 'icon-envelope-open', '/sys-msg.html', '/dcassets/templateurl/sys-msg', '                    ''/assets/admin/pages/css/timeline.css'',
-                    ''/assets/global/plugins/bootstrap-select/bootstrap-select.min.css'',
-                    ''/assets/global/plugins/select2/select2.css'',
-                    ''/assets/global/plugins/jquery-multi-select/css/multi-select.css'',
-                    ''/views/sys-msg/sys-msg.css'',
-
-                    ''/assets/global/plugins/bootstrap-select/bootstrap-select.min.js'',
-                    ''/assets/global/plugins/select2/select2.min.js'',
-                    ''/assets/global/plugins/jquery-multi-select/js/jquery.multi-select.js'',
-                    ''/views/sys-msg/sys-msg.js'',
-                    ''/js/controllers/GeneralPageController.js'',
-                    ''/assets/ckeditor/ckeditor.js''', '1999-09-26 08:41:30', '1996-03-04 03:23:24');
-INSERT INTO public.dcmodels (id, name, title, ismenu, icon, url, templateurl, files, created_at, updated_at) VALUES (15, 'sys-news', '系统公告', 1, 'icon-bell', '/sys-news.html', '/dcassets/templateurl/sys-news', '''/views/sys-news/sys-news.css'',
-''/views/sys-news/sys-news.js'',
-''/js/controllers/GeneralPageController.js'',', '2015-09-03 12:03:11', '2015-09-03 12:03:11');
-INSERT INTO public.dcmodels (id, name, title, ismenu, icon, url, templateurl, files, created_at, updated_at) VALUES (13, 'sys-profile', '个人信息', 1, 'icon-user-following', '/sys-profile.html', '/dcassets/templateurl/sys-profile', '                            ''/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css'',
-                            ''/assets/global/plugins/typeahead/typeahead.css'',
-														''/views/sys-profile/sys-profile.css'',
-
-                            ''/assets/global/plugins/jquery.sparkline.min.js'',
-                            ''/assets/global/plugins/typeahead/typeahead.bundle.min.js'',
-                            ''/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js'',
-                            ''/views/sys-profile/sys-profile.js'',
-                            ''/js/controllers/GeneralPageController.js''', '2015-09-01 01:19:17', '2015-09-01 12:08:01');
-INSERT INTO public.dcmodels (id, name, title, ismenu, icon, url, templateurl, files, created_at, updated_at) VALUES (5, 'sys-role', '角色管理', 1, 'icon-globe', '/sys-role.html', '/dcassets/templateurl/sys-role', '                            ''/assets/global/plugins/jstree/dist/themes/default/style.min.css'',
-
-                            ''/assets/global/plugins/jstree/dist/jstree.min.js'',
-                            ''/assets/admin/pages/scripts/ui-tree.js'',
-                            ''/views/sys-role/sys-role.js'',
-                            ''/js/controllers/GeneralPageController.js''', '1989-04-28 02:26:40', '2004-03-02 14:47:52');
-INSERT INTO public.dcmodels (id, name, title, ismenu, icon, url, templateurl, files, created_at, updated_at) VALUES (4, 'sys-users', '用户管理', 1, 'icon-users', '/sys-users.html', '/dcassets/templateurl/sys-users', '                            ''/assets/global/plugins/select2/select2.css'',
-                            ''/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css'',
-                            ''/views/sys-users/sys-users.css'',
-
-                            ''/js/controllers/GeneralPageController.js'',
-                            ''/views/sys-users/sys-users.js'',', '1995-05-11 02:20:06', '2010-12-29 11:58:31');
-INSERT INTO public.dcmodels (id, name, title, ismenu, icon, url, templateurl, files, created_at, updated_at) VALUES (3, 'sys-setting', '系统设置', 1, 'icon-settings', null, null, '', '1975-01-03 21:45:55', '1980-04-24 22:26:43');
-INSERT INTO public.dcmodels (id, name, title, ismenu, icon, url, templateurl, files, created_at, updated_at) VALUES (62, 'dc-standard-xj', '课程安排设置', 1, 'icon-equalizer', '/dc-standard-xj.html', '/dcassets/templateurl/dc-standard-xj', '''/views/dc-standard-xj/dc-standard-xj.css'',
-''/views/dc-standard-xj/dc-standard-xj.js'',
-''/js/controllers/GeneralPageController.js'',', '2015-09-04 08:04:34', '2015-09-15 07:14:14');
 
 INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (2, 1, 2, 3, 1, 2, '2015-08-23 06:03:39', '2015-09-15 07:15:31');
 INSERT INTO public.dcmdgrps (id, parent_id, lft, rgt, depth, dcmodel_id, created_at, updated_at) VALUES (15, 10, 5, 6, 2, 13, '2015-09-01 01:19:17', '2015-09-15 07:15:31');

@@ -68,8 +68,8 @@
             <div class="form-group">
                 <label class="col-sm-1 control-label"> 内 容 </label>
                 <div class="col-sm-11">
-                    <div name="padcontent" id="dcsimpleeditoradd">
-                        请输入便签内容
+                    <div name="padcontent">
+                        <script id="dcsimpleeditor1" type="text/plain" style="height:150px;"></script>
                     </div>
                 </div>
             </div>
@@ -113,12 +113,12 @@
     <!-- END ALERTS PORTLET-->
 </div>
 <script type="text/javascript">
-    var myeditor = CKEDITOR.replace( 'dcsimpleeditoradd',{
-        toolbar : 'Basic',
-        height : 200,
-        uiColor : '#9AB8F3'
-    });
-    jQuery(document).ready(function() {
-        ComponentsPickers.init();
+    var ue = UE.getEditor('dcsimpleeditor1',{
+        toolbars: [
+            [ 'cleardoc','|', 'fontfamily', 'fontsize', '|',
+                'bold', 'italic', 'underline','|', 'simpleupload','map','emotion', 'scrawl','|','fontborder', 'strikethrough', 'superscript', 'subscript', 'removeformat', 'formatmatch', 'autotypeset', 'blockquote', 'pasteplain', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', '|',
+            ]
+        ],
+        autoFloatEnabled: true
     });
 </script>

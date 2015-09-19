@@ -40,12 +40,11 @@
                                                 </span>
                                                 <a href="#" class="btn default fileinput-exists" data-dismiss="fileinput">
                                                     删除图像 </a>
-                                                <div> 文件名：@{{profile.signpic}}</div>
                                             </div>
                                         </div>
                                         <div class="clearfix margin-top-10">
                                             <span class="label label-danger">注意! </span>
-                                            <span style="line-height:20px;">  &nbsp;&nbsp;支持JPG、GIF、PNG格式图片，用图片编辑软件将图片像素修改为80px*80px，然后上传。 </span>
+                                            <span style="line-height:20px;">  (文件名：@{{profile.signpic}} ) &nbsp;&nbsp;支持JPG、GIF、PNG格式图片，用图片编辑软件将图片像素修改为80px*80px，然后上传。 </span>
                                         </div>
                                     </div>
                                 </div>
@@ -70,7 +69,7 @@
                             <div class="form-group">
                                 <label class="col-md-2 control-label">出生日期</label>
                                 <div class="col-md-10 input-group">
-                                <input type="text" ng-model="profile.tdate" placeholder="1985-02-10" class="form-control" style="width: 70%;"/>
+                                <input class="form-control data date-picker" data-date-format="yyyy-mm-dd" type="text" ng-model="profile.tdate" placeholder="1985-02-10" style="width: 70%;"/>
                                 </div>
                             </div>
                             <div class="form-group">

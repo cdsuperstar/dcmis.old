@@ -1,6 +1,6 @@
 <!-- BEGIN PAGE CONTENT-->
-<div class="rows" style="height: 600px;">
-    <div class="col-md-3">
+<div class="rows" style="height: 600px;" ng-controller="sysmsglistcontroll">
+    <div class="col-md-2">
         <div class="portlet box yellow">
             <div class="portlet-title">
                 <div class="caption">
@@ -9,26 +9,47 @@
             </div>
             <div class="portlet-body">
                 <div class="scroller" style="height:500px" data-rail-visible="1" data-rail-color="yellow" data-handle-color="#a1b2bd">
-                    <p><a href="JavaScript:;"><strong>用户1(8)</strong></a><br/></p>
-                    <p><a href="JavaScript:;"><strong>用户1</strong></a><br/></p>
-                    <p><a href="JavaScript:;"><strong>用户1(8)</strong></a><br/></p>
-                    <p><a href="JavaScript:;"><strong>用户1</strong></a><br/></p>
-                    <p><a href="JavaScript:;"><strong>用户1(8)</strong></a><br/></p>
-                    <p><a href="JavaScript:;"><strong>用户1</strong></a><br/></p>
-                    <p><a href="JavaScript:;"><strong>用户1(8)</strong></a><br/></p>
+                    <div class="input-icon input-icon-sm right">
+                        <i class="icon-magnifier"></i>
+                        <input placeholder="搜索.." class="form-control" type="search">
+                    </div>
+                    <ul id="accordion" class="accordion">
+                        <li>
+                            <div class="link"><i class="icon-user"></i>职员列表<i class="fa fa-chevron-down"></i></div>
+                            <ul class="submenu">
+                                <li><a href="#">Photoshop</a></li>
+                                <li><a href="#">HTML</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="link"><i class="icon-users"></i>教师列表<i class="fa fa-chevron-down"></i></div>
+                            <ul class="submenu">
+                                <li><a href="#">Javascript</a></li>
+                                <li><a href="#">jQuery</a></li>
+                                <li><a href="#">HTML</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="link"><i class="icon-user-following"></i>学生列表<i class="fa fa-chevron-down"></i></div>
+                            <ul class="submenu">
+                                <li><a href="#">Tablets</a></li>
+                                <li><a href="#">HTML</a></li>
+                                <li><a href="#">CSS</a></li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-10">
         <div class="portlet box blue-hoki">
             <div class="portlet-body">
                 <div class="scroller" style="height:570px" data-rail-visible="1" data-rail-color="yellow" data-handle-color="#a1b2bd">
                     <div style="margin-top: 0px;padding-top: 0px;">
-                        <div id="dcsimpleeditor-no">
-                        </div>
+                        <div class="ueditor" ng-model="themsg.content" config="_simpleConfig"></div>
                         <p style="text-align: left;padding-top: 5px;">
-                            <a href="javascript:;" class="btn yellow">
+                            <a href="javascript:;" class="btn yellow" ng-click="test()">
                                 发送消息 <i class="fa fa-link"></i>
                             </a>
                             &nbsp;&nbsp;&nbsp;
@@ -70,11 +91,30 @@
 </div>
 <!-- END PAGE CONTENT-->
 <script type="text/javascript">
-    CKEDITOR.replace( 'dcsimpleeditor-no',{
-        toolbar : 'Basic',
-        height : 100,
-        uiColor : '#9AB8F3',
-        removePlugins : 'elementspath',
-        resize_enabled : false
+    $(function() {
+        var Accordion = function(el, multiple) {
+            this.el = el || {};
+            this.multiple = multiple || false;
+
+            // Variables privadas
+            var links = this.el.find('.link');
+            // Evento
+            links.on('click', {el: this.el, multiple: this.multiple}, this.dropdown)
+        }
+
+        Accordion.prototype.dropdown = function(e) {
+            var $el = e.data.el;
+            $this = $(this),
+                    $next = $this.next();
+
+            $next.slideToggle();
+            $this.parent().toggleClass('open');
+
+            if (!e.data.multiple) {
+                $el.find('.submenu').not($next).slideUp().parent().removeClass('open');
+            };
+        }
+
+        var accordion = new Accordion($('#accordion'), false);
     });
 </script>

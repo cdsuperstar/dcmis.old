@@ -24,9 +24,11 @@
     "tests"
   ],
   "dependencies": {
-    "angular-smart-table": "~2.1.2",
     "angular": "~1.4.4",
+    "angular-smart-table": "~2.1.2",
+    "angular-ueditor": "*",
     "ng-table": "~0.8.3",
-    "ngDialog": "~0.4.0"
+    "ngDialog": "~0.4.0",
+    "ueditor": "fex-team/ueditor#~1.4.3"
   }
 }

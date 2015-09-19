@@ -12,6 +12,7 @@ var DcmisApp = angular.module("DcmisApp", [
     "ngDialog",
     "ngResource",
     "ghiscoding.validation","pascalprecht.translate",
+    "ng.ueditor",
 ]);
 DcmisApp.value('validationConfig', {
     debounce: 500,
