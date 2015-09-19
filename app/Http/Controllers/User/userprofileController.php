@@ -4,8 +4,6 @@ namespace App\Http\Controllers\User;
 
 use App\models\userprofile;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
-use Input;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -32,7 +30,6 @@ class userprofileController extends Controller
     {
         //
         $userprofile=userprofile::firstOrCreate(['id'=>$request->input('id')]);
-
 
         if($userprofile->update($request->input())){
             return response()->json([

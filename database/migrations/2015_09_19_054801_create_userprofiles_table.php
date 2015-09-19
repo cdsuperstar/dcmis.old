@@ -13,20 +13,47 @@ class CreateUserprofilesTable extends Migration
     public function up()
     {
         Schema::create('userprofiles', function (Blueprint $table) {
+            //BEING ALL
             $table->integer('id')->unsigned();
             $table->foreign('id')->references('id')->on('users')
                 ->onUpdate('cascade')->onDelete('cascade');
             $table->string('no')->nullable();
             $table->string('name')->nullable();
+            $table->string('mz')->nullable();
+            $table->string('address')->nullable();
             $table->string('sex',1)->nullable();
             $table->date('tdate')->nullable();
-            $table->string('zgxl')->nullable();
-            $table->string('zgzt')->nullable();
             $table->string('phone')->nullable();
             $table->string('phone1')->nullable();
+            //END ALL
+            //BEGIN employee
+            $table->string('zgxl')->nullable();
+            $table->string('zgzt')->nullable();
             $table->text('jjlxr')->nullable();
             $table->text('bz')->nullable();
-            $table->string('usertype')->nullable();
+            //END employee
+/*
+xxmc	学校名称
+bjmc	班级名称
+name1	法定监护人姓名
+jhrgx	法定监护人关系
+jhrdz	法定监护人联系地址
+*/
+            //BEGIN student
+            $table->string('schoolname')->nullable();
+            $table->string('schooldclass')->nullable();
+
+            $table->string('name1')->nullable();
+            $table->string('prelation1')->nullable();
+            $table->string('phone2')->nullable();
+
+            $table->string('name2')->nullable();
+            $table->string('prelation2')->nullable();
+            $table->string('phone3')->nullable();
+            $table->string('address1')->nullable();
+            //END student
+
+            $table->string('usertype')->nullable(); //student teacher employee
             $table->primary('id');
 
 /*
