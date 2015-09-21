@@ -6,6 +6,7 @@ DcmisApp.controller('userpwdController',
         function ($scope, $resource) {
             var dataServer = $resource('/userprofile/selfdata/:id', null, {
                 userpwd: {url: '/user/userpwd', method: 'POST'},
+                //saveprof:{url:'/userprofile/selfdata/',method:'POST'}
             });
             dataServer.get().$promise.then(
                 function (res) {
@@ -13,7 +14,17 @@ DcmisApp.controller('userpwdController',
                     console.log("get",res);
                 }
             );
+            $scope.files = [];
+
+            $scope.$on("fileSelected", function (event, args) {
+                $scope.$apply(function () {
+                    //add the file object to the scope's files collection
+                    $scope.files.push(args.file);
+                });
+            });
             $scope.saveprofile = function (userprofile) {
+                userprofile.uploadfile=$scope.files[0];
+                userprofile.signpic=$scope.files[0].name;
                 dataServer.save(userprofile).$promise.then(
                     function (res) {
                         if (res.success) {
@@ -48,17 +59,17 @@ DcmisApp.controller('userpwdController',
         }
     ]);
 
-DcmisApp.directive('file', function () {
+DcmisApp.directive('fileUpload', function () {
     return {
-        scope: {
-            file: '='
-        },
+        scope: true,        //create a new scope
         link: function (scope, el, attrs) {
             el.bind('change', function (event) {
                 var files = event.target.files;
-                var file = files[0];
-                scope.file = file ? file.name : undefined;
-                scope.$apply();
+                //iterate files since 'multiple' may be specified on the element
+                for (var i = 0;i<files.length;i++) {
+                    //emit event upward
+                    scope.$emit("fileSelected", { file: files[i] });
+                }
             });
         }
     };

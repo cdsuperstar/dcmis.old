@@ -106,7 +106,7 @@ class dcResController extends Controller
         return view('style.default.tpls.' . $sTpls);
     }
 
-    public function getTemplateurl($sModel)
+    public function getTemplateurl($sModel,Request $req)
     {
         $aTitle=[];
         dcmodel::where('name',$sModel)->first()->dcMdGrp->getAncestorsAndSelf()->each(function($e) use (&$aTitle){
@@ -114,7 +114,7 @@ class dcResController extends Controller
         });
         array_shift($aTitle);
 //        dump($aTitle);exit;
-        return view('style.default.templateurl', ['sModel' => $sModel,'aTitle'=>$aTitle]);
+        return view('style.default.templateurl', ['sModel' => $sModel,'aTitle'=>$aTitle,'user'=>$req->user()]);
     }
 
     public function dcComponentSelector($comId)

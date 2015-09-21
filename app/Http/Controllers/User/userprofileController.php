@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\models\userprofile;
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use Storage;
 use App\Http\Controllers\Controller;
 
 class userprofileController extends Controller
@@ -39,13 +40,29 @@ class userprofileController extends Controller
         //
         $userprofile=userprofile::firstOrCreate(['id'=>$request->input('id')]);
 
+        $tmp = $request->input('uploadfile');
+        if(is_array($tmp)){
+            $filestring=$tmp['result'];
+            $comma = strpos($filestring, ',');
+            $filedata = base64_decode(substr($filestring, $comma+1));
+            $disk=Storage::disk('local_public');
+        }
+
+        if($request->input('signpic')<>''){
+            $signpic=str_random(30).substr($request->input('signpic'),strripos($request->input('signpic'),'.'));
+            $request->merge(['signpic'=>$signpic]);
+        }
+
         if($userprofile->update($request->input())){
+            $disk->put('/images/users/'.$request->input('id').'/'.$signpic,$filedata);
+
             return response()->json([
                 'messages' => trans('userprofile.updatesuccess'),
                 'success' => true,
                 'data' => $userprofile->toJson(),
             ]);
         }
+
         return response()->json(['errors' => trans('userprofile.nofound')]);
     }
 
