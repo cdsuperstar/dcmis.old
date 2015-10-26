@@ -52,25 +52,27 @@
                             </div>
                             <div class="form-group">
                                 <label class="col-md-2 control-label"> 姓 名 </label>
-                                <div class="col-md-10 input-group">
+                                <div class="col-md-4 input-group">
                                     <input type="text" ng-model="profile.name" placeholder="请输入姓名" class="form-control" style="width: 70%;"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-2 control-label"> 性 别 </label>
                                 <div class="col-md-10 input-group">
-                                    <label class="uniform-inline">&nbsp;&nbsp;
-                                        <input type="radio" name="sex" ng-model="profile.sex" ng-checked="dcEdition.sex==m" value="m"/>
-                                        男 </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <label class="uniform-inline">
-                                        <input type="radio" name="sex" ng-model="profile.sex" ng-checked="dcEdition.sex==f" value="f"/>
-                                        女 </label>
+                                    <div class="btn-group">
+                                    <label class="btn btn-success" ng-model="profile.sex" btn-radio="'m'" uncheckable>男</label>
+                                    <label class="btn" ng-model="profile.sex" btn-radio="'f'" uncheckable>女</label>
+                                        黄色覆盖为值
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-2 control-label">出生日期</label>
-                                <div class="col-md-10 input-group">
-                                <input class="form-control data date-picker" data-date-format="yyyy-mm-dd" type="text" ng-model="profile.tdate" placeholder="1985-02-10" style="width: 70%;"/>
+                                <div class="col-md-3 input-group">
+                                <input type="text" class="form-control" readonly datepicker-popup="yyyy-MM-dd" ng-model="profile.tdate" is-open="opened" min-date="minDate" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+                                  <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="opendatepicker($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                  </span>
                                 </div>
                             </div>
                             <div class="form-group">
