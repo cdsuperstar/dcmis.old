@@ -47,3 +47,8 @@ th{
     float: inherit;
 
 }
+.btn.btn-success.active {
+    color: #FFFFFF;
+    background-color: #ecca38;
+    border-color: #364150;
+}

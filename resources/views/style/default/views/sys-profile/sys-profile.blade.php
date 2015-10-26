@@ -61,8 +61,7 @@
                                 <div class="col-md-10 input-group">
                                     <div class="btn-group">
                                     <label class="btn btn-success" ng-model="profile.sex" btn-radio="'m'" uncheckable>男</label>
-                                    <label class="btn" ng-model="profile.sex" btn-radio="'f'" uncheckable>女</label>
-                                        黄色覆盖为值
+                                    <label class="btn btn-success" ng-model="profile.sex" btn-radio="'f'" uncheckable>女</label>
                                     </div>
                                 </div>
                             </div>

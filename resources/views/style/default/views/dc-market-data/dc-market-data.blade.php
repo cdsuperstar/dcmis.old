@@ -1,5 +1,5 @@
 <!-- BEGIN MAIN CONTENT -->
-<div class="row" ng-controller="modellistcontroll as modelc">
+<div class="row" ng-controller="dcmarketdatactroller">
     <div class="col-md-12" st-pipe="modelc.callServer"  st-table="modelc.displayed">
         <!-- BEGIN start search CONTENT -->
         <div class="portlet box blue">
@@ -68,41 +68,44 @@
                         <th>
                             序
                         </th>
-                        <th st-sort="name">
+                        <th st-sort="xxmc">
                             学校名称
                         </th>
-                        <th st-sort='title'>
+                        <th st-sort='bjmc'>
                             班级名称
                         </th>
-                        <th st-sort='icon'>
+                        <th st-sort='name'>
                             姓名
                         </th>
-                        <th st-sort='ismenu' width="50">
+                        <th st-sort='sex' width="50">
                             性别
                         </th>
-                        <th st-sort='ismenu' width="50">
+                        <th st-sort='mz' width="50">
                             民族
                         </th>
-                        <th st-sort='url'>
+                        <th st-sort='tdate'>
                             出生日期
                         </th>
-                        <th st-sort='templateurl'>
+                        <th st-sort='dz'>
                             现住址
                         </th>
-                        <th st-sort='files' width="300">
+                        <th st-sort='name1' width="300">
                             法定监护人姓名
                         </th>
-                        <th st-sort='files' width="300">
+                        <th st-sort='phone' width="300">
                             法定监护人联系电话1
                         </th>
-                        <th st-sort='files' width="300">
+                        <th st-sort='phone1' width="300">
                             法定监护人联系电话2
                         </th>
-                        <th st-sort='files' width="300">
+                        <th st-sort='jhrdz' width="300">
                             法定监护人联系地址
                         </th>
-                        <th st-sort='files' width="300">
+                        <th st-sort='bz' width="300">
                             备注
+                        </th>
+                        <th width="300">
+                            查看
                         </th>
                         <th>
                             编辑
@@ -114,33 +117,54 @@
                     </thead>
                     <tbody>
                     <tr ng-show="modelc.isLoading">
-                        <td colspan="10" ng-show="modelc.isLoading" class="text-center"> 数据加载中 ... </td>
+                        <td colspan="17" ng-show="modelc.isLoading" class="text-center"> 数据加载中 ... </td>
                     </tr>
                     <tr ng-show="modelc.noResult">
-                        <td colspan="10" ng-show="modelc.noResult" class="text-center" bgcolor="#f0f8ff"> 无符合条件数据! 请输入条件重新查询...  </td>
+                        <td colspan="17" ng-show="modelc.noResult" class="text-center" bgcolor="#f0f8ff"> 无符合条件数据! 请输入条件重新查询...  </td>
                     </tr>
-                    <tr ng-repeat="model in modelc.displayed">
+                    <tr ng-repeat="data in modelc.displayed">
                         <td align="center">@{{ $index+1 }}</td>
                         <td>
-                            @{{ model.name }}
+                            @{{ data.xxmc }}
                         </td>
                         <td>
-                            @{{model.title}}
+                            @{{ data.bjmc }}
                         </td>
                         <td>
-                            @{{model.icon}}
+                            @{{ data.name }}
                         </td>
                         <td>
-                            @{{model.ismenu}}
+                            @{{ data.sex }}
                         </td>
                         <td>
-                            @{{model.url}}
+                            @{{ data.mz }}
                         </td>
                         <td>
-                            @{{model.templateurl}}
+                            @{{ data.tdate }}
                         </td>
                         <td>
-                            @{{model.files}}
+                            @{{ data.dz }}
+                        </td>
+                        <td>
+                            @{{ data.name1 }}
+                        </td>
+                        <td>
+                            @{{ data.xxmc }}
+                        </td>
+                        <td>
+                            @{{ data.phone }}
+                        </td>
+                        <td>
+                            @{{ data.phone1 }}
+                        </td>
+                        <td>
+                            @{{ data.jhrdz }}
+                        </td>
+                        <td>
+                            @{{ data.bz }}
+                        </td>
+                        <td widtd="300">
+                            查看
                         </td>
                         <td align="center">
                             <a href="javascript:;" class="dcaedit" ng-click="edit(model)" title="编辑该条数据！">
@@ -156,7 +180,7 @@
                     </tbody>
                     <tfoot>
                     <tr>
-                        <td colspan="10"  st-pagination st-items-by-page="itemsByPage" class="text-center">
+                        <td colspan="17"  st-pagination st-items-by-page="itemsByPage" class="text-center">
                         </td>
                     </tr>
                     </tfoot>

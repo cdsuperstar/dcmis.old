@@ -68,9 +68,7 @@
             <div class="form-group">
                 <label class="col-sm-1 control-label"> 内 容 </label>
                 <div class="col-sm-11">
-                    <div name="padcontent">
-                        <script id="dcsimpleeditor1" type="text/plain" style="height:150px;"></script>
-                    </div>
+                    <div class="ueditor" ng-model="themsg.padcontent" config="_simpleConfig"></div>
                 </div>
             </div>
             <div class="form-group" style="margin-bottom: 1px;">

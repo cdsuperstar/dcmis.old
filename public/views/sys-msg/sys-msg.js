@@ -5,11 +5,9 @@ DcmisApp.controller('sysmsglistcontroll',
         function ($scope, $filter, ngDialog, $resource) {
 
             var ctrl = this;
-            var dataServer = $resource('/dcmodel/data/:id', null, {
+            var dataServer = $resource('/sysuser/list/:id', null, {
                 update: {method: 'PUT'},
-                list: {url: '/sysmsg/list/', method: 'GET', isArray: true},
-                getalluser:{url: '/sysuser/list/', method: 'GET', isArray: true},
-                movenode: {url: '/dcmodel/movenode', method: 'POST'}
+                list: {url: '/sysmsg/list/', method: 'GET', isArray: true}
             });
 
             $scope._simpleConfig = {
@@ -24,150 +22,10 @@ DcmisApp.controller('sysmsglistcontroll',
                 wordCount: false
             }
             $scope.themsg={};
-            $scope.themsg.content = 'Hello Ueditor';
-            $scope.test=function(){
+            $scope.themsg.content = '请输入文字……';
+            $scope.sendmsg=function(){
                 $scope.themsg.id="test it it it !!!";
             }
-            $scope.treeEditor = function () {
-                ngDialog.openConfirm({
-                    template: 'treeTemp',
-                    className: 'ngdialog-theme-default',
-                    scope: $scope,
-                    controller: ['$scope', 'validationConfig', function ($scope, validationConfig) {
-                        $scope.$validationOptions = validationConfig;
-
-                        $scope.$on('ngDialog.opened', function () {
-                            //console.log($scope.$parent.$parent.mdTreeJson);
-                            $("#modelTree").jstree({
-                                "core": {
-                                    "themes": {
-                                        "responsive": false
-                                    },
-                                    // so that create works
-                                    "check_callback": function (operation, node, parent, position, more) {
-                                        if (operation === "copy_node" || operation === "move_node") {
-                                            if (parent.id === "#") {
-                                                return false; // prevent moving a child above or below the root
-                                            }
-                                        }
-                                        return true; // allow everything else
-                                    },
-                                    'data': {
-                                        'url': function (node) {
-                                            return '/dcmodel/tree';
-                                        },
-                                        'data': function (node) {
-                                            return {'modelid': node.modelid};
-                                        }
-                                    }
-                                },
-                                "types": {
-                                    "default": {
-                                        "icon": "fa fa-folder icon-state-warning icon-lg"
-                                    },
-                                    "file": {
-                                        "icon": "fa fa-file icon-state-warning icon-lg"
-                                    }
-                                },
-                                "plugins": ["dnd", "state", "types"]
-                            })
-                                .bind("move_node.jstree", function (e, data) {
-                                    //console.log('the item being dragged ', data);
-                                    dataServer.movenode(data).$promise.then(
-                                        function (res) {
-                                            //console.log(res);
-                                            if (res.success) {
-                                                showMsg(res.messages.toString(), '信息', 'lime');
-                                                //console.log("save success", res);
-                                            }
-                                        }
-                                    );
-                                })
-                                .bind("changed.jstree", function (e, data) {
-                                    //console.log("The selected nodes are:");
-                                    //console.log(data);
-                                });
-                        });
-                    }],
-                    showClose: false,
-                    setBodyPadding: 1,
-                    overlay: false,
-                    closeByEscape: false
-                }).then(function (dcEdition) {
-
-                }, function (dcEdition) {
-
-                });
-            }
-
-            // add user
-            $scope.add = function () {
-                ngDialog.openConfirm({
-                    template: '/dcmodel/edition',
-                    className: 'ngdialog-theme-default',
-                    scope: $scope,
-                    controller: ['$scope', 'validationConfig', function ($scope, validationConfig) {
-                        $scope.$validationOptions = validationConfig;
-                    }],
-                    showClose: false,
-                    setBodyPadding: 1,
-                    overlay: false,
-                    closeByEscape: false
-                }).then(function (dcEdition) {
-                    dataServer.save(dcEdition).$promise.then(
-                        function (res) {
-                            if (res.success) {
-                                ctrl.displayed.push(JSON.parse(res.data));
-                                showMsg(res.messages.toString(), '信息', 'lime');
-                                //console.log("save success", res);
-                            } else {
-                                // TODO add error message to system
-                                showMsg(res.errors.toString(), '错误', 'ruby');
-                                //console.log('add failed!', res);
-                            }
-                        }
-                    );
-                }, function (dcEdition) {
-                    console.log('Modal promise rejected. Reason: ', dcEdition);
-                });
-            };
-
-            // edit user
-            $scope.edit = function (dataRec) {
-                $scope.dcEditiontmp = angular.copy(dataRec);
-                ngDialog.openConfirm({
-                    template: '/dcmodel/edition',
-                    className: 'ngdialog-theme-default',
-                    scope: $scope,
-                    controller: ['$scope', 'validationConfig', function ($scope, validationConfig) {
-                        $scope.$validationOptions = validationConfig;
-                        $scope.dcEdition = dataRec;
-                    }],
-                    showClose: false,
-                    setBodyPadding: 1,
-                    overlay: false,
-                    closeByEscape: false
-                }).then(function (dcEdition) {
-                    dataServer.update({id: dcEdition.id}, dcEdition).$promise.then(
-                        function (res) {
-                            if (res.success) {
-                                var index = ctrl.displayed.indexOf(dcEdition);
-                                ctrl.displayed[index] = JSON.parse(res.data);
-                                showMsg(res.messages.toString(), '信息', 'lime');
-                            } else {
-                                // TODO add error message to system
-                                showMsg(res.errors.toString(), '错误', 'ruby');
-                                console.log('update failed!');
-                            }
-                        }
-                    );
-                }, function (dcEdition) {
-                    delete dcEdition.password_confirmation;
-                    var index = ctrl.displayed.indexOf(dcEdition);
-                    ctrl.displayed[index] = angular.copy($scope.dcEditiontmp);
-                    console.log('Modal promise rejected. Reason: ', index);
-                });
-            };
 
             $scope.del = function (user) {
                 dataServer.remove({id: user.id}).$promise.then(
@@ -189,35 +47,6 @@ DcmisApp.controller('sysmsglistcontroll',
                 };
             }
 
-            $scope.dels = function () {
-                var aTodel = [];
-                $("input[name='Datacheckbox']").each(function () {
-                    if ($(this).attr("checked")) {
-                        aTodel.push($(this).attr("value"));
-                    }
-                });
-                dataServer.remove({id: JSON.stringify(aTodel)}).$promise
-                    .then(
-                    function (res) {
-                        if (res.success) {
-                            for (var delkey in aTodel) {
-                                for (var key in ctrl.displayed) {
-                                    if (ctrl.displayed[key].id == aTodel[delkey]) {
-                                        ctrl.displayed.splice(key, 1);
-                                    }
-                                }
-                            }
-                            //$scope.$apply();
-
-                            showMsg(res.messages.toString(), '信息', 'lime');
-                        } else {
-                            showMsg(res.errors.toString(), '错误', 'ruby');
-                        }
-                    }
-                ),
-                    function (data) {
-                    };
-            }
 
             this.callServer = function callServer(tableState) {
 

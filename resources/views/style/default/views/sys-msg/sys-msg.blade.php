@@ -49,7 +49,7 @@
                     <div style="margin-top: 0px;padding-top: 0px;">
                         <div class="ueditor" ng-model="themsg.content" config="_simpleConfig"></div>
                         <p style="text-align: left;padding-top: 5px;">
-                            <a href="javascript:;" class="btn yellow" ng-click="test()">
+                            <a href="javascript:;" class="btn yellow" ng-click="sendmsg()">
                                 发送消息 <i class="fa fa-link"></i>
                             </a>
                             &nbsp;&nbsp;&nbsp;
