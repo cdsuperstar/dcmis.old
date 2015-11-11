@@ -10,8 +10,8 @@ DcmisApp.controller('userpwdController',
             });
             dataServer.get().$promise.then(
                 function (res) {
-                    $scope.profile=res;
-                    console.log("get",res);
+                    $scope.profile = res;
+                    console.log("get", res);
                 }
             );
             $scope.files = [];
@@ -23,9 +23,10 @@ DcmisApp.controller('userpwdController',
                 });
             });
             $scope.saveprofile = function (userprofile) {
-                if($scope.files[0]){
-                    userprofile.uploadfile=$scope.files[0];
-                    userprofile.signpic=$scope.files[0].name;
+                console.log("beforsave", userprofile);
+                if ($scope.files[0]) {
+                    userprofile.uploadfile = $scope.files[0];
+                    userprofile.signpic = $scope.files[0].name;
                 }
                 dataServer.save(userprofile).$promise.then(
                     function (res) {
@@ -59,7 +60,7 @@ DcmisApp.controller('userpwdController',
                 );
             }
 
-            $scope.opendatepicker = function($event) {
+            $scope.opendatepicker = function ($event) {
                 $event.preventDefault();
                 $event.stopPropagation();
                 $scope.opened = true;
@@ -67,7 +68,38 @@ DcmisApp.controller('userpwdController',
 
         }
     ]);
+DcmisApp.directive('datepickerLocalDate', ['$parse', function ($parse) {
+    var directive = {
+        restrict: 'A',
+        require: ['ngModel'],
+        link: link
+    };
+    return directive;
 
+    function link(scope, element, attr, ctrls) {
+        var ngModelController = ctrls[0];
+
+        // called with a JavaScript Date object when picked from the datepicker
+        ngModelController.$parsers.push(function (viewValue) {
+            // undo the timezone adjustment we did during the formatting
+            viewValue.setMinutes(viewValue.getMinutes() - viewValue.getTimezoneOffset());
+            // we just want a local date in ISO format
+            return viewValue.toISOString().substring(0, 10);
+        });
+
+        // called with a 'yyyy-mm-dd' string to format
+        ngModelController.$formatters.push(function (modelValue) {
+            if (!modelValue) {
+                return undefined;
+            }
+            // date constructor will apply timezone deviations from UTC (i.e. if locale is behind UTC 'dt' will be one day behind)
+            var dt = new Date(modelValue);
+            // 'undo' the timezone offset again (so we end up on the original date again)
+            dt.setMinutes(dt.getMinutes() + dt.getTimezoneOffset());
+            return dt;
+        });
+    }
+}]);
 DcmisApp.directive('fileUpload', function () {
     return {
         scope: true,        //create a new scope
@@ -75,9 +107,9 @@ DcmisApp.directive('fileUpload', function () {
             el.bind('change', function (event) {
                 var files = event.target.files;
                 //iterate files since 'multiple' may be specified on the element
-                for (var i = 0;i<files.length;i++) {
+                for (var i = 0; i < files.length; i++) {
                     //emit event upward
-                    scope.$emit("fileSelected", { file: files[i] });
+                    scope.$emit("fileSelected", {file: files[i]});
                 }
             });
         }

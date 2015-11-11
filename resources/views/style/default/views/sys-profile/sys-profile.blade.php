@@ -68,7 +68,7 @@
                             <div class="form-group">
                                 <label class="col-md-2 control-label">出生日期</label>
                                 <div class="col-md-3 input-group">
-                                <input type="text" class="form-control" readonly datepicker-popup="yyyy-MM-dd" ng-model="profile.tdate" is-open="opened" min-date="minDate" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+                                <input type="text" class="form-control" readonly datepicker-local-date datepicker-popup="yyyy-MM-dd " ng-model="profile.tdate" is-open="opened" min-date="minDate" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
                                   <span class="input-group-btn">
                                     <button type="button" class="btn btn-default" ng-click="opendatepicker($event)"><i class="glyphicon glyphicon-calendar"></i></button>
                                   </span>
