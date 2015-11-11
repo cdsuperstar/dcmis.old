@@ -46,15 +46,15 @@ class userprofileController extends Controller
             $comma = strpos($filestring, ',');
             $filedata = base64_decode(substr($filestring, $comma+1));
             $disk=Storage::disk('local_public');
+            if($request->input('signpic')<>''){
+                $signpic=str_random(30).substr($request->input('signpic'),strripos($request->input('signpic'),'.'));
+                $request->merge(['signpic'=>$signpic]);
+            }
         }
 
-        if($request->input('signpic')<>''){
-            $signpic=str_random(30).substr($request->input('signpic'),strripos($request->input('signpic'),'.'));
-            $request->merge(['signpic'=>$signpic]);
-        }
 
         if($userprofile->update($request->input())){
-            $disk->put('/images/users/'.$request->input('id').'/'.$signpic,$filedata);
+            if(is_array($tmp))$disk->put('/images/users/'.$request->input('id').'/'.$signpic,$filedata);
 
             return response()->json([
                 'messages' => trans('userprofile.updatesuccess'),

@@ -23,8 +23,10 @@ DcmisApp.controller('userpwdController',
                 });
             });
             $scope.saveprofile = function (userprofile) {
-                userprofile.uploadfile=$scope.files[0];
-                userprofile.signpic=$scope.files[0].name;
+                if($scope.files[0]){
+                    userprofile.uploadfile=$scope.files[0];
+                    userprofile.signpic=$scope.files[0].name;
+                }
                 dataServer.save(userprofile).$promise.then(
                     function (res) {
                         if (res.success) {
